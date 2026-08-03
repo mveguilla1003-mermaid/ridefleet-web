@@ -1,0 +1,808 @@
+{
+  "meta": {
+    "title": "Ride Fleet Manager — una columna de operaciones para toda tu flota",
+    "description": "Renta tradicional, marketplace de car-sharing y unidades de cortesía sobre el mismo motor de reservas: inspecciones, peajes, depósitos y facturación en un solo expediente, en español e inglés."
+  },
+  "hero": {
+    "badge": "Ride Fleet Manager",
+    "title": "Una sola plataforma. Una columna de operaciones. <grad>Todos tus modelos.</grad>",
+    "lede": "Renta tradicional, marketplace de car-sharing y unidades de cortesía (loaners) de concesionario corriendo sobre el mismo motor de reservas, la misma operación diaria y la misma capa de reportes. De la reserva al cierre, sin salir del expediente.",
+    "primary": "Reservar una demo",
+    "secondary": "Ver la columna de operaciones",
+    "notes": {
+      "0": "Bilingüe de raíz, español e inglés",
+      "1": "Hecho en Puerto Rico, listo para EE. UU. continental",
+      "2": "Peajes y recepción con IA en el mismo sistema"
+    },
+    "index": {
+      "0": "<b>Renta tradicional</b> — counter, contratos, depósitos y devoluciones.",
+      "1": "<b>Marketplace de car-sharing</b> — anfitriones, listados y reparto de ingresos.",
+      "2": "<b>Unidades de cortesía</b> — taller, órdenes de servicio y facturación interna."
+    }
+  },
+  "board": {
+    "ariaLabel": "Panel de flota de Ride Fleet Manager: 34 de 44 unidades turn-ready y una tabla de vehículos con su próxima acción.",
+    "crumbs": {
+      "product": "Ride Fleet Manager",
+      "section": "Flota",
+      "place": {
+        "value": "San Juan · PR"
+      }
+    },
+    "search": {
+      "label": "Buscar placa o reserva",
+      "code": "Ctrl K"
+    },
+    "avatar": "MR",
+    "side": {
+      "ops": {
+        "label": "Operación",
+        "items": {
+          "0": {
+            "label": "Panel de flota"
+          },
+          "1": {
+            "label": "Reservas",
+            "count": "26"
+          },
+          "2": {
+            "label": "Entregas hoy",
+            "count": "11"
+          },
+          "3": {
+            "label": "Inspecciones",
+            "count": "4"
+          }
+        }
+      },
+      "money": {
+        "label": "Dinero",
+        "items": {
+          "0": {
+            "label": "Peajes",
+            "count": "9"
+          },
+          "1": {
+            "label": "Facturación"
+          },
+          "2": {
+            "label": "Reclamaciones"
+          }
+        }
+      }
+    },
+    "pane": {
+      "title": "Panel de flota",
+      "sub": "Martes 14:06 · 3 sucursales · 44 unidades",
+      "today": "Hoy",
+      "week": "Semana",
+      "filter": "Requiere acción"
+    },
+    "kpi": {
+      "ready": {
+        "value": "Turn-ready",
+        "pct": "77",
+        "pctSymbol": "%",
+        "count": "34",
+        "total": " / 44",
+        "foot": "6 en lavado · 4 en taller"
+      },
+      "handovers": {
+        "label": "Entregas hoy",
+        "count": "11",
+        "foot": "7 completadas · 4 pendientes"
+      },
+      "billed": {
+        "label": "Facturado hoy",
+        "amount": "$8,412",
+        "foot": "Incluye $164 en peajes"
+      }
+    },
+    "table": {
+      "caption": "Vehículos de la flota con estado, combustible y próxima acción",
+      "head": {
+        "unit": "Unidad",
+        "plate": "Placa",
+        "status": "Estado",
+        "level": "Nivel",
+        "next": "Próxima acción",
+        "time": "Hora"
+      },
+      "rows": {
+        "0": {
+          "vehicle": {
+            "value": "Toyota Corolla 2024",
+            "sub": "Renta · Aeropuerto SJU"
+          },
+          "plate": "GBL-704",
+          "status": {
+            "value": "Turn-ready"
+          },
+          "level": "92%",
+          "next": {
+            "title": "Entregar a J. Colón",
+            "sub": "Reserva #4830 · mostrador 2"
+          },
+          "time": "15:30"
+        },
+        "1": {
+          "vehicle": {
+            "value": "Hyundai Tucson 2024",
+            "sub": "Renta · Condado"
+          },
+          "plate": "HTG-119",
+          "status": {
+            "value": "En renta"
+          },
+          "level": "71%",
+          "next": {
+            "title": "Devolución programada",
+            "sub": "Reserva #4821 · 2 peajes sin cobrar"
+          },
+          "time": "17:00"
+        },
+        "2": {
+          "vehicle": {
+            "value": "Jeep Wrangler 2023",
+            "sub": "Car-sharing · anfitrión M. Rivera"
+          },
+          "plate": "IVR-238",
+          "status": {
+            "value": "Falta lavado"
+          },
+          "level": "58%",
+          "next": {
+            "title": "Enviar a lavado",
+            "sub": "Bahía 2 · bloquea reserva de mañana"
+          },
+          "time": "14:40"
+        },
+        "3": {
+          "vehicle": {
+            "value": "Kia Forte 2022",
+            "sub": "Renta · Bayamón"
+          },
+          "plate": "FQD-552",
+          "status": {
+            "value": "Daño reportado"
+          },
+          "level": "44%",
+          "next": {
+            "title": "Revisar inspección",
+            "sub": "6 fotos · parachoques trasero"
+          },
+          "time": "—"
+        },
+        "4": {
+          "vehicle": {
+            "value": "Tesla Model 3 2024",
+            "sub": "Cortesía · concesionario Caguas"
+          },
+          "plate": "JLP-806",
+          "status": {
+            "value": "Turn-ready"
+          },
+          "level": "88%",
+          "next": {
+            "title": "Asignar a orden #2211",
+            "sub": "Cliente espera en el taller"
+          },
+          "time": "16:15"
+        },
+        "5": {
+          "vehicle": {
+            "value": "Nissan Versa 2023",
+            "sub": "Renta · Aeropuerto SJU"
+          },
+          "plate": "KMB-347",
+          "status": {
+            "value": "Mantenimiento"
+          },
+          "level": "33%",
+          "next": {
+            "title": "Cambio de aceite vencido",
+            "sub": "34,182 mi · regla del operador: 5,000 mi"
+          },
+          "time": "Mañana"
+        }
+      },
+      "foot": {
+        "left": "44 unidades · 3 sucursales · 3 modelos de negocio",
+        "updated": "Actualizado 14:06",
+        "code": "AST (UTC−4)"
+      }
+    },
+    "notes": {
+      "0": {
+        "label": "Por qué 77 %",
+        "body": "El puntaje turn-ready se explica solo: lavado, combustible, inspección, taller."
+      },
+      "1": {
+        "label": "Próxima acción",
+        "body": "Cada fila dice qué hacer ahora, no solo qué pasó ayer."
+      },
+      "2": {
+        "label": "Nota",
+        "body": "Interfaz del producto con datos de ejemplo."
+      }
+    }
+  },
+  "trust": {
+    "label": "Se conecta con los sistemas que ya corres",
+    "integrations": {
+      "0": {
+        "value": "AutoExpreso"
+      },
+      "1": {
+        "value": "SunPass"
+      },
+      "2": {
+        "value": "Stripe"
+      },
+      "3": {
+        "value": "Zubie"
+      },
+      "4": {
+        "value": "VoltSwitch"
+      },
+      "5": {
+        "value": "Telnyx"
+      }
+    }
+  },
+  "models": {
+    "head": {
+      "mark": "01",
+      "of": "Modelos",
+      "title": "Tres negocios distintos, un solo sistema debajo",
+      "aside": "No son tres productos empacados juntos. Es un motor de reservas, un expediente y una capa de reportes que cambian de forma según el modelo que corras — y que puedes correr los tres a la vez."
+    },
+    "rental": {
+      "n": "01",
+      "kicker": "Operadores de renta · flotas de varias sucursales",
+      "title": "Renta tradicional",
+      "body": "Todo el ciclo de una reserva vive en un solo expediente: tarifa, pago, conductores adicionales, acuerdo firmado, salida, devolución, inspección y auditoría. El mostrador deja de ser el cuello de botella porque el cliente ya hizo la mitad desde su teléfono.",
+      "features": {
+        "0": {
+          "title": "Pre-check-in y firma antes de llegar",
+          "body": "Licencia, tarjeta y acuerdo cargados desde el portal del cliente."
+        },
+        "1": {
+          "title": "Depósitos y cargos con Stripe",
+          "body": "Retención al salir, liberación al cerrar, todo contra la misma reserva."
+        },
+        "2": {
+          "title": "Reportes por sucursal y por unidad",
+          "body": "Utilización, ingreso por día disponible y días fuera de servicio."
+        }
+      },
+      "app": {
+        "ariaLabel": "Expediente de la reserva 4821 con su progreso y totales.",
+        "crumb": "Reserva",
+        "number": "#4821",
+        "vehicle": {
+          "value": "Hyundai Tucson 2024",
+          "plate": "HTG-119"
+        },
+        "sub": "J. Colón · 12–14 mar · Condado",
+        "chip": "En renta",
+        "rows": {
+          "0": {
+            "no": "01",
+            "title": "Acuerdo firmado",
+            "sub": "Firma electrónica · 07:20",
+            "amount": "PDF"
+          },
+          "1": {
+            "no": "02",
+            "title": "Depósito retenido",
+            "sub": "Stripe · autorización",
+            "amount": "$250.00"
+          },
+          "2": {
+            "no": "03",
+            "title": "Conductor adicional",
+            "sub": "L. Ortiz · licencia verificada",
+            "amount": "+$12.00"
+          }
+        },
+        "steps": {
+          "0": {
+            "value": "Reserva"
+          },
+          "1": {
+            "value": "Pre-check-in"
+          },
+          "2": {
+            "value": "Salida"
+          },
+          "3": {
+            "value": "Devolución"
+          },
+          "4": {
+            "value": "Cierre"
+          }
+        },
+        "foot": {
+          "label": "2 días · tarifa $72.50",
+          "total": "$187.50"
+        }
+      }
+    },
+    "sharing": {
+      "n": "02",
+      "kicker": "Marketplaces con anfitriones · flotas mixtas",
+      "title": "Marketplace de car-sharing",
+      "body": "El anfitrión no es un usuario más: es un negocio dentro del tuyo. Publica su unidad, fija tarifas y disponibilidad, y ve su liquidación. Tú apruebas vehículos, cobras comisión y mantienes la operación bajo las mismas reglas de inspección y peajes que el resto de la flota.",
+      "features": {
+        "0": {
+          "title": "Aprobación de vehículos",
+          "body": "Fotos, documentos y seguro revisados antes de que la unidad se publique."
+        },
+        "1": {
+          "title": "Búsqueda por ubicación",
+          "body": "El invitado busca dónde y cuándo; la complejidad del operador queda escondida."
+        },
+        "2": {
+          "title": "Comisión y liquidación automáticas",
+          "body": "El reparto se calcula sobre la reserva cerrada, con peajes y cargos ya incluidos."
+        }
+      },
+      "app": {
+        "ariaLabel": "Panel de anfitrión con tres unidades publicadas y su liquidación del mes.",
+        "crumb": "Anfitrión",
+        "host": {
+          "value": "M. Rivera"
+        },
+        "title": "Mis unidades",
+        "sub": "Marzo · 3 publicadas · 1 en revisión",
+        "caption": "Unidades del anfitrión con reservas, tarifa y liquidación",
+        "head": {
+          "unit": "Unidad",
+          "bookings": "Reservas",
+          "rate": "Tarifa",
+          "payout": "Liquidación"
+        },
+        "rows": {
+          "0": {
+            "vehicle": {
+              "value": "Jeep Wrangler",
+              "plate": "IVR-238"
+            },
+            "bookings": "7",
+            "rate": "$96",
+            "payout": "$551.04"
+          },
+          "1": {
+            "vehicle": {
+              "value": "Toyota RAV4",
+              "plate": "DPX-415"
+            },
+            "bookings": "5",
+            "rate": "$78",
+            "payout": "$319.80"
+          },
+          "2": {
+            "vehicle": {
+              "value": "Honda Civic",
+              "plate": "CWA-902"
+            },
+            "bookings": "6",
+            "rate": "$64",
+            "payout": "$314.88"
+          }
+        },
+        "foot": {
+          "label": "Comisión de plataforma 18% · peajes ya conciliados",
+          "total": "$1,185.72"
+        }
+      }
+    },
+    "loaners": {
+      "n": "03",
+      "kicker": "Concesionarios · departamentos de servicio",
+      "title": "Unidades de cortesía (loaners)",
+      "body": "Un loaner no es una renta con otro nombre. Entra por el taller, se amarra a una orden de servicio, no cobra tarifa al cliente y termina facturándose por dentro. Ride Fleet Manager lo trata así de raíz, sobre el mismo motor de reservas y las mismas inspecciones.",
+      "features": {
+        "0": {
+          "title": "Entrada por el taller",
+          "body": "El asesor asigna la unidad desde la orden de servicio, sin abrir otro sistema."
+        },
+        "1": {
+          "title": "Paquete del cliente",
+          "body": "Acuerdo, seguro, licencia y fotos de salida en un solo documento."
+        },
+        "2": {
+          "title": "Facturación interna",
+          "body": "Costo por día contra el departamento de servicio, con paquete mensual y orden de compra."
+        }
+      },
+      "app": {
+        "ariaLabel": "Cola del taller con tres órdenes de servicio y sus unidades de cortesía.",
+        "crumb": "Cortesía",
+        "place": "Taller · Caguas",
+        "title": "Órdenes abiertas",
+        "sub": "9 unidades de cortesía · 2 disponibles",
+        "rows": {
+          "0": {
+            "number": "#2211",
+            "vehicle": {
+              "value": "Tesla Model 3",
+              "plate": "JLP-806"
+            },
+            "sub": "Cliente en sala de espera · asignar ahora",
+            "chip": "Espera"
+          },
+          "1": {
+            "number": "#2208",
+            "vehicle": {
+              "value": "Kia Sportage",
+              "plate": "BQT-661"
+            },
+            "sub": "Día 3 de 5 · $38/día al departamento",
+            "chip": "Activa"
+          },
+          "2": {
+            "number": "#2199",
+            "vehicle": {
+              "value": "Toyota Camry",
+              "plate": "GNS-173"
+            },
+            "sub": "Devuelta · inspección sin daños",
+            "chip": "Cerrada"
+          }
+        },
+        "foot": {
+          "label": "Paquete mensual al departamento de servicio",
+          "total": "$4,326.00"
+        }
+      }
+    }
+  },
+  "spine": {
+    "head": {
+      "mark": "02",
+      "of": "Columna",
+      "title": "De la reserva al cierre, sin salir del expediente",
+      "aside": "Seis paradas. Una sola línea de tiempo. Cada evento queda escrito contra la reserva, así que el cierre no depende de que alguien recuerde lo que pasó a las 9:15 de la mañana."
+    },
+    "stations": {
+      "0": {
+        "n": "01",
+        "value": "Reserva",
+        "body": "El cliente reserva por ubicación y fecha. El personal puede tomar el control en cualquier punto sin empezar de nuevo.",
+        "rec": "tarifa · disponibilidad · depósito"
+      },
+      "1": {
+        "n": "02",
+        "value": "Check-out",
+        "body": "Acuerdo firmado, licencia verificada, millaje y combustible anotados, llaves entregadas.",
+        "rec": "firma · millaje · retención"
+      },
+      "2": {
+        "n": "03",
+        "value": "Inspección",
+        "body": "Fotos de salida y de entrada en el mismo expediente, comparadas lado a lado para decidir si hay daño.",
+        "rec": "antes / después · triage"
+      },
+      "3": {
+        "n": "04",
+        "value": "Peajes",
+        "body": "Los cruces de AutoExpreso y SunPass caen contra la reserva que tenía la unidad a esa hora.",
+        "rec": "cruce · unidad · conductor"
+      },
+      "4": {
+        "n": "05",
+        "value": "Facturación",
+        "body": "Tarifa, extras, peajes y cargos por daño se suman una sola vez, sin re-teclear nada.",
+        "rec": "factura · comisión · cobro"
+      },
+      "5": {
+        "n": "06",
+        "value": "Cierre",
+        "body": "Depósito liberado, unidad devuelta al inventario con su próxima acción y expediente sellado.",
+        "rec": "liberación · turn-ready · auditoría"
+      }
+    },
+    "log": {
+      "title": "Bitácora de la reserva #4814 · IVR-238",
+      "tag": "Ejemplo",
+      "events": {
+        "0": {
+          "time": "07:12",
+          "text": "<b>Reserva creada</b> — Jeep Wrangler 2023 · IVR-238 · anfitrión M. Rivera · 2 días"
+        },
+        "1": {
+          "time": "07:14",
+          "text": "<b>Pre-check-in completado</b> — licencia y tarjeta cargadas desde el portal"
+        },
+        "2": {
+          "time": "07:20",
+          "text": "<b>Acuerdo firmado</b> — depósito de <em>$300.00</em> retenido vía Stripe"
+        },
+        "3": {
+          "time": "09:15",
+          "text": "<b>Salida</b> — 24,860 mi · combustible 88% · 14 fotos de inspección"
+        },
+        "4": {
+          "time": "13:48",
+          "text": "<b>Devolución</b> — 25,087 mi · combustible 58% · sin daño nuevo"
+        },
+        "5": {
+          "time": "14:02",
+          "text": "<b>Peajes conciliados</b> — AutoExpreso, 2 cruces · <em>$4.50</em> al conductor"
+        },
+        "6": {
+          "time": "14:03",
+          "text": "<b>Factura emitida</b> — tarifa $192.00 · extras $24.00 · peajes $4.50 · <em>$220.50</em>"
+        },
+        "7": {
+          "time": "14:05",
+          "text": "<b>Reserva cerrada</b> — depósito liberado · unidad marcada para lavado"
+        }
+      },
+      "foot": "La unidad volvió al tablero como <b>Falta lavado</b>, con «Enviar a lavado» a las 14:40 en Bahía 2."
+    },
+    "detail": {
+      "title": "Un expediente, no siete pestañas",
+      "body": "La mayoría de los operadores no pierden dinero en la tarifa: lo pierden en lo que nunca se cobró. Un peaje que llegó tres semanas tarde. Un daño que nadie fotografió. Un depósito que quedó retenido. La columna existe para que esas cosas tengan dueño y hora.",
+      "features": {
+        "0": {
+          "title": "Todo evento lleva hora y usuario",
+          "body": "La disputa se resuelve mirando la bitácora, no la memoria de nadie."
+        },
+        "1": {
+          "title": "Los peajes encuentran su reserva solos",
+          "body": "El cruce se amarra por placa y hora, aunque el estado de cuenta llegue semanas después."
+        },
+        "2": {
+          "title": "El cierre devuelve la unidad al tablero",
+          "body": "Con su próxima acción ya asignada: lavado, taller o lista para entregar."
+        }
+      }
+    }
+  },
+  "caps": {
+    "head": {
+      "mark": "03",
+      "of": "Capacidades",
+      "title": "Lo que hace hoy, y lo que estamos construyendo",
+      "aside": "Lo que lleva la etiqueta <b>En construcción</b> todavía no está lanzado. Lo decimos aquí adentro, en la misma línea donde hacemos la promesa, para que nadie compre una demo de algo que no existe."
+    },
+    "rows": {
+      "0": {
+        "kicker": "01 · Reserva y cliente",
+        "title": "Que el cliente llegue con la mitad hecha",
+        "body": "Menos fila en el mostrador, menos papel, menos llamadas para pedir la licencia otra vez.",
+        "features": {
+          "0": {
+            "value": "Motor de reservas por ubicación",
+            "body": "Una tienda pública limpia donde el invitado busca dónde y cuándo. La estructura interna de sucursales y modelos queda escondida."
+          },
+          "1": {
+            "value": "Portal del cliente",
+            "body": "Pre-check-in, firma del acuerdo y pago en un flujo guiado. El cliente retoma donde lo dejó desde cualquier dispositivo."
+          },
+          "2": {
+            "value": "Retiro self-service con intercambio de llaves",
+            "body": "Retirar la unidad fuera del horario del mostrador, con verificación de identidad y entrega de llave sin personal presente."
+          }
+        }
+      },
+      "1": {
+        "kicker": "02 · Operación diaria",
+        "title": "El turno completo desde un teléfono",
+        "body": "Entregas, devoluciones, inspecciones y problemas en una sola cola, no en cuatro grupos de WhatsApp.",
+        "features": {
+          "0": {
+            "value": "Hub de operaciones del empleado",
+            "body": "Una vista pensada para el celular donde el turno se ve como lista de tareas: quién entrega, quién devuelve, qué falta."
+          },
+          "1": {
+            "value": "Inteligencia de inspección",
+            "body": "Captura guiada de fotos, paquete de comparación antes/después y triage del daño con la próxima acción sugerida."
+          },
+          "2": {
+            "value": "Issue Center",
+            "body": "Cada queja, disputa o incidente se convierte en un caso con dueño, historial y estado, en vez de un mensaje que se pierde."
+          }
+        }
+      },
+      "2": {
+        "kicker": "03 · Flota y planificación",
+        "title": "Saber qué unidad está lista, y por qué",
+        "body": "La disponibilidad deja de ser una conversación y pasa a ser un número que se puede auditar.",
+        "features": {
+          "0": {
+            "value": "Puntaje turn-ready explicable",
+            "body": "Cada unidad muestra qué le falta — lavado, combustible, inspección, mantenimiento — y qué señal lo dice. Nada de caja negra."
+          },
+          "1": {
+            "value": "Smart Planner",
+            "body": "Planifica escasez, lavado y mantenimiento con reglas que tú defines por sucursal y por modelo de negocio, no con un promedio genérico."
+          },
+          "2": {
+            "value": "Precios dinámicos",
+            "body": "Ajuste de tarifa por demanda, temporada y ocupación. Hoy las tarifas se manejan por reglas fijas de temporada, ubicación y duración."
+          }
+        }
+      },
+      "3": {
+        "kicker": "04 · Dinero y cierre",
+        "title": "Cobrar lo que ya te ganaste",
+        "body": "Peajes, depósitos, comisiones y daños conciliados contra la misma reserva.",
+        "features": {
+          "0": {
+            "value": "Pagos y depósitos con Stripe",
+            "body": "Retención al salir, cargos durante la renta y liberación al cerrar. El estado del pago vive dentro del expediente, no en otra pantalla."
+          },
+          "1": {
+            "value": "Peajes con Toll Bridge",
+            "body": "AutoExpreso y SunPass conciliados por placa y hora contra la reserva correcta, y facturados al conductor que cruzó."
+          },
+          "2": {
+            "value": "Espacio de trabajo de reclamaciones",
+            "body": "Llevar un daño desde la inspección hasta la aseguradora dentro del sistema. Hoy la evidencia y el triage ya están; el expediente de reclamación es lo que falta."
+          }
+        }
+      }
+    }
+  },
+  "compare": {
+    "head": {
+      "mark": "04",
+      "of": "Comparación",
+      "title": "Dónde ganamos: inteligencia operativa",
+      "aside": "La columna de la derecha no describe a ningún competidor en particular. Describe el montaje que encontramos una y otra vez cuando entramos a un operador: un sistema de renta, una hoja de cálculo y un grupo de mensajes."
+    },
+    "caption": "Comparación de capacidades entre Ride Fleet Manager y el montaje típico",
+    "th": {
+      "capability": "Capacidad",
+      "us": "Ride Fleet Manager",
+      "them": "El montaje típico hoy"
+    },
+    "rows": {
+      "0": {
+        "cap": "Modelos de negocio",
+        "sub": {
+          "value": "Renta, car-sharing, cortesía"
+        },
+        "us": "Los tres sobre el mismo motor de reservas, con la operación y los reportes compartidos.",
+        "them": "Un sistema por modelo, o un sistema de renta forzado a hacer de loaner."
+      },
+      "1": {
+        "cap": "Preparación de la unidad",
+        "sub": {
+          "value": "Qué puedo entregar ahora"
+        },
+        "us": "Puntaje turn-ready que se explica solo: lavado, combustible, inspección y taller, con la señal que lo origina.",
+        "them": "Un tablero o una hoja de cálculo; la razón vive en la cabeza del supervisor de turno."
+      },
+      "2": {
+        "cap": "Planificación",
+        "sub": {
+          "value": "Escasez, lavado, mantenimiento"
+        },
+        "us": "Smart Planner con reglas por sucursal y por modelo, ajustables sin pedirle nada a soporte.",
+        "them": "Planificación manual sobre un calendario, rehecha cada mañana."
+      },
+      "3": {
+        "cap": "Precios",
+        "us": "Reglas de tarifa por temporada, ubicación y duración.",
+        "badge": "Precios dinámicos en construcción",
+        "them": "Tarifas fijas editadas a mano cuando alguien se acuerda."
+      },
+      "4": {
+        "cap": "Inspecciones y daños",
+        "us": "Fotos de salida y entrada en el expediente, comparadas lado a lado, con triage y próxima acción.",
+        "badge": "Reclamaciones en construcción",
+        "them": "Fotos en el teléfono del empleado y notas sueltas en el contrato."
+      },
+      "5": {
+        "cap": "Peajes",
+        "sub": {
+          "value": "AutoExpreso · SunPass"
+        },
+        "us": "Cada cruce se amarra por placa y hora a la reserva que tenía la unidad, y se factura al conductor.",
+        "them": "Conciliación manual del estado de cuenta a fin de mes, con lo que no se identifica dado por perdido."
+      },
+      "6": {
+        "cap": "Autoservicio del cliente",
+        "us": "Pre-check-in, firma y pago desde el portal antes de llegar.",
+        "badge": "Retiro sin personal en construcción",
+        "them": "Todo ocurre en el mostrador, en horario de mostrador."
+      },
+      "7": {
+        "cap": "Idioma",
+        "us": "Español e inglés de raíz: interfaz interna, portal del cliente, acuerdos y correos.",
+        "them": "Interfaz en inglés con traducciones parciales, y documentos que salen solo en inglés."
+      }
+    },
+    "note": "Lo marcado <b>En construcción</b> está en desarrollo y no se demuestra como si estuviera lanzado. Todo lo demás en esta tabla lo puedes ver funcionando en una demo en vivo."
+  },
+  "modules": {
+    "eyebrow": "Se activa por módulos",
+    "title": "Toll Bridge y Voz AI corren sobre la misma flota",
+    "body": "Empiezas con Ride Fleet Manager. Cuando quieras cobrar peajes sin perseguir estados de cuenta, activas Toll Bridge. Cuando el teléfono deje de dar abasto, activas tu recepción con IA. Mismo expediente, misma factura, misma bitácora.",
+    "linkToll": "Ver Toll Bridge",
+    "linkVoz": "Ver Voz AI",
+    "mods": {
+      "0": {
+        "code": "RFM",
+        "name": "Ride Fleet Manager",
+        "desc": "La base: reservas, operación y reportes"
+      },
+      "1": {
+        "code": "TOLL",
+        "name": "Toll Bridge",
+        "desc": "Peajes conciliados y facturados solos"
+      },
+      "2": {
+        "code": "VOZ",
+        "name": "Voz AI",
+        "desc": "Tu recepción con IA, contestada en español o inglés"
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas que nos hacen",
+    "items": {
+      "0": {
+        "q": "¿Tengo que correr los tres modelos de negocio?",
+        "a": "No. La mayoría empieza con uno. Lo que evitas es tener que migrar de sistema el día que abras car-sharing o empieces a prestar unidades de cortesía: el modelo nuevo se activa sobre la flota que ya tienes cargada."
+      },
+      "1": {
+        "q": "¿Cómo llegan los peajes de AutoExpreso al cliente correcto?",
+        "a": "Cada cruce trae placa y hora. Ride Fleet Manager busca qué reserva tenía esa unidad en ese momento y le adjudica el cargo, aunque el estado de cuenta llegue tres semanas después de que el cliente devolvió el carro. Toll Bridge hace lo mismo con SunPass para operadores en Florida."
+      },
+      "2": {
+        "q": "¿Qué pasa con la data que ya tengo?",
+        "a": "Cargamos flota, clientes y reservas activas antes de que salgas en vivo. Lo que no traemos automáticamente lo decimos por adelantado en la llamada de implementación — no después de firmar."
+      },
+      "3": {
+        "q": "¿La interfaz está de verdad en español?",
+        "a": "Sí, y no como traducción tardía. El sistema es bilingüe de raíz: la pantalla del empleado, el portal del cliente, los acuerdos y los correos salen en el idioma que la persona escoja. Se construyó en Puerto Rico, donde eso no es una función opcional."
+      },
+      "4": {
+        "q": "¿Qué significa exactamente «En construcción»?",
+        "a": "Que está en desarrollo activo y todavía no lo puedes usar en producción. No lo enseñamos en la demo como si estuviera lanzado y no lo incluimos en un contrato como si lo estuviera. Si tu decisión depende de una de esas piezas, dínoslo en la llamada y te damos la fecha real."
+      },
+      "5": {
+        "q": "¿Trabajan fuera de Puerto Rico?",
+        "a": "Sí. El producto se construyó aquí y se opera aquí, y está listo para operadores en EE. UU. continental — empezando por los mercados donde SunPass y la operación bilingüe pesan."
+      }
+    }
+  },
+  "partner": {
+    "title": "Buscamos socios de diseño",
+    "body": "Estamos en etapa temprana y lo decimos claro: en vez de inventar testimonios, preferimos trabajar de cerca con unos pocos operadores que quieran meter mano en cómo se construye esto. A cambio, ustedes fijan la prioridad del roadmap.",
+    "cta": "Hablemos",
+    "slotsNote": "Estos espacios quedan vacíos a propósito hasta que un cliente real nos autorice a usar su nombre."
+  },
+  "cta": {
+    "eyebrow": "Próximo paso",
+    "title": "Trae tu operación a la demo",
+    "body": "Dinos cuántas unidades corres y en qué modelo, y montamos la demo con tu caso: renta, car-sharing o unidades de cortesía.",
+    "tags": {
+      "0": {
+        "value": "Renta"
+      },
+      "1": {
+        "value": "Car-sharing"
+      },
+      "2": {
+        "value": "Cortesía"
+      },
+      "3": {
+        "value": "1 – 500 unidades"
+      }
+    },
+    "primary": "Reservar una demo",
+    "secondary": "Ver Toll Bridge primero",
+    "list": {
+      "0": "30 minutos, montada con tu caso real",
+      "1": "En español o en inglés, tú decides",
+      "2": "Sin tarjeta de crédito"
+    }
+  }
+}

@@ -1,0 +1,446 @@
+/* Page styles — ride-fleet-manager. Extracted verbatim from site-v2/02-ride-fleet-manager.html.
+   Loaded only by the ride-fleet-manager route. Uses the shared tokens; adds no new values. */
+
+/* ============================================================================
+   PAGE 02 — RIDE FLEET MANAGER  ·  page-specific layer only
+   Everything above this line is the shared system, pasted verbatim.
+   ========================================================================= */
+[id]{scroll-margin-top:96px}
+
+/* --- HERO ---------------------------------------------------------------- */
+.hero{
+  position:relative;overflow:hidden;padding-top:clamp(40px,4.6vw,64px);
+  background:linear-gradient(180deg,var(--n-0) 0%,var(--n-25) 46%,var(--n-50) 100%);
+  border-bottom:1px solid var(--border);
+}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.hero-bg .grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(to right,rgba(90,38,201,.055) 1px,transparent 1px),
+                   linear-gradient(to bottom,rgba(90,38,201,.055) 1px,transparent 1px);
+  background-size:66px 66px;
+  -webkit-mask-image:radial-gradient(1180px 620px at 46% 2%,#000 0%,rgba(0,0,0,.34) 54%,transparent 80%);
+          mask-image:radial-gradient(1180px 620px at 46% 2%,#000 0%,rgba(0,0,0,.34) 54%,transparent 80%);
+}
+.hero-bg .glow{position:absolute;border-radius:50%;filter:blur(84px)}
+.hero-bg .g1{width:760px;height:440px;left:52%;top:-210px;transform:translateX(-50%);
+  background:radial-gradient(closest-side,rgba(127,79,240,.26),transparent)}
+.hero-bg .g2{width:520px;height:340px;left:-6%;top:180px;
+  background:radial-gradient(closest-side,rgba(232,161,60,.13),transparent)}
+.hero-in{position:relative;z-index:1}
+.hero-head{max-width:none}
+.hero h1{margin-top:var(--sp-5);max-width:23ch;text-wrap:balance}
+.hero-copy{max-width:none;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+  gap:clamp(28px,3.4vw,52px);align-items:start;margin-top:clamp(28px,3vw,44px)}
+.hero .lede{margin-top:0}
+.hero .btn-row{margin-top:var(--sp-7)}
+.hero-note{
+  margin-top:var(--sp-6);display:flex;flex-wrap:wrap;gap:var(--sp-2) var(--sp-5);
+  font-size:var(--fs-xs);color:var(--text-3);
+}
+.hero-note > span{display:inline-flex;align-items:center;gap:7px}
+.hero-note svg{width:14px;height:14px;color:var(--ok);flex:0 0 auto}
+/* the right column of the hero head: the three models, as an index not a card */
+.hero-copy > div:last-child{display:flex}
+.hero-index{border-top:2px solid var(--rule-heavy);padding-top:var(--sp-2);
+  flex:1;display:flex;flex-direction:column}
+.hero-index li{
+  flex:1;display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-4) 0;
+  border-bottom:1px solid var(--border);font-size:var(--fs-sm);color:var(--text-2);
+}
+.hero-index li:last-child{border-bottom:0}
+.hero-index .ix{
+  font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:var(--tr-caps);
+  color:var(--text-brand);flex:0 0 auto;
+}
+.hero-index b{color:var(--text-1);font-weight:640}
+
+/* the product surface sits in a wider stage so callouts can live in the gutter */
+/* the stage escapes the 1200px container so the fleet board gets its real width;
+   `translate` (not `transform`) so it survives the .reveal transition */
+.stage{position:relative;margin:clamp(36px,4.4vw,56px) 0 0;
+  width:min(1400px,calc(100vw - 2 * var(--gutter)));left:50%;translate:-50% 0}
+.stage .amb{position:absolute;inset:2% 8% 10%;filter:blur(70px);z-index:0;border-radius:50%;
+  opacity:.7;background:radial-gradient(closest-side,rgba(127,79,240,.22),transparent 72%);pointer-events:none}
+.stage .app{position:relative;z-index:1}
+
+/* editorial annotation band under the product surface — replaces floating callouts */
+.stage-notes{
+  position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0 clamp(20px,3vw,44px);margin-top:var(--sp-5);
+}
+.stage-notes .sn{
+  padding-top:var(--sp-4);border-top:1px solid var(--border-strong);
+  font-size:var(--fs-xs);line-height:1.6;color:var(--text-2);max-width:40ch;
+}
+.stage-notes .snl{
+  display:flex;align-items:center;gap:6px;margin-bottom:6px;
+  font-family:var(--font-mono);font-size:var(--fs-2xs);font-weight:500;letter-spacing:var(--tr-caps);
+  text-transform:uppercase;color:var(--text-brand);
+}
+.stage-notes .snl svg{width:12px;height:12px}
+.stage-notes .sn--note{color:var(--text-3)}
+.stage-notes .sn--note .snl{color:var(--text-3)}
+
+/* the lead KPI row: the ring tile needs more room than its two neighbours */
+.kpis--lead{grid-template-columns:minmax(0,1.42fr) minmax(0,1fr) minmax(0,1fr)}
+.kpi .kval .sub{font-size:.58em;font-weight:600;color:var(--text-3);letter-spacing:-.01em}
+.kpi .kfoot svg{width:13px;height:13px;flex:0 0 auto;color:var(--ok)}
+
+/* next-action cell inside the fleet table — the only cell allowed to wrap,
+   so the six-column board fits the pane instead of scrolling off the edge */
+.nact{display:flex;align-items:flex-start;gap:9px;min-width:210px;max-width:260px}
+.nact svg{width:14px;height:14px;color:var(--p-600);flex:0 0 auto;margin-top:2px}
+.nact > span{min-width:0}
+.nact b{display:block;font-weight:600;color:var(--text-1);font-size:13px;white-space:normal;line-height:1.35}
+.nact small{display:block;color:var(--text-3);font-size:11.5px;white-space:normal;line-height:1.4;margin-top:1px}
+.tcell{font-family:var(--font-mono);font-size:11.5px;color:var(--text-2)}
+
+/* --- SECTION 01 · BUSINESS MODELS ---------------------------------------- */
+.model{
+  display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:clamp(28px,4vw,64px);align-items:center;
+  padding-block:clamp(40px,4.6vw,64px);border-top:1px solid var(--border);
+}
+.model:first-of-type{border-top:2px solid var(--rule-heavy)}
+.model:last-of-type{border-bottom:1px solid var(--border)}
+.model--flip{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+.model--flip .m-copy{order:2}
+.m-kicker{display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-4)}
+.m-kicker .mi{
+  font-family:var(--font-mono);font-size:var(--fs-2xs);font-weight:500;letter-spacing:var(--tr-caps);
+  color:var(--text-brand);background:var(--p-50);border:1px solid var(--border-brand);
+  border-radius:var(--r-xs);padding:4px 8px;
+}
+.m-kicker .mw{font-size:var(--fs-xs);color:var(--text-3)}
+.m-copy h3{margin-bottom:var(--sp-3)}
+.m-copy > p{font-size:var(--fs-sm);color:var(--text-2);line-height:1.62;max-width:52ch}
+.m-copy .flist{margin-top:var(--sp-5)}
+.m-copy .link-arrow{margin-top:var(--sp-5)}
+
+/* compact product surface used by each model */
+.mini .app-pane{padding:var(--sp-4)}
+.mini .pane-head{margin-bottom:var(--sp-4)}
+.mini .tbl--compact table.data{min-width:0}
+.mini table.data th{padding:8px 12px;font-size:9.5px}
+.mini table.data td{padding:9px 12px;font-size:12.5px}
+.mini-rows{display:grid;gap:7px}
+.mini-row{
+  display:flex;align-items:center;gap:var(--sp-3);padding:10px 12px;
+  border:1px solid var(--border-subtle);border-radius:var(--r-md);background:var(--n-0);
+}
+.mini-row .mno{font-family:var(--font-mono);font-size:11px;color:var(--text-3);flex:0 0 auto}
+.mini-row .mtx{min-width:0;flex:1}
+.mini-row .mtx b{display:block;font-size:12.5px;font-weight:620;color:var(--text-1);letter-spacing:-.01em}
+.mini-row .mtx small{font-size:11px;color:var(--text-3)}
+.mini-row .mt{font-family:var(--font-mono);font-size:11px;color:var(--text-2);flex:0 0 auto}
+/* the four-step progress rail inside the rental surface */
+.steprail{display:flex;align-items:center;gap:6px;margin-top:var(--sp-4);flex-wrap:wrap}
+.steprail i{
+  display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-style:normal;
+  font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 9px;border-radius:var(--r-xs);
+  background:var(--surface-3);color:var(--text-2);border:1px solid var(--border);
+}
+.steprail i.done{background:var(--ok-bg);color:var(--ok-tx);border-color:var(--ok-bd)}
+.steprail i.now{background:var(--p-50);color:var(--p-800);border-color:var(--border-brand)}
+.steprail .arw{color:var(--text-3);font-size:11px} /* 6.05 on white */
+.mini-foot{
+  display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-4);
+  padding-top:var(--sp-3);border-top:1px solid var(--border-subtle);
+  font-size:var(--fs-xs);color:var(--text-3);
+}
+.mini-foot .tot{margin-left:auto;font-weight:660;color:var(--text-1);font-size:13.5px}
+
+/* --- SECTION 02 · THE OPERATIONS SPINE ------------------------------------
+   Light. The ink band is spent once on the home page's spine section and on
+   Toll Bridge's hero; here the spine reads as an editorial ruled band on a
+   tinted well, so the set does not go dark four times out of five. -------- */
+#columna{background:linear-gradient(180deg,var(--surface-0),var(--p-50) 34%,var(--surface-0))}
+#columna .editorial-head{border-top-color:var(--rule-heavy)}
+.spine{
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  grid-template-rows:auto auto auto 1fr auto;grid-auto-rows:auto auto auto 1fr auto;
+  gap:0;border-top:2px solid var(--rule-heavy);
+}
+/* Six columns of unequal copy left the dashed keyword rules on six different
+   baselines. Subgrid puts node / index / title / copy / keywords on one line
+   across all six, in both languages. */
+.station{position:relative;padding:var(--sp-6) clamp(12px,1.5vw,20px) var(--sp-6) 0;
+  display:grid;grid-row:span 5;grid-template-rows:subgrid;align-content:start}
+.station + .station{padding-left:clamp(12px,1.5vw,20px);border-left:1px solid var(--border)}
+.station .node{
+  position:relative;width:38px;height:38px;border-radius:var(--r-md);display:grid;place-items:center;
+  background:linear-gradient(160deg,var(--p-100),var(--n-0));
+  border:1px solid var(--p-200);color:var(--text-brand);margin-bottom:var(--sp-4);
+  box-shadow:var(--sh-1);
+}
+.station .node svg{width:19px;height:19px}
+.station .node::after{
+  content:"";position:absolute;left:calc(100% + 1px);top:50%;height:1px;
+  width:100vw;max-width:220px;
+  background:linear-gradient(90deg,var(--p-300),rgba(192,168,255,0));
+}
+.station:last-child .node::after{display:none}
+.station .sn{
+  font-family:var(--font-mono);font-size:9.5px;letter-spacing:var(--tr-caps);
+  color:var(--text-brand);display:block;margin-bottom:var(--sp-2);   /* 8.22 AAA */
+}
+.station h3{font-size:15.5px;letter-spacing:var(--tr-snug);margin-bottom:6px;color:var(--text-1)}
+.station p{font-size:12.5px;line-height:1.55;color:var(--text-2)}    /* 9.22 AAA */
+.station .rec{
+  display:block;margin-top:var(--sp-3);padding-top:var(--sp-3);
+  border-top:1px dashed var(--border-strong);
+  font-family:var(--font-mono);font-size:10.5px;line-height:1.5;color:var(--text-3); /* 5.04 AA */
+}
+.spine-detail{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+  gap:clamp(24px,3.4vw,48px);margin-top:clamp(36px,4vw,56px);align-items:start}
+.log{
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  background:var(--surface-0);padding:var(--sp-5) var(--sp-5) var(--sp-3);
+  box-shadow:var(--sh-2);
+}
+.log-head{
+  display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;
+  padding-bottom:var(--sp-3);margin-bottom:var(--sp-2);border-bottom:1px solid var(--border);
+}
+.log-head .caps{color:var(--text-2)}
+.log-head .tag{
+  margin-left:auto;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);border:1px solid var(--border-strong);border-radius:var(--r-xs);padding:3px 7px;
+}
+.log .evt .tx b{color:var(--text-1);font-weight:600}
+.log .evt .tx em{font-style:normal;color:var(--text-brand)}
+.log-foot{
+  margin-top:var(--sp-3);padding-top:var(--sp-3);border-top:1px solid var(--border);
+  font-size:12px;line-height:1.55;color:var(--text-2);
+}
+.log-foot b{color:var(--text-1);font-weight:600}
+/* .live is defined only inside .band--ink upstream; this section is light. */
+.live{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);
+  font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ok-tx)} /* 6.86 AAA */
+
+/* --- SECTION 03 · CAPABILITIES ------------------------------------------- */
+.cap-row{
+  display:grid;grid-template-columns:minmax(0,3.1fr) minmax(0,8.9fr);
+  gap:clamp(20px,3vw,48px);padding-block:clamp(30px,3.4vw,46px);
+  border-top:1px solid var(--border);
+}
+.cap-row:first-of-type{border-top:2px solid var(--rule-heavy)}
+.cap-row:last-of-type{border-bottom:2px solid var(--rule-heavy)}
+.cap-head{position:sticky;top:92px}
+.cap-head h3{font-size:clamp(19px,1.6vw,23px);max-width:18ch;letter-spacing:var(--tr-snug)}
+.cap-head .cn{
+  display:block;font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:var(--tr-caps);
+  color:var(--text-3);margin-bottom:var(--sp-3);
+}
+.cap-head p{font-size:var(--fs-xs);color:var(--text-2);margin-top:var(--sp-3);max-width:34ch;line-height:1.6}
+
+/* Spec-sheet grid, deliberately NOT a row of cards: no plate, no radius, no
+   shadow. Full-height hairlines rule the columns straight off the canvas so
+   the whole section reads as one ruled table, and ragged column bottoms stop
+   reading as dead space inside a box. */
+.cap-row .feature-grid{
+  background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible;
+  gap:0;column-gap:0;
+}
+.cap-row .feature{
+  background:transparent;padding:0 clamp(16px,1.7vw,24px);
+  border-left:1px solid var(--border);
+}
+.cap-row .feature:first-child{padding-left:0;border-left:0}
+.cap-row .feature:last-child{padding-right:0}
+.cap-row .feature:hover{background:transparent}
+.cap-row .feature .fic{
+  width:32px;height:32px;border-radius:var(--r-sm);margin-bottom:var(--sp-4);
+  background:var(--p-50);border-color:var(--border-brand);box-shadow:none;
+}
+.cap-row .feature .fic svg{width:17px;height:17px}
+.cap-row .feature h4{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:15.5px}
+.cap-row .feature p{font-size:13.5px;max-width:38ch}
+@media (max-width:1024px){
+  .cap-head{position:static}
+  /* the head has already stacked above, so the three columns keep their
+     ~30ch measure — no ragged half-empty full-width cell */
+  .cap-row .feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:0;row-gap:0}
+  .cap-row .feature{padding:0 clamp(14px,1.8vw,20px)}
+  .cap-row .feature p{max-width:none}
+}
+@media (max-width:700px){
+  .cap-row .feature-grid{grid-template-columns:minmax(0,1fr)}
+  .cap-row .feature{padding:var(--sp-5) 0 0;border-left:0;
+    border-top:1px solid var(--border)}
+  .cap-row .feature:first-child{padding-top:0;border-top:0}
+  .cap-row .feature p{max-width:64ch}
+}
+
+/* --- SECTION 04 · COMPARISON --------------------------------------------- */
+.cmp table.data{min-width:820px}
+.cmp table.data td,.cmp table.data th{white-space:normal}
+.cmp table.data th{padding:12px 18px;vertical-align:bottom}
+.cmp table.data td{padding:16px 18px;font-size:13.5px;line-height:1.55;vertical-align:top}
+.cmp th.c-us{
+  color:var(--p-800);background:var(--p-50);border-bottom:1px solid var(--border-brand);
+}
+.cmp td.c-us{
+  background:linear-gradient(180deg,rgba(244,239,255,.72),rgba(244,239,255,.34));
+  color:var(--text-1);font-weight:560;border-left:1px solid var(--border-brand);
+  border-right:1px solid var(--border-brand);
+}
+.cmp tr:last-child td.c-us{border-bottom:1px solid var(--border-brand)}
+.cmp th.c-us,.cmp td.c-us{width:36%}
+.cmp th.c-them,.cmp td.c-them{width:30%}
+.cmp td.c-cap{font-weight:640;color:var(--text-1);font-size:13.5px}
+.cmp td.c-cap small{display:block;font-weight:400;color:var(--text-3);font-size:11.5px;margin-top:3px}
+.cmp td.c-them{color:var(--text-2)}
+.cmp .c-us .badge-building{margin-left:6px;vertical-align:1px}
+.cmp-note{
+  display:flex;gap:var(--sp-3);align-items:flex-start;margin-top:var(--sp-5);
+  padding:var(--sp-4) var(--sp-5);border:1px solid var(--border);border-radius:var(--r-md);
+  background:var(--surface-2);font-size:var(--fs-xs);color:var(--text-2);max-width:78ch;
+}
+.cmp-note svg{width:16px;height:16px;color:var(--p-600);flex:0 0 auto;margin-top:2px}
+
+/* --- TOGGLE / BUNDLE BAND ------------------------------------------------ */
+.toggle-band{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.86fr);
+  gap:clamp(24px,3.4vw,56px);align-items:center;
+  padding-block:clamp(32px,3.6vw,48px);
+  border-top:2px solid var(--rule-heavy);border-bottom:2px solid var(--rule-heavy);
+}
+.toggle-band h2{font-size:clamp(24px,2.5vw,34px);max-width:16ch}
+.toggle-band p{font-size:var(--fs-sm);color:var(--text-2);max-width:56ch}
+.toggle-mods{display:grid;gap:var(--sp-3)}
+.tmod{
+  display:flex;align-items:center;gap:var(--sp-4);padding:var(--sp-4) var(--sp-5);
+  border:1px solid var(--border);border-radius:var(--r-lg);background:var(--surface-1);
+  box-shadow:var(--sh-1);
+}
+.tmod .tx{min-width:0;flex:1}
+.tmod .tx b{display:block;font-size:14.5px;font-weight:640;color:var(--text-1)}
+.tmod .tx small{font-size:12px;color:var(--text-3)}
+.tmod .sw{
+  width:38px;height:22px;border-radius:var(--r-pill);flex:0 0 auto;position:relative;
+  background:var(--n-200);border:1px solid var(--border-strong);
+}
+.tmod .sw::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;
+  background:var(--n-0);box-shadow:var(--sh-1)}
+.tmod--on .sw{background:var(--p-500);border-color:var(--p-600)}
+.tmod--on .sw::after{left:auto;right:2px}
+
+/* --- FAQ + PARTNER ------------------------------------------------------- */
+.faq-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+  gap:clamp(28px,3.6vw,56px);align-items:start}
+.faq{border-top:2px solid var(--rule-heavy)}
+.faq details{border-bottom:1px solid var(--border)}
+.faq summary{
+  display:flex;align-items:center;gap:var(--sp-4);cursor:pointer;list-style:none;
+  padding:var(--sp-5) 0;font-size:16px;font-weight:640;color:var(--text-1);letter-spacing:var(--tr-snug);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--text-brand)}
+.faq summary .q{flex:1;min-width:0}
+.faq summary svg{width:18px;height:18px;color:var(--p-600);flex:0 0 auto;transition:transform var(--dur-3) var(--ease-out)}
+.faq details[open] summary svg{transform:rotate(180deg)}
+.faq .a{padding:0 0 var(--sp-5);font-size:var(--fs-sm);color:var(--text-2);line-height:1.62;max-width:64ch}
+.faq .a + .a{padding-top:0;margin-top:calc(var(--sp-3) * -1)}
+.partner{position:sticky;top:96px}
+.partner .partner-invite{margin:0;text-align:left}
+.partner .partner-invite p{margin-inline:0}
+.slot-row{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-6)}
+.slot-row .logo-slot{flex:1 1 120px}
+.slot-cap{
+  margin-top:var(--sp-3);font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.08em;
+  text-transform:uppercase;color:var(--text-3);
+}
+
+/* The CTA card carries its own generous padding and the footer carries its own
+   top margin — a section gutter on top of both opens a ~175px hole. */
+#demo{padding-bottom:0}
+
+/* --- RESPONSIVE ---------------------------------------------------------- */
+@media (max-width:1200px){
+  .station .node::after{max-width:120px}
+}
+@media (max-width:760px){
+  .stage-notes{grid-template-columns:minmax(0,1fr);gap:0}
+  .stage-notes .sn{max-width:none;padding-bottom:var(--sp-4)}
+  .stage-notes .sn + .sn{border-top-color:var(--border)}
+}
+@media (max-width:1100px){
+  .spine{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .station:nth-child(3n+1){padding-left:0;border-left:0}
+  .station:nth-child(n+4){border-top:1px solid var(--border)}
+  .station:nth-child(3n) .node::after{display:none}
+}
+@media (max-width:1024px){
+  .hero-copy{grid-template-columns:minmax(0,1fr);gap:var(--sp-8);align-items:start}
+  .hero h1{max-width:24ch}
+  .hero-copy > div:last-child{display:block}
+  .hero-index li{padding:var(--sp-3) 0}
+  .model,.model--flip .m-copy{grid-template-columns:minmax(0,1fr);order:0}
+  .model{gap:var(--sp-8)}
+  .cap-row{grid-template-columns:minmax(0,1fr);gap:var(--sp-6)}
+  .cap-head p{max-width:60ch}
+  .spine-head,.cmp-head,.spine-detail,.toggle-band,.faq-split{grid-template-columns:minmax(0,1fr);gap:var(--sp-8)}
+  .partner{position:static}
+}
+@media (max-width:900px){
+  .kpis--lead{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  .cmp table.data{min-width:0}
+  .cmp thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .cmp tbody tr{
+    display:block;border:1px solid var(--border);border-radius:var(--r-md);
+    background:var(--n-0);margin-bottom:var(--sp-3);overflow:hidden;
+  }
+  .cmp tbody td{display:block;border-bottom:1px solid var(--border-subtle);width:auto !important;padding:12px 16px}
+  .cmp tbody tr td:last-child{border-bottom:0}
+  .cmp td.c-us{border-left:0;border-right:0}
+  .cmp td::before{
+    content:attr(data-label);display:block;font-family:var(--font-mono);font-size:9.5px;font-weight:500;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--text-3);margin-bottom:5px;
+  }
+  .cmp td.c-cap::before{display:none}
+  .cmp td.c-cap{background:var(--surface-2);font-size:15px}
+}
+@media (max-width:700px){
+  .spine{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .station:nth-child(3n+1){padding-left:clamp(12px,1.5vw,20px);border-left:1px solid var(--border)}
+  .station:nth-child(2n+1){padding-left:0;border-left:0}
+  .station:nth-child(n+3){border-top:1px solid var(--border)}
+  .station .node::after{display:none}
+  .station:nth-child(3n) .node::after{display:none}
+}
+@media (max-width:560px){
+  .kpis--lead{grid-template-columns:minmax(0,1fr)}
+  .hero-note{gap:var(--sp-2) var(--sp-4)}
+  .m-kicker{flex-wrap:wrap;gap:var(--sp-2)}
+  .toggle-band h2{max-width:none}
+  .slot-row .logo-slot{flex:1 1 100%}
+}
+@media (max-width:430px){
+  .spine{grid-template-columns:minmax(0,1fr)}
+  .station,.station + .station{padding-left:0;border-left:0}
+  .station:nth-child(n+2){border-top:1px solid var(--border)}
+}
+
+/* =========================================================================
+   X. CROSS-PAGE SHELL NORMALISATION  (identical block in all five pages)
+   The nav and footer are byte-identical across the set; these rules keep the
+   chrome that carries them identical too.
+   ====================================================================== */
+.lang button{color:var(--text-2)}            /* 8.13 AAA on --surface-3 */
+.lang button:hover{color:var(--text-1)}
+.lang button.is-active{background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1)} /* 9.93 AAA */
+.lang .sep{width:1px;align-self:stretch;margin-block:4px;margin-inline:0;padding:0;
+  font-size:0;line-height:0;background:var(--n-400);flex:0 0 auto;border-radius:1px;
+  height:auto;min-height:15px;color:transparent}
+.nav-links .nl-abbr{display:none}
+@media (max-width:1080px){
+  .nav-links .nl-full{display:none}
+  .nav-links .nl-abbr{display:inline}
+}
+/* Every page now closes on a beat that carries its own breathing room, so the
+   footer joins at the same distance on all five. One number, not five. */
+.site-footer{margin-top:clamp(36px,3.8vw,52px)}

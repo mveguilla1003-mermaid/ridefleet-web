@@ -1,0 +1,28 @@
+{
+  "name": "ridefleet-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ride Fleet marketing site \u2014 bilingual (es/en) Next.js App Router build.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "verify": "npm run check:i18n && npm run build",
+    "verify:shots": "node scripts/capture.mjs",
+    "verify:a11y": "node scripts/audit.mjs"
+  },
+  "dependencies": {
+    "next": "^14.2.35",
+    "next-intl": "^3.26.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "playwright": "^1.49.1",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,403 @@
+{
+  "meta": {
+    "title": "Ride Fleet — one operations spine for your whole fleet",
+    "description": "Rental, car-sharing and dealership loaners on one operations spine, with AutoExpreso and SunPass tolls reconciled and AI customer service in Spanish and English. Built in Puerto Rico, ready for the US mainland."
+  },
+  "terms": {
+    "turnReady": { "value": "Turn-ready" },
+    "scoreSuffix": { "value": "score" },
+    "crumbLocation": { "value": "San Juan · PR" },
+    "utilizationDelta": { "value": "+4.2 pts" },
+    "markets": { "value": "PR · FL" }
+  },
+  "hero": {
+    "eyebrow": "Fleet operations platform",
+    "titleLead": "One spine.",
+    "titleGrad": "Every business model.",
+    "lede": "Traditional rental, car-sharing and dealership loaners — with tolls and AI customer service — on one operations spine. From booking to closeout, without jumping between systems.",
+    "ctaPrimary": "Book a demo",
+    "ctaSecondary": "What's bleeding money?",
+    "spec": [
+      { "label": "Models", "value": "Rental · Car-sharing · Loaners" },
+      { "label": "Tolls", "value": "AutoExpreso · SunPass", "live": "Connected" },
+      { "label": "Language", "value": "Spanish and English, native — not translated" },
+      { "label": "Base", "value": "Puerto Rico first · ready for the US mainland" }
+    ],
+    "app": {
+      "ariaLabel": "Ride Fleet Manager dashboard: today's turns, 128 units across three rooftops, turn-ready score, utilization and reconciled tolls.",
+      "crumbs": {
+        "product": "Ride Fleet Manager",
+        "section": "Fleet"
+      },
+      "search": "Search plate, booking…",
+      "kbd": "⌘K",
+      "avatar": "HR",
+      "sideNav": {
+        "groupOps": "Operations",
+        "groupRevenue": "Revenue",
+        "items": [
+          { "value": "Today's turns", "count": "128" },
+          { "value": "Smart Planner" },
+          { "value": "Shop", "count": "11" },
+          { "value": "Inspections" },
+          { "value": "Tolls", "count": "7" },
+          { "value": "Calls" },
+          { "value": "Billing" }
+        ]
+      },
+      "pane": {
+        "title": "Today's turns",
+        "sub": "Tuesday 25 · 128 units · 3 rooftops",
+        "filters": [
+          { "value": "All rooftops" },
+          { "value": "San Juan" },
+          { "value": "Today" }
+        ]
+      },
+      "kpi": {
+        "ringValue": "88",
+        "readyCount": "112",
+        "readyLabel": "ready",
+        "blockedCount": "11",
+        "blockedLabel": "blocked",
+        "note": "Wash, fuel, damage and maintenance.",
+        "util": {
+          "label": "Utilization",
+          "value": "87.4%",
+          "foot": "vs. last week"
+        },
+        "tolls": {
+          "label": "Tolls reconciled · 30 d",
+          "value": "$1,284.50",
+          "crossings": "342",
+          "crossingsLabel": "crossings",
+          "review": "7 in review"
+        }
+      },
+      "table": {
+        "cols": {
+          "plate": "Plate",
+          "vehicle": "Vehicle",
+          "status": "Status",
+          "location": "Location",
+          "next": "Next action"
+        },
+        "plates": [
+          {
+            "plate": "HTR·142",
+            "vehicle": "Toyota Corolla",
+            "meta": "2024 · Rental",
+            "status": "On rent",
+            "location": "SJU Airport",
+            "score": "96",
+            "next": "Returns 14:20"
+          },
+          {
+            "plate": "KLM·908",
+            "vehicle": "Kia Sportage",
+            "meta": "2023 · Car-sharing",
+            "status": "In wash",
+            "location": "Bayamón hub",
+            "score": "71",
+            "next": "30 min"
+          },
+          {
+            "plate": "PRA·771",
+            "vehicle": "Hyundai Tucson",
+            "meta": "2025 · Rental",
+            "status": "Ready",
+            "location": "Carolina hub",
+            "score": "98",
+            "next": "Assign"
+          },
+          {
+            "plate": "DLR·315",
+            "vehicle": "Toyota RAV4",
+            "meta": "2024 · Loaner",
+            "status": "Loaner",
+            "location": "Ponce dealership",
+            "score": "84",
+            "next": "Pickup 16:00"
+          },
+          {
+            "plate": "MSA·224",
+            "vehicle": "Nissan Versa",
+            "meta": "2023 · Rental",
+            "status": "In shop",
+            "location": "Caguas shop",
+            "score": "42",
+            "next": "WO-4471"
+          }
+        ],
+        "footCount": "5 of 128 units",
+        "footUpdated": "Updated 14:06 AST"
+      }
+    },
+    "callouts": [
+      {
+        "label": "Explainable score",
+        "body": "Every point traces to wash, damage or fuel."
+      },
+      {
+        "label": "Next action",
+        "body": "Every unit knows what's next: wash, handoff or shop."
+      }
+    ]
+  },
+  "trust": {
+    "nowLabel": "Connected today · real integrations",
+    "now": [
+      { "value": "AutoExpreso" },
+      { "value": "SunPass" },
+      { "value": "Stripe" },
+      { "value": "Telnyx / Twilio" }
+    ],
+    "soonLabel": "Telematics — ready to connect",
+    "soon": [{ "value": "Zubie" }, { "value": "VoltSwitch" }]
+  },
+  "router": {
+    "chapter": { "num": "01", "label": "Diagnosis" },
+    "title": "What's bleeding money right now?",
+    "aside": "Pick the leak that hurts most. Each door leads to the product that closes it — and all three run on the same base, so you start with one and expand once it pays for itself.",
+    "ledgerNote": "Example — your own assumptions",
+    "doors": [
+      {
+        "idx": "01",
+        "badge": "Toll Bridge",
+        "title": "Tolls you never billed",
+        "sub": "The toll posts weeks later, nobody remembers who was driving, and the house eats it.",
+        "ledger": [
+          { "label": "40 units × 12 crossings/mo", "value": "480" },
+          { "label": "× $1.75 average per crossing", "value": "$840.00" },
+          { "label": "× 35 % never assigned", "value": "×0.35" }
+        ],
+        "total": {
+          "label": "Comes out of your pocket",
+          "value": "$294",
+          "suffix": "/mo"
+        },
+        "verb": "Recover it",
+        "verbSub": "Toll Bridge collects from AutoExpreso and SunPass, matches every crossing to the booking that caused it, and bills it.",
+        "link": "See Toll Bridge"
+      },
+      {
+        "idx": "02",
+        "badge": "Voz AI",
+        "title": "Calls nobody answers after 5",
+        "sub": "The customer doesn't leave a message — they call the next shop. The rental you lost shows up in no report.",
+        "ledger": [
+          { "label": "6 missed calls per week", "value": "26/mo" },
+          { "label": "1 in 5 would have booked", "value": "5" },
+          { "label": "× a 3-day rental at $70", "value": "$210.00" }
+        ],
+        "total": {
+          "label": "The shop next door got it",
+          "value": "$1,050",
+          "suffix": "/mo"
+        },
+        "verb": "Answer it",
+        "verbSub": "Every call answered, in Spanish or English, around the clock — with a human team behind it for what shouldn't be decided alone.",
+        "link": "See Voz AI"
+      },
+      {
+        "idx": "03",
+        "badge": "Ride Fleet Manager",
+        "title": "Three systems for three business models",
+        "sub": "Rental in one tool, car-sharing in another, loaners in a spreadsheet. Closing the month is a full-time job.",
+        "ledger": [
+          { "label": "6 hrs/week reconciling by hand", "value": "26 hrs/mo" },
+          { "label": "× $32/hr loaded cost", "value": "$832.00" },
+          { "label": "+ duplicate licences", "value": "$180.00" }
+        ],
+        "total": {
+          "label": "Cost of holding it together",
+          "value": "$1,012",
+          "suffix": "/mo"
+        },
+        "verb": "Run it",
+        "verbSub": "Rental, car-sharing and loaners on one engine, with modules and permissions per rooftop.",
+        "link": "See Ride Fleet Manager"
+      }
+    ]
+  },
+  "spine": {
+    "chapter": { "num": "02", "label": "The spine" },
+    "title": "One record. Three products.",
+    "aside": "Toll Bridge and Voz AI don't \"integrate\" with Ride Fleet Manager — they write to the same booking, the same customer and the same vehicle.",
+    "chain": [
+      { "value": "Tenants", "sub": "Accounts and rooftops" },
+      { "value": "Customers", "sub": "Profile and licence" },
+      { "value": "Reservations", "sub": "Window and rate" },
+      { "value": "Vehicles", "sub": "Plate, tag and status" },
+      { "value": "Agreements", "sub": "Signature and holder" },
+      { "value": "Inspections", "sub": "Evidence and damage" },
+      { "value": "Payments", "sub": "Charges and closeout" }
+    ],
+    "log": {
+      "code": "RES-10428",
+      "sub": "Toyota Corolla · HTR·142 · Tuesday 25",
+      "live": "One record, one day",
+      "events": [
+        {
+          "time": "09:41",
+          "tag": "Voz AI",
+          "text": "Call answered in Spanish. Booking created in the conversation.",
+          "conf": "confidence 0.94"
+        },
+        {
+          "time": "09:42",
+          "tag": "Ride Fleet Manager",
+          "text": "Unit HTR·142 assigned — turn-ready 96, available at SJU."
+        },
+        {
+          "time": "10:05",
+          "tag": "Ride Fleet Manager",
+          "text": "Agreement signed and check-out inspection with 12 photos."
+        },
+        {
+          "time": "13:18",
+          "tag": "Toll Bridge",
+          "text": "AutoExpreso crossing $1.75 matched to this booking.",
+          "conf": "confidence 0.91"
+        },
+        {
+          "time": "14:20",
+          "tag": "Ride Fleet Manager",
+          "text": "Return and check-in inspection. No new damage."
+        },
+        {
+          "time": "14:24",
+          "tag": "Toll Bridge",
+          "text": "$5.25 in tolls added to the booking closeout."
+        },
+        {
+          "time": "14:26",
+          "tag": "Voz AI",
+          "text": "Receipt sent by SMS plus confirmation of the next rental."
+        }
+      ]
+    },
+    "writes": "Writes to",
+    "lanes": [
+      { "product": "Ride Fleet Manager" },
+      { "product": "Toll Bridge" },
+      { "product": "Voz AI" }
+    ],
+    "toggle": {
+      "strong": "Start with one leak. Expand when it pays for itself.",
+      "rest": "Turning on the next module is a setting, not an integration project: no migration, no double entry, no file someone has to upload every night."
+    }
+  },
+  "diff": {
+    "chapter": { "num": "03", "label": "Difference" },
+    "title": "Where we win: operational intelligence",
+    "aside": "This isn't a feature catalogue. It's the decisions the system makes for you — and then explains to you, line by line.",
+    "score": {
+      "title": "Why this unit scores 88",
+      "plate": "HTR·142",
+      "sub": "Toyota Corolla 2024 · Carolina hub",
+      "ringValue": "88",
+      "rows": [
+        {
+          "title": "Unit baseline",
+          "sub": "Every unit starts at 100 and drops on evidence",
+          "value": "100"
+        },
+        {
+          "title": "Wash",
+          "sub": "Completed 10:12 · photo on the record",
+          "value": "0"
+        },
+        {
+          "title": "Maintenance",
+          "sub": "Current · next service in 1,200 mi",
+          "value": "0"
+        },
+        {
+          "title": "Fuel 7/8",
+          "sub": "Below the handover policy (full)",
+          "value": "−2"
+        },
+        {
+          "title": "Open damage",
+          "sub": "Scrape on rear bumper · INS-2231 · 3 photos",
+          "value": "−8"
+        },
+        {
+          "title": "Documents",
+          "sub": "Registration expires in 21 days",
+          "value": "−2"
+        }
+      ],
+      "foot": "Every point traces to a timestamped, photographed event.",
+      "totalValue": "88"
+    },
+    "list": [
+      {
+        "value": "Smart Planner with per-rooftop rules",
+        "body": "Shortage, maintenance, wash and priority are configured per account and per rooftop. The planner proposes moves that respect that operation's rules, not an industry average."
+      },
+      {
+        "value": "Planner Copilot",
+        "body": "A copilot that proposes the day's plan and explains why it moves each unit — in the language you work in."
+      },
+      {
+        "value": "Explainable turn-ready score",
+        "body": "No unit is \"ready\" just because. The breakdown on the left is the real screen: every point deducted has an event, a timestamp and a photo behind it."
+      },
+      {
+        "value": "Inspections with evidence and damage triage",
+        "body": "Check-out and check-in photos, a side-by-side compare packet and a next-best action for every damage. The claims workspace",
+        "bodyTail": "is built on that same evidence."
+      },
+      {
+        "value": "Telematics-ready",
+        "body": "The planner is ready to take mileage, fuel and location from Zubie and VoltSwitch. The connections are",
+        "bodyTail": "— today that data arrives by hand or by inspection."
+      },
+      {
+        "value": "Bilingual by design",
+        "body": "Spanish and English throughout — the employee app, the customer portal and the phone call. Puerto Rico first, ready for the US mainland."
+      }
+    ]
+  },
+  "partners": {
+    "chapter": { "num": "04", "label": "Invitation" },
+    "title": "We're looking for 3 to 5 operators in Puerto Rico",
+    "aside": "No invented testimonials. A working product and room to work closely with the first operators who put it to the test.",
+    "eyebrow": "Founding-partner program",
+    "heading": "What we put in, and what you ask for",
+    "body": "You won't find testimonials here — we don't have them yet, and we're not going to invent them. What we do have is a working product and room to work closely with the first operators who put it to the test.",
+    "cta": "Apply with your operation",
+    "slotNote": "The first three go here — with real names, once they exist.",
+    "perks": [
+      {
+        "title": "Founder pricing",
+        "body": "Locked for the life of the program."
+      },
+      {
+        "title": "Hands-on onboarding",
+        "body": "We migrate your data with you — no manual handoff."
+      },
+      {
+        "title": "A direct line to the builders",
+        "body": "Your priorities enter the roadmap, with a date."
+      },
+      {
+        "title": "In exchange: a case study with real numbers",
+        "body": "Yours — measured and published with your sign-off."
+      }
+    ]
+  },
+  "cta": {
+    "title": "See all three on one record",
+    "body": "Half an hour, live, with your business model on screen — rental, car-sharing or loaners. No generic slide deck.",
+    "primary": "Book a demo",
+    "secondary": "Start with tolls",
+    "list": [
+      "30 minutes, no obligation",
+      "In Spanish or English",
+      "Confirmed the same business day"
+    ]
+  }
+}

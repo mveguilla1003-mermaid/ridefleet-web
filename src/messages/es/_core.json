@@ -1,0 +1,61 @@
+{
+  "a11y": {
+    "skipToContent": "Saltar al contenido",
+    "sampleData": "Datos de ejemplo. No es la pantalla de un cliente real."
+  },
+  "nav": {
+    "primary": "Navegación principal",
+    "languageGroup": "Idioma",
+    "switchTo": {
+      "es": "Cambiar a español",
+      "en": "Switch to English"
+    },
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "home": "Inicio",
+    "rideFleetManager": "Ride Fleet Manager",
+    "tollBridge": "Toll Bridge",
+    "vozAi": "Voz AI",
+    "bookDemo": "Agendar un demo",
+    "bookDemoShort": "Demo",
+    "callLine": "Llamar a la línea de Voz AI",
+    "router": "Diagnostica tu fuga",
+    "calculator": "Calculadora de peajes",
+    "security": "Seguridad y credenciales",
+    "designPartners": "Socios fundadores",
+    "faq": "Preguntas frecuentes",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "cookies": "Cookies",
+    "accessibility": "Accesibilidad"
+  },
+  "footer": {
+    "about": "Una sola columna de operaciones para renta, car-sharing y unidades de cortesía — con peajes y servicio al cliente con IA. Hecha en Puerto Rico, lista para EE. UU. continental.",
+    "headings": {
+      "products": "Productos",
+      "explore": "Explorar",
+      "getStarted": "Empezar"
+    },
+    "rights": "Todos los derechos reservados.",
+    "markets": "Mercados: Puerto Rico · Florida (SunPass)"
+  },
+  "common": {
+    "building": "En construcción",
+    "sampleData": "Datos de ejemplo",
+    "placeholder": "Espacio reservado",
+    "logoSlot": "Espacio de socio",
+    "readMore": "Seguir leyendo",
+    "backHome": "Volver al inicio",
+    "updated": "Actualizado"
+  },
+  "notFound": {
+    "meta": {
+      "title": "Página no encontrada · Ride Fleet",
+      "description": "La página que buscas no existe o cambió de dirección."
+    },
+    "eyebrow": "Error 404",
+    "title": "Esa página no existe",
+    "lede": "El enlace puede estar viejo o mal escrito. Desde aquí puedes seguir a cualquiera de los tres productos, o agendar un demo.",
+    "cta": "Agendar un demo"
+  }
+}

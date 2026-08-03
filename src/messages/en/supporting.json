@@ -1,0 +1,441 @@
+{
+  "thankYou": {
+    "meta": {
+      "title": "Thank you — we have your request · Ride Fleet",
+      "description": "Your demo request is in. We confirm by email the same business day. Here is what happens next and what is worth having ready for the call."
+    },
+    "eyebrow": "Request received",
+    "title": "Thank you. Your request is in",
+    "lede": "Someone on the team reviews it and writes to you to set the date. In the meantime, here is what happens next, what is worth having ready, and where to read on.",
+    "next": {
+      "title": "What happens next",
+      "lede": "Three steps, no surprises.",
+      "items": {
+        "0": {
+          "title": "Confirmation by email",
+          "body": "We reply the same business day with two or three times to choose from. If you wrote outside working hours, the clock starts on the next business day."
+        },
+        "1": {
+          "title": "We set the call",
+          "body": "The confirmation email carries the date, the time with its time zone, the language the call will be held in, and the link to join."
+        },
+        "2": {
+          "title": "Half an hour about your operation",
+          "body": "We go through how you work today, show you the product live, and finish with concrete next steps. No obligation and no filler slides."
+        }
+      },
+      "reminder": "Text-message reminders before the call",
+      "reminderNote": "For now the only reminder goes out by email."
+    },
+    "prep": {
+      "title": "What is worth having ready",
+      "lede": "None of this is required. The more concrete the starting point, the more the half hour is worth.",
+      "items": {
+        "0": "How many vehicles you run today, and how many you expect to run in twelve months.",
+        "1": "How the business operates: traditional rental, car-sharing, dealership loaners, or a mix.",
+        "2": "Which toll accounts you use, AutoExpreso or SunPass, and how you reconcile tolls today.",
+        "3": "What you work with now: spreadsheets, a booking system, accounting software.",
+        "4": "Who answers the phone after hours, and how many calls go unanswered.",
+        "5": "The number you want to move: tolls recovered, office hours, calls answered."
+      }
+    },
+    "change": {
+      "title": "If something needs to change",
+      "body": "Wrong detail, need a different date, or want to cancel: write to us and we will fix it. Replying to the confirmation works too."
+    },
+    "onward": {
+      "title": "In the meantime",
+      "lede": "If you want to arrive with context, these are the three modules.",
+      "rfm": "The operations spine: reservations, contracts, handovers and returns in one place.",
+      "toll": "AutoExpreso and SunPass tolls collected and matched to the right contract.",
+      "voz": "The AI front desk that answers calls in your name and handles the scheduling."
+    }
+  },
+  "designPartners": {
+    "meta": {
+      "title": "Founding partners · Ride Fleet",
+      "description": "We are looking for a small group of Puerto Rico operators to build Ride Fleet with: founder pricing, hands-on implementation, and a case study with a real number."
+    },
+    "eyebrow": "Programme open",
+    "title": "Founding partners",
+    "lede": "Ride Fleet is being built with real operators, not behind closed doors. The programme is open and no slot is filled today.",
+    "status": "Programme open · no partners announced",
+    "fit": {
+      "title": "Who this is for",
+      "items": {
+        "0": {
+          "title": "Operators in Puerto Rico",
+          "body": "Traditional rental, car-sharing or dealership loaners, running your own fleet day to day."
+        },
+        "1": {
+          "title": "With a problem that can be measured",
+          "body": "Tolls that go uncollected, office hours lost to manual reconciliation, or calls nobody answers. Something with a before and an after."
+        },
+        "2": {
+          "title": "With time to take part",
+          "body": "Someone on your team available for short sessions during the pilot. Without that person, the programme does not work."
+        }
+      }
+    },
+    "get": {
+      "title": "What a founding partner gets",
+      "items": {
+        "0": {
+          "title": "Founder pricing",
+          "body": "Preferential terms fixed when you join and held for as long as the agreement runs."
+        },
+        "1": {
+          "title": "Hands-on implementation",
+          "body": "Setup, data migration and training done alongside your team, not handed over as a document."
+        },
+        "2": {
+          "title": "A direct line to the builders",
+          "body": "You talk to the people writing the product, on a direct channel with prioritised attention."
+        },
+        "3": {
+          "title": "Real weight on priorities",
+          "body": "Your cases go to the front of the queue when we decide what gets built next."
+        }
+      }
+    },
+    "expect": {
+      "title": "What we expect in return",
+      "items": {
+        "0": {
+          "title": "Actually using the product",
+          "body": "In the daily operation, not in a trial account abandoned after a week."
+        },
+        "1": {
+          "title": "Short, regular sessions",
+          "body": "Feedback during the pilot, so we correct course on evidence rather than on opinion."
+        },
+        "2": {
+          "title": "A case study with a real number",
+          "body": "At the end of the pilot, permission to publish the measured result. Nothing is published without your written approval."
+        },
+        "3": {
+          "title": "Access to the pilot data",
+          "body": "Under a confidentiality agreement, so the before and the after can be compared."
+        }
+      }
+    },
+    "slots": {
+      "title": "How many slots there are",
+      "body": "The first cohort is three to five operators in Puerto Rico. The number is small on purpose: the level of support we are offering does not stretch further.",
+      "note": "We only announce scarcity that is real. If the cohort fills, this page will say so."
+    },
+    "wall": {
+      "title": "Announced partners",
+      "body": "This is where operators who choose to make the agreement public will appear. Today there are none: no slot is filled, and this site carries no customer logos, quotes or metrics.",
+      "caption": "Empty on purpose. These fill only with real partners, and only with their written permission."
+    },
+    "apply": {
+      "title": "How to apply",
+      "body": "Use the same demo form and mention in the notes that you are interested in the founding-partner programme. The first conversation is the same half hour: understand your operation and see whether there is a fit.",
+      "cta": "Apply through the demo form",
+      "after": "If there is a fit, a written proposal follows: pilot scope, price, duration, and what will be measured."
+    }
+  },
+  "security": {
+    "meta": {
+      "title": "Security and data handling · Ride Fleet",
+      "description": "Where the data lives, how it is encrypted, who can see it, how it is backed up, and what we do not have yet. No certifications we do not hold."
+    },
+    "eyebrow": "Security",
+    "title": "How we handle data",
+    "lede": "This page describes today, not an ambition. Ride Fleet is a young company: some things are settled and some are not, and both are written here.",
+    "noCert": {
+      "title": "First, plainly",
+      "body": "Ride Fleet holds no SOC 2, no ISO 27001 and no HIPAA certification, and has not been through an external security audit. If your buying process requires one of those today, we cannot satisfy it yet. We would rather say so on this page than across a table."
+    },
+    "holdings": {
+      "title": "What data we hold today",
+      "body": "This marketing site hosts no customer operational data. The only thing it receives is demo requests: name, company, email, optional phone, fleet size, business model, notes, and where the visit came from.",
+      "link": "The full detail is in the privacy policy"
+    },
+    "hosting": {
+      "title": "Where the data lives",
+      "body": "The site and its services run on cloud infrastructure hosted in United States regions, which is where the business operates: Puerto Rico and the mainland. There are no copies in other regions.",
+      "pending": "Final provider and region",
+      "pendingBody": "The hosting decision is still in progress. As soon as it closes, the provider and the region are named here with a date."
+    },
+    "transit": {
+      "title": "Encryption in transit",
+      "body": "All traffic travels over HTTPS with TLS. No form or endpoint is served unencrypted, and the secure channel is enforced on every response."
+    },
+    "rest": {
+      "title": "Encryption at rest",
+      "body": "The disks holding the data are encrypted at rest by the infrastructure provider, with keys managed by that provider and rotation on its side.",
+      "vault": "Encrypted vault for toll portal credentials",
+      "vaultBody": "Toll Bridge needs AutoExpreso and SunPass credentials. The design is a vault with per-customer encryption, credentials that are never shown in full on screen, and a record of every use. That module is being built, and until it runs with a customer in production we are not going to call it finished."
+    },
+    "access": {
+      "title": "Who can see what",
+      "body": "Access is granted per person and only where it is needed.",
+      "items": {
+        "0": "Named accounts, one per person, no shared credentials.",
+        "1": "Second factor required on every infrastructure administration account.",
+        "2": "Least privilege: nobody holds production access by default.",
+        "3": "Access is revoked the same day somebody leaves the team."
+      },
+      "audit": "Customer-visible audit log",
+      "auditBody": "Being able to check for yourself who on our side touched your data, and when, is part of the product and is not available yet."
+    },
+    "backups": {
+      "title": "Backups and recovery",
+      "body": "Backups are taken automatically and encrypted by the database provider, with a rolling retention window and point-in-time restore.",
+      "gap": "Documented restore test, with published RPO and RTO",
+      "gapBody": "Having backups is not the same as having timed a restore. That test and its numbers are not documented yet."
+    },
+    "subprocessors": {
+      "title": "Subprocessors",
+      "body": "We use outside providers to host infrastructure, deliver transactional email, and carry voice and text messages. None of them receives customer operational data today, because there are no customers in production yet.",
+      "list": "Named, versioned subprocessor list",
+      "listBody": "It gets published on this page, with provider, purpose and country, before the first customer's data is processed. Until then, ask us by email and we send it as it stands."
+    },
+    "incident": {
+      "title": "Incidents and reports",
+      "body": "If you find something that looks like a vulnerability or misuse, write to us and we treat it as a priority. Nothing needs to be signed to report, and we take no legal action against anyone reporting in good faith.",
+      "commitment": "If an incident ever affects a customer's data, we tell that customer directly with what we know, even while the investigation is still open.",
+      "policy": "Incident response policy with published timelines",
+      "policyBody": "The internal procedure exists in draft. The committed timelines get published here once they have been reviewed."
+    },
+    "notYet": {
+      "title": "What we do not have yet",
+      "lede": "This list exists so nobody has to guess.",
+      "items": {
+        "0": "An external security audit and a third-party penetration test.",
+        "1": "A vulnerability reward programme.",
+        "2": "A public service status page with incident history.",
+        "3": "A published data processing agreement that can be signed online."
+      },
+      "close": "When any of these changes, this page changes, and so does its date."
+    },
+    "contact": {
+      "title": "Security questions",
+      "body": "If you are evaluating Ride Fleet and need answers for your buying process, write to us. We answer with what exists, including when the answer is \"not yet\"."
+    }
+  },
+  "legal": {
+    "draftNote": "Draft under legal review. This document describes what we do today and may change before launch. When it changes, the date changes with it.",
+    "privacy": {
+      "meta": {
+        "title": "Privacy policy · Ride Fleet",
+        "description": "What this site collects, what it is used for, how long it is kept, and how to ask us to delete it."
+      },
+      "title": "Privacy policy",
+      "lede": "This site collects little, and states all of it. If anything here is unclear, write to us and we will explain it in ordinary words.",
+      "who": {
+        "title": "Who we are",
+        "body": "Ride Fleet is a software company for fleet operators, based in San Juan, Puerto Rico. We are responsible for the data sent through this site, and we answer at the email address at the end of this page."
+      },
+      "collect": {
+        "title": "What we collect",
+        "body": "There is only one way to give us personal data on this site: sending the demo form. The rest is generated by the server as it serves the page.",
+        "items": {
+          "0": "What you type into the form: name, company, work email, optional phone, role, fleet size, business model, products of interest, preferred language and notes.",
+          "1": "The consent confirmation you tick when you submit the form.",
+          "2": "Where the visit came from: campaign parameters, landing page, and the referring site if there is one.",
+          "3": "Technical server logs: IP address, browser type and request time, generated automatically.",
+          "4": "We do not collect special category data, data about children, or payment information on this site."
+        }
+      },
+      "why": {
+        "title": "What we use it for",
+        "items": {
+          "0": "Answering your request and setting up the demo.",
+          "1": "Understanding which channels bring useful conversations, so we do not spend on the ones that do not.",
+          "2": "Keeping the site available and protected against abuse.",
+          "3": "We do not sell data, do not pass it to data brokers, and make no automated decisions about you."
+        }
+      },
+      "basis": {
+        "title": "On what basis we process it",
+        "body": "We process your data because you sent it to us so we would get in touch, and because you ticked the consent box. You can withdraw that consent at any time, without explaining why."
+      },
+      "retention": {
+        "title": "How long we keep it",
+        "body": "Demo requests are kept for as long as the commercial conversation runs, and up to twenty-four months after the last contact. Technical server logs last a short operational period. If you ask for deletion, it happens sooner."
+      },
+      "sharing": {
+        "title": "Who we share it with",
+        "body": "With the providers we need in order to operate: site hosting, email delivery, and, once it is connected, the customer management system. None is connected today, so requests sit in the application logs until somebody answers you. We may also share information where a law or a court order requires it."
+      },
+      "rights": {
+        "title": "Your rights",
+        "body": "About the data we hold on you, you can ask for the following.",
+        "items": {
+          "0": "A copy of what we hold.",
+          "1": "Correction of anything that is wrong.",
+          "2": "Deletion of everything you sent.",
+          "3": "Withdrawal of consent and removal from our emails.",
+          "4": "An objection to your data being used for marketing."
+        },
+        "after": "Write to us and we answer through the same channel. We do not charge for handling these requests."
+      },
+      "cookies": {
+        "title": "Cookies",
+        "body": "This site uses no marketing, advertising or social network cookies. The detail is on the cookies page.",
+        "link": "See the cookies page"
+      },
+      "changes": {
+        "title": "Changes to this policy",
+        "body": "If what we collect or why it changes, this text is updated along with its date. Material changes are also sent to anyone who has already written to us."
+      },
+      "contact": {
+        "title": "How to reach us",
+        "body": "For anything about privacy, including deletion of your data, write to:"
+      }
+    },
+    "terms": {
+      "meta": {
+        "title": "Terms of use · Ride Fleet",
+        "description": "The conditions this site is offered under: what is informational, what is not a contract, and who to write to."
+      },
+      "title": "Terms of use",
+      "lede": "The site's rules, in the plainest language we could write them in.",
+      "scope": {
+        "title": "What these terms cover",
+        "body": "They cover use of this marketing site. They do not cover use of the product: that is governed by the separate signed agreement, which prevails over this page wherever it applies."
+      },
+      "informational": {
+        "title": "The site is informational",
+        "body": "Product descriptions, screens and examples illustrate where Ride Fleet is going. Anything marked as being built is not available yet. Nothing on this site is a binding offer or a promise that a feature will exist on a given date."
+      },
+      "sample": {
+        "title": "Sample data",
+        "body": "The product screens shown on the site are renderings built from invented data. They are not a customer's screen and contain nobody's information."
+      },
+      "acceptable": {
+        "title": "Acceptable use",
+        "body": "By using the site, you agree not to do the following.",
+        "items": {
+          "0": "Attempt to reach systems, accounts or data without authorisation.",
+          "1": "Extract content automatically at a scale that degrades the service for everyone else.",
+          "2": "Submit false details, or somebody else's details, through the forms.",
+          "3": "Use the site for anything illegal or to harass others."
+        }
+      },
+      "ip": {
+        "title": "Intellectual property",
+        "body": "The content, design, code and marks on this site belong to Ride Fleet. You may quote extracts with attribution and a link; copying whole pages, or using our marks in a way that suggests our endorsement, you may not."
+      },
+      "thirdParty": {
+        "title": "Third-party marks",
+        "body": "AutoExpreso, SunPass and any other third-party names belong to their owners. We name them to describe compatibility and integration. That implies no affiliation, sponsorship or endorsement by those entities."
+      },
+      "warranty": {
+        "title": "No warranty on the site",
+        "body": "The site is offered as it is. We take care that the information is correct and that the site stays up, but we do not warrant that it is free of errors or interruptions."
+      },
+      "liability": {
+        "title": "Limitation of liability",
+        "body": "To the extent the law allows, we are not liable for indirect or incidental damages arising from use of this site. None of this limits liability that the law does not permit to be limited."
+      },
+      "links": {
+        "title": "Links to other sites",
+        "body": "When we link to a third-party site it is for reference. We do not control its content or its privacy practices."
+      },
+      "changes": {
+        "title": "Changes to these terms",
+        "body": "We may update them. The version in force is always the one published here, with its date."
+      },
+      "law": {
+        "title": "Governing law",
+        "body": "These terms are governed by the laws of the Commonwealth of Puerto Rico, and any dispute is heard in the courts of San Juan."
+      },
+      "contact": {
+        "title": "How to reach us",
+        "body": "For questions about these terms, write to:"
+      }
+    },
+    "cookies": {
+      "meta": {
+        "title": "Cookies and local storage · Ride Fleet",
+        "description": "What this site stores in your browser. Today: nothing for analytics or advertising. Here is the detail, and what would change if we add measurement."
+      },
+      "title": "Cookies and local storage",
+      "lede": "The short version: this site does not track you today. The long version is below.",
+      "today": {
+        "title": "What is here today",
+        "body": "This site sets no analytics, advertising or social network cookies. There are no third-party pixels, no remarketing tags, and no scripts that follow you to other sites."
+      },
+      "essential": {
+        "title": "Strictly necessary storage",
+        "body": "The infrastructure provider may set technical cookies for security, load balancing and abuse protection. They are not used to profile you and are not used for marketing."
+      },
+      "language": {
+        "title": "Your language",
+        "body": "The language preference travels in the page address, in the /es or /en prefix, not in a cookie. The ES | EN control takes you to the same page in the other language without storing anything in your browser."
+      },
+      "analytics": {
+        "title": "Measurement",
+        "badgeBody": "If we ever turn on analytics, it will be aggregate measurement behind a consent notice in Spanish and English, where declining is as visible as accepting.",
+        "body": "Until that notice exists and works, no measurement tag is loaded. This page is updated the same day that changes."
+      },
+      "control": {
+        "title": "How to control them",
+        "body": "Your browser lets you inspect, block and delete cookies site by site, and private mode discards them on close. Blocking the strictly necessary ones may stop the site from loading properly."
+      },
+      "forms": {
+        "title": "Forms are a different matter",
+        "body": "What you send through the demo form is not a cookie: it is data you hand over deliberately, and it is governed by the privacy policy.",
+        "link": "See the privacy policy"
+      },
+      "contact": {
+        "title": "How to reach us",
+        "body": "For questions about cookies or measurement, write to:"
+      }
+    },
+    "accessibility": {
+      "meta": {
+        "title": "Accessibility statement · Ride Fleet",
+        "description": "Our target is WCAG 2.2 level AA. Here is what has been verified, what is missing, and how to tell us if you hit a barrier."
+      },
+      "title": "Accessibility statement",
+      "lede": "If you cannot use something on this site, that is our defect and we want to hear about it.",
+      "target": {
+        "title": "The target",
+        "body": "This site is built to meet the Web Content Accessibility Guidelines, WCAG 2.2, level AA, equally in Spanish and English. Accessibility is reviewed as part of the work on each page, not at the end."
+      },
+      "status": {
+        "title": "Conformance status",
+        "body": "Partially conformant. We meet most level AA criteria, and the known exceptions are written out below without decoration."
+      },
+      "verified": {
+        "title": "What has been verified",
+        "items": {
+          "0": "Text and icon contrast was measured against the level AA thresholds. Combinations that fell short were corrected in the design system before publishing.",
+          "1": "The whole site can be worked by keyboard, with a skip-to-content link and a visible focus indicator on every control.",
+          "2": "The focus indicator uses its own colour, distinct from the brand colour, so it stands out on any background.",
+          "3": "Semantic structure: one H1 per page, headings in order, and labelled landmark regions.",
+          "4": "Every control has a programmatic name. Buttons that show only an icon carry text for screen readers.",
+          "5": "Icons are decorative graphics and the meaning always sits in the text beside them. No emoji are used anywhere.",
+          "6": "The language attribute changes with the language of the page, so screen readers pronounce it correctly.",
+          "7": "The system preference for reduced motion is respected.",
+          "8": "Blocks that open and close use native browser elements, operable by keyboard without depending on JavaScript."
+        }
+      },
+      "gaps": {
+        "title": "What is missing",
+        "lede": "Verification so far has been internal. That has limits, and these are they.",
+        "items": {
+          "0": "We have not run an external audit or testing with people who use assistive technology daily.",
+          "1": "There are no automated accessibility tests running on each publish yet.",
+          "2": "There is no audio or video on the site. When there is, it will carry captions and a transcript from day one."
+        },
+        "scheduler": "Third-party scheduler for booking demos",
+        "schedulerBody": "When one is integrated, its accessibility is validated before it is published, and the form stays available as an equivalent alternative route."
+      },
+      "barriers": {
+        "title": "If you hit a barrier",
+        "body": "Write to us and tell us which page it was on, what you were trying to do, and what happened. If you use a screen reader, magnification or a large text size, say so as well: it helps us reproduce the problem.",
+        "promise": "We answer, we fix what can be fixed quickly, and in the meantime we give you another way to finish what you were doing, by email or by phone."
+      },
+      "contact": {
+        "title": "How to reach us",
+        "body": "To report a barrier or ask for content in another format, write to:"
+      }
+    }
+  }
+}

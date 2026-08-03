@@ -1,0 +1,396 @@
+{
+  "meta": {
+    "title": "Book a 30-minute demo · Ride Fleet",
+    "description": "Book a live 30-minute demo on your own fleet operation: Ride Fleet Manager, Toll Bridge and Voz AI, run on sample data close to yours. In Spanish or English, and we reply the same business day."
+  },
+  "hero": {
+    "eyebrow": "Live demo · 30 minutes",
+    "title": "30 minutes on your operation. Not on our slide deck.",
+    "lede": "Fill in the form and we reply the same business day with two or three time slots. On the call we open the product against a case like yours — your fleet type, your tolls, your calls — and tell you straight what already works and what we are still building.",
+    "rail": {
+      "duration": { "value": "30 min" },
+      "language": "Spanish or English",
+      "who": "With whoever builds the product",
+      "place": { "value": "San Juan · AST (UTC−4)" }
+    }
+  },
+  "book": {
+    "mark": {
+      "n": "01",
+      "label": "Book",
+      "note": "Answer the same business day · AST"
+    },
+    "railLabel": "What to expect"
+  },
+  "form": {
+    "title": "Tell us about your operation",
+    "sub": "Six required fields. The rest lets us show up prepared instead of asking you the same things on the call.",
+    "step": "Step 1 of 1",
+    "requiredMark": "*",
+    "errorSummary": "Something is missing before you send",
+    "honeypot": "Do not fill in this field",
+    "name": {
+      "label": "Full name",
+      "placeholder": "E.g. María Rivera"
+    },
+    "company": {
+      "label": "Company",
+      "placeholder": "E.g. Caribe Rent A Car"
+    },
+    "email": {
+      "label": "Work email",
+      "placeholder": "maria@yourfleet.com",
+      "help": "This is where the time slots go."
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "787 555 0142",
+      "help": "Only if the email bounces."
+    },
+    "operation": {
+      "label": "Type of operation",
+      "options": {
+        "empty": "Select an option",
+        "rental": "Traditional rental",
+        "carsharing": { "value": "Car-sharing" },
+        "loaner": "Dealership loaner",
+        "other": "Other"
+      }
+    },
+    "fleetSize": {
+      "label": "Fleet size",
+      "help": "This tells us who should sit with you.",
+      "options": {
+        "empty": "Select a range",
+        "r1": "1 to 9 vehicles",
+        "r2": "10 to 49 vehicles",
+        "r3": "50 to 149 vehicles",
+        "r4": "150 to 499 vehicles",
+        "r5": "500 or more"
+      },
+      "routing": {
+        "lead": "Under 10 vehicles,",
+        "body": "a guided demo is usually more than you need. Send the form anyway: we add you to the early-access list for the self-serve plan",
+        "tail": "and tell you when it opens."
+      }
+    },
+    "products": {
+      "legend": "What do you want to see?",
+      "optTag": " — tick everything that applies",
+      "rfm": {
+        "value": "Fleet Manager",
+        "desc": "Contracts, handovers, maintenance, billing."
+      },
+      "toll": {
+        "value": "Toll Bridge",
+        "desc": "AutoExpreso and SunPass matched to the contract."
+      },
+      "voz": {
+        "value": "Voz AI",
+        "desc": "The line that answers in Spanish and English."
+      }
+    },
+    "demoLanguage": {
+      "legend": "Language for the demo",
+      "es": { "value": "Español" },
+      "en": { "value": "English" }
+    },
+    "notes": {
+      "label": "What is costing you most right now?",
+      "placeholder": "E.g. AutoExpreso tolls fall through the cracks between rentals and nobody answers the phone on Saturdays.",
+      "help": "Optional, but it is what makes the demo yours instead of generic."
+    },
+    "consent": {
+      "text": "I authorise Ride Fleet to contact me about this request. We do not sell or share your data, and you can ask us to delete it at any time.",
+      "notice": "Privacy notice"
+    },
+    "submit": "Book my demo",
+    "submitting": "Sending…",
+    "fine": {
+      "lead": "Nobody is going to chase you.",
+      "body": "One email with time slots, and one reminder if you do not reply. That is all."
+    },
+    "errors": {
+      "name": "Enter your full name.",
+      "company": "Enter your company name.",
+      "email": "Enter a valid work email.",
+      "phone": "Enter a phone number where we can reach you.",
+      "operation": "Select the type of operation.",
+      "fleetSize": "Select a fleet size range.",
+      "consent": "We need your permission before we can contact you.",
+      "network": "We could not send the form. Try again, or call us."
+    }
+  },
+  "next": {
+    "title": "What happens next",
+    "kicker": "3 steps",
+    "steps": {
+      "s1": {
+        "n": "01",
+        "title": "Your request reaches us",
+        "body": "A person reads it, not a funnel. If you wrote something in the message, that is the first thing we look at."
+      },
+      "s2": {
+        "n": "02",
+        "title": "We write back with time slots",
+        "body": "Two or three options in AST, plus the call link. If none of them work, you just reply to that email."
+      },
+      "s3": {
+        "n": "03",
+        "title": "The half hour",
+        "body": "We open the product live with sample data close to your fleet. No sales deck and no obligation to continue."
+      }
+    },
+    "sla": "We reply the same business day · Mon to Fri · AST (UTC−4), no daylight saving"
+  },
+  "agenda": {
+    "title": "What the demo covers",
+    "kicker": { "value": "30 MIN" },
+    "rows": {
+      "r1": {
+        "time": "00–05",
+        "title": "Your operation",
+        "desc": "How many vehicles, how you hand them over, where your time goes."
+      },
+      "r2": {
+        "time": "05–14",
+        "title": "Ride Fleet Manager",
+        "desc": "Contract, photo handover, maintenance and invoice — one rental end to end."
+      },
+      "r3": {
+        "time": "14–21",
+        "title": "Toll Bridge",
+        "desc": "How an AutoExpreso or SunPass toll finds the driver who generated it on its own."
+      },
+      "r4": {
+        "time": "21–27",
+        "title": "Voz AI",
+        "desc": "A real call start to finish, in Spanish and in English, with the transcript alongside."
+      },
+      "r5": {
+        "time": "27–30",
+        "title": "Price and next steps",
+        "desc": "What it would cost in your case and what it would take to start."
+      }
+    },
+    "foot": "We reorder it around what you ticked",
+    "total": { "value": "30 MIN" }
+  },
+  "scheduler": {
+    "title": "Pick the time yourself",
+    "kicker": "Soon",
+    "kickerLive": "Live",
+    "ariaLabel": "Preview of the booking calendar: week of July 27 to 31, half-hour slots in AST. Not connected yet.",
+    "stamp": "Preview · not connected",
+    "heading": "Book 30 min",
+    "tz": { "value": "AST (UTC−4)" },
+    "days": {
+      "d1": { "name": "Mon", "date": "27" },
+      "d2": { "name": "Tue", "date": "28" },
+      "d3": { "name": "Wed", "date": "29" },
+      "d4": { "name": "Thu", "date": "30" },
+      "d5": { "name": "Fri", "date": "31" }
+    },
+    "times": {
+      "t1": "9:00",
+      "t2": "10:30",
+      "t3": "11:30",
+      "t4": "13:00",
+      "t5": "14:30",
+      "t6": "16:00"
+    },
+    "note": "This is how it will look once the scheduler is connected. It books nothing today: the form on this page does exactly the same job and we reply the same business day.",
+    "open": "Open the scheduler",
+    "openNote": "The scheduler opens on a separate page. If you would rather not use it, the form above does the same job."
+  },
+  "call": {
+    "title": "Rather just call?",
+    "body": "Some people do not fill in forms, and that is fine. Call and we set the demo up by phone in two minutes — the same half hour, without going through this page.",
+    "handyLabel": "Have handy",
+    "handy": {
+      "h1": "How many units you move",
+      "h2": "What systems you run today",
+      "h3": "Two time slots that work"
+    },
+    "hours": "Mon to Fri · 8:00–18:00 AST",
+    "note": "The X's are honest: the public line is being provisioned with Telnyx and will appear here the moment it is live."
+  },
+  "onscreen": {
+    "chapter": "02",
+    "chapterOf": "On screen",
+    "title": "No slides. This is what we open.",
+    "aside": "Minute 14 of the half hour: the week's tolls, already stuck to the driver who generated them.",
+    "appLabel": "Toll Bridge: AutoExpreso and SunPass tolls reconciled against bookings, with plate, driver and match confidence. Sample data.",
+    "app": {
+      "product": { "value": "Toll Bridge" },
+      "section": "Reconciliation",
+      "range": "20–26 Jul 2026",
+      "search": "Search plate, crossing…",
+      "kbd": "⌘K",
+      "avatar": "HR",
+      "side": {
+        "tolls": "Tolls",
+        "toReconcile": "To reconcile",
+        "toReconcileCount": "7",
+        "reconciled": "Reconciled",
+        "reconciledCount": "335",
+        "disputed": "Disputed",
+        "disputedCount": "2",
+        "charging": "Charging",
+        "rentalCharges": "Rental charges",
+        "billing": "Billing"
+      },
+      "pane": {
+        "title": "Tolls to reconcile",
+        "sub": "342 crossings this week · 335 matched on their own · 7 waiting on you"
+      },
+      "filters": {
+        "autoexpreso": "AutoExpreso",
+        "sunpass": "SunPass",
+        "week": "This week"
+      },
+      "kpi": {
+        "matched": {
+          "label": "Matched untouched",
+          "value": "97.9%",
+          "chip": "335 / 342"
+        },
+        "recovered": {
+          "label": "Recovered · 30 d",
+          "value": "$1,284.50",
+          "delta": { "value": "+$118.20" },
+          "foot": "vs. last month"
+        },
+        "unowned": {
+          "label": "Unowned",
+          "value": "$18.35",
+          "pct": "2.1%",
+          "count": "7",
+          "unit": "crossings",
+          "foot": "manual triage"
+        }
+      },
+      "table": {
+        "head": {
+          "crossing": "Crossing",
+          "plaza": { "value": "Plaza" },
+          "plate": "Plate",
+          "amount": "Amount",
+          "driver": "Driver",
+          "confidence": "Confidence",
+          "status": "Status"
+        },
+        "rows": {
+          "r1": {
+            "when": { "value": "24 jul · 08:12" },
+            "plaza": { "value": "Buchanan · AutoExpreso" },
+            "plate": "HTR·142",
+            "amount": "$1.60",
+            "driver": { "value": "RES-18428 · M. Rivera" },
+            "conf": "0.97",
+            "status": "Charged"
+          },
+          "r2": {
+            "when": { "value": "24 jul · 07:48" },
+            "plaza": { "value": "Caguas Norte · AutoExpreso" },
+            "plate": "PRA·771",
+            "amount": "$0.85",
+            "driver": { "value": "RES-18402 · J. Colón" },
+            "conf": "0.94",
+            "status": "Charged"
+          },
+          "r3": {
+            "when": { "value": "23 jul · 19:05" },
+            "plaza": { "value": "Teodoro Moscoso · AutoExpreso" },
+            "plate": "KLM·908",
+            "amount": "$2.25",
+            "driver": { "value": "Between two bookings" },
+            "conf": "0.61",
+            "status": "Review"
+          },
+          "r4": {
+            "when": { "value": "23 jul · 16:31" },
+            "plaza": { "value": "Homestead Ext. · SunPass" },
+            "plate": "FLA·2287",
+            "amount": "$3.50",
+            "driver": { "value": "RES-18377 · A. Marrero" },
+            "conf": "0.91",
+            "status": "Charged"
+          },
+          "r5": {
+            "when": { "value": "22 jul · 14:57" },
+            "plaza": { "value": "Toa Baja · AutoExpreso" },
+            "plate": "MSA·224",
+            "amount": "$1.10",
+            "driver": { "value": "Unit in shop" },
+            "conf": "0.23",
+            "status": "Unowned"
+          }
+        },
+        "foot": {
+          "showing": "Showing 5 of 342 crossings",
+          "source": "Source: AutoExpreso · SunPass"
+        }
+      }
+    },
+    "legend": {
+      "unit": "min",
+      "l1": {
+        "range": "05–14",
+        "title": "Ride Fleet Manager",
+        "body": "One rental contract end to end: photo handover, damage, shop and invoice, without switching systems."
+      },
+      "l2": {
+        "range": "14–21",
+        "title": "Toll Bridge",
+        "now": "on screen",
+        "body": "This screen. We open the seven that did not match on their own and you watch them get resolved."
+      },
+      "l3": {
+        "range": "21–27",
+        "title": "Voz AI",
+        "body": "A Saturday call, in Spanish, with the transcript and the booking it created alongside."
+      }
+    }
+  },
+  "faq": {
+    "chapter": "03",
+    "chapterOf": "Questions",
+    "title": "What people ask before booking",
+    "aside": "Short answers, and where something does not exist yet we say so right here.",
+    "items": {
+      "q1": {
+        "n": "01",
+        "q": "Who runs the demo?",
+        "a": "Someone from the team that builds the product. There is no sales layer in between, so if you ask something technical you get the answer on the spot — and if the answer is “not yet”, you get that too."
+      },
+      "q2": {
+        "n": "02",
+        "q": "What language is it in?",
+        "a": "Whichever you tick above, Spanish or English. If you are bringing someone who prefers the other one, say so in the message and we run it mixed — that is normal here."
+      },
+      "q3": {
+        "n": "03",
+        "q": "I have six cars. Do I qualify?",
+        "a": "You do, but we will be straight with you: under ten vehicles a guided demo is usually more than you need. Send the form and we add you to the early-access list for the self-serve plan",
+        "aTail": ", which is what will actually help you."
+      },
+      "q4": {
+        "n": "04",
+        "q": "Do I have to hand over AutoExpreso or SunPass credentials?",
+        "a": "No. The demo runs on sample data. Credentials, if you ever decide to go ahead, get connected during implementation with your IT people present — never on a half-hour call."
+      },
+      "q5": {
+        "n": "05",
+        "q": "Can I take just one module?",
+        "a": "Yes. Toll Bridge and Voz AI work on top of the fleet you already manage, even without Ride Fleet Manager. Tick only what interests you and the demo gets shorter — thirty useful minutes beat thirty full ones.",
+        "link": "See Toll Bridge on its own"
+      }
+    },
+    "end": {
+      "title": "Not the one you had?",
+      "body": "Write it in the message field on the form. We answer in writing before the call, so the half hour does not go on clarifications.",
+      "cta": "Back to the form"
+    }
+  }
+}

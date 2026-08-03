@@ -1,0 +1,189 @@
+/* Generated from site-v2/_system/design-system.css — Direction C (Product-Led Premium).
+   Do not hand-edit token values here without updating _system/DESIGN-SYSTEM.md. */
+
+
+/* ============================================================================
+   1. TOKENS
+   ========================================================================= */
+:root{
+
+  /* ---- 1.1 Neutral ramp (purple-tinted, light-first) -------------------- */
+  --n-0:#ffffff;
+  --n-25:#fbfaff;
+  --n-50:#f7f5fd;
+  --n-100:#f2eff9;
+  --n-200:#e9e4f4;
+  --n-300:#d9d2ea;
+  --n-400:#b3aac9;   /* decorative / dividers only — 2.21 on white, NOT text  */
+  --n-500:#8a819f;   /* decorative / icons only    — 3.67 on white, NOT text  */
+  --n-600:#675e7c;   /* meta text — 6.05 white · 5.33 n-100 · 4.86 n-200  AA  */
+                     /* RECONCILED: was #736a8b (5.04). Raised on 02 so that  */
+                     /* meta text still clears AA when it sits on --n-200.    */
+  --n-700:#4b4362;   /* secondary text             — 9.22 on white  AAA       */
+  --n-800:#2e2745;   /* strong body text           — 14.07 on white AAA       */
+  --n-900:#17122b;   /* primary text / headings    — 18.14 on white AAA       */
+
+  /* ---- 1.2 Purple ramp — brand spine, Ride Fleet Manager ---------------- */
+  --p-50:#f4efff;
+  --p-100:#ebe2ff;
+  --p-200:#d9c9ff;
+  --p-300:#c0a8ff;   /* on ink-900 — 9.83  AAA                               */
+  --p-400:#9f79ff;   /* on ink-900 — 6.36  AA                                */
+  --p-500:#7f4ff0;   /* brand core. Surfaces/fills only, not small text.     */
+  --p-600:#6a35e0;   /* white on it — 6.57 AA. Button fill.                  */
+  --p-700:#5a26c9;   /* on white — 8.22 AAA. Link/accent text.               */
+  --p-800:#45189e;   /* on p-50  — 9.93 AAA                                  */
+  --p-900:#2e1071;   /* white on it — 14.70 AAA. Deep field.                 */
+
+  /* ---- 1.3 Gold ramp — Toll Bridge ------------------------------------- */
+  --gold-50:#fdf6e8;
+  --gold-100:#fbe9c6;
+  --gold-200:#f5d18e;  /* on ink-900 — 13.75 AAA                             */
+  --gold-300:#efb85c;  /* on ink-900 — 11.16 AAA                             */
+  --gold-400:#e8a13c;  /* brand core. Fill only. n-900 on it — 8.29 AAA      */
+  --gold-500:#c9821d;
+  --gold-600:#a3660f;  /* fill / border. On gold-50 = 4.37 — large text only */
+  --gold-700:#7d4d08;  /* on white — 7.15 AAA · on gold-50 — 6.65 AAA        */
+  --gold-800:#56340a;
+  --gold-900:#3a2400;  /* on gold-400 — 6.70 AA · on gold-300 — 8.16 AAA     */
+
+  /* ---- 1.4 Teal ramp — Voz AI ------------------------------------------ */
+  --teal-50:#e7faf6;
+  --teal-100:#c9f2ea;
+  --teal-200:#8fe4d5;
+  --teal-300:#4fd6c0;  /* on ink-900 — 11.19 AAA                             */
+  --teal-400:#2dd4bf;  /* brand core. Fill only. On ink-900 — 10.78 AAA      */
+  --teal-500:#0fa896;
+  --teal-600:#0b8375;  /* fill / border. On teal-50 = 4.29 — large text only */
+  --teal-700:#086a5e;  /* on white — 6.49 AA · on teal-50 — 6.00 AA          */
+  --teal-800:#064e46;
+  --teal-900:#03302b;
+
+  /* ---- 1.5 Semantic ---------------------------------------------------- */
+  --ok:#0f8a68;        --ok-bg:#e6f7f1; --ok-bd:#bfe8d9;
+  --ok-tx:#08674e;     /* on white — 6.86 AAA · on --ok-bg — 6.19 AA         */
+  --warn:#b8760a;      --warn-bg:#fdf3e2; --warn-bd:#f3dcb5;
+  --warn-tx:#8a5606;   /* on white — 6.15 AA  · on --warn-bg — 5.59 AA       */
+  --danger:#c02626;    --danger-bg:#fdecea; --danger-bd:#f6cdc9;
+  --danger-tx:#9c1d1d; /* on white — 8.06 AAA · on --danger-bg — 7.04 AAA    */
+  --info:#0b63d6;      --info-bg:#eaf2fe; --info-bd:#c5dcfb;
+  --info-tx:#0b63d6;   /* on white — 5.57 AA                                 */
+
+  /* ---- 1.6 Ink ramp — dark console surfaces (see .band--ink) ------------ */
+  --ink-900:#08070d;   /* canvas                                             */
+  --ink-800:#0b0a12;
+  --ink-700:#12101c;
+  --ink-600:#171525;
+  --ink-500:#1d1a2c;
+  --ink-tx-1:#f2f0fa;  /* on ink-900 — 17.79 AAA                             */
+  --ink-tx-2:#b7b2cd;  /* on ink-900 —  9.81 AAA · on ink-600 — 8.77 AAA     */
+  --ink-tx-3:#9a94b1;  /* on ink-900 —  6.92 AA  · on ink-600 — 6.19 AA      */
+  --ink-tx-4:#8a84a1;  /* on ink-900 —  5.63 AA  · on ink-700 — 5.28 AA      */
+
+  /* ---- 1.7 Semantic surface / border / text aliases --------------------
+     Components read ONLY these aliases, never raw ramp steps. .band--ink
+     re-points them, so every component inverts for free.                   */
+  --surface-0:var(--n-0);        /* page canvas                             */
+  --surface-1:var(--n-25);       /* raised card                             */
+  --surface-2:var(--n-50);       /* sunken well / table head                */
+  --surface-3:var(--n-100);      /* chip / inset control                    */
+  --surface-app:var(--n-0);      /* product-UI chrome interior              */
+  --surface-glass:rgba(255,255,255,.80);
+
+  --border-subtle:var(--n-100);
+  --border:var(--n-200);
+  --border-strong:var(--n-300);
+  --border-brand:rgba(127,79,240,.20);
+  --rule-heavy:var(--n-900);     /* the 2px editorial rule                  */
+
+  --text-1:var(--n-900);         /* headings, primary          18.14 AAA    */
+  --text-2:var(--n-700);         /* body                        9.22 AAA    */
+  --text-3:var(--n-600);         /* meta, captions              5.04 AA     */
+  --text-inverse:var(--n-0);
+  --text-brand:var(--p-700);     /* 8.22 AAA on white                       */
+  --text-gold:var(--gold-700);   /* 7.15 AAA on white                       */
+  --text-teal:var(--teal-700);   /* 6.49 AA  on white                       */
+  --icon-quiet:var(--n-500);     /* decorative glyph, never carries meaning */
+
+  /* ---- 1.8 Elevation — 3-layer shadow scale ----------------------------- */
+  --sh-1:
+    0 1px 1px rgba(24,16,54,.04),
+    0 1px 2px rgba(24,16,54,.05),
+    0 2px 4px -2px rgba(38,20,90,.05);
+  --sh-2:
+    0 1px 2px rgba(24,16,54,.05),
+    0 6px 14px -4px rgba(38,20,90,.09),
+    0 14px 28px -12px rgba(38,20,90,.10);
+  --sh-3:
+    0 1px 3px rgba(24,16,54,.06),
+    0 14px 30px -10px rgba(38,20,90,.14),
+    0 44px 80px -28px rgba(38,20,90,.22);
+  --sh-ring:0 0 0 1px rgba(127,79,240,.10);
+  --sh-inset:inset 0 1px 0 rgba(255,255,255,.90);
+  --sh-btn:
+    0 1px 2px rgba(56,20,130,.28),
+    0 8px 18px -6px rgba(90,38,201,.42),
+    inset 0 1px 0 rgba(255,255,255,.22);
+
+  /* ---- 1.9 Radii -------------------------------------------------------- */
+  --r-xs:6px; --r-sm:8px; --r-md:11px; --r-lg:14px; --r-xl:18px;
+  --r-2xl:24px; --r-3xl:32px; --r-pill:999px;
+
+  /* ---- 1.10 Spacing — 4px base ------------------------------------------ */
+  --sp-0:0;     --sp-1:4px;   --sp-2:8px;   --sp-3:12px;  --sp-4:16px;
+  --sp-5:20px;  --sp-6:24px;  --sp-7:28px;  --sp-8:32px;  --sp-10:40px;
+  --sp-12:48px; --sp-14:56px; --sp-16:64px; --sp-20:80px; --sp-24:96px;
+  --sp-28:112px;--sp-32:128px;--sp-40:160px;
+  --sec-y:clamp(64px,7.2vw,104px);   /* vertical rhythm of a full section   */
+  --gutter:clamp(20px,3.4vw,32px);   /* container side padding              */
+
+  /* ---- 1.11 Type -------------------------------------------------------- */
+  --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+
+  --fs-display:clamp(40px,5.6vw,76px);   /* hero only, one per page         */
+  --fs-h1:clamp(34px,4.4vw,58px);
+  --fs-h2:clamp(28px,3.3vw,44px);
+  --fs-h3:clamp(20px,1.95vw,27px);
+  --fs-h4:clamp(16.5px,1.25vw,19px);
+  --fs-lede:clamp(16.5px,1.35vw,19.5px);
+  --fs-body:16px;
+  --fs-sm:14px;
+  --fs-xs:12.5px;
+  --fs-2xs:11px;
+  --fs-num-hero:clamp(64px,9vw,128px);   /* editorial giant numeral         */
+  --fs-num-lg:clamp(38px,4.6vw,64px);
+  --fs-num-md:clamp(26px,2.4vw,32px);
+
+  --lh-tight:0.98;   /* display + giant numerals                            */
+  --lh-snug:1.08;    /* h1–h3                                               */
+  --lh-heading:1.18; /* h4, card titles                                     */
+  --lh-body:1.62;
+  --lh-relaxed:1.7;
+
+  --tr-display:-0.038em;
+  --tr-tight:-0.028em;
+  --tr-snug:-0.018em;
+  --tr-normal:-0.008em;
+  --tr-wide:0.08em;
+  --tr-caps:0.14em;   /* mono uppercase labels                              */
+
+  /* ---- 1.12 z-index ----------------------------------------------------- */
+  --z-under:-1; --z-base:0; --z-raised:5; --z-sticky:80; --z-header:90;
+  --z-dropdown:120; --z-overlay:200; --z-modal:400; --z-toast:600;
+
+  /* ---- 1.13 Motion ------------------------------------------------------ */
+  --dur-1:120ms; --dur-2:180ms; --dur-3:260ms; --dur-4:420ms; --dur-5:700ms;
+  --ease-out:cubic-bezier(.2,.7,.3,1);
+  --ease-in-out:cubic-bezier(.65,0,.35,1);
+  --ease-emph:cubic-bezier(.22,.75,.28,1);
+
+  /* ---- 1.14 Focus — deliberately BLUE, never brand purple --------------- */
+  --focus:#0b63d6;                 /* 5.57 on white AA                       */
+  --focus-halo:rgba(11,99,214,.22);
+
+  /* ---- 1.15 Layout ------------------------------------------------------ */
+  --container:1200px;
+  --container-wide:1340px;
+  --container-narrow:820px;
+}

@@ -1,0 +1,671 @@
+{
+  "meta": {
+    "title": "Toll Bridge — tolls matched and ready to bill",
+    "description": "Toll Bridge pulls crossings from AutoExpreso and SunPass, matches each one to the reservation that was running at that hour and hands them to you ready to bill, with the confidence score in plain sight."
+  },
+  "hero": {
+    "badge": "Toll Bridge",
+    "titleLead": "Stop eating your\u00a0customers' ",
+    "titleGrad": "toll\u00a0charges",
+    "titleTail": ".",
+    "lede": "The crossing happens today and shows up in the portal three days later, once the car is back and the invoice is closed. Toll Bridge pulls crossings from AutoExpreso and SunPass, matches each one to the reservation that was running at that hour, and hands them to you ready to bill — with the confidence score in plain sight.",
+    "ctaDemo": "Book a demo",
+    "ctaCalc": "Add up what you're losing",
+    "notes": [
+      "AutoExpreso (PR) and SunPass (FL) connected",
+      "Encrypted credentials, read-only access",
+      "Nothing bills without a human approving it"
+    ]
+  },
+  "sync": {
+    "aria": "Portal sync status",
+    "live": "Sync status",
+    "tag": "Sample",
+    "rows": [
+      {
+        "name": { "value": "AutoExpreso" },
+        "region": "Puerto Rico",
+        "status": "Connected",
+        "time": "6 min ago"
+      },
+      {
+        "name": { "value": "SunPass" },
+        "region": "Florida",
+        "status": "Connected",
+        "time": "4 h ago"
+      }
+    ],
+    "epass": {
+      "name": { "value": "E-PASS" },
+      "region": "Central Florida"
+    },
+    "chart": {
+      "aria": "Crossings imported per day over the last seven days, sample data.",
+      "head": "Crossings imported · last 7 days",
+      "total": "412",
+      "days": ["M", "T", "W", "T", "F", "S", "S"]
+    },
+    "foot": "AutoExpreso is polled continuously; SunPass publishes in batches, so there the wait is hours, not minutes. We say it here so you don't find out in production."
+  },
+  "app": {
+    "aria": "Toll reconciliation console: 128 crossings imported today, 96 auto-matched and 12 in review, with the crossing table and its assigned reservation.",
+    "crumbSection": "Reconciliation",
+    "crumbDate": "2026-07-21",
+    "search": {
+      "label": "Search plate, crossing or booking",
+      "code": "Ctrl K"
+    },
+    "avatar": { "value": "MR" },
+    "groups": {
+      "tolls": "Tolls",
+      "sources": "Sources"
+    },
+    "queues": [
+      { "label": "Today's crossings", "count": "128" },
+      { "label": "Auto-matched", "count": "96" },
+      { "label": "In review", "count": "12" },
+      { "label": "Ready to bill", "count": "84" },
+      { "label": "Disputed", "count": "3" }
+    ],
+    "sources": ["Connections", "Import history"],
+    "pane": {
+      "title": "Today's crossings",
+      "sub": "Tuesday 9:14 AM AST · AutoExpreso + SunPass · 128 crossings",
+      "live": "Syncing",
+      "segAll": "All",
+      "segReview": "Review",
+      "filter": "Unbilled"
+    },
+    "kpis": [
+      {
+        "label": "Imported today",
+        "value": "128",
+        "foot": { "value": "104 AutoExpreso · 24 SunPass" }
+      },
+      {
+        "label": "Auto-matched",
+        "value": "96",
+        "foot": { "value": "Confidence 85 or above" }
+      },
+      {
+        "label": "Need review",
+        "value": "12",
+        "foot": { "value": "A person decides, in one click" }
+      },
+      {
+        "label": "Ready to bill",
+        "value": "$284.15",
+        "foot": { "value": "84 crossings across 39 bookings" }
+      }
+    ],
+    "table": {
+      "caption": "Imported toll crossings with plate, gantry, amount, match confidence and assigned reservation",
+      "head": {
+        "txn": "TXN",
+        "plate": "Plate",
+        "gantry": "Gantry",
+        "time": "Time",
+        "amount": "Amount",
+        "confidence": "Confidence",
+        "reservation": "Reservation",
+        "status": "Status"
+      },
+      "rows": [
+        {
+          "code": "AE-88214",
+          "plate": "GBL-704",
+          "gantry": { "value": "Buchanan NB" },
+          "time": "08:12",
+          "amount": "$1.80",
+          "conf": "96",
+          "resv": { "value": "RES-4821" },
+          "sub": { "value": "J. Colón · 07:40–18:00" },
+          "status": "Auto-matched"
+        },
+        {
+          "code": "AE-88219",
+          "plate": "HTG-119",
+          "gantry": { "value": "Teodoro Moscoso" },
+          "time": "08:41",
+          "amount": "$2.50",
+          "conf": "94",
+          "resv": { "value": "RES-4830" },
+          "sub": { "value": "M. Rivera · 06:15–20:30" },
+          "status": "Auto-matched"
+        },
+        {
+          "code": "SP-31077",
+          "plate": "IVR-238",
+          "gantry": { "value": "Selmon Expy" },
+          "time": "19:05",
+          "amount": "$1.75",
+          "conf": "88",
+          "resv": { "value": "RES-4788" },
+          "sub": { "value": "A. Pérez · 3 days" },
+          "status": "Auto-matched"
+        },
+        {
+          "code": "AE-88231",
+          "plate": "FQD-552",
+          "gantry": { "value": "Caguas Norte" },
+          "time": "09:03",
+          "amount": "$2.10",
+          "conf": "71",
+          "resv": { "value": "RES-4802" },
+          "sub": { "value": "returned 8:52 · 11 min earlier" },
+          "status": "Suggested"
+        },
+        {
+          "code": "SP-31084",
+          "plate": "JLP-806",
+          "gantry": { "value": "Veterans Expy" },
+          "time": "21:36",
+          "amount": "$1.25",
+          "conf": "63",
+          "resv": { "value": "RES-4795" },
+          "sub": { "value": "plate swapped units that day" },
+          "status": "Suggested"
+        },
+        {
+          "code": "AE-88240",
+          "plate": "KMB-347",
+          "gantry": { "value": "Dorado" },
+          "time": "06:58",
+          "amount": "$1.40",
+          "conf": "42",
+          "resv": { "value": "No active booking" },
+          "sub": { "value": "unit in the shop that day" },
+          "status": "Review"
+        },
+        {
+          "code": "AE-88246",
+          "plate": "GBL-704",
+          "gantry": { "value": "Buchanan SB" },
+          "time": "17:22",
+          "amount": "$1.80",
+          "conf": "38",
+          "resv": { "value": "2 bookings overlap" },
+          "sub": { "value": "RES-4821 · RES-4839" },
+          "status": "Review"
+        }
+      ],
+      "foot": {
+        "showing": "Showing 7 of 128 crossings · 12 waiting on a human decision",
+        "lastImport": "Last import 9:08 AM",
+        "tz": { "value": "AST (UTC−4)" }
+      }
+    }
+  },
+  "notes": [
+    {
+      "label": "Confidence in the open",
+      "body": "Every crossing arrives with a number, not a verdict. 85 and up posts on its own; 60 to 84 is proposed; below 60 it stops and waits for a person."
+    },
+    {
+      "label": "The same booking as always",
+      "body": "The crossing attaches to the real booking that already lives in Ride Fleet Manager — same customer, same agreement, same invoice. There is no second toll database."
+    },
+    {
+      "label": "About this screen",
+      "body": "Product interface with sample data. No number here comes from a customer or claims to be an industry average."
+    }
+  ],
+  "trust": {
+    "label": "Connects to what you already run",
+    "items": [
+      { "value": "AutoExpreso" },
+      { "value": "SunPass" },
+      { "value": "Stripe" },
+      { "value": "Zubie" },
+      { "value": "VoltSwitch" },
+      { "value": "Telnyx" }
+    ]
+  },
+  "leak": {
+    "chapter": "01",
+    "of": "The leak",
+    "title": "Nobody decides to lose this money. It leaks on its own.",
+    "aside": "Put in your own numbers. It computes right here, in your browser, and nothing is saved or sent anywhere."
+  },
+  "calc": {
+    "title": "Your numbers",
+    "fields": {
+      "fleet": "Units in fleet",
+      "cross": "Crossings per unit per month",
+      "rate": "Average toll",
+      "leak": "Share you never bill",
+      "hours": "Hours a month reconciling by hand",
+      "wage": "Loaded cost of that hour"
+    },
+    "units": {
+      "currency": "$",
+      "percent": "%",
+      "hours": "h"
+    },
+    "help": "The values you see are an editable starting point, not an industry average. The only person who knows your operation is you.",
+    "nocount": {
+      "title": "What this number leaves out, on purpose",
+      "items": [
+        "Violation fines and the administrative charges the authority adds on later.",
+        "Crossings you did bill, but to the wrong customer, that ended in a refund.",
+        "What it costs to argue a $3.50 charge with a customer who already returned the car."
+      ],
+      "foot": "None of those three can be honestly estimated without seeing your data. The number beside this is the floor, not the ceiling."
+    },
+    "out": {
+      "label": "What's leaking out",
+      "month": "Per month",
+      "year": "Per year",
+      "crossings": "Crossings per month",
+      "tolls": "Tolls running through your fleet",
+      "leak": "Never reaches an invoice",
+      "admin": "Hours spent reconciling by hand",
+      "perUnit": "Per unit, per year",
+      "key1": "Uncharged toll",
+      "key2": "Your team's time",
+      "foot": "That total is not a recovery promise. It's what leaves your operation today through tolls nobody tied to a booking, plus what the person chasing them costs.",
+      "cta": "See this on your real data"
+    }
+  },
+  "honesty": {
+    "lead": "We are not going to promise you a percentage.",
+    "body": "How much Toll Bridge recovers depends on how clean your plate inventory is, how many bookings overlap on the same vehicle, and whether your operation crosses state lines. What we do promise: every crossing stays visible, with its confidence, and none of them bills without a human approving it."
+  },
+  "quo": {
+    "title": "The real competitor is a person with a spreadsheet",
+    "sub": "Almost nobody arrives here from other toll software. They arrive from this.",
+    "caption": "Comparison between reconciling tolls by hand and doing it with Toll Bridge",
+    "head": {
+      "task": "The task",
+      "them": "Today, with a spreadsheet",
+      "us": "With Toll Bridge"
+    },
+    "labels": {
+      "them": "Today",
+      "us": "Toll Bridge"
+    },
+    "rows": [
+      {
+        "task": "Getting the crossings",
+        "them": "Someone logs into the portal, filters by date and downloads a file. Miss a week and that week is gone.",
+        "us": "They arrive on their own. AutoExpreso is polled continuously; SunPass in batches, with a 14-day lookback window."
+      },
+      {
+        "task": "Tying the crossing to a customer",
+        "them": "Cross-checking plate and time against the booking calendar, line by line, coffee going cold.",
+        "us": "Resolved by plate, crossing time and active booking, and it comes out with an auditable confidence score."
+      },
+      {
+        "task": "The messy cases",
+        "them": "Solved from memory — or written off, because chasing $1.80 costs more than $1.80.",
+        "us": "They land in a review queue with the candidate bookings right beside them. Accept or reassign is one click."
+      },
+      {
+        "task": "Actually charging it",
+        "them": "Copied by hand onto the invoice, assuming the invoice is still open.",
+        "us": "Added to the rental agreement as a toll charge, under the policy you set: at cost, a percentage, or a flat fee per crossing."
+      },
+      {
+        "task": "When the customer pushes back",
+        "them": "Back into the portal, hunt for the crossing, and hope the receipt is still there.",
+        "us": "Gantry, exact time, amount and data source on the same screen as the charge. The conversation takes a minute."
+      },
+      {
+        "task": "What it costs",
+        "them": "Someone's hours, every month, forever — and it grows with the fleet.",
+        "us": "Minutes, on the few cases that genuinely need a human eye."
+      }
+    ]
+  },
+  "how": {
+    "chapter": "02",
+    "of": "The mechanism",
+    "title": "Four steps, and not one of them asks you to open the portal.",
+    "aside": "From gantry to customer invoice, without anyone retyping a single line.",
+    "steps": [
+      {
+        "num": "01",
+        "kicker": "Collect",
+        "title": "It signs into the portal for you, with your credentials",
+        "body": "Toll Bridge authenticates against AutoExpreso and SunPass with the account you already use and pulls the new crossings. If the portal changes shape or rejects the session, the import fails loudly and tells you — it never goes quiet pretending there were no tolls.",
+        "list": [
+          { "k": "PR", "v": "AutoExpreso, continuous polling" },
+          { "k": "FL", "v": "SunPass, in batches, with a 14-day lookback" },
+          { "k": "CSV", "v": "Manual upload for any authority that isn't connected" }
+        ]
+      },
+      {
+        "num": "02",
+        "kicker": "Import",
+        "title": "Every crossing lands exactly once",
+        "body": "Each crossing is stored with its portal identifier, so re-running an import duplicates nothing. We keep gantry, exact timestamp, plate and amount exactly as the authority published them — no rounding, no reinterpretation. That record is what you show the customer when they push back.",
+        "list": [
+          { "k": "01", "v": "No duplicates even if you re-run the import" },
+          { "k": "02", "v": "Gantry, time, plate and amount, untouched" },
+          { "k": "03", "v": "A history of every run, including what failed" }
+        ]
+      },
+      {
+        "num": "03",
+        "kicker": "Match",
+        "title": "It ties the crossing to a booking, and tells you how sure it is",
+        "body": "The plate says which unit crossed. The timestamp says who had it. When both line up cleanly, confidence goes up; when the crossing lands on the edge of a return, or two bookings overlap on the same vehicle, confidence drops and the case stops. The number is always visible, and you can always reassign.",
+        "list": [
+          { "k": "≥85", "v": "Matches on its own" },
+          { "k": "60–84", "v": "Proposed, waiting on one click" },
+          { "k": "<60", "v": "Stops, with the candidates beside it" }
+        ]
+      },
+      {
+        "num": "04",
+        "kicker": "Bill",
+        "title": "It reaches the invoice under the policy you chose",
+        "body": "A matched crossing becomes a charge inside the same rental agreement where everything else already lives. You decide whether it bills at cost, with a handling percentage, with a flat fee per crossing, or drawn down from a prepaid toll package the customer bought at pickup.",
+        "list": [
+          { "k": "Cost", "v": "Exactly what the authority charged" },
+          { "k": "%", "v": "Cost plus a handling percentage" },
+          { "k": "Flat", "v": "A flat fee per crossing, or a prepaid package" }
+        ]
+      }
+    ],
+    "ladder": {
+      "title": "What happens at each confidence level",
+      "sub": "The threshold is yours: if you'd rather review everything by hand at first, push it to 100 and nothing auto-matches.",
+      "rows": [
+        {
+          "num": "≥85",
+          "title": "Matches on its own",
+          "body": "Plate and time fall inside a single active booking, no overlaps, no edges. It moves straight to the billing queue, where you can still see it before charging.",
+          "chip": "Auto-matched"
+        },
+        {
+          "num": "60–84",
+          "title": "Proposed, and waits",
+          "body": "There is a likely booking but something doesn't close perfectly — the crossing landed minutes after the return, or the unit changed plates that day. We show you why, and you accept it or move it.",
+          "chip": "Suggested"
+        },
+        {
+          "num": "<60",
+          "title": "It stops",
+          "body": "No booking explains the crossing, or two explain it equally well. We never guess who to charge: the case sits in the queue with the candidates beside it and a person decides.",
+          "chip": "Review"
+        }
+      ]
+    },
+    "disclosure": {
+      "summary": "How the confidence score is built, under the hood",
+      "items": [
+        {
+          "term": "Plate",
+          "def": "The crossing's plate has to exist in your vehicle inventory and be valid on the date of the crossing, not just today."
+        },
+        {
+          "term": "Time window",
+          "def": "The deeper inside the rental period the crossing falls, the higher the confidence. A crossing minutes from pickup or return lowers confidence on purpose."
+        },
+        {
+          "term": "Competing bookings",
+          "def": "If more than one booking could have had the vehicle at that hour, confidence drops below the automatic threshold. We would rather ask you than charge the wrong customer."
+        },
+        {
+          "term": "Correction",
+          "def": "When you reassign a crossing, we record who moved it and when. The full history travels with the charge all the way to the invoice."
+        }
+      ],
+      "note": "We don't publish the exact weights because we keep tuning them with every new operation that comes on. What doesn't change is the rule: if the system isn't sure, it doesn't charge."
+    }
+  },
+  "security": {
+    "chapter": "03",
+    "of": "Trust",
+    "title": "How we handle your portal credentials",
+    "aside": "It's the second question everyone asks. We answer it here, before the demo.",
+    "guard": {
+      "title": "Handing us the portal login shouldn't feel like handing over the keys",
+      "body": "To pull your crossings we have to sign in where your bookkeeper signs in. That's why the access is read-only, the password never leaves the system in readable form again, and everything we do with that session is logged.",
+      "items": [
+        {
+          "title": "Encrypted at rest, never shown again",
+          "body": "The password is stored encrypted and cannot be read back from the app — not by you, not by us. If you forget it, you replace it; you don't recover it."
+        },
+        {
+          "title": "Scoped to one operation",
+          "body": "Each portal account belongs to a single operation inside Ride Fleet. No shared credentials between customers, or between locations that don't need them."
+        },
+        {
+          "title": "Read-only, always",
+          "body": "Toll Bridge reads crossing history. It doesn't pay, doesn't top up your balance, doesn't change your portal account settings and doesn't open disputes on your behalf."
+        },
+        {
+          "title": "Revocable in one click",
+          "body": "Disconnect the source whenever you want and the credential is deleted. The crossings you already imported stay; the access doesn't."
+        }
+      ]
+    },
+    "conn": {
+      "aria": "Portal connections screen with the password masked and a test-connection button that only reads.",
+      "crumb": "Connections",
+      "title": "Portal connections",
+      "sub": "Only the account owner can edit these",
+      "userLabel": "Username",
+      "passLabel": "Password",
+      "rows": [
+        {
+          "name": { "value": "AutoExpreso" },
+          "region": "Puerto Rico",
+          "user": { "value": "flota@•••••••.com" },
+          "pass": { "value": "••••••••••••" },
+          "status": "Verified",
+          "test": "Test connection"
+        },
+        {
+          "name": { "value": "SunPass" },
+          "region": "Florida",
+          "user": { "value": "ops@•••••••.com" },
+          "pass": { "value": "••••••••••••" },
+          "status": "Verified",
+          "test": "Test connection"
+        }
+      ],
+      "noteLead": "Test connection",
+      "noteBody": " only signs in and confirms it can read the history. It doesn't pay, doesn't top up and doesn't change anything in your portal account."
+    },
+    "roles": {
+      "title": "Who sees what",
+      "sub": "The password column says the same thing for every role, and that is the point.",
+      "caption": "Per-role permissions over toll crossings and portal credentials",
+      "head": {
+        "role": "Role",
+        "crossings": "Sees crossings",
+        "username": "Sees the portal username",
+        "password": "Sees the password",
+        "test": "Can test the connection"
+      },
+      "labels": {
+        "crossings": "Crossings",
+        "username": "Username",
+        "password": "Password",
+        "test": "Test"
+      },
+      "rows": [
+        {
+          "role": "Owner / Admin",
+          "crossings": "All of them",
+          "username": "Masked",
+          "password": "Never",
+          "test": "Yes"
+        },
+        {
+          "role": "Location manager",
+          "crossings": "Their location's",
+          "username": "No",
+          "password": "Never",
+          "test": "No"
+        },
+        {
+          "role": "Counter agent",
+          "crossings": "Those on the booking they're handling",
+          "username": "No",
+          "password": "Never",
+          "test": "No"
+        },
+        {
+          "role": "Ride Fleet support",
+          "crossings": "Only if you open a ticket and grant it",
+          "username": "No",
+          "password": "Never",
+          "test": "No"
+        }
+      ]
+    },
+    "soc": {
+      "certTitle": "Certification",
+      "certBody": "We are not SOC 2 certified yet. We're building the controls and we'll say so here, with a date, the day we have it. In the meantime we can walk you through how credentials are stored, who has access and what gets logged — no seal, but real evidence.",
+      "demoTitle": "You can see it before connecting anything",
+      "demoBody": "The demo runs on a sample crossings file. You see the full reconciliation, the review queue and the charge landing on the invoice without giving us a single credential. You connect the portal once you already know whether it's worth it."
+    }
+  },
+  "coverage": {
+    "chapter": "04",
+    "of": "Coverage",
+    "title": "Two authorities connected. Everything else we say plainly.",
+    "aside": "We'd rather you rule Toll Bridge out today than find out in month two.",
+    "caption": "Supported toll authorities, with region, sync frequency and status",
+    "head": {
+      "authority": "Authority",
+      "region": "Region",
+      "frequency": "Frequency",
+      "lookback": "Lookback",
+      "status": "Status"
+    },
+    "labels": {
+      "region": "Region",
+      "frequency": "Frequency",
+      "lookback": "Lookback",
+      "status": "Status"
+    },
+    "rows": [
+      {
+        "name": { "value": "AutoExpreso" },
+        "region": "Puerto Rico",
+        "frequency": "Continuous · minutes",
+        "lookback": "7 days",
+        "status": "Connected"
+      },
+      {
+        "name": { "value": "SunPass" },
+        "region": "Florida",
+        "frequency": "Batched · hours",
+        "lookback": "14 days",
+        "status": "Connected"
+      },
+      {
+        "name": { "value": "E-PASS" },
+        "region": "Central Florida",
+        "frequency": "—",
+        "lookback": "—",
+        "status": "Building"
+      },
+      {
+        "name": { "value": "CSV or PDF upload" },
+        "region": "Any authority",
+        "frequency": "Whenever you upload",
+        "lookback": "—",
+        "status": "Available"
+      }
+    ],
+    "note": {
+      "body": "No other toll authority is connected today. If you run fleet outside Puerto Rico and Florida, the path is file upload — matching, the review queue and billing all work the same — and you tell us which authority matters to you so we can queue it up.",
+      "ask": "Ask for yours"
+    },
+    "toggle": {
+      "title": "Toll Bridge is a module, not another system",
+      "body": "It switches on inside Ride Fleet Manager and writes onto the same bookings, the same customers and the same agreements. If you ever switch it off, your imported crossings stay right where they are.",
+      "mods": [
+        { "name": "Ride Fleet Manager", "sub": "The operations spine" },
+        { "name": "Toll Bridge", "sub": "Tolls matched and billed" },
+        { "name": "Voz AI", "sub": "AI reception · optional" }
+      ]
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "q": "What if the customer says that toll isn't theirs?",
+        "a": "You flag the charge as disputed from the same screen and a case opens with the gantry, the exact timestamp and the amount exactly as the authority published them. If they were right, the charge reverses and the reason is recorded. If not, you have the evidence without going back to the portal."
+      },
+      {
+        "q": "Can it charge the wrong customer?",
+        "a": "It can propose wrong, which is exactly why the confidence score exists. When two bookings overlap on the same vehicle, or the crossing lands on the edge of a return, the case stops and waits for a person. And even when it matches on its own, the charge is still reviewable before it bills."
+      },
+      {
+        "q": "How long until a crossing shows up?",
+        "a": "That depends on the authority, not on us. AutoExpreso publishes fast, so there we're talking minutes after the portal shows it. SunPass publishes in batches: there it's hours. Neither is instant, and anyone who tells you otherwise hasn't worked with these portals."
+      },
+      {
+        "q": "Do I have to use Ride Fleet Manager?",
+        "a": "Yes. Toll Bridge matches against real bookings, vehicles and customers; without that spine there is nothing to tie the crossing to. It isn't a standalone product, and selling it as one would be selling you a prettier spreadsheet."
+      },
+      {
+        "q": "Can I add a handling fee on top of the toll?",
+        "a": "Yes, and you pick the mode: at cost, cost plus a percentage, a flat fee per crossing, or a prepaid package the customer buys at pickup that crossings draw down from. What you charge is between you and your rental agreement; we just apply it the same way every day."
+      },
+      {
+        "q": "What happens if the portal changes and the import breaks?",
+        "a": "It will happen — these portals change without warning. The rule is that the import fails visibly: the connection status flips, the run is marked failed and you see it on the same screen. The dangerous failure isn't a broken import; it's a silent one that makes you think there were no tolls that month."
+      },
+      {
+        "q": "What about old crossings, the ones from before I connected?",
+        "a": "It depends on how much history the authority keeps: AutoExpreso lets you go further back than SunPass. Anything you can export from the portal you can upload as a file, and matching runs the same way against the bookings already in the system. If a booking from that period isn't loaded, the crossing sits in the review queue instead of attaching to the wrong reservation."
+      },
+      {
+        "q": "What if my fleet uses transponders, not plate reads?",
+        "a": "It works the same way, and honestly it works better. The transponder is tied to a unit in your inventory, so the crossing arrives with the unit already identified and confidence starts higher. The only thing the timestamp still decides is who had the car at that moment."
+      }
+    ]
+  },
+  "partner": {
+    "title": "We're looking for design partners",
+    "body": "Toll Bridge is being built with real fleets in Puerto Rico and Florida. If you run tolls every day and are willing to tell us where it breaks, you come in early and your case shapes the product.",
+    "cta": "Talk to us",
+    "slotCap": "These slots stay empty on purpose until a real customer gives us permission to use their name."
+  },
+  "cta": {
+    "eyebrow": "The next step",
+    "title": "Bring one month of crossings to the demo",
+    "lede": "Download your portal history, bring it along and we'll reconcile it live against your bookings. You'll see how many crossings match on their own, how many need an eye and how much money was going unbilled.",
+    "primary": "Book a demo",
+    "secondary": "See Ride Fleet Manager",
+    "list": [
+      "No credentials connected",
+      "Spanish or English",
+      "No credit card"
+    ],
+    "agenda": {
+      "title": "The 30 minutes",
+      "tag": "Live",
+      "items": [
+        {
+          "t": "00–05",
+          "b": "How you bill today",
+          "s": "Who pulls the portal file, how often, and what happens when a crossing lands late."
+        },
+        {
+          "t": "05–20",
+          "b": "Your file, reconciled on screen",
+          "s": "We upload your history and run it against sample bookings. You see every confidence score and every case that stops."
+        },
+        {
+          "t": "20–28",
+          "b": "The number you're left with",
+          "s": "How many crossings that month never reached an invoice, and which billing policy fits you."
+        },
+        {
+          "t": "28–30",
+          "b": "What's missing and what isn't",
+          "s": "We tell you straight what isn't built yet, before you find out yourself."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,671 @@
+{
+  "meta": {
+    "title": "Toll Bridge — peajes conciliados y listos para facturar",
+    "description": "Toll Bridge trae los cruces de AutoExpreso y SunPass, los amarra a la reserva que estaba corriendo a esa hora y te los deja listos para facturar, con el porcentaje de confianza a la vista."
+  },
+  "hero": {
+    "badge": "Toll Bridge",
+    "titleLead": "Deja de comerte los peajes ",
+    "titleGrad": "de tus clientes",
+    "titleTail": ".",
+    "lede": "El cruce ocurre hoy y aparece en el portal tres días después, cuando el carro ya se devolvió y la factura ya cerró. Toll Bridge trae los cruces de AutoExpreso y SunPass, los amarra a la reserva que estaba corriendo a esa hora y te los deja listos para facturar — con el porcentaje de confianza a la vista.",
+    "ctaDemo": "Reservar una demo",
+    "ctaCalc": "Calcular lo que se te va",
+    "notes": [
+      "AutoExpreso (PR) y SunPass (FL) conectados",
+      "Credenciales cifradas, acceso de solo lectura",
+      "Nada se factura sin que alguien lo apruebe"
+    ]
+  },
+  "sync": {
+    "aria": "Estado de sincronización de portales",
+    "live": "Sincronización",
+    "tag": "Ejemplo",
+    "rows": [
+      {
+        "name": { "value": "AutoExpreso" },
+        "region": "Puerto Rico",
+        "status": "Conectado",
+        "time": "hace 6 min"
+      },
+      {
+        "name": { "value": "SunPass" },
+        "region": "Florida",
+        "status": "Conectado",
+        "time": "hace 4 h"
+      }
+    ],
+    "epass": {
+      "name": { "value": "E-PASS" },
+      "region": "Florida Central"
+    },
+    "chart": {
+      "aria": "Cruces importados por día durante los últimos siete días, datos de ejemplo.",
+      "head": "Cruces importados · últimos 7 días",
+      "total": "412",
+      "days": ["L", "M", "M", "J", "V", "S", "D"]
+    },
+    "foot": "AutoExpreso se revisa de forma continua; SunPass publica por tandas, así que ahí la espera es de horas, no de minutos. Lo decimos aquí para que no lo descubras en producción."
+  },
+  "app": {
+    "aria": "Consola de conciliación de peajes: 128 cruces importados hoy, 96 conciliados automáticamente y 12 en revisión, con la tabla de cruces y su reserva asignada.",
+    "crumbSection": "Conciliación",
+    "crumbDate": "2026-07-21",
+    "search": {
+      "label": "Buscar placa, cruce o reserva",
+      "code": "Ctrl K"
+    },
+    "avatar": { "value": "MR" },
+    "groups": {
+      "tolls": "Peajes",
+      "sources": "Fuentes"
+    },
+    "queues": [
+      { "label": "Cruces de hoy", "count": "128" },
+      { "label": "Auto-conciliados", "count": "96" },
+      { "label": "En revisión", "count": "12" },
+      { "label": "Listos para facturar", "count": "84" },
+      { "label": "Disputados", "count": "3" }
+    ],
+    "sources": ["Conexiones", "Historial de importación"],
+    "pane": {
+      "title": "Cruces de hoy",
+      "sub": "Martes 09:14 AST · AutoExpreso + SunPass · 128 cruces",
+      "live": "Sincronizando",
+      "segAll": "Todos",
+      "segReview": "Revisión",
+      "filter": "Sin facturar"
+    },
+    "kpis": [
+      {
+        "label": "Importados hoy",
+        "value": "128",
+        "foot": { "value": "104 AutoExpreso · 24 SunPass" }
+      },
+      {
+        "label": "Auto-conciliados",
+        "value": "96",
+        "foot": { "value": "Confianza 85 o más" }
+      },
+      {
+        "label": "Necesitan revisión",
+        "value": "12",
+        "foot": { "value": "Una persona decide, en un clic" }
+      },
+      {
+        "label": "Listo para facturar",
+        "value": "$284.15",
+        "foot": { "value": "84 cruces en 39 reservas" }
+      }
+    ],
+    "table": {
+      "caption": "Cruces de peaje importados, con placa, pórtico, monto, confianza de conciliación y reserva asignada",
+      "head": {
+        "txn": "TXN",
+        "plate": "Placa",
+        "gantry": "Pórtico",
+        "time": "Hora",
+        "amount": "Monto",
+        "confidence": "Confianza",
+        "reservation": "Reserva",
+        "status": "Estado"
+      },
+      "rows": [
+        {
+          "code": "AE-88214",
+          "plate": "GBL-704",
+          "gantry": { "value": "Buchanan NB" },
+          "time": "08:12",
+          "amount": "$1.80",
+          "conf": "96",
+          "resv": { "value": "RES-4821" },
+          "sub": { "value": "J. Colón · 07:40–18:00" },
+          "status": "Auto-conciliado"
+        },
+        {
+          "code": "AE-88219",
+          "plate": "HTG-119",
+          "gantry": { "value": "Teodoro Moscoso" },
+          "time": "08:41",
+          "amount": "$2.50",
+          "conf": "94",
+          "resv": { "value": "RES-4830" },
+          "sub": { "value": "M. Rivera · 06:15–20:30" },
+          "status": "Auto-conciliado"
+        },
+        {
+          "code": "SP-31077",
+          "plate": "IVR-238",
+          "gantry": { "value": "Selmon Expy" },
+          "time": "19:05",
+          "amount": "$1.75",
+          "conf": "88",
+          "resv": { "value": "RES-4788" },
+          "sub": { "value": "A. Pérez · 3 días" },
+          "status": "Auto-conciliado"
+        },
+        {
+          "code": "AE-88231",
+          "plate": "FQD-552",
+          "gantry": { "value": "Caguas Norte" },
+          "time": "09:03",
+          "amount": "$2.10",
+          "conf": "71",
+          "resv": { "value": "RES-4802" },
+          "sub": { "value": "devuelta 08:52 · 11 min antes" },
+          "status": "Sugerido"
+        },
+        {
+          "code": "SP-31084",
+          "plate": "JLP-806",
+          "gantry": { "value": "Veterans Expy" },
+          "time": "21:36",
+          "amount": "$1.25",
+          "conf": "63",
+          "resv": { "value": "RES-4795" },
+          "sub": { "value": "placa cambió de unidad ese día" },
+          "status": "Sugerido"
+        },
+        {
+          "code": "AE-88240",
+          "plate": "KMB-347",
+          "gantry": { "value": "Dorado" },
+          "time": "06:58",
+          "amount": "$1.40",
+          "conf": "42",
+          "resv": { "value": "Sin reserva activa" },
+          "sub": { "value": "unidad en taller ese día" },
+          "status": "Revisión"
+        },
+        {
+          "code": "AE-88246",
+          "plate": "GBL-704",
+          "gantry": { "value": "Buchanan SB" },
+          "time": "17:22",
+          "amount": "$1.80",
+          "conf": "38",
+          "resv": { "value": "2 reservas se solapan" },
+          "sub": { "value": "RES-4821 · RES-4839" },
+          "status": "Revisión"
+        }
+      ],
+      "foot": {
+        "showing": "Mostrando 7 de 128 cruces · 12 esperan decisión humana",
+        "lastImport": "Última importación 09:08",
+        "tz": { "value": "AST (UTC−4)" }
+      }
+    }
+  },
+  "notes": [
+    {
+      "label": "Confianza a la vista",
+      "body": "Cada cruce llega con un número, no con un veredicto. 85 o más entra solo; de 60 a 84 se propone; por debajo de 60 se detiene y espera a una persona."
+    },
+    {
+      "label": "La misma reserva de siempre",
+      "body": "El cruce se amarra a la reserva real que ya vive en Ride Fleet Manager — mismo cliente, mismo contrato, misma factura. No hay una segunda base de datos de peajes."
+    },
+    {
+      "label": "Sobre esta pantalla",
+      "body": "Interfaz del producto con datos de ejemplo. Ningún número aquí proviene de un cliente ni pretende ser un promedio de la industria."
+    }
+  ],
+  "trust": {
+    "label": "Se conecta con lo que ya usas",
+    "items": [
+      { "value": "AutoExpreso" },
+      { "value": "SunPass" },
+      { "value": "Stripe" },
+      { "value": "Zubie" },
+      { "value": "VoltSwitch" },
+      { "value": "Telnyx" }
+    ]
+  },
+  "leak": {
+    "chapter": "01",
+    "of": "La fuga",
+    "title": "Nadie decide perder este dinero. Se pierde solo.",
+    "aside": "Pon tus propios números. Se calcula aquí mismo, en tu navegador, y no se guarda ni se envía a ningún lado."
+  },
+  "calc": {
+    "title": "Tus números",
+    "fields": {
+      "fleet": "Unidades en flota",
+      "cross": "Cruces por unidad al mes",
+      "rate": "Peaje promedio",
+      "leak": "Porciento que nunca se factura",
+      "hours": "Horas al mes conciliando a mano",
+      "wage": "Costo de esa hora"
+    },
+    "units": {
+      "currency": "$",
+      "percent": "%",
+      "hours": "h"
+    },
+    "help": "Los valores que ves son un punto de partida editable, no un promedio de la industria. El único número que conoce tu operación eres tú.",
+    "nocount": {
+      "title": "Lo que este cálculo deja fuera, a propósito",
+      "items": [
+        "Las multas por peaje sin pagar y los cargos administrativos que la autoridad te suma después.",
+        "Los cruces que sí facturaste, pero al cliente equivocado, y que terminaron en un reembolso.",
+        "Lo que cuesta discutir un cargo de $3.50 con un cliente que ya devolvió el carro."
+      ],
+      "foot": "Ninguno de esos tres se puede estimar honestamente sin ver tus datos. El número de al lado es el piso, no el techo."
+    },
+    "out": {
+      "label": "Lo que se te está yendo",
+      "month": "Al mes",
+      "year": "Al año",
+      "crossings": "Cruces al mes",
+      "tolls": "Peajes que pasan por tu flota",
+      "leak": "Nunca llega a una factura",
+      "admin": "Horas de conciliación a mano",
+      "perUnit": "Por unidad, al año",
+      "key1": "Peaje no cobrado",
+      "key2": "Tiempo de tu gente",
+      "foot": "Ese total no es una promesa de recuperación. Es lo que hoy sale de tu operación por peajes que nadie amarró a una reserva, más lo que cuesta la persona que los persigue.",
+      "cta": "Ver esto con tus datos reales"
+    }
+  },
+  "honesty": {
+    "lead": "No te vamos a prometer un porcentaje.",
+    "body": "Cuánto recupera Toll Bridge depende de qué tan limpio esté tu inventario de placas, de cuántas reservas se solapan en el mismo vehículo y de si tu operación cruza los estados. Lo que sí prometemos: cada cruce queda visible, con su confianza, y ninguno se factura sin que alguien lo apruebe."
+  },
+  "quo": {
+    "title": "El competidor real es una persona con una hoja de cálculo",
+    "sub": "Casi nadie llega aquí desde otro software de peajes. Llegan desde esto.",
+    "caption": "Comparación entre conciliar peajes a mano y hacerlo con Toll Bridge",
+    "head": {
+      "task": "La tarea",
+      "them": "Hoy, con una hoja de cálculo",
+      "us": "Con Toll Bridge"
+    },
+    "labels": {
+      "them": "Hoy",
+      "us": "Toll Bridge"
+    },
+    "rows": [
+      {
+        "task": "Traer los cruces",
+        "them": "Alguien entra al portal, filtra por fecha y baja un archivo. Si se le olvida una semana, esa semana se perdió.",
+        "us": "Entran solos. AutoExpreso se revisa de forma continua; SunPass, por tandas, con ventana de recuperación de 14 días."
+      },
+      {
+        "task": "Amarrar el cruce al cliente",
+        "them": "Cruzar placa y hora contra el calendario de reservas, línea por línea, con el café frío.",
+        "us": "Se resuelve por placa, hora del cruce y reserva activa, y sale con un número de confianza que puedes auditar."
+      },
+      {
+        "task": "Los casos raros",
+        "them": "Se resuelven de memoria — o se dejan sin cobrar, porque perseguir $1.80 cuesta más que $1.80.",
+        "us": "Caen en una cola de revisión con las reservas candidatas al lado. Aceptar o reasignar toma un clic."
+      },
+      {
+        "task": "Cobrarlo",
+        "them": "Se copia a mano a la factura, si es que la factura sigue abierta.",
+        "us": "Se añade al contrato de renta como cargo de peaje, con la política que tú definas: costo, porciento o cargo fijo por cruce."
+      },
+      {
+        "task": "Cuando el cliente reclama",
+        "them": "Volver al portal, buscar el cruce, y esperar que el recibo todavía esté disponible.",
+        "us": "Pórtico, hora exacta, monto y origen del dato en la misma pantalla del cargo. La conversación dura un minuto."
+      },
+      {
+        "task": "Lo que cuesta",
+        "them": "Horas de alguien, todos los meses, para siempre — y crece con la flota.",
+        "us": "Minutos, sobre los pocos casos que de verdad necesitan un ojo humano."
+      }
+    ]
+  },
+  "how": {
+    "chapter": "02",
+    "of": "El mecanismo",
+    "title": "Cuatro pasos, y en ninguno tienes que abrir el portal.",
+    "aside": "Del pórtico a la factura del cliente, sin que nadie copie una línea a mano.",
+    "steps": [
+      {
+        "num": "01",
+        "kicker": "Recolecta",
+        "title": "Entra al portal por ti, con tus credenciales",
+        "body": "Toll Bridge se autentica contra AutoExpreso y SunPass con la cuenta que ya usas y baja los cruces nuevos. Si el portal cambia de forma o rechaza la sesión, la importación falla ruidosamente y te avisa — nunca se queda callada fingiendo que no hubo peajes.",
+        "list": [
+          { "k": "PR", "v": "AutoExpreso, revisión continua" },
+          { "k": "FL", "v": "SunPass, por tandas, con 14 días de recuperación" },
+          { "k": "CSV", "v": "Carga manual para cualquier autoridad que no esté conectada" }
+        ]
+      },
+      {
+        "num": "02",
+        "kicker": "Importa",
+        "title": "Cada cruce entra una sola vez",
+        "body": "El cruce se guarda con su identificador del portal, así que volver a correr la importación no duplica nada. Guardamos pórtico, hora exacta, placa y monto tal como los publicó la autoridad — sin redondear, sin reinterpretar. Ese registro es el que le enseñas al cliente cuando reclama.",
+        "list": [
+          { "k": "01", "v": "Sin duplicados aunque repitas la importación" },
+          { "k": "02", "v": "Pórtico, hora, placa y monto, sin tocar" },
+          { "k": "03", "v": "Historial de cada corrida, con lo que falló" }
+        ]
+      },
+      {
+        "num": "03",
+        "kicker": "Concilia",
+        "title": "Amarra el cruce a la reserva, y te dice cuánta confianza tiene",
+        "body": "La placa dice qué unidad cruzó. La hora dice quién la tenía. Cuando las dos cosas cuadran limpio, la confianza sube; cuando el cruce cae en el borde de una devolución, o dos reservas se solapan sobre el mismo vehículo, la confianza baja y el caso se detiene. El número siempre está a la vista, y siempre puedes reasignar.",
+        "list": [
+          { "k": "≥85", "v": "Se concilia solo" },
+          { "k": "60–84", "v": "Se propone y espera un clic" },
+          { "k": "<60", "v": "Se detiene, con las candidatas al lado" }
+        ]
+      },
+      {
+        "num": "04",
+        "kicker": "Factura",
+        "title": "Llega a la factura con la política que tú elegiste",
+        "body": "El cruce conciliado se convierte en un cargo dentro del mismo contrato de renta donde vive todo lo demás. Tú decides si se cobra al costo, con un porciento de manejo, con un cargo fijo por cruce, o si viene descontado de un paquete prepagado de peajes que el cliente compró al recoger el carro.",
+        "list": [
+          { "k": "Costo", "v": "Exactamente lo que cobró la autoridad" },
+          { "k": "%", "v": "Costo más un porciento de manejo" },
+          { "k": "Fijo", "v": "Un cargo fijo por cruce, o un paquete prepagado" }
+        ]
+      }
+    ],
+    "ladder": {
+      "title": "Qué pasa con cada nivel de confianza",
+      "sub": "El umbral es tuyo: si prefieres revisar todo a mano al principio, súbelo hasta 100 y nada se concilia solo.",
+      "rows": [
+        {
+          "num": "≥85",
+          "title": "Se concilia solo",
+          "body": "Placa y hora caen dentro de una sola reserva activa, sin solapes ni bordes. Pasa directo a la cola de facturación, donde todavía lo puedes ver antes de cobrar.",
+          "chip": "Auto-conciliado"
+        },
+        {
+          "num": "60–84",
+          "title": "Se propone y espera",
+          "body": "Hay una reserva probable pero algo no cierra perfecto — el cruce cayó minutos después de la devolución, o la unidad cambió de placa ese día. Te mostramos por qué y lo aceptas o lo mueves.",
+          "chip": "Sugerido"
+        },
+        {
+          "num": "<60",
+          "title": "Se detiene",
+          "body": "Ninguna reserva explica el cruce, o dos lo explican igual de bien. Nunca adivinamos a quién cobrarle: el caso queda en la cola con las candidatas al lado y una persona decide.",
+          "chip": "Revisión"
+        }
+      ]
+    },
+    "disclosure": {
+      "summary": "Cómo se calcula la confianza, por dentro",
+      "items": [
+        {
+          "term": "Placa",
+          "def": "La placa del cruce tiene que existir en tu inventario de vehículos y estar vigente en la fecha del cruce, no solo hoy."
+        },
+        {
+          "term": "Ventana de tiempo",
+          "def": "Cuanto más adentro del período de renta caiga el cruce, más confianza. Un cruce a minutos de la entrega o la devolución baja la confianza a propósito."
+        },
+        {
+          "term": "Reservas que compiten",
+          "def": "Si más de una reserva pudo tener el vehículo a esa hora, la confianza cae por debajo del umbral automático. Preferimos preguntarte a cobrarle al cliente equivocado."
+        },
+        {
+          "term": "Corrección",
+          "def": "Cuando reasignas un cruce, queda registrado quién lo movió y cuándo. El historial completo viaja con el cargo hasta la factura."
+        }
+      ],
+      "note": "No publicamos los pesos exactos del cálculo porque los seguimos ajustando con cada operación nueva que entra. Lo que no cambia es la regla: si el sistema no está seguro, no cobra."
+    }
+  },
+  "security": {
+    "chapter": "03",
+    "of": "Confianza",
+    "title": "Cómo manejamos tus credenciales del portal",
+    "aside": "Es la pregunta que todo el mundo hace de segundo. La contestamos aquí, antes de la demo.",
+    "guard": {
+      "title": "Entregarnos el usuario del portal no puede sentirse como entregar las llaves",
+      "body": "Para traer tus cruces necesitamos entrar donde entra tu contable. Por eso el acceso está limitado a leer, la contraseña no vuelve a salir del sistema en texto legible, y todo lo que hacemos con esa sesión queda registrado.",
+      "items": [
+        {
+          "title": "Cifradas en reposo, no visibles después",
+          "body": "La contraseña se guarda cifrada y no se puede volver a leer desde la aplicación — ni tú, ni nosotros. Si se te olvida, se reemplaza; no se recupera."
+        },
+        {
+          "title": "Aisladas por operación",
+          "body": "Cada cuenta de portal pertenece a una sola operación dentro de Ride Fleet. Nada de credenciales compartidas entre clientes, ni entre sucursales que no las necesitan."
+        },
+        {
+          "title": "Solo lectura, siempre",
+          "body": "Toll Bridge lee historial de cruces. No paga, no recarga tu balance, no cambia la configuración de tu cuenta del portal y no abre disputas en tu nombre."
+        },
+        {
+          "title": "Revocables en un clic",
+          "body": "Desconectas la fuente cuando quieras y la credencial se borra. Los cruces que ya importaste se quedan; el acceso, no."
+        }
+      ]
+    },
+    "conn": {
+      "aria": "Pantalla de conexiones del portal con la contraseña enmascarada y un botón de probar conexión que solo lee.",
+      "crumb": "Conexiones",
+      "title": "Conexiones del portal",
+      "sub": "Solo el dueño de la cuenta puede editarlas",
+      "userLabel": "Usuario",
+      "passLabel": "Contraseña",
+      "rows": [
+        {
+          "name": { "value": "AutoExpreso" },
+          "region": "Puerto Rico",
+          "user": { "value": "flota@•••••••.com" },
+          "pass": { "value": "••••••••••••" },
+          "status": "Verificada",
+          "test": "Probar conexión"
+        },
+        {
+          "name": { "value": "SunPass" },
+          "region": "Florida",
+          "user": { "value": "ops@•••••••.com" },
+          "pass": { "value": "••••••••••••" },
+          "status": "Verificada",
+          "test": "Probar conexión"
+        }
+      ],
+      "noteLead": "Probar conexión",
+      "noteBody": " solo abre sesión y confirma que puede leer el historial. No paga, no recarga y no cambia nada en tu cuenta del portal."
+    },
+    "roles": {
+      "title": "Quién ve qué",
+      "sub": "La columna de la contraseña dice lo mismo para todos los roles, y esa es la idea.",
+      "caption": "Permisos por rol sobre los cruces de peaje y las credenciales del portal",
+      "head": {
+        "role": "Rol",
+        "crossings": "Ve los cruces",
+        "username": "Ve el usuario del portal",
+        "password": "Ve la contraseña",
+        "test": "Puede probar la conexión"
+      },
+      "labels": {
+        "crossings": "Cruces",
+        "username": "Usuario",
+        "password": "Contraseña",
+        "test": "Probar"
+      },
+      "rows": [
+        {
+          "role": "Dueño / Administrador",
+          "crossings": "Todos",
+          "username": "Enmascarado",
+          "password": "Nunca",
+          "test": "Sí"
+        },
+        {
+          "role": "Gerente de sucursal",
+          "crossings": "Los de su sucursal",
+          "username": "No",
+          "password": "Nunca",
+          "test": "No"
+        },
+        {
+          "role": "Agente de mostrador",
+          "crossings": "Los de la reserva que atiende",
+          "username": "No",
+          "password": "Nunca",
+          "test": "No"
+        },
+        {
+          "role": "Soporte de Ride Fleet",
+          "crossings": "Solo si tú abres un caso y lo autorizas",
+          "username": "No",
+          "password": "Nunca",
+          "test": "No"
+        }
+      ]
+    },
+    "soc": {
+      "certTitle": "Certificación",
+      "certBody": "Todavía no tenemos SOC 2. Estamos armando los controles y lo diremos aquí, con fecha, el día que lo tengamos. Mientras tanto podemos enseñarte cómo se guardan las credenciales, quién tiene acceso y qué queda registrado — sin sello, pero con evidencia.",
+      "demoTitle": "Puedes verlo antes de conectar nada",
+      "demoBody": "La demo corre sobre un archivo de cruces de ejemplo. Ves la conciliación completa, la cola de revisión y el cargo llegando a la factura sin darnos una sola credencial. Conectas el portal cuando ya sepas si te sirve."
+    }
+  },
+  "coverage": {
+    "chapter": "04",
+    "of": "Cobertura",
+    "title": "Dos autoridades conectadas. Lo demás lo decimos claro.",
+    "aside": "Preferimos que descartes Toll Bridge hoy a que lo descubras en el segundo mes.",
+    "caption": "Autoridades de peaje soportadas, con región, frecuencia de sincronización y estado",
+    "head": {
+      "authority": "Autoridad",
+      "region": "Región",
+      "frequency": "Frecuencia",
+      "lookback": "Recuperación",
+      "status": "Estado"
+    },
+    "labels": {
+      "region": "Región",
+      "frequency": "Frecuencia",
+      "lookback": "Recuperación",
+      "status": "Estado"
+    },
+    "rows": [
+      {
+        "name": { "value": "AutoExpreso" },
+        "region": "Puerto Rico",
+        "frequency": "Continua · minutos",
+        "lookback": "7 días",
+        "status": "Conectado"
+      },
+      {
+        "name": { "value": "SunPass" },
+        "region": "Florida",
+        "frequency": "Por tandas · horas",
+        "lookback": "14 días",
+        "status": "Conectado"
+      },
+      {
+        "name": { "value": "E-PASS" },
+        "region": "Florida Central",
+        "frequency": "—",
+        "lookback": "—",
+        "status": "En construcción"
+      },
+      {
+        "name": { "value": "Carga CSV o PDF" },
+        "region": "Cualquier autoridad",
+        "frequency": "Cuando tú la subas",
+        "lookback": "—",
+        "status": "Disponible"
+      }
+    ],
+    "note": {
+      "body": "Ninguna otra autoridad de peaje está conectada hoy. Si corres flota fuera de Puerto Rico y Florida, la ruta es la carga de archivo — la conciliación, la cola de revisión y la facturación funcionan igual — y nos dices cuál autoridad te importa para ponerla en la fila.",
+      "ask": "Pide la tuya"
+    },
+    "toggle": {
+      "title": "Toll Bridge es un módulo, no otro sistema",
+      "body": "Se enciende dentro de Ride Fleet Manager y escribe sobre las mismas reservas, los mismos clientes y los mismos contratos. Si un día decides apagarlo, tus cruces importados se quedan donde están.",
+      "mods": [
+        { "name": "Ride Fleet Manager", "sub": "La columna de operaciones" },
+        { "name": "Toll Bridge", "sub": "Peajes conciliados y facturados" },
+        { "name": "Voz AI", "sub": "Recepción con IA · opcional" }
+      ]
+    }
+  },
+  "faq": {
+    "items": [
+      {
+        "q": "¿Y si el cliente dice que ese peaje no es suyo?",
+        "a": "Marcas el cargo como disputado desde la misma pantalla y se abre un caso con el pórtico, la hora exacta y el monto tal como los publicó la autoridad. Si tenías razón, el cargo se revierte y queda registrado por qué. Si no, tienes la evidencia sin volver al portal."
+      },
+      {
+        "q": "¿Puede cobrarle al cliente equivocado?",
+        "a": "Puede proponer mal, y por eso existe la confianza. Cuando dos reservas se solapan sobre el mismo vehículo, o el cruce cae en el borde de una devolución, el caso se detiene y espera a una persona. Y aun cuando concilia solo, el cargo sigue siendo revisable antes de cobrar."
+      },
+      {
+        "q": "¿Cuánto tarda un cruce en aparecer?",
+        "a": "Depende de la autoridad, no de nosotros. AutoExpreso publica rápido y ahí hablamos de minutos después de que el portal lo muestra. SunPass publica por tandas: ahí son horas. Ninguna de las dos es instantánea, y nadie que te diga lo contrario ha trabajado con estos portales."
+      },
+      {
+        "q": "¿Tengo que usar Ride Fleet Manager?",
+        "a": "Sí. Toll Bridge concilia contra reservas, vehículos y clientes reales; sin esa columna no hay contra qué amarrar el cruce. No es un producto suelto, y venderlo como tal sería venderte una hoja de cálculo más bonita."
+      },
+      {
+        "q": "¿Puedo cobrar un cargo de manejo encima del peaje?",
+        "a": "Sí, y tú eliges el modo: al costo, costo más un porciento, un cargo fijo por cruce, o un paquete prepagado que el cliente compra al recoger el carro y del que se van descontando los cruces. Lo que cobres es decisión tuya y de tu contrato; nosotros solo lo aplicamos igual todos los días."
+      },
+      {
+        "q": "¿Qué pasa si el portal cambia y la importación falla?",
+        "a": "Va a pasar — estos portales cambian sin avisar. La regla es que la importación falla de forma visible: el estado de la conexión cambia, la corrida queda marcada como fallida y tú lo ves en la misma pantalla. Lo peligroso no es que falle; es que falle en silencio y creas que ese mes no hubo peajes."
+      },
+      {
+        "q": "¿Qué pasa con los cruces viejos, los de antes de conectarme?",
+        "a": "Depende de cuánto historial guarde la autoridad: AutoExpreso te deja bajar más atrás que SunPass. Todo lo que puedas exportar del portal lo puedes subir como archivo, y la conciliación corre igual contra las reservas que ya tienes en el sistema. Si una reserva de ese período no está cargada, el cruce se queda en la cola de revisión en vez de amarrarse a la reserva equivocada."
+      },
+      {
+        "q": "¿Y si mi flota tiene transponders, no lectura de placa?",
+        "a": "Funciona igual, y de hecho funciona mejor. El transponder viene amarrado a una unidad en tu inventario, así que el cruce llega con la unidad ya identificada y la confianza empieza más alta. Lo único que sigue decidiendo la hora es quién tenía el carro en ese momento."
+      }
+    ]
+  },
+  "partner": {
+    "title": "Buscamos operaciones de diseño",
+    "body": "Toll Bridge se está construyendo con flotas reales en Puerto Rico y Florida. Si corres peajes todos los días y estás dispuesto a decirnos dónde falla, entras temprano y tu caso moldea el producto.",
+    "cta": "Hablar con nosotros",
+    "slotCap": "Estos espacios quedan vacíos a propósito hasta que un cliente real nos autorice a usar su nombre."
+  },
+  "cta": {
+    "eyebrow": "El próximo paso",
+    "title": "Trae un mes de cruces a la demo",
+    "lede": "Baja tu historial del portal, tráelo y lo conciliamos en vivo contra tus reservas. Vas a ver cuántos cruces cuadran solos, cuántos necesitan un ojo y cuánto dinero estaba sin facturar.",
+    "primary": "Reservar una demo",
+    "secondary": "Ver Ride Fleet Manager",
+    "list": [
+      "Sin conectar tus credenciales",
+      "Español o inglés",
+      "Sin tarjeta de crédito"
+    ],
+    "agenda": {
+      "title": "Los 30 minutos",
+      "tag": "En vivo",
+      "items": [
+        {
+          "t": "00–05",
+          "b": "Cómo facturas hoy",
+          "s": "Quién baja el archivo del portal, cada cuánto y qué pasa cuando el cruce llega tarde."
+        },
+        {
+          "t": "05–20",
+          "b": "Tu archivo, conciliado en pantalla",
+          "s": "Subimos tu historial y lo corremos contra reservas de ejemplo. Ves cada confianza y cada caso que se detiene."
+        },
+        {
+          "t": "20–28",
+          "b": "El número que te queda",
+          "s": "Cuántos cruces de ese mes nunca llegaron a una factura, y qué política de cobro te conviene."
+        },
+        {
+          "t": "28–30",
+          "b": "Qué falta y qué no",
+          "s": "Te decimos de frente qué no está construido todavía, antes de que lo descubras tú."
+        }
+      ]
+    }
+  }
+}

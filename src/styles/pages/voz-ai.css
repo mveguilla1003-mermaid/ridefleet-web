@@ -1,0 +1,715 @@
+/* Page styles — voz-ai. Extracted verbatim from site-v2/04-voz-ai.html.
+   Loaded only by the voz-ai route. Uses the shared tokens; adds no new values. */
+
+/* ============================================================================
+   PAGE 04 — VOZ AI  ·  page-specific layer only
+   Everything above this line is the shared system, pasted verbatim.
+   ========================================================================= */
+
+[id]{scroll-margin-top:96px}
+
+/* ---- HERO ---------------------------------------------------------------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding-top:clamp(40px,4.6vw,64px);padding-bottom:clamp(48px,5.2vw,80px);
+  background:linear-gradient(180deg,var(--n-0) 0%,var(--n-25) 44%,var(--n-50) 100%);
+  border-bottom:1px solid var(--border);
+}
+.hero::before{
+  content:"";position:absolute;left:0;right:0;top:-190px;height:860px;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(700px 380px at 40% 4%,rgba(45,212,191,.20),transparent 70%),
+    radial-gradient(560px 320px at 93% 6%,rgba(127,79,240,.10),transparent 66%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(11,131,117,.06) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(11,131,117,.06) 1px,transparent 1px);
+  background-size:66px 66px;
+  -webkit-mask-image:radial-gradient(1180px 640px at 42% 0%,#000 0%,rgba(0,0,0,.32) 54%,transparent 80%);
+          mask-image:radial-gradient(1180px 640px at 42% 0%,#000 0%,rgba(0,0,0,.32) 54%,transparent 80%);
+}
+.hero > .container{position:relative;z-index:1}
+.hero-copy{
+  display:grid;grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);
+  gap:clamp(28px,3.6vw,60px);align-items:start;
+}
+/* one display step for the whole set — the hero measure, not the size, is what
+   keeps the long Spanish headline in three lines */
+.hero-copy h1{margin-top:var(--sp-6);max-width:15ch;font-size:var(--fs-display)}
+.hero-copy .lede{margin-top:var(--sp-5);max-width:50ch}
+.hero-copy .btn-row{margin-top:var(--sp-8)}
+.hero-note{
+  margin-top:var(--sp-6);display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-2) var(--sp-5);
+  font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.11em;text-transform:uppercase;
+  color:var(--text-3);
+}
+.hero-note i{width:4px;height:4px;border-radius:50%;background:var(--n-400);display:inline-block;flex:0 0 auto}
+.hero-copy{align-items:stretch}
+.hero-idx{display:flex;flex-direction:column;height:100%}
+.ix-lab{
+  font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-3);margin-top:var(--sp-6);
+}
+.hero-index{
+  border-top:2px solid var(--rule-heavy);padding-top:var(--sp-1);margin-top:var(--sp-3);
+  flex:1;display:flex;flex-direction:column;
+}
+.ix-more{
+  display:inline-flex;align-items:center;gap:8px;margin-top:var(--sp-5);align-self:flex-start;
+  font-size:13px;font-weight:640;color:var(--text-teal);letter-spacing:var(--tr-normal);
+}
+.ix-more svg{width:15px;height:15px}
+.ix-more:hover{color:var(--teal-800)}
+.hero-index li{
+  display:flex;align-items:flex-start;gap:var(--sp-4);flex:1;
+  padding:var(--sp-4) 0;border-bottom:1px solid var(--border);
+}
+.hero-index .ix{
+  font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:var(--tr-caps);
+  color:var(--text-teal);flex:0 0 auto;padding-top:3px;font-variant-numeric:tabular-nums;
+}
+.hero-index b{display:block;font-size:14.5px;font-weight:640;color:var(--text-1);letter-spacing:var(--tr-normal)}
+.hero-index .d{display:block;font-size:13px;color:var(--text-2);line-height:1.5;margin-top:3px}
+
+/* ---- Full-bleed product stage ------------------------------------------- */
+.stage{
+  position:relative;margin:clamp(36px,4.4vw,58px) 0 0;
+  width:min(1360px,calc(100vw - 2 * var(--gutter)));left:50%;translate:-50% 0;
+}
+
+/* ---- The live call console ---------------------------------------------- */
+.voz-body{display:flex;min-height:0;align-items:stretch}
+.voz-main{
+  flex:1;min-width:0;background:var(--surface-app);
+  padding:var(--sp-5) var(--sp-5) var(--sp-6);
+  display:grid;grid-template-columns:minmax(0,1fr) 244px;
+  gap:var(--sp-5) clamp(20px,2.2vw,32px);align-content:start;
+}
+.voz-main > .callhead,.voz-main > .waveband,.voz-main > .tcap{grid-column:1/-1}
+@media (max-width:1240px){
+  .voz-main{grid-template-columns:minmax(0,1fr)}
+  .voz-main > *{grid-column:1}
+}
+.voz-side{
+  width:302px;flex:0 0 302px;border-left:1px solid var(--border-subtle);background:var(--surface-1);
+  padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-5);
+}
+@media (max-width:1080px){.voz-side{display:none}}
+
+.callhead{display:flex;align-items:center;gap:var(--sp-4);flex-wrap:wrap}
+.callhead .av{
+  width:42px;height:42px;border-radius:12px;flex:0 0 auto;display:grid;place-items:center;
+  background:linear-gradient(150deg,#3fdcc9,var(--teal-700));color:#fff;box-shadow:var(--sh-1);
+}
+.callhead .av svg{width:21px;height:21px}
+.callhead .idt b{display:block;font-size:14.5px;font-weight:660;color:var(--text-1);letter-spacing:var(--tr-snug)}
+.callhead .idt > span{
+  display:block;margin-top:2px;font-family:var(--font-mono);font-size:11.5px;color:var(--text-3);
+  font-variant-numeric:tabular-nums;
+}
+.callhead .hr{margin-left:auto;display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap}
+.ctimer{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border:1px solid var(--border);
+  border-radius:var(--r-sm);background:var(--n-0);font-family:var(--font-mono);font-size:12.5px;
+  color:var(--text-2);font-variant-numeric:tabular-nums;
+}
+.ctimer svg{width:13px;height:13px;color:var(--n-500)}
+
+/* waveform */
+.waveband{
+  display:flex;align-items:center;gap:var(--sp-4);padding:var(--sp-3) var(--sp-4);
+  border:1px solid var(--border-subtle);border-radius:var(--r-lg);
+  background:linear-gradient(180deg,var(--teal-50),var(--n-0) 78%);
+}
+.wave{display:flex;align-items:center;gap:4px;height:40px;flex:1;min-width:0;overflow:hidden}
+.wave i{
+  display:block;width:3px;border-radius:2px;flex:0 0 auto;transform-origin:center;
+  background:linear-gradient(180deg,#3fdcc9,var(--teal-700));
+  animation:vz-wave 1.5s ease-in-out infinite;
+}
+.wave i:nth-child(9n+1){height:11px;animation-delay:0s}
+.wave i:nth-child(9n+2){height:22px;animation-delay:.12s}
+.wave i:nth-child(9n+3){height:34px;animation-delay:.24s}
+.wave i:nth-child(9n+4){height:15px;animation-delay:.36s}
+.wave i:nth-child(9n+5){height:28px;animation-delay:.47s}
+.wave i:nth-child(9n+6){height:9px;animation-delay:.59s}
+.wave i:nth-child(9n+7){height:24px;animation-delay:.7s}
+.wave i:nth-child(9n+8){height:17px;animation-delay:.82s}
+.wave i:nth-child(9n+9){height:31px;animation-delay:.94s}
+@keyframes vz-wave{0%,100%{transform:scaleY(.30);opacity:.55}50%{transform:scaleY(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.wave i{animation:none;opacity:.9;transform:none}}
+.waveband .wlab{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-700);flex:0 0 auto;
+}
+@media (max-width:620px){
+  .waveband{flex-wrap:wrap;gap:var(--sp-3)}
+  .waveband .chip{margin-left:auto}
+  .wave{order:3;flex:1 0 100%;height:32px}
+}
+
+/* transcript */
+.transcript{display:flex;flex-direction:column;gap:var(--sp-3)}
+.tl{display:grid;grid-template-columns:50px minmax(0,1fr);gap:var(--sp-3);align-items:start}
+.tl .ts{
+  font-family:var(--font-mono);font-size:10.5px;color:var(--text-3);padding-top:10px;
+  font-variant-numeric:tabular-nums;
+}
+.bub{
+  border:1px solid var(--border-subtle);border-radius:var(--r-lg);padding:10px 14px;
+  background:var(--n-0);max-width:58ch;
+}
+.tl--ai .bub{
+  border-left:2px solid var(--teal-600);
+  background:linear-gradient(180deg,var(--teal-50),var(--n-0) 74%);
+}
+.tl--caller .bub{background:var(--surface-2);border-color:var(--border);margin-left:clamp(20px,5%,64px)}
+.bub .spk{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap}
+.bub .nm{
+  font-family:var(--font-mono);font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-3);
+}
+.lt{
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;padding:1px 5px;border-radius:4px;
+  border:1px solid var(--border);background:var(--surface-3);color:var(--text-2);
+}
+.bub p{font-size:13.5px;line-height:1.56;color:var(--text-1)}
+.tl--caller .bub p{color:var(--text-2)}
+.tcap{
+  border-top:1px dashed var(--border-strong);padding-top:var(--sp-3);margin-top:var(--sp-1);
+  font-size:12.5px;line-height:1.55;color:var(--text-3);max-width:88ch;
+}
+
+/* actions rail — what the assistant actually wrote to the record */
+.acts{display:flex;flex-direction:column;gap:var(--sp-3);align-content:start}
+.acts .alab{
+  font-family:var(--font-mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);
+}
+.acts ol{
+  border-left:1px solid var(--border);margin-left:5px;padding-left:var(--sp-4);
+  display:flex;flex-direction:column;gap:var(--sp-4);
+}
+.acts li{position:relative}
+.acts li::before{
+  content:"";position:absolute;left:calc(-1 * var(--sp-4) - 5px);top:5px;width:9px;height:9px;
+  border-radius:50%;background:var(--n-0);border:2px solid var(--teal-600);
+}
+.acts .at{font-family:var(--font-mono);font-size:10px;color:var(--text-3);font-variant-numeric:tabular-nums}
+.acts .ab{display:block;font-size:12.5px;font-weight:620;color:var(--text-1);line-height:1.35;margin-top:3px}
+.acts .ad{display:block;font-size:11.5px;color:var(--text-2);line-height:1.45;margin-top:3px}
+.acts .atag{
+  display:inline-flex;align-items:center;gap:4px;margin-top:6px;padding:2px 6px;border-radius:5px;
+  font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--border);background:var(--surface-2);color:var(--text-3);
+}
+.acts .atag--w{color:var(--teal-700);background:var(--teal-50);border-color:rgba(11,131,117,.26)}
+.acts .atag--h{color:var(--p-800);background:var(--p-50);border-color:var(--border-brand)}
+.acts .afoot{
+  margin-top:var(--sp-2);border-top:1px dashed var(--border-strong);padding-top:var(--sp-3);
+  font-size:11.5px;line-height:1.5;color:var(--text-3);
+}
+.acts .afoot b{font-family:var(--font-mono);color:var(--text-teal);font-variant-numeric:tabular-nums}
+
+/* side panel */
+.vs-grp{display:flex;flex-direction:column;gap:var(--sp-3)}
+.vs-lab{
+  font-family:var(--font-mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);
+}
+.reskit{border:1px solid var(--border);border-radius:var(--r-md);background:var(--n-0);overflow:hidden}
+.reskit .rk{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  padding:7px 11px;border-bottom:1px solid var(--border-subtle);
+}
+.reskit .rk:last-child{border-bottom:0}
+.reskit .k{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)}
+.reskit .v{font-size:12.5px;font-weight:620;color:var(--text-1);font-variant-numeric:tabular-nums}
+.intent{display:flex;flex-direction:column;gap:6px}
+.intent .ir{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  padding:7px 10px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--n-0);
+  font-size:12.5px;color:var(--text-1);
+}
+.handoff{
+  border:1px solid var(--border-strong);border-radius:var(--r-md);padding:var(--sp-4);
+  background:linear-gradient(180deg,var(--n-0),var(--surface-2));
+}
+.handoff .ht{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:660;color:var(--text-1)}
+.handoff .ht svg{width:15px;height:15px;color:var(--text-teal);flex:0 0 auto}
+.handoff p{font-size:12px;line-height:1.5;color:var(--text-2);margin-top:6px}
+.hrow{display:flex;gap:7px;margin-top:var(--sp-3)}
+.fauxbtn{
+  display:inline-flex;align-items:center;justify-content:center;gap:5px;flex:1;min-width:0;
+  padding:7px 8px;border-radius:var(--r-sm);border:1px solid transparent;white-space:nowrap;
+  font-size:11.5px;font-weight:620;letter-spacing:var(--tr-normal);
+}
+.fauxbtn svg{width:13px;height:13px;flex:0 0 auto}
+.fauxbtn--p{background:linear-gradient(180deg,#0fa896,var(--teal-700));color:#fff}
+.fauxbtn--s{background:var(--n-0);color:var(--text-2);border-color:var(--border-strong)}
+
+/* ---- Call it yourself ----------------------------------------------------
+   Light. The set spends its ink budget on the home spine and the Toll Bridge
+   hero; this proof block earns its weight from a teal-tinted well and a 2px
+   editorial rule instead of a fifth dark band. --------------------------- */
+#llamar{overflow:hidden;background:linear-gradient(180deg,var(--surface-0),var(--teal-50) 38%,var(--surface-0))}
+.callblock{
+  display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  gap:clamp(32px,4.4vw,64px);align-items:center;
+}
+.telbig{
+  display:inline-flex;align-items:center;gap:clamp(14px,1.8vw,22px);text-decoration:none;
+  padding:clamp(15px,1.9vw,22px) clamp(18px,2.2vw,28px);border-radius:var(--r-xl);
+  border:1px solid var(--border-strong);
+  background:linear-gradient(180deg,var(--n-0),var(--surface-1));
+  box-shadow:var(--sh-2);
+  transition:border-color var(--dur-2) var(--ease-out),background var(--dur-2) var(--ease-out),
+             transform var(--dur-2) var(--ease-out);
+}
+.telbig:hover{border-color:var(--teal-400);background:var(--n-0);transform:translateY(-2px);box-shadow:var(--sh-3)}
+.telbig .ti{
+  width:clamp(44px,4vw,54px);height:clamp(44px,4vw,54px);border-radius:14px;flex:0 0 auto;
+  display:grid;place-items:center;background:linear-gradient(150deg,#4fd6c0,var(--teal-600));color:#02231f;
+}
+.telbig .ti svg{width:24px;height:24px}
+.telbig .tn{
+  display:block;font-family:var(--font-mono);font-weight:600;font-variant-numeric:tabular-nums;
+  font-size:clamp(26px,3.6vw,46px);letter-spacing:-.035em;line-height:1.05;color:var(--text-1);
+}
+.telbig .tk{
+  display:block;margin-top:6px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-teal);            /* 6.49 AA on white */
+}
+.tel-note{margin-top:var(--sp-5);font-size:13.5px;line-height:1.6;color:var(--text-2);max-width:56ch}
+.callsteps{border-top:2px solid var(--rule-heavy)}
+.callsteps li{
+  display:grid;grid-template-columns:34px minmax(0,1fr);gap:var(--sp-4);align-items:start;
+  padding:var(--sp-4) 0;border-bottom:1px solid var(--border);
+}
+.callsteps .sn{
+  font-family:var(--font-mono);font-size:12px;color:var(--text-teal);padding-top:2px;
+  font-variant-numeric:tabular-nums;
+}
+.callsteps b{display:block;font-size:14.5px;font-weight:640;color:var(--text-1)}
+.callsteps .d{display:block;margin-top:3px;font-size:13px;line-height:1.55;color:var(--text-2)}
+@media (max-width:900px){.callblock{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- Differentiators (editorial rows) ----------------------------------- */
+.dif .dmark{display:flex;flex-direction:column;align-items:flex-start;gap:var(--sp-4)}
+.dif .dn{
+  font-family:var(--font-mono);font-size:clamp(30px,3.1vw,42px);line-height:.9;
+  color:var(--teal-700);font-variant-numeric:tabular-nums;letter-spacing:-.03em;
+}
+.dif .dic{
+  width:38px;height:38px;border-radius:11px;flex:0 0 auto;display:grid;place-items:center;
+  background:linear-gradient(160deg,var(--teal-50),var(--teal-100));color:var(--teal-700);
+  border:1px solid rgba(11,131,117,.22);
+}
+.dif .dic svg{width:19px;height:19px}
+.dif h3{font-size:clamp(19px,1.7vw,23px);letter-spacing:var(--tr-snug);line-height:1.2}
+.dif .dsub{margin-top:var(--sp-4);font-size:13.5px;line-height:1.62;color:var(--text-2);max-width:40ch}
+.dif .lhs{display:flex;flex-direction:column;height:100%}
+.dif .dnote{
+  margin-top:auto;padding-top:var(--sp-5);display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-teal);align-self:flex-start;
+}
+.dif .dnote svg{width:14px;height:14px;flex:0 0 auto}
+.dif a.dnote:hover{color:var(--teal-800)}
+@media (max-width:1080px){.dif .dnote{margin-top:var(--sp-5)}}
+.dif .ed-list{margin-top:2px}
+.dif .ed-list li{flex-direction:column;align-items:flex-start;gap:4px}
+.dif .ed-list li b{
+  padding-top:0;color:var(--teal-700);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+}
+.dif .ed-list li > span{font-size:13px;line-height:1.55;color:var(--text-2)}
+@media (max-width:1080px){
+  .dif .dmark{flex-direction:row;align-items:center;gap:var(--sp-3);align-self:start;padding-top:2px}
+}
+
+/* ---- Channels ------------------------------------------------------------ */
+.chan-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
+  background:var(--border);border:1px solid var(--border);border-radius:var(--r-xl);
+  overflow:hidden;box-shadow:var(--sh-2);
+}
+.chan{background:var(--n-0);padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:var(--sp-4)}
+.chan-h{display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap}
+.chan-h .ci{
+  width:34px;height:34px;border-radius:10px;flex:0 0 auto;display:grid;place-items:center;
+  background:linear-gradient(160deg,var(--teal-50),var(--teal-100));color:var(--teal-700);
+  border:1px solid rgba(11,131,117,.22);
+}
+.chan-h .ci svg{width:18px;height:18px}
+.chan-h h3{font-size:16.5px;letter-spacing:var(--tr-snug)}
+.chan-h .cn{
+  margin-left:auto;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.chan > p{font-size:13.5px;line-height:1.62;color:var(--text-2);max-width:46ch}
+.mini{
+  margin-top:auto;border:1px solid var(--border-subtle);border-radius:var(--r-md);
+  background:var(--surface-1);padding:var(--sp-3);display:flex;flex-direction:column;gap:7px;
+}
+.mini .mhead{
+  display:flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:9.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);
+}
+.mini .mhead svg{width:12px;height:12px;flex:0 0 auto}
+.msg{border-radius:10px;padding:6px 10px;font-size:12.5px;line-height:1.45;max-width:88%}
+.msg--in{background:var(--n-0);border:1px solid var(--border);color:var(--text-2)}
+.msg--out{
+  margin-left:auto;background:linear-gradient(180deg,#eefbf8,var(--teal-50));
+  border:1px solid rgba(11,131,117,.24);color:var(--teal-800);
+}
+.msg .mm{
+  display:block;margin-top:4px;font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.mailrow{display:flex;align-items:center;gap:var(--sp-3);padding:6px 8px;border-radius:var(--r-sm);background:var(--n-0);border:1px solid var(--border)}
+.mailrow .mdot{width:7px;height:7px;border-radius:50%;background:var(--teal-500);flex:0 0 auto}
+.mailrow .msub{font-size:12px;color:var(--text-1);font-weight:620;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mailrow .mtime{margin-left:auto;font-family:var(--font-mono);font-size:10px;color:var(--text-3);flex:0 0 auto}
+.miniwave{display:flex;align-items:center;gap:2px;height:20px;flex:1;overflow:hidden}
+.miniwave i{
+  display:block;width:2px;border-radius:2px;flex:0 0 auto;transform-origin:center;
+  background:var(--teal-600);animation:vz-wave 1.5s ease-in-out infinite;
+}
+.miniwave i:nth-child(6n+1){height:6px;animation-delay:0s}
+.miniwave i:nth-child(6n+2){height:13px;animation-delay:.16s}
+.miniwave i:nth-child(6n+3){height:18px;animation-delay:.32s}
+.miniwave i:nth-child(6n+4){height:8px;animation-delay:.48s}
+.miniwave i:nth-child(6n+5){height:15px;animation-delay:.64s}
+.miniwave i:nth-child(6n+6){height:10px;animation-delay:.8s}
+@media (prefers-reduced-motion:reduce){.miniwave i{animation:none;opacity:.9;transform:none}}
+@media (max-width:900px){.chan-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- Spine table --------------------------------------------------------- */
+#columna table.data{min-width:840px;table-layout:fixed}
+#columna table.data th,#columna table.data td{white-space:normal;vertical-align:top}
+#columna table.data th{vertical-align:bottom}
+#columna table.data th:nth-child(1),#columna table.data td:nth-child(1){width:24%}
+#columna table.data th:nth-child(2),#columna table.data td:nth-child(2){width:29%}
+#columna table.data th:nth-child(3),#columna table.data td:nth-child(3){width:25%}
+#columna table.data th:nth-child(4),#columna table.data td:nth-child(4){width:22%}
+#columna table.data td .chip{white-space:nowrap}
+#columna table.data tbody td{font-size:13px;line-height:1.55}
+.cell-sit{display:flex;align-items:center;gap:var(--sp-3);min-width:0}
+.cell-sit .si{
+  width:28px;height:28px;border-radius:9px;flex:0 0 auto;display:grid;place-items:center;
+  background:linear-gradient(160deg,var(--teal-50),var(--teal-100));color:var(--teal-700);
+  border:1px solid rgba(11,131,117,.20);
+}
+.cell-sit .si svg{width:15px;height:15px}
+.cell-sit b{display:block;font-size:13px;font-weight:620;color:var(--text-1);line-height:1.3}
+.cell-sit small{display:block;font-size:11.5px;color:var(--text-3)}
+.spine-note{
+  margin-top:var(--sp-6);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);
+  gap:clamp(24px,3vw,48px);align-items:center;
+  border-left:2px solid var(--teal-600);padding-left:var(--sp-5);
+}
+.spine-note p{font-size:14px;line-height:1.65;color:var(--text-2);max-width:62ch}
+.sn-cta{
+  display:flex;flex-direction:column;gap:var(--sp-3);align-items:flex-start;
+  border-left:1px solid var(--border);padding-left:clamp(20px,2.4vw,36px);
+}
+.sn-cta .k{
+  font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-3);
+}
+.sn-cta .v{font-size:15px;font-weight:640;color:var(--text-1);line-height:1.35}
+@media (max-width:900px){
+  .spine-note{grid-template-columns:minmax(0,1fr)}
+  .sn-cta{border-left:0;padding-left:0;border-top:1px solid var(--border);padding-top:var(--sp-4)}
+}
+
+/* ---- FAQ + partner ------------------------------------------------------- */
+.faq-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,3.6vw,56px);align-items:start}
+.faq{border-top:2px solid var(--rule-heavy)}
+.faq details{border-bottom:1px solid var(--border)}
+.faq summary{
+  display:flex;align-items:center;gap:var(--sp-4);cursor:pointer;list-style:none;
+  padding:var(--sp-5) 0;font-size:16px;font-weight:640;color:var(--text-1);letter-spacing:var(--tr-snug);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--text-brand)}
+.faq summary .q{flex:1;min-width:0}
+.faq summary svg{width:18px;height:18px;color:var(--p-600);flex:0 0 auto;transition:transform var(--dur-3) var(--ease-out)}
+.faq details[open] summary svg{transform:rotate(180deg)}
+.faq .a{padding:0 0 var(--sp-5);font-size:var(--fs-sm);color:var(--text-2);line-height:1.62;max-width:64ch}
+.partner{position:sticky;top:96px}
+.partner .partner-invite{margin:0;text-align:left}
+.partner .partner-invite p{margin-inline:0}
+.slot-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3);margin-top:var(--sp-6)}
+.slot-row .logo-slot{width:100%}
+.slot-cap{
+  margin-top:var(--sp-3);font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.08em;
+  text-transform:uppercase;color:var(--text-3);
+}
+@media (max-width:900px){.faq-split{grid-template-columns:minmax(0,1fr)}.partner{position:static}}
+@media (max-width:900px){.hero-copy{grid-template-columns:minmax(0,1fr)}}
+
+/* ---- Toggle band --------------------------------------------------------- */
+.toggle-row{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin-top:clamp(28px,3vw,44px);
+}
+.tgl{background:var(--n-0);padding:clamp(20px,2.2vw,28px);display:flex;flex-direction:column;gap:var(--sp-3)}
+.tgl .th{display:flex;align-items:center;gap:var(--sp-3)}
+.tgl .th svg{width:17px;height:17px;flex:0 0 auto}
+.tgl .th b{font-size:15px;font-weight:660;color:var(--text-1)}
+.tgl p{font-size:13px;line-height:1.6;color:var(--text-2)}
+.tgl--rfm .th svg{color:var(--p-600)}
+.tgl--toll .th svg{color:var(--gold-600)}
+.tgl--voz .th svg{color:var(--teal-600)}
+.tgl.is-here{background:linear-gradient(180deg,var(--teal-50),var(--n-0) 70%)}
+@media (max-width:760px){.toggle-row{grid-template-columns:minmax(0,1fr)}}
+
+#demo{padding-bottom:clamp(8px,1.2vw,18px)}
+
+/* =============================================================================
+   AD PASS — density, rhythm and de-templating
+   ============================================================================= */
+
+/* --- 1. Tighter section rhythm. 208px of nothing between chapters read as
+       dead air on a page this dense. --------------------------------------- */
+body{--sec-y:clamp(56px,5.9vw,84px)}
+
+/* --- 2. Hero index: items were flex:1 and stretched to the hero height,
+       opening 40-60px voids between each. Natural height + the link pinned
+       to the baseline of the column instead. -------------------------------- */
+/* The four claims used to stretch to fill the hero column. With the headline
+   back on the shared display step the column got taller and the stretch opened
+   holes between the rules. The rail is now a compact block that ends where its
+   content ends, and "see all four" follows the fourth item instead of floating
+   150px below it. */
+.hero-index{flex:0 0 auto}
+.hero-index li{flex:0 0 auto;padding-block:var(--sp-5)}
+.ix-more{margin-top:var(--sp-5);padding-top:0}
+@media (max-width:1080px){.hero-index li{flex:0 0 auto}.ix-more{padding-top:var(--sp-5)}}
+
+/* --- 3. Console rail: the handoff card floated in ~200px of empty rail.
+       A real after-call block now carries the column to the fold. ----------- */
+.vs-grp--tail{margin-top:auto}
+.aftercall{display:flex;flex-direction:column;gap:2px;
+  border:1px solid var(--border);border-radius:var(--r-md);background:var(--n-0);overflow:hidden}
+.aftercall li{display:flex;gap:var(--sp-3);align-items:flex-start;padding:9px 11px}
+.aftercall li + li{border-top:1px solid var(--border-subtle)}
+.aftercall svg{width:15px;height:15px;flex:0 0 auto;margin-top:1px;color:var(--teal-600)}
+.aftercall b{display:block;font-size:12.5px;font-weight:620;color:var(--text-1);line-height:1.35;letter-spacing:var(--tr-normal)}
+.aftercall .ac-d{display:block;margin-top:2px;font-family:var(--font-mono);font-size:10.5px;
+  letter-spacing:.04em;color:var(--text-3);font-variant-numeric:tabular-nums}
+
+/* --- 4. Editorial rows: margin-top:auto pushed the mono link to the bottom of
+       a row sized by the right column, leaving a 130px hole mid-column. ----- */
+.dif .dnote{margin-top:var(--sp-5);padding-top:0}
+.dif .lhs{height:auto}
+.ed-row{padding-block:clamp(24px,2.8vw,38px)}
+
+/* --- 5. Channels: a 2x2 of four identical white cards is the single loudest
+       template tell on the page. Voz becomes the lead surface across the full
+       width; the other three run as a tighter 3-up beneath it. -------------- */
+.chan-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.chan--lead{
+  grid-column:1/-1;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:var(--sp-4) clamp(28px,3.4vw,52px);align-items:start;
+  padding:clamp(26px,2.9vw,38px);
+  background:linear-gradient(140deg,var(--teal-50) 0%,var(--n-0) 46%,var(--n-0) 100%);
+}
+.chan--lead .chan-h{grid-column:1;align-self:start}
+.chan--lead .chan-h .ci{width:40px;height:40px;border-radius:12px}
+.chan--lead .chan-h .ci svg{width:21px;height:21px}
+.chan--lead .chan-h h3{font-size:clamp(20px,2vw,26px);letter-spacing:var(--tr-snug)}
+.chan--lead > p{grid-column:1;font-size:15px;line-height:1.62;max-width:42ch;color:var(--text-2)}
+.chan-facts{grid-column:1;display:flex;flex-direction:column;border-top:1px solid var(--border)}
+.chan-facts li{
+  padding:9px 0;border-bottom:1px solid var(--border);
+  font-size:12.5px;line-height:1.45;color:var(--text-2);
+  padding-left:18px;position:relative;
+}
+.chan-facts li::before{
+  content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;
+  background:var(--teal-500);
+}
+.chan--lead .mini{grid-column:2;grid-row:1/span 4;margin-top:0;align-self:stretch;
+  padding:var(--sp-4);gap:9px;justify-content:center}
+.chan--lead .mini .miniwave{height:26px}
+.chan--lead .msg{font-size:13px;max-width:82%}
+@media (max-width:1080px){
+  .chan-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .chan--lead{grid-template-columns:minmax(0,1fr)}
+  .chan--lead .chan-h,.chan--lead > p,.chan-facts{grid-column:1}
+  .chan--lead .mini{grid-column:1;grid-row:auto;margin-top:var(--sp-2)}
+}
+@media (max-width:900px){.chan-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* --- 6. Integration strip: a centred row of five identical white pills is
+       stock-template furniture. Rebuilt as a left-aligned spec rail. -------- */
+.trust--rail{
+  background:linear-gradient(180deg,var(--n-25),var(--n-0));
+  border-block:1px solid var(--border);padding-block:clamp(26px,3vw,38px);
+}
+.rail{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,2fr);
+  gap:clamp(20px,3vw,48px);align-items:center}
+.rail-lab .caps{
+  display:block;font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:var(--tr-caps);
+  text-transform:uppercase;color:var(--text-3);
+}
+.rail-lab p{margin-top:8px;font-size:13px;line-height:1.55;color:var(--text-2);max-width:30ch}
+.rail-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;
+  border-left:1px solid var(--border)}
+.rail-list li{
+  display:flex;flex-direction:column;gap:5px;padding:2px clamp(12px,1.4vw,20px);
+  border-right:1px solid var(--border);min-width:0;
+}
+.rail-list li:last-child{border-right:0}
+.rail-list svg{width:17px;height:17px;color:var(--teal-600)}
+.rail-list b{font-size:14px;font-weight:660;color:var(--text-1);letter-spacing:var(--tr-snug);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rail-list li > span{font-family:var(--font-mono);font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--text-3)}
+@media (max-width:1080px){
+  .rail{grid-template-columns:minmax(0,1fr);gap:var(--sp-5)}
+  .rail-lab p{max-width:56ch}
+}
+@media (max-width:720px){
+  .rail-list{grid-template-columns:repeat(2,minmax(0,1fr));border-left:0;
+    border-top:1px solid var(--border)}
+  .rail-list li{border-right:1px solid var(--border);border-bottom:1px solid var(--border);
+    padding:10px clamp(10px,3vw,16px)}
+  .rail-list li:nth-child(2n){border-right:0}
+  .rail-list li:last-child{grid-column:1/-1;border-right:0;border-bottom:0}
+}
+
+/* --- 7. Final CTA: centred-everything on a lavender radial blob is the exact
+       free-template signature the client rejected. Split composition, real
+       rules, no blob. ------------------------------------------------------- */
+.cta-band--split{
+  text-align:left;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:clamp(28px,4vw,64px);align-items:center;
+  background:linear-gradient(120deg,var(--n-0) 0%,var(--n-0) 52%,var(--n-25) 100%);
+  padding:clamp(40px,4.6vw,60px) clamp(26px,3.6vw,54px);
+}
+.cta-band--split::before{display:none}
+.cta-band--split::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.55;
+  background-image:
+    linear-gradient(to right,rgba(11,131,117,.07) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(11,131,117,.07) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(620px 300px at 88% 108%,#000,transparent 76%);
+          mask-image:radial-gradient(620px 300px at 88% 108%,#000,transparent 76%);
+}
+.cta-band--split h2{max-width:15ch;margin-inline:0}
+.cta-band--split p{margin-inline:0;margin-bottom:0;max-width:46ch;font-size:15.5px}
+.cta-band--split{align-items:stretch}
+.cta-band--split .cta-l{display:flex;flex-direction:column;justify-content:center}
+.cta-band--split .cta-r{border-left:1px solid var(--border);padding-left:clamp(24px,3vw,44px);
+  display:flex;flex-direction:column;justify-content:center}
+.cta-band--split .btn-row{justify-content:flex-start;flex-direction:column;align-items:stretch;gap:var(--sp-3)}
+.cta-band--split .btn-row .btn{justify-content:center}
+.cta-band--split .cta-list{
+  flex-direction:column;align-items:flex-start;justify-content:flex-start;
+  gap:var(--sp-3);margin-top:var(--sp-6);width:auto;
+}
+@media (max-width:900px){
+  .cta-band--split{grid-template-columns:minmax(0,1fr);gap:var(--sp-8)}
+  .cta-band--split .cta-r{border-left:0;padding-left:0;border-top:1px solid var(--border);
+    padding-top:var(--sp-7)}
+}
+
+/* --- 7b. Hero index: close the column with a rule instead of naked white. -- */
+.ix-more{width:100%;justify-content:space-between;border-top:1px solid var(--border);
+  padding-top:var(--sp-5);align-self:stretch}
+.hero-index li{padding-block:var(--sp-5)}
+
+/* --- 7c. Editorial rows: column 2 was carrying 13.5px copy against a 56px
+       display heading — the middle of the scale was missing, and the short
+       column left a hole beside the taller list. --------------------------- */
+.dif h3{font-size:clamp(21px,1.85vw,26px)}
+.dif .dsub{font-size:15px;line-height:1.6;max-width:29ch;margin-top:var(--sp-4)}
+.dif .ed-list li > span{font-size:13.5px;line-height:1.55}
+.dif .ed-list li b{font-size:10.5px}
+.dif .ed-list li{padding-block:var(--sp-2) var(--sp-3);gap:3px}
+/* widen the evidence column so its rows stop wrapping and the two columns
+   land within ~30px of each other instead of ~130px apart */
+@media (min-width:1081px){
+  .dif .ed-row{grid-template-columns:minmax(80px,1fr) minmax(0,4.7fr) minmax(0,5fr)}
+}
+
+/* --- 7d. Module band header: a headline over half the width with 500px of
+       nothing beside it. Split it like every other head on the page. ------- */
+.sec-head--split{
+  max-width:none;display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+  gap:clamp(24px,3.4vw,56px);align-items:end;
+}
+.sec-head--split h2{max-width:18ch}
+.sec-head--split .sub{margin-top:0;font-size:15px;line-height:1.62;max-width:40ch;padding-bottom:4px}
+@media (max-width:900px){
+  .sec-head--split{grid-template-columns:minmax(0,1fr);gap:var(--sp-5);align-items:start}
+  .sec-head--split .sub{max-width:56ch}
+}
+
+/* --- 8. Section joins that were reading as holes. ----------------------- */
+#canales{padding-top:clamp(48px,5.2vw,74px)}
+#columna{padding-bottom:clamp(46px,5vw,70px)}
+#faq{padding-block:clamp(52px,5.6vw,80px)}
+.spine-note{margin-bottom:0}
+.site-footer{margin-top:clamp(48px,5vw,72px)}
+
+/* --- 10. The spine table clips at <=900 with no affordance; the 28px mask
+   fade is too quiet to read as "there is more". Show an explicit swipe cue in
+   the table foot, only when the track genuinely overflows. --------------- */
+.tbl-foot .swipe{display:none}
+.tbl-scroll.is-scrollable + .tbl-foot .swipe{
+  display:inline-flex;align-items:center;gap:6px;margin-right:var(--sp-4);
+  color:var(--text-teal);font-weight:640;
+}
+.tbl-scroll.is-scrollable + .tbl-foot .swipe svg{width:13px;height:13px}
+.tbl-scroll.is-scrollable.at-end + .tbl-foot .swipe{display:none}
+.tbl-foot .r{display:flex;align-items:center;flex-wrap:wrap;gap:2px}
+@media (max-width:560px){
+  .tbl-foot{flex-wrap:wrap;gap:6px}
+  .tbl-foot .r{width:100%;justify-content:flex-start;gap:var(--sp-4)}
+  .tbl-scroll.is-scrollable + .tbl-foot .swipe{margin-right:0}
+}
+
+/* --- 9. Measured AA failures (1440, both languages). --------------------- */
+/* white on the teal gradient's top stop (#0fa896) measured 3.16 — the whole
+   fill now sits in the passing range. #fff on --teal-700 = 6.49 AA. */
+.btn--teal,.fauxbtn--p{background:linear-gradient(180deg,var(--teal-700),var(--teal-800))}
+.btn--teal{box-shadow:0 1px 2px rgba(6,60,54,.30),0 8px 18px -6px rgba(6,78,70,.42),
+  inset 0 1px 0 rgba(255,255,255,.20)}
+/* inactive EN|ES label measured 4.44 on --surface-3 */
+.lang button{color:var(--n-700)}
+/* the "|" was a text node at 1.94 — it is a divider, so make it a rule */
+.lang .sep{width:1px;height:15px;background:var(--border-strong);font-size:0;line-height:0;
+  overflow:hidden;padding:0;margin-inline:3px;flex:0 0 auto;color:transparent}
+/* channel index numeral measured 4.05 on the tinted lead surface */
+.chan-h .cn{color:var(--n-700)}
+/* logo slots carried min-width:150px into a 3-col grid and broke out of the
+   FAQ rail at 1024 — the grid track already sets the width */
+.slot-row .logo-slot{min-width:0;padding-inline:6px;font-size:9.5px;letter-spacing:.07em;
+  white-space:nowrap;overflow:hidden}
+
+/* =========================================================================
+   X. CROSS-PAGE SHELL NORMALISATION  (identical block in all five pages)
+   The nav and footer are byte-identical across the set; these rules keep the
+   chrome that carries them identical too.
+   ====================================================================== */
+.lang button{color:var(--text-2)}            /* 8.13 AAA on --surface-3 */
+.lang button:hover{color:var(--text-1)}
+.lang button.is-active{background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1)} /* 9.93 AAA */
+.lang .sep{width:1px;align-self:stretch;margin-block:4px;margin-inline:0;padding:0;
+  font-size:0;line-height:0;background:var(--n-400);flex:0 0 auto;border-radius:1px;
+  height:auto;min-height:15px;color:transparent}
+.nav-links .nl-abbr{display:none}
+@media (max-width:1080px){
+  .nav-links .nl-full{display:none}
+  .nav-links .nl-abbr{display:inline}
+}
+/* Every page now closes on a beat that carries its own breathing room, so the
+   footer joins at the same distance on all five. One number, not five. */
+.site-footer{margin-top:clamp(36px,3.8vw,52px)}

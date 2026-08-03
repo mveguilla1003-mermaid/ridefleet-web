@@ -1,0 +1,311 @@
+/* Page styles — home. Extracted verbatim from site-v2/01-home.html.
+   Loaded only by the home route. Uses the shared tokens; adds no new values. */
+
+/* ============================================================================
+   PAGE — 01 HOME. Page-specific CSS only; everything above is the system.
+   ========================================================================= */
+
+/* ---- Hero ---------------------------------------------------------------- */
+.hero{position:relative;padding-top:clamp(48px,5.4vw,84px);padding-bottom:clamp(56px,6vw,88px);overflow:hidden}
+.hero::before{
+  content:"";position:absolute;left:0;right:0;top:-180px;height:760px;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(720px 380px at 50% 4%,rgba(127,79,240,.15),transparent 70%),
+    radial-gradient(560px 300px at 88% 12%,rgba(232,161,60,.075),transparent 66%),
+    radial-gradient(520px 300px at 8% 16%,rgba(45,212,191,.055),transparent 66%);
+}
+.hero > *{position:relative;z-index:1}
+/* Editorial hero: full-width display type over an asymmetric two-column base.
+   Deliberately NOT centred — the page's whole system is left-ruled. */
+.hero-copy{text-align:left}
+.hero-copy h1{max-width:19ch;margin-top:var(--sp-6)}
+.hero-base{
+  display:grid;grid-template-columns:minmax(0,1.28fr) minmax(0,1fr);
+  gap:clamp(28px,4vw,72px);align-items:start;
+  margin-top:clamp(30px,3.4vw,44px);
+}
+.hero-copy .lede{margin-top:0;text-align:left;max-width:52ch}
+.hero-copy .btn-row{margin-top:var(--sp-7);justify-content:flex-start}
+/* Spec rail — factual, tabular, hairline-ruled. Adds density without decoration. */
+.hero-spec{border-top:2px solid var(--rule-heavy);padding-top:var(--sp-2);margin:0}
+.hspec{
+  display:grid;grid-template-columns:minmax(78px,auto) minmax(0,1fr);
+  gap:var(--sp-1) var(--sp-4);padding-block:11px;border-bottom:1px solid var(--border);
+}
+.hspec:last-child{border-bottom:0}
+.hspec dt{
+  font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--text-3);padding-top:3px;line-height:1.5;
+}   /* --text-3 on white = 5.04 AA */
+.hspec dd{margin:0;font-size:13.5px;font-weight:560;color:var(--text-1);line-height:1.45;
+  letter-spacing:var(--tr-normal)}
+.hspec .live{
+  display:inline-flex;align-items:center;gap:5px;margin-left:7px;vertical-align:1px;
+  font-family:var(--font-mono);font-size:9.5px;font-weight:500;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--teal-700);background:var(--teal-50);
+  border:1px solid rgba(11,131,117,.30);border-radius:var(--r-pill);padding:2px 7px 2px 6px;
+}   /* --teal-700 on --teal-50 = 6.00 AA */
+.hspec .live i{width:5px;height:5px;border-radius:50%;background:var(--teal-600);flex:0 0 auto}
+@media (max-width:900px){
+  .hero-base{grid-template-columns:minmax(0,1fr);gap:var(--sp-8)}
+  .hero-copy h1{max-width:none}
+}
+.hero-note{
+  margin-top:var(--sp-6);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:var(--sp-2) var(--sp-5);font-family:var(--font-mono);font-size:var(--fs-2xs);
+  letter-spacing:.11em;text-transform:uppercase;color:var(--text-3);   /* 5.04 AA on white */
+}
+.hero-note i{width:4px;height:4px;border-radius:50%;background:var(--n-400);display:inline-block}
+.hero-stage{margin-top:clamp(40px,4.4vw,64px)}
+.hero-stage .callout{width:192px}
+.co-a{left:16px;top:428px}          /* over the empty tail of the side nav — occludes nothing */
+/* Lands in the gap between rows: covers one action chip whole, clips no text. */
+.co-b{right:48px;bottom:103px}
+@media (max-width:1360px){.hero-stage .callout{display:none}}
+
+/* ---- Section cadence: deliberately uneven. The dark spine carries the most
+   weight, the diff and invitation sections tighten toward the close. -------- */
+/* ONE measure for the whole page. The hero stage and the ink band need the wide
+   grid; letting the other sections sit 70px narrower left two different left
+   margins running down the page. Everything now rules off the same edge. */
+/* The footer is shell, not page: it holds the 1200px measure on all five so the
+   column rhythm under the fold is identical wherever you land. */
+.sec > .container,.trust > .container{max-width:var(--container-wide)}
+
+/* The trust strip already rules off the hero — a second 104px above the first
+   chapter reads as a hole, so the router opens tighter. */
+#router{padding-top:clamp(46px,5.2vw,74px)}
+#spine{padding-top:clamp(72px,8vw,116px);padding-bottom:clamp(52px,5.6vw,80px)}
+#diff{padding-block:clamp(58px,6.4vw,92px)}
+#partners{padding-block:clamp(52px,5.8vw,84px)}
+
+/* The hero table is the densest surface on the page: give it room to breathe. */
+.hero-stage .app-pane{padding:var(--sp-5) var(--sp-5) var(--sp-5)}
+.hero-stage .kpi .kfoot + .kfoot{margin-top:5px}
+.kpi-note{font-size:11px;color:var(--text-3);margin-top:6px;line-height:1.4}
+
+/* ---- Trust / integrations ------------------------------------------------ */
+.trust-grid{
+  display:grid;grid-template-columns:minmax(0,1.42fr) auto minmax(0,.62fr);
+  gap:clamp(20px,2.6vw,36px);align-items:start;
+}
+.trust-grid .tlab{text-align:left;margin-bottom:var(--sp-4)}
+.trust-grid .integration-strip{justify-content:flex-start;gap:var(--sp-3) var(--sp-4)}
+.trust-div{width:1px;align-self:stretch;background:var(--border);min-height:64px}
+.trust-soon .tlab{display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap}
+@media (max-width:900px){
+  .trust-grid{grid-template-columns:minmax(0,1fr);gap:var(--sp-8)}
+  .trust-div{width:100%;height:1px;min-height:0}
+}
+
+/* ---- Pain router --------------------------------------------------------- */
+/* Subgrid so the ledger rule and the verb land on the same baseline in all
+   three doors — three headlines of different depth otherwise rag the row. */
+.router{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-rows:auto auto auto auto auto;
+  border-top:2px solid var(--rule-heavy);border-bottom:1px solid var(--border)}
+.door{
+  position:relative;display:grid;grid-row:span 5;grid-template-rows:subgrid;
+  align-content:start;gap:var(--sp-5);
+  padding:clamp(24px,2.5vw,34px) clamp(18px,2vw,30px) clamp(22px,2.2vw,30px);
+  border-right:1px solid var(--border);transition:background var(--dur-3) var(--ease-out);
+}
+.door:last-child{border-right:0}
+.door:hover,.door:focus-within{background:var(--surface-1)}
+.door::before{
+  content:"";position:absolute;left:0;top:-2px;height:2px;width:0;background:var(--door-line);
+  transition:width var(--dur-4) var(--ease-emph);
+}
+.door:hover::before,.door:focus-within::before{width:100%}
+.door--toll{--door-tx:var(--text-gold);--door-line:var(--gold-400)}
+.door--voz{--door-tx:var(--text-teal);--door-line:var(--teal-400)}
+.door--rfm{--door-tx:var(--text-brand);--door-line:var(--p-500)}
+.door-top{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--sp-3)}
+.door .idx{
+  font-family:var(--font-mono);font-size:clamp(32px,3.2vw,46px);line-height:.86;letter-spacing:-.05em;
+  color:var(--door-tx);font-variant-numeric:tabular-nums;
+}
+.door h3{margin-top:calc(var(--sp-2) * -1)}
+.door .dsub{font-size:14px;color:var(--text-2);line-height:1.55;margin-top:var(--sp-3)}
+
+.ledger{border-top:1px solid var(--border);padding-top:var(--sp-3);display:grid;gap:7px;margin-top:auto}
+.lrow{
+  display:flex;align-items:baseline;gap:var(--sp-3);
+  font-family:var(--font-mono);font-size:12px;line-height:1.45;color:var(--text-2);
+  font-variant-numeric:tabular-nums;
+}
+.lrow .v{margin-left:auto;color:var(--text-1);font-weight:600;white-space:nowrap}
+.lrow--total{
+  border-top:1px dashed var(--border-strong);margin-top:5px;padding-top:10px;align-items:center;
+  font-size:12.5px;color:var(--text-1);
+}
+.lrow--total .v{font-size:23px;font-weight:700;letter-spacing:-.03em;color:var(--door-tx);line-height:1}
+.ledger-note{
+  font-family:var(--font-mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--text-3);display:flex;align-items:center;gap:6px;margin-top:2px;
+}
+.ledger-note svg{width:12px;height:12px;flex:0 0 auto}
+.door-foot{display:flex;flex-direction:column;gap:var(--sp-4);align-items:flex-start}
+.door .verb{font-size:clamp(25px,2.5vw,33px);font-weight:700;letter-spacing:-.035em;line-height:1;color:var(--text-1)}
+.door .verb small{display:block;font-size:13.5px;font-weight:450;letter-spacing:var(--tr-normal);color:var(--text-2);margin-top:9px;line-height:1.5}
+@media (max-width:900px){
+  .router{grid-template-columns:minmax(0,1fr)}
+  .door{border-right:0;border-bottom:1px solid var(--border)}
+  .door:last-child{border-bottom:0}
+  .ledger{margin-top:0}
+}
+
+/* ---- Ink band: the operations spine -------------------------------------- */
+.chain{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:var(--sp-3)}
+.chain::before{
+  content:"";position:absolute;left:8%;right:8%;top:27px;height:1px;z-index:0;
+  background:linear-gradient(90deg,transparent,var(--border-strong) 10%,var(--border-strong) 90%,transparent);
+}
+.node{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.node .nic{
+  width:54px;height:54px;border-radius:var(--r-lg);display:grid;place-items:center;flex:0 0 auto;
+  background:var(--surface-2);border:1px solid var(--border);color:var(--text-brand);box-shadow:var(--sh-1);
+}
+.node .nic svg{width:21px;height:21px}
+.node b{font-family:var(--font-mono);font-size:10.5px;font-weight:500;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--text-1);line-height:1.3}
+.node span{font-size:11.5px;color:var(--text-3);line-height:1.4}
+@media (max-width:900px){
+  .chain{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--sp-5)}
+  .chain::before{display:none}
+}
+/* Seven entities never divide evenly into a phone-width grid — a 2-up left
+   "Pagos" stranded beside an empty cell. Below 620px the chain becomes what it
+   actually is: a ruled list of the seven records, read top to bottom. */
+@media (max-width:620px){
+  .chain{grid-template-columns:minmax(0,1fr);gap:0;
+    border-top:1px solid var(--border-strong);border-bottom:1px solid var(--border-strong)}
+  .node{
+    flex-direction:row;align-items:center;text-align:left;gap:var(--sp-4);
+    padding-block:13px;border-bottom:1px solid var(--border);
+  }
+  .node:last-child{border-bottom:0}
+  .node .nic{width:40px;height:40px;border-radius:var(--r-md)}
+  .node .nic svg{width:18px;height:18px}
+  .node b{flex:0 0 auto;min-width:112px}
+  .node span{flex:1 1 auto;min-width:0;text-align:right}
+}
+
+.spine-grid{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,1fr);gap:clamp(24px,3vw,44px);align-items:start;
+  margin-top:clamp(36px,4vw,58px)}
+@media (max-width:1024px){.spine-grid{grid-template-columns:minmax(0,1fr)}}
+
+.log{border:1px solid var(--border);border-radius:var(--r-lg);background:rgba(0,0,0,.22);overflow:hidden}
+.log-head{display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;padding:12px 16px;
+  border-bottom:1px solid var(--border);background:rgba(255,255,255,.025)}
+.log-head b{font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--text-1)}
+.log-head .lh-sub{font-size:11.5px;color:var(--text-3)}
+.log-head .live{margin-left:auto}
+.log-body{padding:2px 16px 10px}
+.evt .tx b{color:var(--text-1);font-weight:600}
+.tag{
+  display:inline-block;font-family:var(--font-mono);font-size:9.5px;font-weight:500;letter-spacing:.11em;
+  text-transform:uppercase;padding:2px 6px;border-radius:5px;margin-right:7px;vertical-align:1px;
+}
+.tag--rfm{color:var(--text-brand);background:rgba(127,79,240,.16)}
+.tag--toll{color:var(--text-gold);background:rgba(232,161,60,.14)}
+.tag--voz{color:var(--text-teal);background:rgba(45,212,191,.14)}
+
+.lanes{display:grid;gap:0}
+.lane{display:flex;flex-direction:column;gap:var(--sp-3);padding-block:var(--sp-4);border-top:1px solid var(--border)}
+.lane:first-child{border-top:2px solid var(--rule-heavy)}
+.lane:last-child{border-bottom:1px solid var(--border)}
+.lane-top{display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap}
+.lane-top .writes{font-family:var(--font-mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--text-3);margin-left:auto}
+.lane-chips{display:flex;flex-wrap:wrap;gap:5px}
+.ent{
+  font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;padding:4px 8px;border-radius:var(--r-xs);
+  border:1px solid var(--border);background:var(--surface-3);color:var(--text-2);white-space:nowrap;
+}
+.ent--off{color:var(--text-3);background:transparent;border-style:dashed;opacity:.75}
+.toggle-line{
+  display:flex;gap:var(--sp-4);align-items:flex-start;margin-top:var(--sp-6);padding:var(--sp-5);
+  border:1px solid var(--border-brand);border-radius:var(--r-lg);background:rgba(127,79,240,.09);
+}
+.toggle-line svg{width:20px;height:20px;flex:0 0 auto;color:var(--text-brand);margin-top:2px}
+.toggle-line p{font-size:14px;line-height:1.6}
+.toggle-line b{color:var(--text-1)}
+
+/* ---- Differentiators ----------------------------------------------------- */
+.diff-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(28px,3.4vw,52px);align-items:start}
+@media (max-width:1024px){.diff-grid{grid-template-columns:minmax(0,1fr)}}
+.score{border:1px solid var(--border);border-radius:var(--r-xl);background:var(--surface-1);
+  box-shadow:var(--sh-2);overflow:hidden;position:sticky;top:88px}
+@media (max-width:1024px){.score{position:static}}
+.score-head{display:flex;align-items:center;gap:clamp(16px,2vw,24px);flex-wrap:wrap;
+  padding:clamp(20px,2.2vw,26px);background:var(--n-0);border-bottom:1px solid var(--border-subtle)}
+.score-head .sh-t{min-width:0}
+.score-head h3{font-size:19px;letter-spacing:var(--tr-snug)}
+.score-head .sh-sub{font-size:12.5px;color:var(--text-3);margin-top:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.srows{padding:var(--sp-2) clamp(18px,2vw,24px) 0}
+.srow{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:var(--sp-3);align-items:center;
+  padding:11px 0;border-bottom:1px solid var(--border-subtle);font-size:13.5px;color:var(--text-2)}
+.srow:last-child{border-bottom:0}
+.srow .sic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;flex:0 0 auto;
+  background:var(--surface-3);color:var(--text-2);border:1px solid var(--border-subtle)}
+.srow .sic svg{width:14px;height:14px}
+.srow b{display:block;color:var(--text-1);font-weight:600;font-size:13.5px;line-height:1.3}
+.srow small{display:block;color:var(--text-3);font-size:11.5px;line-height:1.4;margin-top:2px}
+.srow .pts{font-family:var(--font-mono);font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pts--zero{color:var(--ok-tx)}
+.pts--down{color:var(--danger-tx)}
+.pts--base{color:var(--text-3)}
+.score-foot{display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;padding:13px clamp(18px,2vw,24px);
+  background:var(--surface-2);border-top:1px solid var(--border-subtle);font-size:12.5px;color:var(--text-2)}
+.score-foot svg{width:15px;height:15px;color:var(--text-brand);flex:0 0 auto}
+.score-total{display:flex;align-items:baseline;gap:var(--sp-2);margin-left:auto}
+.score-total .st-n{font-size:26px;font-weight:700;letter-spacing:-.04em;color:var(--text-1);font-variant-numeric:tabular-nums}
+.score-total .st-l{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3)}
+.diff-list li b{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap}
+
+/* ---- Design-partner invitation ------------------------------------------- */
+/* Asymmetric: argument on the left, terms ledger on the right. Not centred. */
+.partner-grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(28px,4vw,64px);align-items:start;
+}
+.partner-aside{border-top:2px solid var(--rule-heavy);padding-top:var(--sp-2)}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3);margin-top:var(--sp-6)}
+.slots .logo-slot{min-width:0;width:100%}
+.slot-note{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--text-3);margin-top:var(--sp-3);line-height:1.6}
+.partner-invite .btn-row{justify-content:flex-start;margin-top:var(--sp-7)}
+.partner-terms{display:grid;grid-template-columns:minmax(0,1fr);gap:0;text-align:left;margin:0}
+.pterm{display:flex;gap:var(--sp-4);align-items:flex-start;padding-block:var(--sp-4);
+  border-bottom:1px solid var(--border)}
+.pterm:last-child{border-bottom:0;padding-bottom:0}
+.pterm svg{width:17px;height:17px;flex:0 0 auto;margin-top:2px;color:var(--text-brand)}
+.pterm b{display:block;font-size:14px;color:var(--text-1);font-weight:620}
+@media (max-width:860px){.partner-grid{grid-template-columns:minmax(0,1fr);gap:var(--sp-8)}}
+@media (max-width:520px){.slots{grid-template-columns:minmax(0,1fr)}}
+.sec--cta{padding-bottom:clamp(8px,1.2vw,18px)}
+
+/* ---- AA touch-ups: --text-3 clears 4.5 on white but lands at 4.44 on the
+   tinted chips it sits in here, so those instances step up one rung. -------- */
+.lang button,.searchpill kbd,.app-nav .count{color:var(--text-2)}
+.pterm > span > span{display:block;font-size:13px;color:var(--text-2);line-height:1.5}
+
+/* =========================================================================
+   X. CROSS-PAGE SHELL NORMALISATION  (identical block in all five pages)
+   The nav and footer are byte-identical across the set; these rules keep the
+   chrome that carries them identical too.
+   ====================================================================== */
+.lang button{color:var(--text-2)}            /* 8.13 AAA on --surface-3 */
+.lang button:hover{color:var(--text-1)}
+.lang button.is-active{background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1)} /* 9.93 AAA */
+.lang .sep{width:1px;align-self:stretch;margin-block:4px;margin-inline:0;padding:0;
+  font-size:0;line-height:0;background:var(--n-400);flex:0 0 auto;border-radius:1px;
+  height:auto;min-height:15px;color:transparent}
+.nav-links .nl-abbr{display:none}
+@media (max-width:1080px){
+  .nav-links .nl-full{display:none}
+  .nav-links .nl-abbr{display:inline}
+}
+/* Every page now closes on a beat that carries its own breathing room, so the
+   footer joins at the same distance on all five. One number, not five. */
+.site-footer{margin-top:clamp(36px,3.8vw,52px)}

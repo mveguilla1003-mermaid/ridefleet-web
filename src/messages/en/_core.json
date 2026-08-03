@@ -1,0 +1,61 @@
+{
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "sampleData": "Sample data. Not a real customer's screen."
+  },
+  "nav": {
+    "primary": "Primary navigation",
+    "languageGroup": "Language",
+    "switchTo": {
+      "es": "Cambiar a español",
+      "en": "Switch to English"
+    },
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "Home",
+    "rideFleetManager": "Ride Fleet Manager",
+    "tollBridge": "Toll Bridge",
+    "vozAi": "Voz AI",
+    "bookDemo": "Book a demo",
+    "bookDemoShort": "Demo",
+    "callLine": "Call the Voz AI line",
+    "router": "Diagnose your leak",
+    "calculator": "Toll calculator",
+    "security": "Security and credentials",
+    "designPartners": "Founding partners",
+    "faq": "Frequent questions",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "accessibility": "Accessibility"
+  },
+  "footer": {
+    "about": "One operations spine for rental, car-sharing and dealership loaners — with tolls and AI customer service. Built in Puerto Rico, ready for the US mainland.",
+    "headings": {
+      "products": "Products",
+      "explore": "Explore",
+      "getStarted": "Get started"
+    },
+    "rights": "All rights reserved.",
+    "markets": "Markets: Puerto Rico · Florida (SunPass)"
+  },
+  "common": {
+    "building": "Building",
+    "sampleData": "Sample data",
+    "placeholder": "Reserved slot",
+    "logoSlot": "Partner slot",
+    "readMore": "Read on",
+    "backHome": "Back to home",
+    "updated": "Updated"
+  },
+  "notFound": {
+    "meta": {
+      "title": "Page not found · Ride Fleet",
+      "description": "The page you are looking for does not exist or has moved."
+    },
+    "eyebrow": "Error 404",
+    "title": "That page does not exist",
+    "lede": "The link may be old or mistyped. From here you can reach any of the three products, or book a demo.",
+    "cta": "Book a demo"
+  }
+}

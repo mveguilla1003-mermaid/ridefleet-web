@@ -1,0 +1,516 @@
+/* Page styles — book-demo. Extracted verbatim from site-v2/05-book-demo.html.
+   Loaded only by the book-demo route. Uses the shared tokens; adds no new values. */
+
+/* ============================================================================
+   PAGE — 05 BOOK A DEMO. Page-specific CSS only; everything above is the system.
+   One primary action on this page: the form's submit button. Nothing competes
+   with it — the nav CTA is replaced by the current-page link, and the phone is
+   an alternative route, not a second CTA.
+   ========================================================================= */
+
+/* ---- [hidden] wins. Several system components set `display`, which would
+   otherwise out-specify the UA rule and leave hidden panels on screen. ------ */
+[hidden]{display:none !important}
+
+/* ---- Page header --------------------------------------------------------- */
+.dhero{position:relative;overflow:hidden;padding-top:clamp(40px,4.6vw,72px);padding-bottom:clamp(26px,3vw,40px)}
+.dhero::before{
+  content:"";position:absolute;left:0;right:0;top:-220px;height:680px;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(660px 340px at 22% 10%,rgba(127,79,240,.14),transparent 70%),
+    radial-gradient(520px 300px at 86% 0%,rgba(127,79,240,.07),transparent 68%);
+}
+.dhero > *{position:relative;z-index:1}
+.dhero h1{max-width:19ch;margin-top:var(--sp-5)}
+.dhero .lede{margin-top:var(--sp-5);max-width:64ch}
+.meta-rail{
+  display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-2) var(--sp-5);
+  margin-top:var(--sp-7);padding-top:var(--sp-5);border-top:1px solid var(--border);
+  font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-3);font-variant-numeric:tabular-nums;                 /* 5.04 AA on white */
+}
+.meta-rail .mi{display:inline-flex;align-items:center;gap:7px}
+.meta-rail svg{width:13px;height:13px;color:var(--icon-quiet);flex:0 0 auto}
+.meta-rail i{width:4px;height:4px;border-radius:50%;background:var(--n-400);display:inline-block}
+/* the separators dangle at line ends once the rail wraps — drop them and let
+   the row gap do the separating instead */
+@media (max-width:620px){.meta-rail{gap:var(--sp-3) var(--sp-4)}.meta-rail i{display:none}}
+
+/* ---- Section mark: the page runs 01 reservar / 02 en pantalla / 03 preguntas,
+   the same chaptering as the rest of the site. The booking section carries the
+   compact variant so the form is not pushed down by a full editorial head. -- */
+.secmark{
+  display:flex;align-items:baseline;gap:var(--sp-4);flex-wrap:wrap;
+  border-top:2px solid var(--rule-heavy);padding-top:var(--sp-4);
+  margin-bottom:clamp(24px,2.6vw,38px);
+}
+.secmark .n{
+  font-family:var(--font-mono);font-size:clamp(22px,2.2vw,30px);line-height:.9;letter-spacing:-.05em;
+  color:var(--text-1);font-variant-numeric:tabular-nums;
+}
+.secmark .l{font-size:var(--fs-2xs);font-family:var(--font-mono);letter-spacing:var(--tr-caps);
+  text-transform:uppercase;color:var(--text-2)}                       /* 9.22 AAA */
+.secmark .r{margin-left:auto;font-family:var(--font-mono);font-size:var(--fs-2xs);
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);   /* 5.04 AA */
+  font-variant-numeric:tabular-nums;text-align:right}
+
+/* ---- Two-column shell: form left, reassurance right ---------------------- */
+.sec--book{padding-top:clamp(20px,2.4vw,32px)}
+.book{
+  display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+  gap:clamp(30px,3.6vw,58px);align-items:start;
+}
+@media (max-width:1024px){.book{grid-template-columns:minmax(0,1fr);gap:clamp(44px,6vw,64px)}}
+
+/* ---- The form surface ---------------------------------------------------- */
+.formcard{
+  position:relative;overflow:hidden;
+  border:1px solid var(--border);border-radius:var(--r-2xl);
+  background:linear-gradient(180deg,var(--n-0),var(--surface-1));
+  box-shadow:var(--sh-3),var(--sh-ring);
+  padding:clamp(24px,2.6vw,38px);
+}
+.formcard::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,var(--p-600),var(--p-400) 46%,rgba(127,79,240,0));
+}
+.form-head{display:flex;align-items:flex-start;gap:var(--sp-4);flex-wrap:wrap;margin-bottom:var(--sp-6)}
+.form-head h2{font-size:clamp(21px,1.9vw,26px);letter-spacing:var(--tr-tight)}
+.form-head .fsub{font-size:14px;color:var(--text-2);margin-top:var(--sp-2);max-width:46ch;line-height:1.55}
+.form-step{
+  margin-left:auto;flex:0 0 auto;align-self:flex-start;font-family:var(--font-mono);font-size:var(--fs-2xs);
+  letter-spacing:.13em;text-transform:uppercase;color:var(--text-2);           /* 8.12 on n-100 */
+  background:var(--surface-3);border:1px solid var(--border);border-radius:var(--r-pill);
+  padding:6px 12px;font-variant-numeric:tabular-nums;
+}
+.formcard .form-grid{gap:var(--sp-5) var(--sp-5)}
+.fieldset-b{border:0;padding:0;margin:0;min-width:0}
+.fieldset-b legend{
+  padding:0;font-size:13px;font-weight:640;color:var(--text-1);letter-spacing:var(--tr-normal);
+  margin-bottom:var(--sp-1);
+}
+.opt-tag{font-weight:500;color:var(--text-3);letter-spacing:0}
+@media (max-width:620px){.form-head{gap:var(--sp-3)}.form-step{margin-left:0}}
+
+/* multi-select product tiles — neutral by design: this page is one accent */
+.choices{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--sp-2);margin-top:var(--sp-3)}
+.choice{
+  display:grid;grid-template-columns:17px minmax(0,1fr);gap:var(--sp-3);align-items:center;
+  min-width:0;cursor:pointer;
+  padding:11px 14px;border:1px solid var(--border-strong);border-radius:var(--r-md);
+  background:var(--n-0);box-shadow:var(--sh-1);
+  transition:border-color var(--dur-2),background var(--dur-2),box-shadow var(--dur-2);
+}
+.choice:hover{border-color:#c3b6e8}
+.choice input{width:17px;height:17px;flex:0 0 auto;accent-color:var(--p-600);cursor:pointer}
+.choice .ct{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px var(--sp-4);min-width:0}
+.choice .cn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:620;
+  color:var(--text-1);line-height:1.3;flex:0 0 auto;min-width:132px}
+.choice .cn svg{width:15px;height:15px;flex:0 0 auto;color:var(--icon-quiet)}
+.choice .cd{font-size:12.5px;color:var(--text-2);line-height:1.45;flex:1 1 190px;min-width:0}
+.choice.is-on{border-color:var(--p-500);background:var(--p-50);box-shadow:var(--sh-ring)}
+.choice.is-on .cn svg{color:var(--p-700)}
+
+/* language radio pills */
+.langpick{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-3)}
+.lopt{
+  display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+  padding:10px 15px;border:1px solid var(--border-strong);border-radius:var(--r-md);
+  background:var(--n-0);box-shadow:var(--sh-1);font-size:14px;color:var(--text-2);
+  transition:border-color var(--dur-2),background var(--dur-2),color var(--dur-2);
+}
+.lopt:hover{border-color:#c3b6e8}
+.lopt input{width:17px;height:17px;flex:0 0 auto;accent-color:var(--p-600);cursor:pointer}
+.lopt b{font-weight:620;color:var(--text-1)}
+.lopt.is-on{border-color:var(--p-500);background:var(--p-50);color:var(--p-800)}   /* 9.93 AAA */
+.lopt.is-on b{color:var(--p-800)}
+
+/* qualification routing note — appears when the fleet-size answer needs it */
+.routing{
+  display:flex;gap:var(--sp-3);align-items:flex-start;margin-top:var(--sp-3);
+  padding:12px 14px;border:1px solid var(--info-bd);background:var(--info-bg);border-radius:var(--r-md);
+  font-size:13px;line-height:1.55;color:var(--text-2);                        /* 8.6 on info-bg */
+}
+.routing svg{width:16px;height:16px;flex:0 0 auto;margin-top:2px;color:var(--info-tx)}
+.routing b{color:var(--text-1);font-weight:620}
+
+/* consent */
+.consent{
+  display:flex;gap:var(--sp-3);align-items:flex-start;
+  padding:14px 15px;border:1px solid var(--border);border-radius:var(--r-md);
+  background:var(--surface-2);font-size:13px;line-height:1.55;color:var(--text-2);
+}
+.consent input{width:18px;height:18px;flex:0 0 auto;margin-top:1px;accent-color:var(--p-600);cursor:pointer}
+.consent a{color:var(--text-brand);text-decoration:underline;text-underline-offset:2px}
+.consent.is-bad{border-color:var(--danger);background:var(--danger-bg)}
+
+/* error summary + inline errors */
+.errsum{
+  margin-bottom:var(--sp-5);padding:14px 16px;border-radius:var(--r-md);
+  border:1px solid var(--danger-bd);background:var(--danger-bg);
+}
+.errsum b{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--danger-tx)} /* 7.04 AAA */
+.errsum b svg{width:16px;height:16px;flex:0 0 auto}
+.errsum ul{display:grid;gap:5px;margin-top:9px;padding-left:26px}
+.errsum a{font-size:13px;color:var(--danger-tx);text-decoration:underline;text-underline-offset:2px}
+.field .error{margin-top:1px}
+.select[aria-invalid="true"]{border-color:var(--danger);background:var(--danger-bg)}
+
+.submit-row{margin-top:var(--sp-7);display:flex;flex-direction:column;gap:var(--sp-4)}
+.fine{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--text-3);line-height:1.5}
+.fine svg{width:14px;height:14px;flex:0 0 auto;margin-top:2px;color:var(--icon-quiet)}
+.fine b{color:var(--text-2);font-weight:620}
+
+/* accessible success state */
+.success{padding:var(--sp-2) 0}
+.success:focus{outline:none}
+.success:focus-visible{outline:3px solid var(--focus);outline-offset:6px;border-radius:var(--r-lg)}
+.succ-top{display:flex;gap:var(--sp-4);align-items:flex-start}
+.succ-ic{
+  width:46px;height:46px;border-radius:14px;flex:0 0 auto;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(150deg,#2fbd94,var(--ok));box-shadow:0 6px 16px -6px rgba(15,138,104,.55);
+}
+.succ-ic svg{width:24px;height:24px}
+.success h2{font-size:clamp(21px,1.9vw,26px)}
+.success .slede{font-size:14.5px;color:var(--text-2);margin-top:var(--sp-2);line-height:1.6;max-width:48ch}
+.succ-recap{margin-top:var(--sp-6);border-top:1px solid var(--border)}
+.succ-recap li{
+  display:grid;grid-template-columns:26px minmax(0,1fr);gap:var(--sp-3);align-items:start;
+  padding-block:12px;border-bottom:1px solid var(--border);font-size:13.5px;color:var(--text-2);line-height:1.5;
+}
+.succ-recap li b{color:var(--text-1);font-weight:620}
+.succ-recap .sn{font-family:var(--font-mono);font-size:12px;color:var(--text-3);font-variant-numeric:tabular-nums;padding-top:2px}
+.succ-foot{display:flex;flex-wrap:wrap;gap:var(--sp-4);align-items:center;margin-top:var(--sp-6)}
+.build-note{
+  display:flex;gap:var(--sp-3);align-items:flex-start;margin-top:var(--sp-6);
+  padding:12px 14px;border:1px dashed var(--border-strong);border-radius:var(--r-md);
+  background:var(--surface-2);font-size:12.5px;line-height:1.55;color:var(--text-2);
+}
+
+/* ---- Right rail ---------------------------------------------------------- */
+.rail{display:flex;flex-direction:column;gap:clamp(38px,4vw,58px)}
+.rhead{
+  display:flex;align-items:baseline;gap:var(--sp-4);flex-wrap:wrap;
+  border-top:2px solid var(--rule-heavy);padding-top:var(--sp-4);margin-bottom:var(--sp-5);
+}
+.rhead h2{font-size:clamp(19px,1.75vw,24px);letter-spacing:var(--tr-tight)}
+.rhead .rk{
+  margin-left:auto;font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.13em;
+  text-transform:uppercase;color:var(--text-3);font-variant-numeric:tabular-nums;
+}
+
+/* three-step timeline */
+.steps{display:grid}
+.step{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:var(--sp-5);
+  padding-block:var(--sp-5);border-bottom:1px solid var(--border);
+}
+.step:first-child{padding-top:var(--sp-2)}
+.step:last-child{border-bottom:0;padding-bottom:var(--sp-3)}
+.step .sn{
+  font-family:var(--font-mono);font-size:clamp(26px,2.7vw,36px);line-height:.86;letter-spacing:-.05em;
+  color:var(--text-brand);font-variant-numeric:tabular-nums;                   /* 8.22 AAA */
+}
+.step h3{font-size:16.5px;letter-spacing:var(--tr-snug)}
+.step p{font-size:13.5px;color:var(--text-2);line-height:1.6;margin-top:5px}
+.sla{
+  display:flex;align-items:flex-start;gap:10px;margin-top:var(--sp-4);padding:12px 14px;
+  border:1px solid var(--border-brand);background:var(--p-50);border-radius:var(--r-md);
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  line-height:1.6;color:var(--p-800);font-variant-numeric:tabular-nums;         /* 9.93 AAA */
+}
+.sla svg{width:15px;height:15px;flex:0 0 auto;margin-top:1px}
+
+/* agenda — a time-coded list, not cards */
+.agenda{border-top:1px solid var(--border)}
+.arow{
+  display:grid;grid-template-columns:60px 24px minmax(0,1fr);gap:var(--sp-3);align-items:start;
+  padding-block:13px;border-bottom:1px solid var(--border);
+}
+.arow .amin{
+  font-family:var(--font-mono);font-size:12px;color:var(--text-3);padding-top:3px;
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.arow .aic{
+  width:24px;height:24px;border-radius:8px;display:grid;place-items:center;flex:0 0 auto;margin-top:1px;
+  background:var(--surface-3);border:1px solid var(--border-subtle);color:var(--text-2);  /* 8.12 AAA */
+}
+.arow .aic svg{width:14px;height:14px}
+.arow b{display:block;font-size:14px;font-weight:620;color:var(--text-1);line-height:1.3}
+.arow .d{display:block;font-size:13px;color:var(--text-2);line-height:1.5;margin-top:3px}
+.afoot{
+  display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-3);padding-top:12px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);font-variant-numeric:tabular-nums;
+}
+.afoot .tot{margin-left:auto;color:var(--text-1);font-size:12.5px;letter-spacing:.06em}
+@media (max-width:390px){.arow{grid-template-columns:54px minmax(0,1fr)}.arow .aic{display:none}}
+
+/* Reserved scheduler slot. Not an empty dashed box: a full-contrast preview of
+   the picker that will ship, stamped "preview / not connected" on its own
+   header bar so nobody mistakes it for a live control. Inert spans only —
+   pointer-events off, role="img" on the wrapper, so it is never a keyboard
+   trap. Height is reserved so the real embed drops in with no layout shift. */
+.slot{
+  position:relative;overflow:hidden;min-height:380px;
+  display:flex;flex-direction:column;
+  border:1px solid var(--border-strong);border-radius:var(--r-xl);
+  background:linear-gradient(180deg,var(--n-0),var(--surface-2));
+  box-shadow:var(--sh-2);
+}
+.slot-stamp{
+  display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;
+  padding:9px 14px;border-bottom:1px solid var(--border);background:var(--gold-50);
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold-700);                                        /* 7.15 AAA on white-ish */
+}
+.slot-stamp .badge-building{margin-left:auto}
+.slot-pick{padding:var(--sp-5) clamp(14px,1.6vw,18px);pointer-events:none;flex:1;display:flex;flex-direction:column}
+.slot-pick .sp-head{display:flex;align-items:baseline;gap:var(--sp-3);margin-bottom:var(--sp-4)}
+.slot-pick .sp-head b{font-size:14.5px;font-weight:640;color:var(--text-1);letter-spacing:var(--tr-snug)}
+.slot-pick .sp-head .tz{
+  margin-left:auto;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3);font-variant-numeric:tabular-nums;
+}
+.slot-week{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.slot-week .sd{
+  display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px 9px;
+  border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface-1);
+}
+.slot-week .sd em{
+  font-style:normal;font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.slot-week .sd b{font-size:15px;font-weight:640;color:var(--text-1);font-variant-numeric:tabular-nums;line-height:1}
+.slot-week .sd i{width:4px;height:4px;border-radius:50%;background:var(--n-300);display:block}
+.slot-week .sd.is-on{
+  background:var(--p-50);border-color:var(--border-brand);box-shadow:inset 0 0 0 1px var(--border-brand);
+}
+.slot-week .sd.is-on em,.slot-week .sd.is-on b{color:var(--p-800)}   /* 9.93 AAA */
+.slot-week .sd.is-on i{background:var(--p-600)}
+.slot-week .sd.is-off{opacity:1;background:var(--surface-2)}
+.slot-week .sd.is-off b,.slot-week .sd.is-off em{color:var(--text-3)}  /* 4.67 AA */
+.slot-times{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:var(--sp-4)}
+.slot-times .st{
+  display:block;text-align:center;padding:9px 4px;border-radius:var(--r-md);
+  border:1px solid var(--border);background:var(--n-0);
+  font-family:var(--font-mono);font-size:12.5px;color:var(--text-1);font-variant-numeric:tabular-nums;
+}
+.slot-times .st.is-taken{background:var(--surface-2);color:var(--text-3);text-decoration:line-through}
+.slot-times .st.is-on{
+  background:var(--p-600);border-color:var(--p-700);color:#fff;font-weight:600;
+  box-shadow:0 3px 10px -5px rgba(90,38,201,.7);
+}
+.slot-note{
+  display:flex;gap:10px;align-items:flex-start;margin-top:auto;padding:12px 14px;
+  border-top:1px solid var(--border);background:var(--surface-2);
+  font-size:12.5px;line-height:1.55;color:var(--text-2);                 /* 8.53 AAA */
+}
+.slot-note svg{width:15px;height:15px;flex:0 0 auto;margin-top:2px;color:var(--icon-quiet)}
+@media (max-width:560px){.slot{min-height:0}}
+
+/* click-to-call alternative — a full-width strip under both columns, so the
+   short column does not leave a hole and the phone route reads as a route,
+   not as a second CTA competing with the form's button. */
+.altcall{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.8fr) minmax(300px,.95fr);
+  gap:clamp(20px,3vw,44px);
+  align-items:start;margin-top:clamp(34px,3.6vw,52px);
+  border-top:2px solid var(--rule-heavy);padding-top:clamp(22px,2.4vw,32px);
+}
+.altcall h2{font-size:clamp(19px,1.75vw,24px);letter-spacing:var(--tr-tight)}
+.altcall p{font-size:14px;color:var(--text-2);line-height:1.6;max-width:52ch;margin-top:var(--sp-3)}
+.ac-mid{border-left:1px solid var(--border);padding-left:clamp(18px,2vw,30px)}
+.ac-mid .acl{
+  display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:var(--sp-3);                        /* 5.04 AA */
+}
+.ac-list{list-style:none;display:grid;gap:9px}
+.ac-list li{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--text-2);line-height:1.4}
+.ac-list svg{width:15px;height:15px;flex:0 0 auto;color:var(--icon-quiet)}
+.ac-tel{display:grid;gap:var(--sp-4);justify-items:stretch}
+@media (max-width:1024px){
+  .altcall{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .ac-tel{grid-column:1 / -1}
+}
+@media (max-width:640px){
+  .altcall{grid-template-columns:minmax(0,1fr)}
+  .ac-mid{border-left:0;padding-left:0;border-top:1px solid var(--border);padding-top:var(--sp-4)}
+}
+.telrow{
+  display:flex;align-items:center;gap:var(--sp-4);
+  padding:13px 16px;border:1px solid var(--border-strong);border-radius:var(--r-lg);
+  background:var(--n-0);box-shadow:var(--sh-1);
+  transition:border-color var(--dur-2),box-shadow var(--dur-2),transform var(--dur-2) var(--ease-out);
+}
+.telrow:hover{border-color:var(--p-400);box-shadow:var(--sh-2);transform:translateY(-1px)}
+.telrow .ti{
+  width:44px;height:44px;border-radius:13px;flex:0 0 auto;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(150deg,#9367f7,var(--p-700));
+  box-shadow:0 3px 10px -4px rgba(90,38,201,.6),inset 0 1px 0 rgba(255,255,255,.28);
+}
+.telrow .ti svg{width:21px;height:21px}
+.telrow .tn{
+  display:block;font-family:var(--font-mono);font-weight:600;font-size:clamp(19px,2vw,25px);
+  letter-spacing:-.02em;line-height:1.1;color:var(--text-1);font-variant-numeric:tabular-nums;
+}
+.telrow .tk{
+  display:block;margin-top:4px;font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.telnote{display:block;margin-top:0;font-size:12.5px;
+  color:var(--text-2);line-height:1.6;max-width:52ch}
+.telnote .badge-building{margin-right:3px;vertical-align:baseline;position:relative;top:1px}
+
+/* ---- Vertical rhythm: the booking block runs long, so it does not also get
+   a full section pad at the bottom — the ink band's own top pad separates it. */
+.sec--book{padding-bottom:clamp(30px,3.2vw,46px)}
+/* the footer already brings 72-112px of margin-top; the section's own tail
+   padding on top of that was pure dead white above the fold-out. */
+#faq{padding-bottom:clamp(4px,1vw,14px)}
+
+/* ---- On-screen -----------------------------------------------------------
+   Light. The set spends ink on the home spine and the Toll Bridge hero only;
+   this section earns its separation from a tinted well and a 2px rule. ---- */
+/* The ambient bloom behind the console is inset -6% horizontally, which reaches
+   past the viewport on a --container-wide stage. The ink band used to clip it;
+   this one clips on the x axis only so the console's shadow still breathes. */
+#onscreen{padding-bottom:clamp(48px,5vw,76px);overflow-x:clip;
+  background:linear-gradient(180deg,var(--surface-0),var(--surface-2) 30%,var(--surface-0))}
+#onscreen .editorial-head{border-top-color:var(--rule-heavy)}
+/* the second and third tiles carry less content than the ring-less first —
+   pin their footers to the bottom so the row reads as one band, not steps */
+#onscreen .kpi{display:flex;flex-direction:column}
+#onscreen .kpi .kfoot:last-child{margin-top:auto;padding-top:var(--sp-3)}
+#onscreen .app-stage{margin-top:clamp(30px,3.4vw,48px)}
+#onscreen .app{max-height:none}
+/* At the 1024 step the side rail narrows to 172px and "Por conciliar" broke onto
+   two lines while its siblings stayed on one — a ragged nav no real product has.
+   Widen the rail a touch here and hold the labels on one line. */
+@media (max-width:1080px) and (min-width:769px){
+  #onscreen .app-side{width:190px;flex-basis:190px}
+}
+#onscreen .app-nav > span{white-space:nowrap}
+#onscreen .chapter-mark .of{white-space:nowrap}
+/* measured: --ink-tx-4 on the raised key cap lands at 3.36 — below AA. The cap
+   sits on a lighter plate than ink-900, so it needs the next step up. */
+#onscreen .searchpill kbd{color:var(--text-2)}      /* 9.22 AAA on the cap */
+/* Below ~560 the foot's two groups wrap into a ragged two-column mess. Stack
+   them instead. Column direction, never display:block — the .es/.en spans must
+   keep resolving their own display or both languages show at once. */
+@media (max-width:560px){
+  #onscreen .tbl-foot{flex-direction:column;align-items:flex-start;gap:5px}
+  #onscreen .tbl-foot .r{margin-left:0;flex-direction:column;gap:3px}
+}
+.onscreen-legend{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;margin-top:clamp(34px,3.8vw,54px);
+  border-top:1px solid var(--border-strong);
+}
+.osl{
+  padding:var(--sp-5) clamp(16px,2vw,30px) var(--sp-4);
+  border-right:1px solid var(--border);position:relative;
+}
+.osl:first-child{padding-left:0}
+.osl:last-child{border-right:0;padding-right:0}
+.osl .oslk{
+  display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--text-3);font-variant-numeric:tabular-nums;margin-bottom:8px;
+}
+.osl b{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:15.5px;font-weight:640;
+  color:var(--text-1);letter-spacing:var(--tr-snug)}
+.osl p{font-size:13.5px;line-height:1.6;color:var(--text-2);margin-top:7px;max-width:38ch}
+.osl.is-live::before{
+  content:"";position:absolute;left:0;right:1px;top:-1px;height:2px;
+  background:linear-gradient(90deg,var(--gold-400),rgba(232,161,60,0));
+}
+.osl.is-live .oslk{color:var(--text-gold)}
+.oslnow{
+  font-family:var(--font-mono);font-size:9.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--text-gold);background:var(--gold-50);border:1px solid rgba(232,161,60,.34);
+  border-radius:999px;padding:2px 8px;
+}
+@media (max-width:860px){
+  .onscreen-legend{grid-template-columns:minmax(0,1fr)}
+  .osl{border-right:0;border-bottom:1px solid var(--border);padding-left:0;padding-right:0}
+  .osl:last-child{border-bottom:0}
+  .osl.is-live::before{right:0}
+}
+
+/* ---- FAQ ----------------------------------------------------------------- */
+.faq{border-top:2px solid var(--rule-heavy)}
+.faq details{border-bottom:1px solid var(--border)}
+.faq summary{
+  display:grid;grid-template-columns:34px minmax(0,1fr) 28px;gap:var(--sp-3);align-items:start;
+  padding-block:var(--sp-5);cursor:pointer;list-style:none;
+  font-size:clamp(15.5px,1.35vw,17.5px);font-weight:620;color:var(--text-1);
+  letter-spacing:var(--tr-snug);line-height:1.4;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--p-800)}
+.faq .qn{font-family:var(--font-mono);font-size:12px;font-weight:400;color:var(--text-3);
+  padding-top:4px;font-variant-numeric:tabular-nums}
+.faq .qi{
+  width:28px;height:28px;border-radius:9px;display:grid;place-items:center;margin-top:-1px;
+  border:1px solid var(--border);background:var(--n-0);color:var(--text-2);
+  transition:transform var(--dur-3) var(--ease-out),background var(--dur-2),border-color var(--dur-2);
+}
+.faq .qi svg{width:15px;height:15px}
+.faq details[open] .qi{transform:rotate(180deg);background:var(--p-50);border-color:var(--border-brand);color:var(--p-800)}
+.faq .ans{
+  padding:0 0 var(--sp-6) calc(34px + var(--sp-3));font-size:14.5px;color:var(--text-2);
+  line-height:1.65;max-width:82ch;
+}
+.faq .ans p + p{margin-top:var(--sp-3)}
+.faq .ans .link-arrow{margin-top:var(--sp-4)}
+@media (max-width:560px){
+  .faq summary{grid-template-columns:26px minmax(0,1fr) 26px;gap:var(--sp-2)}
+  .faq .ans{padding-left:calc(26px + var(--sp-2))}
+}
+/* Closing beat. The list of collapsed rows is a limp way to end a page, and it
+   left ~190px of dead white above the footer. This sits on the FAQ's closing
+   rule (negative margin swallows the last hairline) and sends the reader back
+   up to the one thing the page is for. */
+.faqend{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(18px,3vw,48px);
+  align-items:start;margin-top:-1px;
+  border-top:2px solid var(--rule-heavy);
+  padding-top:clamp(22px,2.4vw,34px);
+}
+.faqend h3{
+  font-size:clamp(17px,1.7vw,22px);font-weight:640;letter-spacing:var(--tr-snug);
+  line-height:1.25;color:var(--text-1);margin:0;
+}
+.faqend p{
+  margin:var(--sp-3) 0 0;font-size:14px;line-height:1.65;color:var(--text-2);max-width:62ch;
+}
+/* optically seated on the h3 cap-height, so the row reads title-left / action-right
+   rather than a link floating in the middle of the block */
+.faqend .link-arrow{white-space:nowrap;padding-top:4px}
+@media (max-width:720px){
+  .faqend{grid-template-columns:minmax(0,1fr);gap:var(--sp-5)}
+}
+
+/* ---- Contrast touch-ups: --text-3 clears 4.5 on white but only 4.44 on the
+   --n-100 tinted chrome, so those instances step up one rung. --------------- */
+.lang button,.searchpill kbd{color:var(--text-2)}
+
+/* =========================================================================
+   X. CROSS-PAGE SHELL NORMALISATION  (identical block in all five pages)
+   The nav and footer are byte-identical across the set; these rules keep the
+   chrome that carries them identical too.
+   ====================================================================== */
+.lang button{color:var(--text-2)}            /* 8.13 AAA on --surface-3 */
+.lang button:hover{color:var(--text-1)}
+.lang button.is-active{background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1)} /* 9.93 AAA */
+.lang .sep{width:1px;align-self:stretch;margin-block:4px;margin-inline:0;padding:0;
+  font-size:0;line-height:0;background:var(--n-400);flex:0 0 auto;border-radius:1px;
+  height:auto;min-height:15px;color:transparent}
+.nav-links .nl-abbr{display:none}
+@media (max-width:1080px){
+  .nav-links .nl-full{display:none}
+  .nav-links .nl-abbr{display:inline}
+}
+/* Every page now closes on a beat that carries its own breathing room, so the
+   footer joins at the same distance on all five. One number, not five. */
+.site-footer{margin-top:clamp(36px,3.8vw,52px)}

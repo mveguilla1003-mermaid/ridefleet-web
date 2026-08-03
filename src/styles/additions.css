@@ -1,0 +1,222 @@
+/* ============================================================================
+   ADDITIONS — components the static v2 pages did not have.
+   Written in the same token vocabulary as design-system.css. Nothing here
+   introduces a new colour, radius, shadow or spacing value.
+
+   1. FAQ disclosure        — required on every page (WEBSITE_PLAN §6 preamble)
+   2. Sample-data note      — the no-fabricated-proof label on product surfaces
+   3. Sticky mobile CTA bar — Book a demo + tap-to-call (§5.1)
+   4. Placeholder / logo slots and legal utility row
+   ========================================================================= */
+
+/* ---- 1. FAQ ------------------------------------------------------------ */
+/* Opt-in. The ported pages own their own `.faq` layout (two-column
+   `.faq-split` on RFM / Voz AI / Demo), so this grid is scoped to the card
+   variant the shared `<Faq>` component emits instead of claiming bare `.faq`
+   and fighting the page stylesheets at equal specificity. */
+.faq--cards {
+  display: grid;
+  gap: var(--sp-2);
+  max-width: var(--container-narrow);
+}
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface-1);
+  box-shadow: var(--sh-1);
+  overflow: hidden;
+}
+.faq-item + .faq-item {
+  margin-top: 0;
+}
+.faq-item > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--fs-h4);
+  font-weight: 640;
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tr-snug);
+  color: var(--text-1);
+  transition: background var(--dur-2) var(--ease-out);
+}
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item > summary:hover {
+  background: var(--surface-2);
+}
+.faq-item > summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+.faq-item > summary .ic {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: var(--icon-quiet);
+  transition: transform var(--dur-2) var(--ease-out);
+}
+.faq-item[open] > summary .ic {
+  transform: rotate(180deg);
+}
+.faq-item[open] > summary {
+  border-bottom: 1px solid var(--border-subtle);
+}
+.faq-body {
+  padding: var(--sp-4) var(--sp-5) var(--sp-5);
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+}
+.faq-body p + p {
+  margin-top: var(--sp-3);
+}
+.faq-body a {
+  color: var(--text-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.band--ink .faq-item {
+  background: var(--surface-1);
+  border-color: var(--border);
+}
+
+/* ---- 2. Sample-data note ---------------------------------------------- */
+.sample-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  color: var(--text-3);
+  font-size: var(--fs-2xs);
+  line-height: 1.45;
+  letter-spacing: var(--tr-normal);
+}
+.sample-note .ic {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  color: var(--icon-quiet);
+}
+
+/* ---- 3. Sticky mobile CTA bar ----------------------------------------- */
+.sticky-cta {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: var(--z-sticky);
+  display: none;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--gutter)
+    calc(var(--sp-3) + env(safe-area-inset-bottom, 0px));
+  background: var(--surface-0);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -8px 24px -12px rgba(38, 20, 90, 0.18);
+}
+.sticky-cta .btn {
+  flex: 1 1 0;
+  justify-content: center;
+  white-space: nowrap;
+}
+.sticky-cta .btn--secondary {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 700px) {
+  .sticky-cta {
+    display: flex;
+  }
+  /* Keep the last section clear of the bar. */
+  .site-footer {
+    padding-bottom: calc(var(--sp-20) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ---- 4. Placeholders, logo slots, legal row --------------------------- */
+.foot-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-4);
+  padding-top: var(--sp-4);
+  margin-top: var(--sp-4);
+  border-top: 1px solid var(--border-subtle);
+  font-size: var(--fs-2xs);
+  color: var(--text-3);
+}
+.foot-legal a {
+  color: var(--text-3);
+  text-underline-offset: 2px;
+}
+.foot-legal a:hover {
+  color: var(--text-1);
+  text-decoration: underline;
+}
+.foot-legal .dot {
+  color: var(--n-400);
+}
+
+/* A deliberately empty partner slot. It must LOOK empty — never a fake logo. */
+.logo-slot {
+  display: grid;
+  place-items: center;
+  min-height: 68px;
+  padding: var(--sp-3);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+  color: var(--text-3);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--tr-caps);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Prose pages (legal, security) — narrow measure, no decoration. */
+.prose {
+  max-width: var(--container-narrow);
+  color: var(--text-2);
+}
+.prose h2 {
+  font-size: var(--fs-h3);
+  margin-top: var(--sp-10);
+  margin-bottom: var(--sp-3);
+}
+.prose h3 {
+  font-size: var(--fs-h4);
+  margin-top: var(--sp-6);
+  margin-bottom: var(--sp-2);
+}
+.prose p + p,
+.prose ul {
+  margin-top: var(--sp-3);
+}
+.prose ul {
+  display: grid;
+  gap: var(--sp-2);
+  padding-left: var(--sp-5);
+  list-style: disc;
+}
+.prose li::marker {
+  color: var(--n-400);
+}
+.prose a {
+  color: var(--text-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose .updated {
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+
+/* Body scroll lock while the mobile nav panel is open. */
+body.nav-open {
+  overflow: hidden;
+}

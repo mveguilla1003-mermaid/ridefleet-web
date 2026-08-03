@@ -1,0 +1,534 @@
+{
+  "meta": {
+    "title": "Voz AI — recepción con IA para tu flota, en español e inglés",
+    "description": "Voz AI contesta el teléfono, el chat, el correo y los SMS de tu flota en español e inglés, sobre el mismo expediente de reserva, y le pasa el micrófono a una persona cuando toca."
+  },
+  "chapterOf": "de 03",
+  "hero": {
+    "badge": "Voz AI",
+    "titleLead": "Tu recepción con IA — ",
+    "titleAccent": "con un equipo humano detrás.",
+    "lede": "Cada llamada contestada. En español o en inglés. A toda hora. Voz AI atiende el teléfono, el chat, el correo y los mensajes de tu flota sobre el mismo expediente de reserva que usa tu equipo — y le pasa el micrófono a una persona cuando toca.",
+    "ctaDemo": "Reservar una demo",
+    "ctaCall": "Llama y escúchalo tú mismo",
+    "note": {
+      "channels": "Voz · Chat · Correo · SMS",
+      "languages": "Español e inglés",
+      "hours": "24 / 7",
+      "spine": "Sobre tu columna de operaciones"
+    },
+    "index": {
+      "label": "Lo que está construido",
+      "more": "Ver las cuatro en detalle",
+      "items": {
+        "0": {
+          "title": "Un solo asistente, cuatro canales",
+          "desc": "Voz, chat, correo y SMS con la misma persona digital y la misma base de conocimiento."
+        },
+        "1": {
+          "title": "Bilingüe de raíz, no traducido",
+          "desc": "Español de Puerto Rico e inglés, con cambio de idioma a mitad de la llamada."
+        },
+        "2": {
+          "title": "Humano en el lazo",
+          "desc": "La IA propone; una persona confirma reembolsos, disputas y todo lo que huela a excepción."
+        },
+        "3": {
+          "title": "Nativa sobre la columna",
+          "desc": "Lee y escribe en el mismo expediente de reserva. No es un bot pegado por fuera."
+        }
+      }
+    }
+  },
+  "console": {
+    "label": "Ejemplo de una llamada atendida por Voz AI",
+    "crumbSection": "Llamadas",
+    "crumb": {
+      "code": "#2148"
+    },
+    "sampleChip": "Ejemplo de llamada",
+    "agent": {
+      "value": "MR"
+    },
+    "call": {
+      "persona": "Recepción Voz AI",
+      "line": "Entrante · número enmascarado",
+      "lang": {
+        "value": "ES → EN"
+      },
+      "timer": "02:14"
+    },
+    "wave": {
+      "label": "Audio de ejemplo",
+      "status": "Transcribiendo"
+    },
+    "transcript": {
+      "ai": "Voz AI",
+      "caller": "Cliente",
+      "lines": {
+        "0": {
+          "ts": "00:02",
+          "lt": "ES",
+          "value": "Gracias por llamar a Ride Fleet. Soy la asistente virtual. ¿En qué te puedo ayudar?"
+        },
+        "1": {
+          "ts": "00:07",
+          "lt": "ES",
+          "value": "Sí, buenas. Tengo una renta y quiero extenderla hasta el domingo."
+        },
+        "2": {
+          "ts": "00:12",
+          "lt": "ES",
+          "value": "Claro. Veo tu reserva RES-4821, el Corolla del aeropuerto. Extenderla dos días son $96 más peajes. ¿Te la extiendo?"
+        },
+        "3": {
+          "ts": "00:21",
+          "lt": "EN",
+          "value": "Actually — sorry, can we do this in English? And does that ninety-six include the toll charges?"
+        },
+        "4": {
+          "ts": "00:25",
+          "lt": "EN",
+          "value": "Of course. The $96 is the two extra rental days. Tolls are billed separately at cost from AutoExpreso — $11.40 so far on this rental."
+        },
+        "5": {
+          "ts": "00:36",
+          "lt": "EN",
+          "value": "Got it. One more thing — I was double charged last week. Can someone look at that?"
+        },
+        "6": {
+          "ts": "00:41",
+          "lt": "EN",
+          "value": "I can extend the rental right now. The duplicate charge is a refund, so I am passing you to Marisol on the team — she has the record open."
+        }
+      },
+      "caption": "Transcripción tal como se habló: el cliente cambia de español a inglés a mitad de la llamada y el asistente lo sigue sin perder el expediente. Ejemplo ilustrativo — no es una llamada de un cliente real."
+    },
+    "acts": {
+      "label": "Acciones sobre el expediente",
+      "a1": {
+        "at": "00:14",
+        "title": "Reserva localizada",
+        "code": "RES-4821",
+        "plate": "HTX-412",
+        "tag": "Lectura"
+      },
+      "a2": {
+        "at": "00:26",
+        "title": "Peajes consultados",
+        "value": "AutoExpreso",
+        "amount": "$11.40",
+        "tag": "Lectura"
+      },
+      "a3": {
+        "at": "00:48",
+        "title": "Extensión escrita",
+        "detail": "Devuelve dom 6:00 PM · +",
+        "amount": "$96.00",
+        "tag": "Escritura"
+      },
+      "a4": {
+        "at": "00:52",
+        "title": "Caso de reembolso preparado",
+        "detail": "Cargo duplicado · en cola de Marisol",
+        "tag": "Decide una persona"
+      },
+      "foot": "En esta llamada: <b>3</b> acciones automáticas, <b>1</b> enviada a una persona."
+    },
+    "record": {
+      "label": "Expediente en pantalla",
+      "booking": {
+        "k": "Reserva",
+        "value": "RES-4821"
+      },
+      "customer": {
+        "k": "Cliente",
+        "value": "M. Rivera"
+      },
+      "unit": {
+        "k": "Unidad",
+        "value": "Corolla",
+        "plate": "HTX-412"
+      },
+      "due": {
+        "k": "Devuelve",
+        "value": "Vie 6:00 PM"
+      },
+      "tolls": {
+        "k": "Peajes",
+        "amount": "$11.40"
+      }
+    },
+    "intent": {
+      "label": "Intención detectada",
+      "items": {
+        "0": {
+          "label": "Extender renta",
+          "score": "0.96"
+        },
+        "1": {
+          "label": "Pregunta de peajes",
+          "score": "0.91"
+        },
+        "2": {
+          "label": "Disputa de cargo",
+          "score": "0.58"
+        }
+      }
+    },
+    "handoff": {
+      "label": "Control humano",
+      "title": "Pase a persona",
+      "body": "Reembolsos, disputas y excepciones no se resuelven solas. La IA prepara el caso; Marisol lo aprueba.",
+      "primary": "Pasar ahora",
+      "secondary": "Dejar nota"
+    },
+    "after": {
+      "label": "Al colgar",
+      "summary": {
+        "title": "Resumen en la reserva",
+        "value": "RES-4821 · 02:14"
+      },
+      "confirm": {
+        "title": "Confirmación al cliente",
+        "detail": "Correo y SMS · +",
+        "amount": "$96.00"
+      },
+      "case": {
+        "title": "Caso abierto para Marisol",
+        "detail": "Con transcripción adjunta"
+      }
+    }
+  },
+  "line": {
+    "eyebrow": "Prueba directa",
+    "title": "No nos creas. Llámala.",
+    "lede": "La demo más honesta que tenemos no es un video: es el teléfono. Marca, habla como hablarías con tu propia recepción y juzga tú. Voz AI ya corre en producción sobre <mono>valet.ridefleetmanager.com</mono>.",
+    "kicker": "Llama y escúchalo tú mismo",
+    "note": "Las X son honestas: la línea pública de demostración se está aprovisionando y aparecerá aquí en cuanto exista. Mientras tanto, en la demo marcamos juntos y escuchas la llamada en vivo.",
+    "steps": {
+      "0": {
+        "title": "Saluda en español. O en inglés.",
+        "desc": "Cambia de idioma a mitad de la oración y fíjate si se pierde."
+      },
+      "1": {
+        "title": "Pídele algo real.",
+        "desc": "Una cotización, un horario, extender una renta, dónde se entrega la unidad."
+      },
+      "2": {
+        "title": "Pide hablar con una persona.",
+        "desc": "Ese es el punto: debe pasarte, con el contexto ya escrito."
+      },
+      "3": {
+        "title": "Cuelga y dinos qué falló.",
+        "desc": "Preferimos el reporte crudo a un caso de estudio inventado."
+      }
+    },
+    "cta": "Marcar juntos en una demo"
+  },
+  "difference": {
+    "title": "Cuatro cosas que sí podemos sostener.",
+    "aside": "No hay métricas inventadas en esta página. Estas cuatro son las que están construidas y las que puedes verificar por teléfono.",
+    "items": {
+      "0": {
+        "title": "Un asistente, cuatro canales",
+        "sub": "Voz, chat, correo y SMS. Misma persona digital, misma base de conocimiento, mismo historial.",
+        "note": "Los cuatro, abajo",
+        "points": {
+          "0": {
+            "title": "Sin cuatro bandejas separadas",
+            "text": "El cliente que escribió por SMS y luego llamó es la misma conversación, no dos tickets."
+          },
+          "1": {
+            "title": "Una sola configuración",
+            "text": "Cambias una política de cancelación una vez y cambia en los cuatro canales."
+          },
+          "2": {
+            "title": "El conteo es cuatro",
+            "text": "Voz, chat, correo y SMS. Si en algún lado dice otra cosa, ese otro lado está mal."
+          }
+        }
+      },
+      "1": {
+        "title": "Bilingüe de raíz",
+        "sub": "Español de Puerto Rico e inglés. No un guion en inglés traducido a última hora.",
+        "note": "Escúchalo cambiar de idioma",
+        "points": {
+          "0": {
+            "title": "Cambio a mitad de llamada",
+            "text": "El cliente cambia de idioma y el asistente cambia con él, sin volver a empezar."
+          },
+          "1": {
+            "title": "Dos idiomas, no \"cualquiera\"",
+            "text": "Español e inglés es lo que está construido. No prometemos un catálogo que no existe."
+          },
+          "2": {
+            "title": "Escrito para acá",
+            "text": "Nombres de municipios, direcciones y peajes de Puerto Rico dichos como se dicen aquí."
+          }
+        }
+      },
+      "2": {
+        "title": "Humano en el lazo",
+        "sub": "La IA propone. Una persona confirma lo que cuesta dinero o reputación.",
+        "note": "Quién confirma qué",
+        "points": {
+          "0": {
+            "title": "Reembolsos y disputas",
+            "text": "Nunca se aprueban solos. Llegan preparados a la cola de una persona."
+          },
+          "1": {
+            "title": "Confianza visible",
+            "text": "Cuando el asistente no está seguro, lo dice y escala en vez de improvisar."
+          },
+          "2": {
+            "title": "Pase con contexto",
+            "text": "La persona recibe la transcripción y el expediente abierto. No \"cuénteme de nuevo\"."
+          }
+        }
+      },
+      "3": {
+        "title": "Nativa sobre la columna",
+        "sub": "Vive dentro de Ride Fleet Manager, no encima. Lee y escribe el expediente de reserva.",
+        "note": "La columna de operaciones",
+        "points": {
+          "0": {
+            "title": "Consulta real",
+            "text": "Reserva, unidad, hora de devolución y peajes acumulados salen del registro, no de un guion."
+          },
+          "1": {
+            "title": "Escritura real",
+            "text": "Una extensión aceptada por teléfono queda en la reserva y en la facturación."
+          },
+          "2": {
+            "title": "Activar, no integrar",
+            "text": "Si ya corres Ride Fleet Manager, encender Voz AI es configuración, no un proyecto."
+          }
+        }
+      }
+    }
+  },
+  "channels": {
+    "title": "Cuatro canales. Un solo hilo.",
+    "aside": "Cada canal tiene su ritmo. Ninguno tiene su propia verdad: los cuatro leen y escriben el mismo expediente.",
+    "voice": {
+      "value": "Voz",
+      "body": "Contesta al primer timbre, de día, de noche y cuando entran tres llamadas a la vez. Cotiza, busca reservas y extiende rentas hablando.",
+      "facts": {
+        "0": "Contesta en paralelo, no en fila",
+        "1": "Cotiza, reserva y extiende hablando",
+        "2": "Pasa a una persona con el caso escrito"
+      },
+      "mini": {
+        "head": "Llamada entrante",
+        "time": "00:12",
+        "in": {
+          "text": "\"¿Tienen algo para mañana en Isla Verde?\""
+        },
+        "out": {
+          "text": "Cotización enviada · RES-4907",
+          "value": "Voz AI · 0.94"
+        }
+      }
+    },
+    "chat": {
+      "value": "Chat",
+      "body": "El mismo asistente en tu sitio web y en tu portal de reservas. Responde con el inventario y las políticas que ya configuraste.",
+      "mini": {
+        "head": "Chat del sitio",
+        "in": {
+          "text": "¿Puedo recoger en el aeropuerto a las 11 PM?",
+          "value": "10:41 PM"
+        },
+        "out": {
+          "text": "Sí — entrega en LMM hasta medianoche. ¿Reservo?",
+          "value": "10:41 PM · Voz AI"
+        }
+      }
+    },
+    "email": {
+      "value": "Correo",
+      "body": "Triage de la bandeja: clasifica, redacta la respuesta con el expediente delante y deja lo delicado en cola para una persona.",
+      "mini": {
+        "head": "Bandeja de reservas",
+        "rows": {
+          "0": {
+            "text": "Factura de mi renta de julio",
+            "value": "08:12"
+          },
+          "1": {
+            "text": "Cargo duplicado — necesito ayuda",
+            "value": "08:26"
+          }
+        },
+        "chip": "En cola para una persona"
+      }
+    },
+    "sms": {
+      "value": "SMS",
+      "body": "Recordatorios de devolución, enlaces de pago y avisos de peaje por texto — el canal que la gente sí lee. WhatsApp llega después.",
+      "mini": {
+        "head": "Hilo SMS",
+        "out": {
+          "text": "Tu Corolla vence hoy 6:00 PM. Responde EXTENDER para dos días más.",
+          "value": "Entregado · 4:02 PM"
+        },
+        "in": {
+          "text": "EXTENDER",
+          "value": "4:09 PM"
+        }
+      }
+    }
+  },
+  "rail": {
+    "label": "Corre sobre",
+    "body": "Telefonía, cobros y peajes que ya existen. Nada de esto lo inventamos nosotros.",
+    "items": {
+      "0": {
+        "value": "Telnyx",
+        "label": "Voz"
+      },
+      "1": {
+        "value": "Twilio",
+        "label": "SMS"
+      },
+      "2": {
+        "value": "Stripe",
+        "label": "Cobros"
+      },
+      "3": {
+        "value": "AutoExpreso",
+        "label": "Peajes PR"
+      },
+      "4": {
+        "value": "SunPass",
+        "label": "Peajes FL"
+      }
+    }
+  },
+  "spine": {
+    "title": "Dónde se enchufa en la columna de operaciones.",
+    "aside": "Un asistente que no puede tocar el expediente es un contestador caro. Esto es exactamente lo que Voz AI lee, lo que escribe y quién lo confirma.",
+    "table": {
+      "caption": "Situaciones que atiende Voz AI, qué toca del expediente y quién confirma",
+      "headers": {
+        "situation": "Situación",
+        "does": "Lo que hace Voz AI",
+        "touches": "Qué toca del expediente",
+        "confirms": "Quién confirma"
+      },
+      "rows": {
+        "0": {
+          "title": "Reserva y cotización",
+          "sub": "Entrante · voz o chat",
+          "does": "Consulta disponibilidad, cotiza con tus reglas de tarifa y crea la reserva.",
+          "touches": "Inventario, tarifas, expediente de reserva",
+          "confirm": "Automático"
+        },
+        "1": {
+          "title": "Después de las 5",
+          "sub": "Fuera de horario y desborde",
+          "does": "Contesta lo que hoy cae en buzón: horarios, direcciones, cambios y devoluciones tardías.",
+          "touches": "Reserva, notas del expediente",
+          "confirm": "Automático"
+        },
+        "2": {
+          "title": "Cobros",
+          "sub": "Saldos, peajes, enlaces de pago",
+          "does": "Explica el desglose, manda el enlace de pago y registra la promesa de pago.",
+          "touches": "Facturación, peajes de Toll Bridge, Stripe",
+          "confirm": "Persona si hay disputa"
+        },
+        "3": {
+          "title": "Seguimiento",
+          "sub": "Saliente · SMS y voz",
+          "does": "Recuerda devoluciones, confirma recogidas y persigue documentos que faltan.",
+          "touches": "Calendario de reservas, contactos",
+          "confirm": "Automático"
+        },
+        "4": {
+          "title": "Excepciones",
+          "sub": "Reembolsos, daños, disputas",
+          "does": "Prepara el caso con transcripción y evidencia, y para. No decide.",
+          "touches": "Expediente completo · solo lectura",
+          "confirm": "Siempre una persona"
+        }
+      },
+      "foot": "5 situaciones · columna de operaciones de Ride Fleet",
+      "swipe": "Desliza la tabla",
+      "updated": "Actualizado con cada versión"
+    },
+    "note": "Nada de esto pasa en una base de datos aparte. Voz AI usa el mismo expediente de reserva que ve tu mostrador, y los peajes que explica por teléfono son los mismos que Toll Bridge concilia con AutoExpreso. Una sola verdad, cuatro canales de entrada.",
+    "check": {
+      "k": "Compruébalo",
+      "v": "Pregúntale por los peajes de una reserva y compara con la factura.",
+      "link": "Ir al número"
+    }
+  },
+  "faq": {
+    "label": "Preguntas frecuentes",
+    "items": {
+      "0": {
+        "q": "¿Suena a robot?",
+        "a": "Juzga tú: para eso está el número en esta página. Lo que sí te prometemos es que se identifica como asistente al contestar. No fingimos que es una persona."
+      },
+      "1": {
+        "q": "¿Qué pasa si no entiende?",
+        "a": "Escala. Cuando la confianza baja o el tema es un reembolso, una disputa o un daño, pasa la llamada a una persona con la transcripción y el expediente ya abiertos. Prefiere transferir antes que inventar."
+      },
+      "2": {
+        "q": "¿Reemplaza a mi equipo?",
+        "a": "No. Se come la cola repetitiva — horarios, direcciones, estado de la reserva, recordatorios — para que tu equipo atienda lo que de verdad necesita criterio. El diseño es explícitamente humano en el lazo."
+      },
+      "3": {
+        "q": "¿Funciona si no uso Ride Fleet Manager?",
+        "a": "Donde brilla es sobre la columna de operaciones, porque ahí puede consultar y escribir el expediente. Si corres otro sistema, hablemos de qué se puede conectar antes de venderte nada."
+      },
+      "4": {
+        "q": "¿Qué idiomas, exactamente?",
+        "a": "Español e inglés. Dos. No decimos \"cualquier idioma\" porque no sería cierto, y en una llamada la mentira dura seis segundos."
+      },
+      "5": {
+        "q": "¿Cuánto tarda en estar contestando?",
+        "a": "Si ya corres Ride Fleet Manager, es configuración: tu horario, tus políticas, tu tono y el número. No es un proyecto de integración. El tiempo exacto depende del aprovisionamiento del número con el operador."
+      }
+    }
+  },
+  "partner": {
+    "title": "Buscamos socios de diseño",
+    "body": "Voz AI corre hoy en producción, pero todavía no publicamos testimonios ni números de clientes — porque no vamos a inventarlos. Si operas una flota en Puerto Rico y quieres moldear lo que se construye, aquí hay un asiento.",
+    "cta": "Hablemos",
+    "slotsCaption": "Estos espacios están vacíos a propósito"
+  },
+  "toggle": {
+    "eyebrow": "Un módulo a la vez",
+    "title": "Empieza por una fuga. Expande cuando se pague solo.",
+    "sub": "Toll Bridge y Voz AI ya viven sobre el mismo registro de reserva — activar el siguiente módulo es una configuración, no un proyecto de integración.",
+    "rfm": {
+      "title": "Ride Fleet Manager",
+      "body": "Córrelo. Reserva, check-out, inspección, facturación y cierre sobre una sola columna."
+    },
+    "toll": {
+      "title": "Toll Bridge",
+      "body": "Recupéralo. Peajes de AutoExpreso conciliados al conductor correcto y facturados."
+    },
+    "voz": {
+      "title": "Voz AI",
+      "body": "Contéstalo. Voz, chat, correo y SMS en español e inglés, con una persona detrás."
+    },
+    "see": "Ver el producto",
+    "here": "Estás aquí"
+  },
+  "cta": {
+    "eyebrow": "Voz AI",
+    "title": "Deja de perder la llamada de las 7:40 PM.",
+    "body": "Media hora. Traemos tu horario, tus políticas y tus preguntas más repetidas, y marcamos la línea juntos para que la escuches contestar.",
+    "demo": "Reservar una demo",
+    "call": "Llamar {phone}",
+    "list": {
+      "0": "Sin contrato para hablar",
+      "1": "En español o en inglés",
+      "2": "Hecho en Puerto Rico"
+    }
+  }
+}

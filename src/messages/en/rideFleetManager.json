@@ -1,0 +1,808 @@
+{
+  "meta": {
+    "title": "Ride Fleet Manager — one operations spine for your whole fleet",
+    "description": "Traditional rental, a car-sharing marketplace and dealership loaners on one booking engine: inspections, tolls, deposits and billing in a single record, in Spanish and English."
+  },
+  "hero": {
+    "badge": "Ride Fleet Manager",
+    "title": "One platform. One operations spine. <grad>Every business model.</grad>",
+    "lede": "Traditional rental, a car-sharing marketplace and dealership loaners running on the same booking engine, the same daily operation and the same reporting layer. From booking to closeout, without leaving the record.",
+    "primary": "Book a demo",
+    "secondary": "See the operations spine",
+    "notes": {
+      "0": "Bilingual to the core, Spanish and English",
+      "1": "Built in Puerto Rico, ready for the US mainland",
+      "2": "Tolls and AI reception in the same system"
+    },
+    "index": {
+      "0": "<b>Traditional rental</b> — counter, agreements, deposits and returns.",
+      "1": "<b>Car-sharing marketplace</b> — hosts, listings and revenue split.",
+      "2": "<b>Dealership loaners</b> — service lane, repair orders and internal billing."
+    }
+  },
+  "board": {
+    "ariaLabel": "Ride Fleet Manager fleet dashboard: 34 of 44 units turn-ready and a vehicle table with each unit's next action.",
+    "crumbs": {
+      "product": "Ride Fleet Manager",
+      "section": "Fleet",
+      "place": {
+        "value": "San Juan · PR"
+      }
+    },
+    "search": {
+      "label": "Search plate or booking",
+      "code": "Ctrl K"
+    },
+    "avatar": "MR",
+    "side": {
+      "ops": {
+        "label": "Operations",
+        "items": {
+          "0": {
+            "label": "Fleet board"
+          },
+          "1": {
+            "label": "Reservations",
+            "count": "26"
+          },
+          "2": {
+            "label": "Handovers today",
+            "count": "11"
+          },
+          "3": {
+            "label": "Inspections",
+            "count": "4"
+          }
+        }
+      },
+      "money": {
+        "label": "Money",
+        "items": {
+          "0": {
+            "label": "Tolls",
+            "count": "9"
+          },
+          "1": {
+            "label": "Billing"
+          },
+          "2": {
+            "label": "Claims"
+          }
+        }
+      }
+    },
+    "pane": {
+      "title": "Fleet board",
+      "sub": "Tuesday 2:06 PM · 3 locations · 44 units",
+      "today": "Today",
+      "week": "Week",
+      "filter": "Needs action"
+    },
+    "kpi": {
+      "ready": {
+        "value": "Turn-ready",
+        "pct": "77",
+        "pctSymbol": "%",
+        "count": "34",
+        "total": " / 44",
+        "foot": "6 washing · 4 in shop"
+      },
+      "handovers": {
+        "label": "Handovers today",
+        "count": "11",
+        "foot": "7 done · 4 pending"
+      },
+      "billed": {
+        "label": "Billed today",
+        "amount": "$8,412",
+        "foot": "Includes $164 in tolls"
+      }
+    },
+    "table": {
+      "caption": "Fleet vehicles with status, fuel and next action",
+      "head": {
+        "unit": "Unit",
+        "plate": "Plate",
+        "status": "Status",
+        "level": "Level",
+        "next": "Next action",
+        "time": "Time"
+      },
+      "rows": {
+        "0": {
+          "vehicle": {
+            "value": "Toyota Corolla 2024",
+            "sub": "Rental · SJU Airport"
+          },
+          "plate": "GBL-704",
+          "status": {
+            "value": "Turn-ready"
+          },
+          "level": "92%",
+          "next": {
+            "title": "Hand over to J. Colón",
+            "sub": "Booking #4830 · counter 2"
+          },
+          "time": "15:30"
+        },
+        "1": {
+          "vehicle": {
+            "value": "Hyundai Tucson 2024",
+            "sub": "Rental · Condado"
+          },
+          "plate": "HTG-119",
+          "status": {
+            "value": "On rent"
+          },
+          "level": "71%",
+          "next": {
+            "title": "Return scheduled",
+            "sub": "Booking #4821 · 2 tolls uncharged"
+          },
+          "time": "17:00"
+        },
+        "2": {
+          "vehicle": {
+            "value": "Jeep Wrangler 2023",
+            "sub": "Car-sharing · host M. Rivera"
+          },
+          "plate": "IVR-238",
+          "status": {
+            "value": "Needs wash"
+          },
+          "level": "58%",
+          "next": {
+            "title": "Send to wash",
+            "sub": "Bay 2 · blocks tomorrow's booking"
+          },
+          "time": "14:40"
+        },
+        "3": {
+          "vehicle": {
+            "value": "Kia Forte 2022",
+            "sub": "Rental · Bayamón"
+          },
+          "plate": "FQD-552",
+          "status": {
+            "value": "Damage reported"
+          },
+          "level": "44%",
+          "next": {
+            "title": "Review inspection",
+            "sub": "6 photos · rear bumper"
+          },
+          "time": "—"
+        },
+        "4": {
+          "vehicle": {
+            "value": "Tesla Model 3 2024",
+            "sub": "Loaner · Caguas dealership"
+          },
+          "plate": "JLP-806",
+          "status": {
+            "value": "Turn-ready"
+          },
+          "level": "88%",
+          "next": {
+            "title": "Assign to repair order #2211",
+            "sub": "Customer waiting in the service lane"
+          },
+          "time": "16:15"
+        },
+        "5": {
+          "vehicle": {
+            "value": "Nissan Versa 2023",
+            "sub": "Rental · SJU Airport"
+          },
+          "plate": "KMB-347",
+          "status": {
+            "value": "Maintenance"
+          },
+          "level": "33%",
+          "next": {
+            "title": "Oil change overdue",
+            "sub": "34,182 mi · operator rule: 5,000 mi"
+          },
+          "time": "Tomorrow"
+        }
+      },
+      "foot": {
+        "left": "44 units · 3 locations · 3 business models",
+        "updated": "Updated 2:06 PM",
+        "code": "AST (UTC−4)"
+      }
+    },
+    "notes": {
+      "0": {
+        "label": "Why 77%",
+        "body": "The turn-ready score explains itself: wash, fuel, inspection, shop."
+      },
+      "1": {
+        "label": "Next action",
+        "body": "Every row says what to do now, not just what happened yesterday."
+      },
+      "2": {
+        "label": "Note",
+        "body": "Product UI shown with sample data."
+      }
+    }
+  },
+  "trust": {
+    "label": "Connects to the systems you already run",
+    "integrations": {
+      "0": {
+        "value": "AutoExpreso"
+      },
+      "1": {
+        "value": "SunPass"
+      },
+      "2": {
+        "value": "Stripe"
+      },
+      "3": {
+        "value": "Zubie"
+      },
+      "4": {
+        "value": "VoltSwitch"
+      },
+      "5": {
+        "value": "Telnyx"
+      }
+    }
+  },
+  "models": {
+    "head": {
+      "mark": "01",
+      "of": "Models",
+      "title": "Three different businesses, one system underneath",
+      "aside": "These aren't three products bundled together. It's one booking engine, one record and one reporting layer that change shape depending on the model you run — and you can run all three at once."
+    },
+    "rental": {
+      "n": "01",
+      "kicker": "Rental operators · multi-location fleets",
+      "title": "Traditional rental",
+      "body": "A booking's whole life sits in one record: rate, payment, additional drivers, signed agreement, check-out, return, inspection and audit trail. The counter stops being the bottleneck because the customer already did half of it from their phone.",
+      "features": {
+        "0": {
+          "title": "Pre-check-in and signature before arrival",
+          "body": "Licence, card and agreement uploaded from the customer portal."
+        },
+        "1": {
+          "title": "Deposits and charges through Stripe",
+          "body": "Hold at check-out, release at closeout, all against the same booking."
+        },
+        "2": {
+          "title": "Reporting by location and by unit",
+          "body": "Utilisation, revenue per available day and days out of service."
+        }
+      },
+      "app": {
+        "ariaLabel": "Booking record 4821 with progress and totals.",
+        "crumb": "Booking",
+        "number": "#4821",
+        "vehicle": {
+          "value": "Hyundai Tucson 2024",
+          "plate": "HTG-119"
+        },
+        "sub": "J. Colón · Mar 12–14 · Condado",
+        "chip": "On rent",
+        "rows": {
+          "0": {
+            "no": "01",
+            "title": "Agreement signed",
+            "sub": "E-signature · 7:20 AM",
+            "amount": "PDF"
+          },
+          "1": {
+            "no": "02",
+            "title": "Deposit held",
+            "sub": "Stripe · authorisation",
+            "amount": "$250.00"
+          },
+          "2": {
+            "no": "03",
+            "title": "Additional driver",
+            "sub": "L. Ortiz · licence verified",
+            "amount": "+$12.00"
+          }
+        },
+        "steps": {
+          "0": {
+            "value": "Book"
+          },
+          "1": {
+            "value": "Pre-check-in"
+          },
+          "2": {
+            "value": "Check-out"
+          },
+          "3": {
+            "value": "Return"
+          },
+          "4": {
+            "value": "Closeout"
+          }
+        },
+        "foot": {
+          "label": "2 days · rate $72.50",
+          "total": "$187.50"
+        }
+      }
+    },
+    "sharing": {
+      "n": "02",
+      "kicker": "Host marketplaces · mixed fleets",
+      "title": "Car-sharing marketplace",
+      "body": "A host isn't just another user — it's a business inside yours. They list a unit, set rates and availability, and see their payout. You approve vehicles, take commission, and keep the operation under the same inspection and toll rules as the rest of the fleet.",
+      "features": {
+        "0": {
+          "title": "Vehicle approval",
+          "body": "Photos, documents and insurance reviewed before a unit goes live."
+        },
+        "1": {
+          "title": "Location-first search",
+          "body": "Guests search where and when; operator complexity stays hidden."
+        },
+        "2": {
+          "title": "Automatic commission and payout",
+          "body": "The split is calculated on the closed booking, tolls and fees already in."
+        }
+      },
+      "app": {
+        "ariaLabel": "Host dashboard with three listed units and the month's payout.",
+        "crumb": "Host",
+        "host": {
+          "value": "M. Rivera"
+        },
+        "title": "My units",
+        "sub": "March · 3 listed · 1 in review",
+        "caption": "Host units with bookings, rate and payout",
+        "head": {
+          "unit": "Unit",
+          "bookings": "Bookings",
+          "rate": "Rate",
+          "payout": "Payout"
+        },
+        "rows": {
+          "0": {
+            "vehicle": {
+              "value": "Jeep Wrangler",
+              "plate": "IVR-238"
+            },
+            "bookings": "7",
+            "rate": "$96",
+            "payout": "$551.04"
+          },
+          "1": {
+            "vehicle": {
+              "value": "Toyota RAV4",
+              "plate": "DPX-415"
+            },
+            "bookings": "5",
+            "rate": "$78",
+            "payout": "$319.80"
+          },
+          "2": {
+            "vehicle": {
+              "value": "Honda Civic",
+              "plate": "CWA-902"
+            },
+            "bookings": "6",
+            "rate": "$64",
+            "payout": "$314.88"
+          }
+        },
+        "foot": {
+          "label": "18% platform commission · tolls already reconciled",
+          "total": "$1,185.72"
+        }
+      }
+    },
+    "loaners": {
+      "n": "03",
+      "kicker": "Dealerships · service departments",
+      "title": "Dealership loaners",
+      "body": "A loaner isn't a rental with a different label. It comes in through the service lane, ties to a repair order, charges the customer nothing, and ends up billed internally. Ride Fleet Manager treats it that way from the ground up, on the same booking engine and the same inspections.",
+      "features": {
+        "0": {
+          "title": "Service-lane intake",
+          "body": "The advisor assigns a unit straight from the repair order, no second system."
+        },
+        "1": {
+          "title": "Borrower packet",
+          "body": "Agreement, insurance, licence and check-out photos in one document."
+        },
+        "2": {
+          "title": "Internal billing",
+          "body": "Daily cost against the service department, with a monthly packet and purchase order."
+        }
+      },
+      "app": {
+        "ariaLabel": "Service lane queue with three repair orders and their loaner units.",
+        "crumb": "Loaners",
+        "place": "Service lane · Caguas",
+        "title": "Open repair orders",
+        "sub": "9 loaner units · 2 available",
+        "rows": {
+          "0": {
+            "number": "#2211",
+            "vehicle": {
+              "value": "Tesla Model 3",
+              "plate": "JLP-806"
+            },
+            "sub": "Customer in the lounge · assign now",
+            "chip": "Waiting"
+          },
+          "1": {
+            "number": "#2208",
+            "vehicle": {
+              "value": "Kia Sportage",
+              "plate": "BQT-661"
+            },
+            "sub": "Day 3 of 5 · $38/day to the department",
+            "chip": "Active"
+          },
+          "2": {
+            "number": "#2199",
+            "vehicle": {
+              "value": "Toyota Camry",
+              "plate": "GNS-173"
+            },
+            "sub": "Returned · inspection clean",
+            "chip": "Closed"
+          }
+        },
+        "foot": {
+          "label": "Monthly packet to the service department",
+          "total": "$4,326.00"
+        }
+      }
+    }
+  },
+  "spine": {
+    "head": {
+      "mark": "02",
+      "of": "Spine",
+      "title": "From booking to closeout, without leaving the record",
+      "aside": "Six stops. One timeline. Every event is written against the booking, so closeout doesn't depend on anyone remembering what happened at 9:15 AM."
+    },
+    "stations": {
+      "0": {
+        "n": "01",
+        "value": "Booking",
+        "body": "The customer books by location and date. Staff can take over at any point without starting over.",
+        "rec": "rate · availability · deposit"
+      },
+      "1": {
+        "n": "02",
+        "value": "Check-out",
+        "body": "Agreement signed, licence verified, mileage and fuel recorded, keys handed over.",
+        "rec": "signature · odometer · hold"
+      },
+      "2": {
+        "n": "03",
+        "value": "Inspection",
+        "body": "Check-out and check-in photos in the same record, compared side by side to decide whether there's damage.",
+        "rec": "before / after · triage"
+      },
+      "3": {
+        "n": "04",
+        "value": "Tolls",
+        "body": "AutoExpreso and SunPass crossings land against whichever booking held the unit at that hour.",
+        "rec": "crossing · unit · driver"
+      },
+      "4": {
+        "n": "05",
+        "value": "Billing",
+        "body": "Rate, extras, tolls and damage charges add up once, with nothing retyped.",
+        "rec": "invoice · commission · charge"
+      },
+      "5": {
+        "n": "06",
+        "value": "Closeout",
+        "body": "Deposit released, unit returned to inventory with its next action, record sealed.",
+        "rec": "release · turn-ready · audit"
+      }
+    },
+    "log": {
+      "title": "Audit log · booking #4814 · IVR-238",
+      "tag": "Sample",
+      "events": {
+        "0": {
+          "time": "07:12",
+          "text": "<b>Booking created</b> — Jeep Wrangler 2023 · IVR-238 · host M. Rivera · 2 days"
+        },
+        "1": {
+          "time": "07:14",
+          "text": "<b>Pre-check-in completed</b> — licence and card uploaded from the portal"
+        },
+        "2": {
+          "time": "07:20",
+          "text": "<b>Agreement signed</b> — <em>$300.00</em> deposit held via Stripe"
+        },
+        "3": {
+          "time": "09:15",
+          "text": "<b>Check-out</b> — 24,860 mi · fuel 88% · 14 inspection photos"
+        },
+        "4": {
+          "time": "13:48",
+          "text": "<b>Return</b> — 25,087 mi · fuel 58% · no new damage"
+        },
+        "5": {
+          "time": "14:02",
+          "text": "<b>Tolls reconciled</b> — AutoExpreso, 2 crossings · <em>$4.50</em> to the driver"
+        },
+        "6": {
+          "time": "14:03",
+          "text": "<b>Invoice issued</b> — rate $192.00 · extras $24.00 · tolls $4.50 · <em>$220.50</em>"
+        },
+        "7": {
+          "time": "14:05",
+          "text": "<b>Booking closed</b> — deposit released · unit flagged for wash"
+        }
+      },
+      "foot": "The unit went back to the board as <b>Needs wash</b>, with “Send to wash” at 2:40 PM in Bay 2."
+    },
+    "detail": {
+      "title": "One record, not seven tabs",
+      "body": "Most operators don't lose money on the rate — they lose it on what never got billed. A toll that showed up three weeks late. Damage nobody photographed. A deposit left on hold. The spine exists so those things have an owner and a timestamp.",
+      "features": {
+        "0": {
+          "title": "Every event carries a time and a user",
+          "body": "Disputes get settled by reading the log, not by anyone's memory."
+        },
+        "1": {
+          "title": "Tolls find their own booking",
+          "body": "A crossing matches by plate and timestamp, even when the statement arrives weeks later."
+        },
+        "2": {
+          "title": "Closeout hands the unit back to the board",
+          "body": "With its next action already assigned: wash, shop, or ready to hand over."
+        }
+      }
+    }
+  },
+  "caps": {
+    "head": {
+      "mark": "03",
+      "of": "Capabilities",
+      "title": "What it does today, and what we're building",
+      "aside": "Anything carrying the <b>Building</b> tag has not shipped yet. We say it right here, on the same line as the claim, so nobody buys a demo of something that doesn't exist."
+    },
+    "rows": {
+      "0": {
+        "kicker": "01 · Booking & customer",
+        "title": "Let the customer arrive half-done",
+        "body": "Shorter counter queue, less paper, fewer calls asking for the licence again.",
+        "features": {
+          "0": {
+            "value": "Location-first booking engine",
+            "body": "A clean public storefront where the guest searches where and when. Your internal location and model structure stays hidden."
+          },
+          "1": {
+            "value": "Customer portal",
+            "body": "Pre-check-in, agreement signature and payment in one guided flow. The customer resumes where they left off, on any device."
+          },
+          "2": {
+            "value": "Self-service pickup with key exchange",
+            "body": "Pick up outside counter hours, with identity verification and key handover without staff on site."
+          }
+        }
+      },
+      "1": {
+        "kicker": "02 · Daily operations",
+        "title": "The whole shift from one phone",
+        "body": "Handovers, returns, inspections and issues in one queue, not four WhatsApp groups.",
+        "features": {
+          "0": {
+            "value": "Employee operations hub",
+            "body": "A phone-first view where the shift reads as a task list: who's picking up, who's returning, what's missing."
+          },
+          "1": {
+            "value": "Inspection intelligence",
+            "body": "Guided photo capture, a before/after compare packet and damage triage with a suggested next action."
+          },
+          "2": {
+            "value": "Issue Center",
+            "body": "Every complaint, dispute or incident becomes a case with an owner, a history and a status, instead of a message that gets lost."
+          }
+        }
+      },
+      "2": {
+        "kicker": "03 · Fleet & planning",
+        "title": "Know which unit is ready, and why",
+        "body": "Availability stops being a conversation and becomes a number you can audit.",
+        "features": {
+          "0": {
+            "value": "Explainable turn-ready score",
+            "body": "Each unit shows what it's missing — wash, fuel, inspection, maintenance — and which signal says so. No black box."
+          },
+          "1": {
+            "value": "Smart Planner",
+            "body": "Plans shortage, wash and maintenance with rules you set per location and per business model, not a generic average."
+          },
+          "2": {
+            "value": "Dynamic pricing",
+            "body": "Rate adjustment by demand, season and utilisation. Today rates run on fixed rules for season, location and length of rental."
+          }
+        }
+      },
+      "3": {
+        "kicker": "04 · Money & closeout",
+        "title": "Bill what you already earned",
+        "body": "Tolls, deposits, commissions and damage reconciled against the same booking.",
+        "features": {
+          "0": {
+            "value": "Payments and deposits through Stripe",
+            "body": "Hold at check-out, charges during the rental, release at closeout. Payment state lives inside the record, not on another screen."
+          },
+          "1": {
+            "value": "Tolls with Toll Bridge",
+            "body": "AutoExpreso and SunPass matched by plate and timestamp to the right booking, then billed to the driver who crossed."
+          },
+          "2": {
+            "value": "Claims workspace",
+            "body": "Taking damage from inspection to insurer inside the system. Evidence capture and triage exist today; the claim file itself is what's missing."
+          }
+        }
+      }
+    }
+  },
+  "compare": {
+    "head": {
+      "mark": "04",
+      "of": "Compare",
+      "title": "Where we win: operational intelligence",
+      "aside": "The right-hand column doesn't describe any one competitor. It describes the setup we keep finding when we walk into an operator: a rental system, a spreadsheet and a group chat."
+    },
+    "caption": "Capability comparison between Ride Fleet Manager and the typical setup",
+    "th": {
+      "capability": "Capability",
+      "us": "Ride Fleet Manager",
+      "them": "The typical setup today"
+    },
+    "rows": {
+      "0": {
+        "cap": "Business models",
+        "sub": {
+          "value": "Rental, car-sharing, loaners"
+        },
+        "us": "All three on the same booking engine, with shared operations and reporting.",
+        "them": "One system per model, or a rental system pushed into doing loaners."
+      },
+      "1": {
+        "cap": "Unit readiness",
+        "sub": {
+          "value": "What I can hand over now"
+        },
+        "us": "A turn-ready score that explains itself: wash, fuel, inspection and shop, each with the signal behind it.",
+        "them": "A whiteboard or a spreadsheet; the reason lives in the shift supervisor's head."
+      },
+      "2": {
+        "cap": "Planning",
+        "sub": {
+          "value": "Shortage, wash, maintenance"
+        },
+        "us": "Smart Planner with rules per location and per model, editable without filing a support ticket.",
+        "them": "Manual planning on a calendar, redone every morning."
+      },
+      "3": {
+        "cap": "Pricing",
+        "us": "Rate rules by season, location and length of rental.",
+        "badge": "Dynamic pricing building",
+        "them": "Fixed rates, edited by hand when someone remembers."
+      },
+      "4": {
+        "cap": "Inspections and damage",
+        "us": "Check-out and check-in photos in the record, compared side by side, with triage and a next action.",
+        "badge": "Claims workspace building",
+        "them": "Photos on the employee's phone and loose notes on the contract."
+      },
+      "5": {
+        "cap": "Tolls",
+        "sub": {
+          "value": "AutoExpreso · SunPass"
+        },
+        "us": "Each crossing matches by plate and timestamp to the booking that held the unit, then bills the driver.",
+        "them": "Manual statement reconciliation at month end, with whatever can't be identified written off."
+      },
+      "6": {
+        "cap": "Customer self-service",
+        "us": "Pre-check-in, signature and payment from the portal before arrival.",
+        "badge": "Unattended pickup building",
+        "them": "Everything happens at the counter, during counter hours."
+      },
+      "7": {
+        "cap": "Language",
+        "us": "Spanish and English to the core: internal UI, customer portal, agreements and email.",
+        "them": "English UI with partial translations, and documents that come out in English only."
+      }
+    },
+    "note": "Anything marked <b>Building</b> is in development and is not demoed as if it had shipped. Everything else in this table you can watch working in a live demo."
+  },
+  "modules": {
+    "eyebrow": "Turns on module by module",
+    "title": "Toll Bridge and Voz AI run on the same fleet",
+    "body": "You start with Ride Fleet Manager. When you want tolls billed without chasing statements, you switch on Toll Bridge. When the phone stops keeping up, you switch on your AI reception. Same record, same invoice, same log.",
+    "linkToll": "See Toll Bridge",
+    "linkVoz": "See Voz AI",
+    "mods": {
+      "0": {
+        "code": "RFM",
+        "name": "Ride Fleet Manager",
+        "desc": "The base: bookings, operations and reporting"
+      },
+      "1": {
+        "code": "TOLL",
+        "name": "Toll Bridge",
+        "desc": "Tolls reconciled and billed on their own"
+      },
+      "2": {
+        "code": "VOZ",
+        "name": "Voz AI",
+        "desc": "Your AI reception, answered in Spanish or English"
+      }
+    }
+  },
+  "faq": {
+    "title": "Questions we get",
+    "items": {
+      "0": {
+        "q": "Do I have to run all three business models?",
+        "a": "No. Most operators start with one. What you avoid is having to migrate systems the day you open car-sharing or start lending loaners: the new model switches on over the fleet you already have loaded."
+      },
+      "1": {
+        "q": "How do AutoExpreso tolls reach the right customer?",
+        "a": "Every crossing carries a plate and a timestamp. Ride Fleet Manager finds which booking held that unit at that moment and assigns the charge, even when the statement arrives three weeks after the customer returned the car. Toll Bridge does the same with SunPass for Florida operators."
+      },
+      "2": {
+        "q": "What happens to the data I already have?",
+        "a": "We load fleet, customers and active bookings before you go live. Whatever we can't migrate automatically, we tell you up front on the implementation call — not after you sign."
+      },
+      "3": {
+        "q": "Is the interface genuinely in Spanish?",
+        "a": "Yes, and not as an afterthought translation. The system is bilingual to the core: the employee screen, the customer portal, the agreements and the emails all come out in the language the person picks. It was built in Puerto Rico, where that isn't an optional feature."
+      },
+      "4": {
+        "q": "What exactly does “Building” mean?",
+        "a": "That it's in active development and you can't use it in production yet. We don't show it in the demo as if it had shipped, and we don't put it in a contract as if it had. If your decision depends on one of those pieces, say so on the call and we'll give you the real date."
+      },
+      "5": {
+        "q": "Do you work outside Puerto Rico?",
+        "a": "Yes. The product was built here and runs here, and it's ready for operators on the US mainland — starting with the markets where SunPass and bilingual operations matter."
+      }
+    }
+  },
+  "partner": {
+    "title": "We're looking for design partners",
+    "body": "We're early and we'd rather say so plainly: instead of inventing testimonials, we'd rather work closely with a handful of operators who want a hand in how this gets built. In exchange, you set the roadmap priority.",
+    "cta": "Talk to us",
+    "slotsNote": "These slots stay empty on purpose until a real customer gives us permission to use their name."
+  },
+  "cta": {
+    "eyebrow": "Next step",
+    "title": "Bring your operation to the demo",
+    "body": "Tell us how many units you run and in which model, and we'll build the demo around your case: rental, car-sharing or loaners.",
+    "tags": {
+      "0": {
+        "value": "Rental"
+      },
+      "1": {
+        "value": "Car-sharing"
+      },
+      "2": {
+        "value": "Loaners"
+      },
+      "3": {
+        "value": "1 – 500 units"
+      }
+    },
+    "primary": "Book a demo",
+    "secondary": "See Toll Bridge first",
+    "list": {
+      "0": "30 minutes, built on your real case",
+      "1": "In Spanish or English, your call",
+      "2": "No credit card"
+    }
+  }
+}
