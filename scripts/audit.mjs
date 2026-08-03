@@ -1,4 +1,8 @@
 import { chromium } from 'playwright';
+
+// Target defaults to the local production server; point it at a deploy with
+// BASE_URL=https://example.com npm run verify:a11y
+const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:3000').replace(/\/$/, '');
 const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/voz-ai', '/demo',
   '/demo/thank-you', '/design-partners', '/security', '/privacy', '/terms', '/cookies', '/accessibility'];
 const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
@@ -9,7 +13,7 @@ const note = (m) => fail.push(m);
 
 for (const locale of ['es', 'en']) {
   for (const r of ROUTES) {
-    const url = `http://127.0.0.1:3000/${locale}${r}`;
+    const url = `${BASE}/${locale}${r}`;
     await page.goto(url, { waitUntil: 'domcontentloaded' });
     const tag = `${locale}${r || '/'}`;
     const res = await page.evaluate(() => {

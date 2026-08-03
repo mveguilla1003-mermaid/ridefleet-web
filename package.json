@@ -2,6 +2,9 @@
   "name": "ridefleet-web",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "description": "Ride Fleet marketing site \u2014 bilingual (es/en) Next.js App Router build.",
   "scripts": {
     "dev": "next dev",

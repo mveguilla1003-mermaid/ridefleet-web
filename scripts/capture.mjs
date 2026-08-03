@@ -1,5 +1,9 @@
 import { chromium } from 'playwright';
 
+// Target defaults to the local production server; point it at a deploy with
+// BASE_URL=https://example.com npm run verify:a11y
+const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:3000').replace(/\/$/, '');
+
 const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/voz-ai', '/demo',
   '/demo/thank-you', '/design-partners', '/security', '/privacy', '/terms',
   '/cookies', '/accessibility'];
@@ -17,7 +21,7 @@ for (const locale of ['es', 'en']) {
     page.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
     page.on('pageerror', e => errs.push('pageerror: ' + e.message));
     for (const r of ROUTES) {
-      const url = `http://127.0.0.1:3000/${locale}${r}`;
+      const url = `${BASE}/${locale}${r}`;
       const resp = await page.goto(url, { waitUntil: 'networkidle' });
       if (resp.status() !== 200) problems.push(`${resp.status()} ${url}`);
       // force the whole page through the reveal sweep

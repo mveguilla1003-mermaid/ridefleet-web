@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "npm run check:i18n && next build",
+  "regions": ["iad1"],
+  "build": {
+    "env": {
+      "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "1",
+      "I18N_STRICT": "1"
+    }
+  },
+  "github": {
+    "silent": true
+  }
+}
