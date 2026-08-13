@@ -1,4 +1,7 @@
 import { chromium } from 'playwright';
+import { existsSync, mkdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 
 // Target defaults to the local production server; point it at a deploy with
 // BASE_URL=https://example.com npm run verify:a11y
@@ -8,9 +11,15 @@ const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/voz-ai', '/demo',
   '/demo/thank-you', '/design-partners', '/security', '/privacy', '/terms',
   '/cookies', '/accessibility'];
 const VIEWPORTS = [[390, 844], [768, 1024], [1024, 900], [1440, 1000]];
-const OUT = '/home/claude/ridefleet-web/verify/shots';
+// Shots land inside the repo so the script works from any checkout location.
+const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'verify', 'shots');
+mkdirSync(OUT, { recursive: true });
 
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+// The CI sandbox preinstalls Chromium at a fixed path; anywhere else we fall
+// back to Playwright's own managed browser (npx playwright install chromium).
+const SANDBOX_CHROMIUM = '/opt/pw-browsers/chromium';
+const launchOpts = existsSync(SANDBOX_CHROMIUM) ? { executablePath: SANDBOX_CHROMIUM } : {};
+const browser = await chromium.launch(launchOpts);
 const problems = [];
 
 for (const locale of ['es', 'en']) {

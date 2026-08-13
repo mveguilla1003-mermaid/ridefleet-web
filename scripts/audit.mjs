@@ -1,11 +1,16 @@
 import { chromium } from 'playwright';
+import { existsSync } from 'node:fs';
 
 // Target defaults to the local production server; point it at a deploy with
 // BASE_URL=https://example.com npm run verify:a11y
 const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:3000').replace(/\/$/, '');
 const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/voz-ai', '/demo',
   '/demo/thank-you', '/design-partners', '/security', '/privacy', '/terms', '/cookies', '/accessibility'];
-const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+// The CI sandbox preinstalls Chromium at a fixed path; anywhere else we fall
+// back to Playwright's own managed browser (npx playwright install chromium).
+const SANDBOX_CHROMIUM = '/opt/pw-browsers/chromium';
+const launchOpts = existsSync(SANDBOX_CHROMIUM) ? { executablePath: SANDBOX_CHROMIUM } : {};
+const b = await chromium.launch(launchOpts);
 const ctx = await b.newContext({ viewport: { width: 1440, height: 1000 } });
 const page = await ctx.newPage();
 const fail = [];
