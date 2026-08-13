@@ -12,11 +12,8 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { StickyCta } from '@/components/StickyCta';
 import { PageEffects } from '@/components/PageEffects';
-
-import '@/styles/tokens.css';
-import '@/styles/base.css';
-import '@/styles/components.css';
-import '@/styles/additions.css';
+// Global stylesheets are imported by the ROOT layout so they also reach the
+// root 404, which renders outside this segment.
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
