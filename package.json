@@ -8,6 +8,7 @@
   "description": "Ride Fleet marketing site — bilingual (es/en) Next.js App Router build.",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/build-lastmod.mjs",
     "build": "next build",
     "start": "next start",
     "build:icons": "node scripts/build-icons.mjs",

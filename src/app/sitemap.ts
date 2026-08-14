@@ -1,6 +1,10 @@
 import type { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
 import { routes, site, localeTags } from '@/lib/site';
+// Real commit dates per route, maintained by scripts/build-lastmod.mjs (runs
+// as the npm prebuild hook on full-history checkouts). A route missing here
+// simply ships no lastModified — never a fabricated date.
+import lastmod from '@/lib/lastmod.json';
 
 /**
  * Per-locale entries with full alternate-language maps, so each URL declares
@@ -30,12 +34,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         `${site.url}/${locale}${path === '/' ? '' : path}`;
     }
 
+    const modified = (lastmod as Partial<Record<string, string>>)[key];
+
     for (const locale of routing.locales) {
       entries.push({
         url: `${site.url}/${locale}${path === '/' ? '' : path}`,
         changeFrequency: 'monthly',
         priority: priorities[key as keyof typeof routes] ?? 0.5,
-        alternates: { languages }
+        alternates: { languages },
+        ...(modified ? { lastModified: modified } : {})
       });
     }
   }
