@@ -16,6 +16,73 @@ const page = await ctx.newPage();
 const fail = [];
 const note = (m) => fail.push(m);
 
+/* ---- App icons: every declared file must actually download ---------------
+   Declared-but-404 icons shipped once in the static era; HEAD is not enough
+   either (a misrouted rewrite can 200 an HTML error page), so each body is
+   checked against its format's magic bytes and a sane minimum size. */
+const ICON_FILES = [
+  ['favicon.svg', (buf) => buf.toString('utf8', 0, 200).includes('<svg'), 100],
+  ['favicon.ico', (buf) => buf.readUInt16LE(0) === 0 && buf.readUInt16LE(2) === 1, 500],
+  ['apple-touch-icon.png', isPng, 500],
+  ['icon-192.png', isPng, 500],
+  ['icon-512.png', isPng, 1000],
+  ['icon-maskable-192.png', isPng, 500],
+  ['icon-maskable-512.png', isPng, 1000]
+];
+function isPng(buf) {
+  return buf.length > 8 && buf[0] === 0x89 && buf.toString('ascii', 1, 4) === 'PNG';
+}
+for (const [file, check, minBytes] of ICON_FILES) {
+  const resp = await ctx.request.get(`${BASE}/${file}`);
+  if (resp.status() !== 200) { note(`icon ${file}: HTTP ${resp.status()}`); continue; }
+  const body = await resp.body();
+  if (body.length < minBytes) note(`icon ${file}: only ${body.length} bytes`);
+  else if (!check(body)) note(`icon ${file}: wrong magic bytes — not the format its name claims`);
+}
+{
+  const resp = await ctx.request.get(`${BASE}/manifest.webmanifest`);
+  if (resp.status() !== 200) note(`manifest: HTTP ${resp.status()}`);
+  else {
+    try {
+      const m = JSON.parse((await resp.body()).toString('utf8'));
+      if (!Array.isArray(m.icons) || m.icons.length < 4) note(`manifest: expected ≥4 icons, got ${m.icons?.length}`);
+      if (!/^#[0-9a-f]{6}$/i.test(m.theme_color ?? '')) note(`manifest: bad theme_color ${m.theme_color}`);
+    } catch { note('manifest: not valid JSON'); }
+  }
+}
+
+/* ---- The 404, in both locale prefixes ------------------------------------
+   The pre-rebuild bug was an EMPTY 404: Next's default shell with no <html>,
+   English only, unstyled. Assert on the RAW served HTML (request.get, no JS)
+   so hydration can never mask a regression, then render it once for the
+   focus-ring check. */
+for (const prefix of ['es', 'en']) {
+  const url = `${BASE}/${prefix}/audit-404-probe`;
+  const resp = await ctx.request.get(url);
+  const tag = `${prefix}/404`;
+  if (resp.status() !== 404) note(`${tag}: HTTP ${resp.status()}, expected 404`);
+  const raw = (await resp.body()).toString('utf8');
+  if (!raw.includes('lang="es-PR"')) note(`${tag}: served HTML lacks the es-PR block`);
+  if (!raw.includes('lang="en-US"')) note(`${tag}: served HTML lacks the en-US block`);
+  if (!/rel="stylesheet"/.test(raw)) note(`${tag}: no stylesheet in served HTML — unstyled 404`);
+  if (!/noindex/.test(raw)) note(`${tag}: missing robots noindex`);
+  if ((raw.match(/<h1[\s>]/g) ?? []).length !== 1) note(`${tag}: expected exactly one h1 in served HTML`);
+  await page.goto(url, { waitUntil: 'domcontentloaded' });
+  const focus = await page.evaluate(() => {
+    const el = document.querySelector('a[href]');
+    el.focus();
+    const cs = getComputedStyle(el);
+    return `${cs.outlineColor} / ${cs.outlineStyle}`;
+  });
+  if (!/rgb\(11, 99, 214\)/.test(focus)) note(`${tag}: focus ring = ${focus}`);
+}
+
+/* Footer separation must be ONE number across every route — this is the
+   regression the CROSS-PAGE SHELL NORMALISATION block in additions.css
+   exists to prevent (it used to be 52px on five routes and 112px on the
+   other seven). Collected per render, asserted once after the loop. */
+const footerJoins = new Map();
+
 for (const locale of ['es', 'en']) {
   for (const r of ROUTES) {
     const url = `${BASE}/${locale}${r}`;
@@ -47,11 +114,21 @@ for (const locale of ['es', 'en']) {
       out.headingJumps = seq.filter((v,i) => i && v - seq[i-1] > 1).length;
       out.emoji = (document.body.innerText.match(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu) || []).slice(0,3);
       out.pairedSpans = document.querySelectorAll('span.es, span.en').length;
-      // focus ring colour on the first focusable
+      // focus ring colour on the first focusable (keyboard sampling of the
+      // rest of the shell happens outside this evaluate — script focus()
+      // chains do not reliably match :focus-visible in Chromium).
       const el = document.querySelector('a[href], button');
       el.focus();
       const cs = getComputedStyle(el);
       out.focus = cs.outlineColor + ' / ' + cs.outlineWidth + ' / ' + cs.outlineStyle;
+      // The demo button carries a long and a short label; exactly one may be
+      // visible at a time (both visible = the double-label menu bug).
+      const vis = (el) => el && getComputedStyle(el).display !== 'none';
+      const long = document.querySelector('.nav-right .nav-long');
+      const short = document.querySelector('.nav-right .nav-short');
+      out.navLabels = { long: vis(long), short: vis(short) };
+      const foot = document.querySelector('.site-footer');
+      out.footerMarginTop = foot ? getComputedStyle(foot).marginTop : 'NO FOOTER';
       return out;
     });
     if (res.unnamed.length) note(`${tag}: ${res.unnamed.length} unnamed control(s): ${res.unnamed[0]}`);
@@ -74,7 +151,42 @@ for (const locale of ['es', 'en']) {
     if (res.emoji.length) note(`${tag}: emoji ${res.emoji}`);
     if (res.pairedSpans) note(`${tag}: ${res.pairedSpans} paired .es/.en span(s)`);
     if (!/rgb\(11, 99, 214\)/.test(res.focus)) note(`${tag}: focus ring = ${res.focus}`);
+
+    // Shell focus rings under REAL keyboard modality: park focus just before
+    // the target with script, then arrive by Tab (script focus alone does not
+    // reliably match :focus-visible, and keyboard is what the ring is for).
+    for (const sel of ['.nav-links a', '.lang button, .lang a', '.site-footer a[href]']) {
+      const parked = await page.evaluate((s) => {
+        const el = document.querySelector(s);
+        if (!el) return false;
+        el.focus();
+        return true;
+      }, sel);
+      if (!parked) { note(`${tag}: shell focus target missing: ${sel}`); continue; }
+      await page.keyboard.press('Tab');
+      await page.keyboard.press('Shift+Tab');
+      // Nav links transition `all` over --dur-2 (180ms), which includes the
+      // outline — measuring immediately reads 0-1px mid-animation, so let the
+      // ring settle first.
+      await page.waitForTimeout(300);
+      const ring = await page.evaluate(() => {
+        const cs = getComputedStyle(document.activeElement);
+        return cs.outlineColor + ' / ' + cs.outlineWidth + ' / ' + cs.outlineStyle;
+      });
+      if (!/rgb\(11, 99, 214\)/.test(ring)) note(`${tag}: keyboard focus ring on ${sel} = ${ring}`);
+    }
+    if (res.navLabels.long === res.navLabels.short)
+      note(`${tag}: demo button labels long=${res.navLabels.long} short=${res.navLabels.short} — exactly one must be visible`);
+    footerJoins.set(tag, res.footerMarginTop);
   }
 }
+
+const joinValues = new Set(footerJoins.values());
+if (joinValues.size !== 1) {
+  const byValue = {};
+  for (const [tag, v] of footerJoins) (byValue[v] ??= []).push(tag);
+  note(`footer join differs across pages: ${JSON.stringify(byValue)}`);
+}
+
 await b.close();
-console.log(fail.length ? 'FINDINGS:\n' + fail.join('\n') : 'audit clean across 24 page renders');
+console.log(fail.length ? 'FINDINGS:\n' + fail.join('\n') : 'audit clean: 24 page renders + 2 404s + 7 icons + manifest');

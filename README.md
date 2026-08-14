@@ -27,7 +27,7 @@ src/lib/site.ts            single source of truth for constants + the placeholde
 src/lib/seo.ts             title/description/canonical/hreflang/OG/Twitter builder
 src/messages/<locale>/     one JSON file per namespace, ES and EN in strict parity
 src/styles/                tokens → base → components → additions, plus per-page CSS
-scripts/                   the three verification gates (below)
+scripts/                   the verification gates + the icon/OG generators (below)
 ```
 
 Routing is `localePrefix: 'always'` with `localeDetection: false`: `/es/...` and
@@ -44,20 +44,40 @@ Styling is plain CSS with a token layer — no Tailwind, no CSS-in-JS. Nothing o
 npm run check:i18n     # key parity across locales, no empty values, no emoji
 npm run build          # typecheck + production build
 npm run verify:shots   # 12 routes × 2 locales × 4 viewports → verify/shots/*.png
-npm run verify:a11y    # 24 renders: labels, focus ring, headings, metadata
+npm run verify:a11y    # 24 renders + both 404s + icon downloads (below)
 ```
 
-The last two need the production server already running (`npm start`) and use the
-sandbox's preinstalled Chromium via an explicit `executablePath` — do not run
-`npx playwright install`. `verify:a11y` checks accessible names on every link and
-button, labels on every form control, no `href="#"`, no dead in-page anchors, `img`
-alt text, `<html lang>`, title and description length, canonical, the `hreflang`
-set, exactly one `h1`, no heading-level jumps, no emoji, and that the computed
-focus outline is the blue `rgb(11, 99, 214)` rather than brand purple.
+The last two need the production server already running (`npm start`). In the CI
+sandbox they use its preinstalled Chromium; on any other machine they fall back to
+Playwright's managed browser (`npx playwright install chromium` once).
+`verify:a11y` checks accessible names on every link and button, labels on every
+form control, no `href="#"`, no dead in-page anchors, `img` alt text, `<html
+lang>`, title and description length, canonical, the `hreflang` set, exactly one
+`h1`, no heading-level jumps, no emoji, and that the computed focus outline is the
+blue `rgb(11, 99, 214)` rather than brand purple — sampled under real keyboard
+modality on the header nav, the ES|EN switch and the footer, not just the first
+focusable. It also asserts: the 404 under both locale prefixes is a real
+server-rendered bilingual page (status 404, both language blocks and a stylesheet
+in the RAW served HTML, noindex, one `h1`); all seven icon files actually download
+with the magic bytes their names claim (plus a well-formed manifest); the demo
+button never shows both its long and short label at once; and the footer joins
+every page at the same computed margin.
 
-Current status: all four gates pass. 30 static pages build; 1963 message keys are in
-parity; 96 full-page screenshots render clean with no console errors and no element
-left unrevealed.
+## Generated assets
+
+```bash
+npm run build:icons    # 7 icon files + manifest.webmanifest from site.brandHex
+npm run build:og       # one 1200×630 OG card per route per locale → public/og/
+```
+
+`build:icons` FAILS if `site.brandHex` drifts from `--p-700` in tokens.css —
+brandHex is the one sanctioned colour outside tokens.css (theme-color is parsed
+before any stylesheet loads), and the gate keeps the exception honest. `build:og`
+titles every card from the route's own `meta` strings; rerun it after copy
+changes. Both write committed files in `public/`.
+
+Current status: all gates pass. 1963 message keys are in parity; 96 full-page
+screenshots render clean with no console errors and no element left unrevealed.
 
 ## Placeholders — these are yours to fill
 
