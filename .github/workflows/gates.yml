@@ -1,0 +1,69 @@
+# Every gate that local discipline runs before a commit, enforced on every
+# push — GitHub is the only source of truth between machines (a full working
+# base was lost once to an unpushed checkout; this workflow is part of the
+# answer). The job mirrors the local sequence exactly: typecheck, strict i18n,
+# production build, icon-sync gate, then the two Playwright gates against the
+# real production server.
+name: gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: i18n parity (strict)
+        run: npm run check:i18n
+        env:
+          I18N_STRICT: '1'
+
+      - name: Production build
+        run: npm run build
+
+      - name: Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Icon sync gate (brandHex must equal --p-700)
+        run: npm run build:icons
+
+      - name: Start production server
+        run: |
+          npm start &
+          for i in $(seq 1 60); do
+            if curl -sf http://127.0.0.1:3000/es > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          echo "server never came up" >&2
+          exit 1
+
+      - name: Screenshot sweep (console errors fail here)
+        run: npm run verify:shots
+
+      - name: Accessibility + metadata audit
+        run: npm run verify:a11y
+
+      - name: Upload screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-shots
+          path: verify/shots
+          if-no-files-found: ignore
