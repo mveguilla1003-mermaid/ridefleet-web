@@ -17,6 +17,7 @@ import {
   BuildingBadge,
   ButtonLink,
   Chip,
+  Eyebrow,
   SampleDataNote,
   Section
 } from '@/components/ui';
@@ -100,6 +101,10 @@ const STATION_ICONS: IconName[] = [
 ];
 
 const SPINE_DETAIL_ICONS: IconName[] = ['i-clock', 'i-link', 'i-refresh'];
+
+/** Market Intelligence: one icon per beat, then the four precisions. */
+const MARKET_BEATS: IconName[] = ['i-search', 'i-layers', 'i-trend'];
+const MARKET_PRECISIONS = [0, 1, 2, 3] as const;
 
 /** Four capability rows × three features. `building` mirrors the static page. */
 const CAP_ROWS: { features: { icon: IconName; building?: boolean }[] }[] = [
@@ -904,6 +909,66 @@ export default function RideFleetManagerPage({
             </div>
           </div>
         ))}
+      </Section>
+
+      {/* ==================== MARKET INTELLIGENCE (add-on) ====================
+          Deliberately NOT numbered into the editorial chapter run: it is a
+          separately-billed add-on, not one of the capabilities the base
+          product includes, and folding it into the sequence would read as
+          "included".
+
+          Every claim here was checked against production on 2026-08-14, and
+          the `precision` list exists because the four things it corrects are
+          exactly the ones a knowledgeable prospect would catch: the sweep is
+          nightly rather than live, the offers are three-day rentals (the
+          7/14/30/60 filters are booking lead time), the offers arrive through
+          a metasearch engine rather than OTA partnerships, and coverage is
+          per airport rather than universal. No price is quoted because the
+          add-on's price is not confirmed. */}
+      <Section id="market" variant="well">
+        <div className="sec-head reveal">
+          <Eyebrow>{t('market.eyebrow')}</Eyebrow>
+          <h2>{t('market.title')}</h2>
+          <p className="lede">{t('market.lede')}</p>
+        </div>
+
+        <div className="feature-grid reveal" style={{ marginTop: 'var(--sp-8)' }}>
+          {MARKET_BEATS.map((icon, i) => (
+            <div className="feature" key={i}>
+              <span className="fic">
+                <Icon name={icon} />
+              </span>
+              <h3>{t(`market.beats.${i}.value`)}</h3>
+              <p>{t(`market.beats.${i}.body`)}</p>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="split reveal"
+          style={{ marginTop: 'var(--sp-10)', alignItems: 'start' }}
+        >
+          <div>
+            <h3>{t('market.guardrail.title')}</h3>
+            <p style={{ marginTop: 'var(--sp-3)' }}>{t('market.guardrail.body')}</p>
+            <p className="meta" style={{ marginTop: 'var(--sp-4)' }}>
+              {t('market.addon')}
+            </p>
+          </div>
+          <div>
+            <h3>{t('market.precision.title')}</h3>
+            {/* The wrapper carries `prose`, not the list: the rules are
+                `.prose ul` / `.prose li::marker`, so putting the class on the
+                <ul> itself renders these four as one run-on paragraph. */}
+            <div className="prose" style={{ marginTop: 'var(--sp-3)' }}>
+              <ul>
+                {MARKET_PRECISIONS.map((i) => (
+                  <li key={i}>{t(`market.precision.items.${i}`)}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </Section>
 
       {/* ========================= 04 · COMPARISON ========================= */}

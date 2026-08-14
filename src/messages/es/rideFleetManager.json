@@ -648,6 +648,39 @@
       }
     }
   },
+  "market": {
+    "eyebrow": "Complemento de Ride Fleet Manager",
+    "title": "Sabe lo que cobra el mercado antes de que fijes tus tarifas",
+    "lede": "Cada noche Ride Fleet lee el mercado de renta de tu aeropuerto, los mismos precios que ve tu cliente cuando compara, y los alinea con tu tarifario clase por clase.",
+    "beats": {
+      "0": {
+        "value": "Mira el mercado",
+        "body": "Un barrido nocturno recoge ofertas de la competencia publicadas en los grandes sitios de reserva, cada una con su agencia, su fecha de recogida y su clase de vehículo."
+      },
+      "1": {
+        "value": "Habla el idioma de tu flota",
+        "body": "Cada oferta se traduce a la clase ACRISS que ya usas, para que un SUV compacto se compare contra un SUV compacto y no contra cualquier otra cosa."
+      },
+      "2": {
+        "value": "Mueve tus precios en tus términos",
+        "body": "Defines una estrategia por clase, por ejemplo quedar segundo más barato del mercado. El sistema aplica los cambios dentro del límite que fijaste y deja para tu aprobación lo que se pase."
+      }
+    },
+    "guardrail": {
+      "title": "Automatizar solo sirve si puedes frenarlo",
+      "body": "Cada regla lleva un movimiento máximo, hoy de 15 por ciento, y toda sugerencia que lo exceda espera tu aprobación en vez de salir en vivo. Los pisos de precio se respetan. Nada cambia en silencio: cada corrida queda registrada con lo que vio, lo que propuso y lo que aplicó."
+    },
+    "precision": {
+      "title": "Y lo que no es",
+      "items": {
+        "0": "No es tiempo real. El barrido corre una vez por noche, a las 4:00 a.m. hora de Nueva York, y los precios no se mueven durante el día.",
+        "1": "Compara rentas de tres días. Las ventanas de 7, 14, 30 y 60 días son la anticipación con que se reserva la recogida, no la duración de la renta.",
+        "2": "No hay integración directa con las agencias de viaje en línea. Las ofertas llegan por un metabuscador que ya las reúne.",
+        "3": "Cada mercado se da de alta por aeropuerto. Hoy corren San Juan y Los Ángeles."
+      }
+    },
+    "addon": "Se contrata aparte de Ride Fleet Manager."
+  },
   "compare": {
     "head": {
       "mark": "04",

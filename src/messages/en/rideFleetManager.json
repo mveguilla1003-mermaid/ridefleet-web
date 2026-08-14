@@ -648,6 +648,39 @@
       }
     }
   },
+  "market": {
+    "eyebrow": "A Ride Fleet Manager add-on",
+    "title": "Know what the market charges before you set your rates",
+    "lede": "Every night Ride Fleet reads the rental market at your airport, the same prices your customers see when they shop around, and lines them up against your own rate card class by class.",
+    "beats": {
+      "0": {
+        "value": "It watches the market",
+        "body": "A nightly sweep collects competitor offers listed on the major booking sites, each one tagged with its rental agency, its pickup date and its vehicle class."
+      },
+      "1": {
+        "value": "It speaks your fleet's language",
+        "body": "Every listing is mapped to the same ACRISS class your own fleet uses, so a compact SUV is compared against a compact SUV and not against something else entirely."
+      },
+      "2": {
+        "value": "It moves your prices on your terms",
+        "body": "You set a strategy per class, such as landing second cheapest in the market. The system applies changes inside the limit you set and holds anything beyond it for your approval."
+      }
+    },
+    "guardrail": {
+      "title": "Automation is only worth having if you can rein it in",
+      "body": "Every rule carries a maximum move, 15 percent today, and any suggestion past it waits for your approval instead of going live. Price floors are respected. Nothing changes quietly: each run is logged with what it saw, what it proposed and what it applied."
+    },
+    "precision": {
+      "title": "And what it is not",
+      "items": {
+        "0": "It is not real time. The sweep runs once a night, at 4:00 a.m. New York time, and prices do not move during the day.",
+        "1": "It compares three-day rentals. The 7, 14, 30 and 60-day windows are how far ahead the pickup is booked, not how long the rental lasts.",
+        "2": "There is no direct integration with the online travel agencies. The offers arrive through a metasearch engine that already gathers them.",
+        "3": "Each market is set up per airport. San Juan and Los Angeles are the two running today."
+      }
+    },
+    "addon": "Billed separately from Ride Fleet Manager."
+  },
   "compare": {
     "head": {
       "mark": "04",
