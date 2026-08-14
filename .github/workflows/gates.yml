@@ -60,6 +60,9 @@ jobs:
       - name: Accessibility + metadata audit
         run: npm run verify:a11y
 
+      - name: Demo form end-to-end
+        run: npm run verify:form
+
       - name: Upload screenshots on failure
         if: failure()
         uses: actions/upload-artifact@v4

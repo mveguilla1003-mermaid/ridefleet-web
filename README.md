@@ -53,9 +53,10 @@ npm run check:i18n     # key parity across locales, no empty values, no emoji
 npm run build          # typecheck + production build
 npm run verify:shots   # 12 routes × 2 locales × 4 viewports → verify/shots/*.png
 npm run verify:a11y    # 24 renders + both 404s + icon downloads (below)
+npm run verify:form    # the demo form, end to end (below)
 ```
 
-The last two need the production server already running (`npm start`). In the CI
+The last three need the production server already running (`npm start`). In the CI
 sandbox they use its preinstalled Chromium; on any other machine they fall back to
 Playwright's managed browser (`npx playwright install chromium` once).
 `verify:a11y` checks accessible names on every link and button, labels on every
@@ -68,8 +69,19 @@ focusable. It also asserts: the 404 under both locale prefixes is a real
 server-rendered bilingual page (status 404, both language blocks and a stylesheet
 in the RAW served HTML, noindex, one `h1`); all seven icon files actually download
 with the magic bytes their names claim (plus a well-formed manifest); the demo
-button never shows both its long and short label at once; and the footer joins
-every page at the same computed margin.
+button never shows both its long and short label at once; the footer joins every
+page at the same computed margin; every visible text node over a solid background
+meets WCAG AAA or one of the AA-by-design pairs documented in tokens.css (each
+allowance in `scripts/audit.mjs` cites its tokens.css line; gradient-backed mockup
+text is skipped, not guessed at); and the full axe-core WCAG A/AA rule set passes
+(color-contrast off — the solid-background gate is the authority there).
+
+`verify:form` exercises the site's one conversion end to end: the API contract of
+`/api/lead` (bad JSON, missing fields, invalid email, honeypot and under-3-seconds
+discards, happy path), and the real UI — an empty submit must trap focus in the
+`role="alert"` summary and go nowhere; a real submission must land on thank-you
+with a non-skipped API reply; a honeypot submission must ALSO land on thank-you
+(bots must not learn they were caught) while the API answers `skipped:true`.
 
 ## Generated assets
 
