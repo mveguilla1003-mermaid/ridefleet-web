@@ -1,5 +1,6 @@
 import { chromium } from 'playwright';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 
 // Target defaults to the local production server; point it at a deploy with
 // BASE_URL=https://example.com npm run verify:a11y
@@ -329,6 +330,40 @@ for (const locale of ['es', 'en']) {
   }
 }
 
+/* ---- axe-core, WCAG A/AA rule set ----------------------------------------
+   Runs in its own context with bypassCSP: the enforced page CSP rightly
+   blocks injected inline scripts, and axe only READS the DOM, so bypassing
+   is safe here and nowhere else. axe's color-contrast rule is disabled on
+   purpose — the solid-background gate above is the contrast authority, and
+   axe guesses on exactly the gradient surfaces that gate skips. */
+const axeSource = readFileSync(
+  createRequire(import.meta.url).resolve('axe-core/axe.min.js'),
+  'utf8'
+);
+const axeCtx = await b.newContext({
+  viewport: { width: 1440, height: 1000 },
+  bypassCSP: true
+});
+const axePage = await axeCtx.newPage();
+for (const locale of ['es', 'en']) {
+  for (const r of ROUTES) {
+    await axePage.goto(`${BASE}/${locale}${r}`, { waitUntil: 'domcontentloaded' });
+    await axePage.addScriptTag({ content: axeSource });
+    const result = await axePage.evaluate(() =>
+      axe.run(document, {
+        runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] },
+        rules: { 'color-contrast': { enabled: false } }
+      })
+    );
+    for (const v of result.violations) {
+      note(
+        `${locale}${r || '/'}: axe ${v.id} (${v.impact}) ×${v.nodes.length} — ${v.help} e.g. ${v.nodes[0]?.target?.[0]}`
+      );
+    }
+  }
+}
+await axeCtx.close();
+
 const joinValues = new Set(footerJoins.values());
 if (joinValues.size !== 1) {
   const byValue = {};
@@ -337,4 +372,4 @@ if (joinValues.size !== 1) {
 }
 
 await b.close();
-console.log(fail.length ? 'FINDINGS:\n' + fail.join('\n') : 'audit clean: 24 page renders + 2 404s + 7 icons + manifest + solid-bg contrast');
+console.log(fail.length ? 'FINDINGS:\n' + fail.join('\n') : 'audit clean: 24 page renders + 2 404s + 7 icons + manifest + solid-bg contrast + axe WCAG A/AA');

@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=18.17.0"
   },
-  "description": "Ride Fleet marketing site \u2014 bilingual (es/en) Next.js App Router build.",
+  "description": "Ride Fleet marketing site — bilingual (es/en) Next.js App Router build.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -27,6 +27,7 @@
     "@types/node": "^26.1.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "axe-core": "^4.13.0",
     "playwright": "^1.49.1",
     "typescript": "^5.9.3"
   }

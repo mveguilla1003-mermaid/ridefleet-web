@@ -413,13 +413,12 @@ export default function TollBridgePage({
                         <span className="pulse" />
                         {t('app.pane.live')}
                       </span>
-                      <span className="segmented" role="group" aria-hidden="true">
-                        <button type="button" tabIndex={-1} aria-selected="true">
-                          {t('app.pane.segAll')}
-                        </button>
-                        <button type="button" tabIndex={-1} aria-selected="false">
-                          {t('app.pane.segReview')}
-                        </button>
+                      {/* Painted controls, not <button>s: real buttons inside
+                          the role="img" board are nested-interactive (axe) —
+                          reachable by keyboard yet hidden from readers. */}
+                      <span className="segmented" aria-hidden="true">
+                        <span className="is-on">{t('app.pane.segAll')}</span>
+                        <span>{t('app.pane.segReview')}</span>
                       </span>
                       <span className="filter is-on">
                         <Icon name="i-filter" />

@@ -326,13 +326,12 @@ export default function RideFleetManagerPage({
                       <p className="psub">{t('board.pane.sub')}</p>
                     </div>
                     <div className="pane-tools">
-                      <span className="segmented" role="group" aria-hidden="true">
-                        <button type="button" tabIndex={-1} aria-selected="true">
-                          {t('board.pane.today')}
-                        </button>
-                        <button type="button" tabIndex={-1} aria-selected="false">
-                          {t('board.pane.week')}
-                        </button>
+                      {/* Painted controls, not <button>s: real buttons inside
+                          the role="img" board are nested-interactive (axe) —
+                          reachable by keyboard yet hidden from readers. */}
+                      <span className="segmented" aria-hidden="true">
+                        <span className="is-on">{t('board.pane.today')}</span>
+                        <span>{t('board.pane.week')}</span>
                       </span>
                       <span className="filter is-on">
                         <Icon name="i-filter" />

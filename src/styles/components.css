@@ -450,14 +450,17 @@
 .filter.is-on{background:var(--p-50);border-color:var(--border-brand);color:var(--p-800)}
 .filter.is-on svg{color:var(--p-600)}
 
+/* Only ever used inside role="img" product mockups, so the segments are
+   painted <span>s, not <button>s — a real button there is nested-interactive:
+   keyboard-reachable but invisible to a screen reader. No cursor:pointer for
+   the same reason: it must not promise interactivity it does not have. */
 .segmented{display:inline-flex;gap:3px;padding:3px;background:var(--surface-3);
   border:1px solid var(--border);border-radius:var(--r-md);max-width:100%;overflow-x:auto}
-.segmented button{
-  border:0;background:transparent;cursor:pointer;padding:6px 13px;border-radius:var(--r-xs);
-  font-size:12.5px;font-weight:620;color:var(--text-3);white-space:nowrap;transition:var(--dur-2);
+.segmented span{
+  border:0;background:transparent;padding:6px 13px;border-radius:var(--r-xs);
+  font-size:12.5px;font-weight:620;color:var(--text-3);white-space:nowrap;
 }
-.segmented button:hover{color:var(--text-1)}
-.segmented button[aria-selected="true"],.segmented button.is-on{
+.segmented span.is-on{
   background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1);
 }
 
