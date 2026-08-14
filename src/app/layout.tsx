@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
+import { headers } from 'next/headers';
 import { site } from '@/lib/site';
 
 import '@/styles/tokens.css';
@@ -42,5 +43,13 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  // Reading the request headers opts EVERY page into dynamic rendering — the
+  // price of the nonce-based CSP the middleware mints. A per-request nonce
+  // cannot exist in prerendered HTML: with static pages the served inline
+  // bootstrap scripts carried no nonce (measured: 15 of them) and the browser
+  // blocked hydration site-wide. Dynamic rendering lets Next stamp the nonce
+  // it finds on the request's Content-Security-Policy header onto every
+  // script tag it emits.
+  headers();
   return children;
 }

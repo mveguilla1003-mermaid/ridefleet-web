@@ -35,6 +35,14 @@ Routing is `localePrefix: 'always'` with `localeDetection: false`: `/es/...` and
 anyone. `hreflang` is emitted as full BCP-47 tags (`es-PR`, `en-US`) plus `x-default`
 pointing at the Spanish URL, matching `<html lang>` on every page.
 
+The middleware also enforces a nonce-based Content-Security-Policy (see
+`src/middleware.ts` for the directive-by-directive reasoning). The nonce is minted
+per request, which is why every page renders dynamically — the root layout reads
+`headers()` on purpose; without it the prerendered HTML shipped inline scripts with
+no nonce and the browser blocked hydration site-wide. That trades static-file TTFB
+for a strict CSP; revisit only as a pair (static + no nonces, or dynamic + nonces).
+When the scheduler embed goes live, its origin must be added to `frame-src`.
+
 Styling is plain CSS with a token layer — no Tailwind, no CSS-in-JS. Nothing outside
 `tokens.css` introduces a colour, radius, shadow or spacing value.
 
