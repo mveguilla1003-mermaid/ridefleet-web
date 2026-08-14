@@ -169,7 +169,7 @@
         "ledger": [
           { "label": "40 units × 12 crossings/mo", "value": "480" },
           { "label": "× $1.75 average per crossing", "value": "$840.00" },
-          { "label": "× 35 % never assigned", "value": "×0.35" }
+          { "label": "× 35% never assigned", "value": "×0.35" }
         ],
         "total": {
           "label": "Comes out of your pocket",
@@ -184,7 +184,7 @@
         "idx": "02",
         "badge": "Voz AI",
         "title": "Calls nobody answers after 5",
-        "sub": "The customer doesn't leave a message — they call the next shop. The rental you lost shows up in no report.",
+        "sub": "The customer doesn't leave a message — they call the next shop. The rental you lost doesn't show up in any report.",
         "ledger": [
           { "label": "6 missed calls per week", "value": "26/mo" },
           { "label": "1 in 5 would have booked", "value": "5" },
@@ -207,7 +207,7 @@
         "ledger": [
           { "label": "6 hrs/week reconciling by hand", "value": "26 hrs/mo" },
           { "label": "× $32/hr loaded cost", "value": "$832.00" },
-          { "label": "+ duplicate licences", "value": "$180.00" }
+          { "label": "+ duplicate licenses", "value": "$180.00" }
         ],
         "total": {
           "label": "Cost of holding it together",
@@ -226,7 +226,7 @@
     "aside": "Toll Bridge and Voz AI don't \"integrate\" with Ride Fleet Manager — they write to the same booking, the same customer and the same vehicle.",
     "chain": [
       { "value": "Tenants", "sub": "Accounts and rooftops" },
-      { "value": "Customers", "sub": "Profile and licence" },
+      { "value": "Customers", "sub": "Profile and license" },
       { "value": "Reservations", "sub": "Window and rate" },
       { "value": "Vehicles", "sub": "Plate, tag and status" },
       { "value": "Agreements", "sub": "Signature and holder" },
@@ -291,7 +291,7 @@
   "diff": {
     "chapter": { "num": "03", "label": "Difference" },
     "title": "Where we win: operational intelligence",
-    "aside": "This isn't a feature catalogue. It's the decisions the system makes for you — and then explains to you, line by line.",
+    "aside": "This isn't a feature catalog. It's the decisions the system makes for you — and then explains to you, line by line.",
     "score": {
       "title": "Why this unit scores 88",
       "plate": "HTR·142",
@@ -347,13 +347,13 @@
       },
       {
         "value": "Inspections with evidence and damage triage",
-        "body": "Check-out and check-in photos, a side-by-side compare packet and a next-best action for every damage. The claims workspace",
+        "body": "Check-out and check-in photos, a side-by-side compare packet and a next-best action for every damage item. The claims workspace",
         "bodyTail": "is built on that same evidence."
       },
       {
         "value": "Telematics-ready",
         "body": "The planner is ready to take mileage, fuel and location from Zubie and VoltSwitch. The connections are",
-        "bodyTail": "— today that data arrives by hand or by inspection."
+        "bodyTail": "— today that data is entered by hand or captured at inspection."
       },
       {
         "value": "Bilingual by design",

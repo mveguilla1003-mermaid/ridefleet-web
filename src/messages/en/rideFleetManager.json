@@ -265,7 +265,7 @@
       "features": {
         "0": {
           "title": "Pre-check-in and signature before arrival",
-          "body": "Licence, card and agreement uploaded from the customer portal."
+          "body": "License, card and agreement uploaded from the customer portal."
         },
         "1": {
           "title": "Deposits and charges through Stripe",
@@ -273,7 +273,7 @@
         },
         "2": {
           "title": "Reporting by location and by unit",
-          "body": "Utilisation, revenue per available day and days out of service."
+          "body": "Utilization, revenue per available day and days out of service."
         }
       },
       "app": {
@@ -296,13 +296,13 @@
           "1": {
             "no": "02",
             "title": "Deposit held",
-            "sub": "Stripe · authorisation",
+            "sub": "Stripe · authorization",
             "amount": "$250.00"
           },
           "2": {
             "no": "03",
             "title": "Additional driver",
-            "sub": "L. Ortiz · licence verified",
+            "sub": "L. Ortiz · license verified",
             "amount": "+$12.00"
           }
         },
@@ -410,7 +410,7 @@
         },
         "1": {
           "title": "Borrower packet",
-          "body": "Agreement, insurance, licence and check-out photos in one document."
+          "body": "Agreement, insurance, license and check-out photos in one document."
         },
         "2": {
           "title": "Internal billing",
@@ -476,7 +476,7 @@
       "1": {
         "n": "02",
         "value": "Check-out",
-        "body": "Agreement signed, licence verified, mileage and fuel recorded, keys handed over.",
+        "body": "Agreement signed, license verified, mileage and fuel recorded, keys handed over.",
         "rec": "signature · odometer · hold"
       },
       "2": {
@@ -514,7 +514,7 @@
         },
         "1": {
           "time": "07:14",
-          "text": "<b>Pre-check-in completed</b> — licence and card uploaded from the portal"
+          "text": "<b>Pre-check-in completed</b> — license and card uploaded from the portal"
         },
         "2": {
           "time": "07:20",
@@ -572,8 +572,8 @@
     "rows": {
       "0": {
         "kicker": "01 · Booking & customer",
-        "title": "Let the customer arrive half-done",
-        "body": "Shorter counter queue, less paper, fewer calls asking for the licence again.",
+        "title": "Let the customer arrive with half already done",
+        "body": "Shorter counter queue, less paper, fewer calls asking for the license again.",
         "features": {
           "0": {
             "value": "Location-first booking engine",
@@ -623,7 +623,7 @@
           },
           "2": {
             "value": "Dynamic pricing",
-            "body": "Rate adjustment by demand, season and utilisation. Today rates run on fixed rules for season, location and length of rental."
+            "body": "Rate adjustment by demand, season and utilization. Today rates run on fixed rules for season, location and length of rental."
           }
         }
       },
@@ -689,13 +689,13 @@
       "3": {
         "cap": "Pricing",
         "us": "Rate rules by season, location and length of rental.",
-        "badge": "Dynamic pricing building",
+        "badge": "Dynamic pricing under construction",
         "them": "Fixed rates, edited by hand when someone remembers."
       },
       "4": {
         "cap": "Inspections and damage",
         "us": "Check-out and check-in photos in the record, compared side by side, with triage and a next action.",
-        "badge": "Claims workspace building",
+        "badge": "Claims workspace under construction",
         "them": "Photos on the employee's phone and loose notes on the contract."
       },
       "5": {
@@ -709,7 +709,7 @@
       "6": {
         "cap": "Customer self-service",
         "us": "Pre-check-in, signature and payment from the portal before arrival.",
-        "badge": "Unattended pickup building",
+        "badge": "Unattended pickup under construction",
         "them": "Everything happens at the counter, during counter hours."
       },
       "7": {
@@ -749,7 +749,7 @@
     "items": {
       "0": {
         "q": "Do I have to run all three business models?",
-        "a": "No. Most operators start with one. What you avoid is having to migrate systems the day you open car-sharing or start lending loaners: the new model switches on over the fleet you already have loaded."
+        "a": "No. Most operators start with one. What you avoid is having to migrate systems the day you open car-sharing or start offering loaners: the new model switches on over the fleet you already have loaded."
       },
       "1": {
         "q": "How do AutoExpreso tolls reach the right customer?",
@@ -775,7 +775,7 @@
   },
   "partner": {
     "title": "We're looking for design partners",
-    "body": "We're early and we'd rather say so plainly: instead of inventing testimonials, we'd rather work closely with a handful of operators who want a hand in how this gets built. In exchange, you set the roadmap priority.",
+    "body": "We're early and we say so plainly: instead of inventing testimonials, we'd rather work closely with a handful of operators who want a hand in how this gets built. In exchange, you set the roadmap priority.",
     "cta": "Talk to us",
     "slotsNote": "These slots stay empty on purpose until a real customer gives us permission to use their name."
   },

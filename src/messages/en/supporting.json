@@ -16,7 +16,7 @@
           "body": "We reply the same business day with two or three times to choose from. If you wrote outside working hours, the clock starts on the next business day."
         },
         "1": {
-          "title": "We set the call",
+          "title": "We set up the call",
           "body": "The confirmation email carries the date, the time with its time zone, the language the call will be held in, and the link to join."
         },
         "2": {
@@ -29,7 +29,7 @@
     },
     "prep": {
       "title": "What is worth having ready",
-      "lede": "None of this is required. The more concrete the starting point, the more the half hour is worth.",
+      "lede": "None of this is required. The more concrete the starting point, the more you get out of the half hour.",
       "items": {
         "0": "How many vehicles you run today, and how many you expect to run in twelve months.",
         "1": "How the business operates: traditional rental, car-sharing, dealership loaners, or a mix.",
@@ -48,7 +48,7 @@
       "lede": "If you want to arrive with context, these are the three modules.",
       "rfm": "The operations spine: reservations, contracts, handovers and returns in one place.",
       "toll": "AutoExpreso and SunPass tolls collected and matched to the right contract.",
-      "voz": "The AI front desk that answers calls in your name and handles the scheduling."
+      "voz": "The AI front desk that answers calls on your behalf and handles the scheduling."
     }
   },
   "designPartners": {
@@ -56,10 +56,10 @@
       "title": "Founding partners · Ride Fleet",
       "description": "We are looking for a small group of Puerto Rico operators to build Ride Fleet with: founder pricing, hands-on implementation, and a case study with a real number."
     },
-    "eyebrow": "Programme open",
+    "eyebrow": "Program open",
     "title": "Founding partners",
-    "lede": "Ride Fleet is being built with real operators, not behind closed doors. The programme is open and no slot is filled today.",
-    "status": "Programme open · no partners announced",
+    "lede": "Ride Fleet is being built with real operators, not behind closed doors. The program is open and no slot is filled today.",
+    "status": "Program open · no partners announced",
     "fit": {
       "title": "Who this is for",
       "items": {
@@ -73,7 +73,7 @@
         },
         "2": {
           "title": "With time to take part",
-          "body": "Someone on your team available for short sessions during the pilot. Without that person, the programme does not work."
+          "body": "Someone on your team available for short sessions during the pilot. Without that person, the program does not work."
         }
       }
     },
@@ -90,10 +90,10 @@
         },
         "2": {
           "title": "A direct line to the builders",
-          "body": "You talk to the people writing the product, on a direct channel with prioritised attention."
+          "body": "You talk to the people writing the product, on a direct channel with prioritized attention."
         },
         "3": {
-          "title": "Real weight on priorities",
+          "title": "A real say in priorities",
           "body": "Your cases go to the front of the queue when we decide what gets built next."
         }
       }
@@ -131,7 +131,7 @@
     },
     "apply": {
       "title": "How to apply",
-      "body": "Use the same demo form and mention in the notes that you are interested in the founding-partner programme. The first conversation is the same half hour: understand your operation and see whether there is a fit.",
+      "body": "Use the same demo form and mention in the notes that you are interested in the founding-partner program. The first conversation is the same half hour: understand your operation and see whether there is a fit.",
       "cta": "Apply through the demo form",
       "after": "If there is a fit, a written proposal follows: pilot scope, price, duration, and what will be measured."
     }
@@ -139,7 +139,7 @@
   "security": {
     "meta": {
       "title": "Security and data handling · Ride Fleet",
-      "description": "Where the data lives, how it is encrypted, who can see it, how it is backed up, and what we do not have yet. No certifications we do not hold."
+      "description": "Where the data lives, how it is encrypted, who can see it, how it is backed up, and what we do not have yet. No claims to certifications we do not hold."
     },
     "eyebrow": "Security",
     "title": "How we handle data",
@@ -205,7 +205,7 @@
       "lede": "This list exists so nobody has to guess.",
       "items": {
         "0": "An external security audit and a third-party penetration test.",
-        "1": "A vulnerability reward programme.",
+        "1": "A vulnerability reward program.",
         "2": "A public service status page with incident history.",
         "3": "A published data processing agreement that can be signed online."
       },
@@ -263,7 +263,7 @@
       },
       "rights": {
         "title": "Your rights",
-        "body": "About the data we hold on you, you can ask for the following.",
+        "body": "You can ask for the following about the data we hold on you.",
         "items": {
           "0": "A copy of what we hold.",
           "1": "Correction of anything that is wrong.",
@@ -280,7 +280,7 @@
       },
       "changes": {
         "title": "Changes to this policy",
-        "body": "If what we collect or why it changes, this text is updated along with its date. Material changes are also sent to anyone who has already written to us."
+        "body": "If what we collect, or what we use it for, changes, this text is updated along with its date. Material changes are also sent to anyone who has already written to us."
       },
       "contact": {
         "title": "How to reach us",
@@ -310,7 +310,7 @@
         "title": "Acceptable use",
         "body": "By using the site, you agree not to do the following.",
         "items": {
-          "0": "Attempt to reach systems, accounts or data without authorisation.",
+          "0": "Attempt to reach systems, accounts or data without authorization.",
           "1": "Extract content automatically at a scale that degrades the service for everyone else.",
           "2": "Submit false details, or somebody else's details, through the forms.",
           "3": "Use the site for anything illegal or to harass others."
@@ -326,7 +326,7 @@
       },
       "warranty": {
         "title": "No warranty on the site",
-        "body": "The site is offered as it is. We take care that the information is correct and that the site stays up, but we do not warrant that it is free of errors or interruptions."
+        "body": "The site is offered as is. We take care that the information is correct and that the site stays up, but we do not warrant that it is free of errors or interruptions."
       },
       "liability": {
         "title": "Limitation of liability",
@@ -393,7 +393,7 @@
         "description": "Our target is WCAG 2.2 level AA. Here is what has been verified, what is missing, and how to tell us if you hit a barrier."
       },
       "title": "Accessibility statement",
-      "lede": "If you cannot use something on this site, that is our defect and we want to hear about it.",
+      "lede": "If you cannot use something on this site, that is a defect on our side and we want to hear about it.",
       "target": {
         "title": "The target",
         "body": "This site is built to meet the Web Content Accessibility Guidelines, WCAG 2.2, level AA, equally in Spanish and English. Accessibility is reviewed as part of the work on each page, not at the end."
@@ -406,9 +406,9 @@
         "title": "What has been verified",
         "items": {
           "0": "Text and icon contrast was measured against the level AA thresholds. Combinations that fell short were corrected in the design system before publishing.",
-          "1": "The whole site can be worked by keyboard, with a skip-to-content link and a visible focus indicator on every control.",
-          "2": "The focus indicator uses its own colour, distinct from the brand colour, so it stands out on any background.",
-          "3": "Semantic structure: one H1 per page, headings in order, and labelled landmark regions.",
+          "1": "The whole site can be navigated by keyboard, with a skip-to-content link and a visible focus indicator on every control.",
+          "2": "The focus indicator uses its own color, distinct from the brand color, so it stands out on any background.",
+          "3": "Semantic structure: one H1 per page, headings in order, and labeled landmark regions.",
           "4": "Every control has a programmatic name. Buttons that show only an icon carry text for screen readers.",
           "5": "Icons are decorative graphics and the meaning always sits in the text beside them. No emoji are used anywhere.",
           "6": "The language attribute changes with the language of the page, so screen readers pronounce it correctly.",
@@ -418,7 +418,7 @@
       },
       "gaps": {
         "title": "What is missing",
-        "lede": "Verification so far has been internal. That has limits, and these are they.",
+        "lede": "Verification so far has been internal. That has limits, and here they are.",
         "items": {
           "0": "We have not run an external audit or testing with people who use assistive technology daily.",
           "1": "There are no automated accessibility tests running on each publish yet.",

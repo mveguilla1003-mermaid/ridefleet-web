@@ -140,6 +140,7 @@ a 24-month retention window and Puerto Rico governing law among them — that a 
 needs to confirm or replace. `/security` likewise describes intended controls;
 anything not yet true should be badged or cut.
 
-Features still in progress carry an inline "En construcción / Building" badge next to
-the claim itself, never in a footnote. Remove each badge as the feature ships.
+Features still in progress carry an inline "En construcción / Under construction"
+badge next to the claim itself, never in a footnote. Remove each badge as the
+feature ships.
 `grep -rn "buildingBadge\|badge-building" src` finds them all.

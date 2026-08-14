@@ -6,11 +6,11 @@
   "hero": {
     "eyebrow": "Live demo · 30 minutes",
     "title": "30 minutes on your operation. Not on our slide deck.",
-    "lede": "Fill in the form and we reply the same business day with two or three time slots. On the call we open the product against a case like yours — your fleet type, your tolls, your calls — and tell you straight what already works and what we are still building.",
+    "lede": "Fill in the form and we reply the same business day with two or three time slots. On the call we open the product with a case like yours — your fleet type, your tolls, your calls — and tell you straight what already works and what we are still building.",
     "rail": {
       "duration": { "value": "30 min" },
       "language": "Spanish or English",
-      "who": "With whoever builds the product",
+      "who": "With the people building the product",
       "place": { "value": "San Juan · AST (UTC−4)" }
     }
   },
@@ -18,7 +18,7 @@
     "mark": {
       "n": "01",
       "label": "Book",
-      "note": "Answer the same business day · AST"
+      "note": "Reply the same business day · AST"
     },
     "railLabel": "What to expect"
   },
@@ -76,7 +76,7 @@
     },
     "products": {
       "legend": "What do you want to see?",
-      "optTag": " — tick everything that applies",
+      "optTag": " — check all that apply",
       "rfm": {
         "value": "Fleet Manager",
         "desc": "Contracts, handovers, maintenance, billing."
@@ -101,7 +101,7 @@
       "help": "Optional, but it is what makes the demo yours instead of generic."
     },
     "consent": {
-      "text": "I authorise Ride Fleet to contact me about this request. We do not sell or share your data, and you can ask us to delete it at any time.",
+      "text": "I authorize Ride Fleet to contact me about this request. We do not sell or share your data, and you can ask us to delete it at any time.",
       "notice": "Privacy notice"
     },
     "submit": "Book my demo",
@@ -160,7 +160,7 @@
       "r3": {
         "time": "14–21",
         "title": "Toll Bridge",
-        "desc": "How an AutoExpreso or SunPass toll finds the driver who generated it on its own."
+        "desc": "How an AutoExpreso or SunPass toll finds, on its own, the driver who generated it."
       },
       "r4": {
         "time": "21–27",
@@ -173,7 +173,7 @@
         "desc": "What it would cost in your case and what it would take to start."
       }
     },
-    "foot": "We reorder it around what you ticked",
+    "foot": "We reorder it around what you checked",
     "total": { "value": "30 MIN" }
   },
   "scheduler": {
@@ -219,7 +219,7 @@
     "chapter": "02",
     "chapterOf": "On screen",
     "title": "No slides. This is what we open.",
-    "aside": "Minute 14 of the half hour: the week's tolls, already stuck to the driver who generated them.",
+    "aside": "Minute 14 of the half hour: the week's tolls, already matched to the driver who generated them.",
     "appLabel": "Toll Bridge: AutoExpreso and SunPass tolls reconciled against bookings, with plate, driver and match confidence. Sample data.",
     "app": {
       "product": { "value": "Toll Bridge" },
@@ -251,7 +251,7 @@
       },
       "kpi": {
         "matched": {
-          "label": "Matched untouched",
+          "label": "Auto-matched",
           "value": "97.9%",
           "chip": "335 / 342"
         },
@@ -282,7 +282,7 @@
         },
         "rows": {
           "r1": {
-            "when": { "value": "24 jul · 08:12" },
+            "when": { "value": "24 Jul · 08:12" },
             "plaza": { "value": "Buchanan · AutoExpreso" },
             "plate": "HTR·142",
             "amount": "$1.60",
@@ -291,7 +291,7 @@
             "status": "Charged"
           },
           "r2": {
-            "when": { "value": "24 jul · 07:48" },
+            "when": { "value": "24 Jul · 07:48" },
             "plaza": { "value": "Caguas Norte · AutoExpreso" },
             "plate": "PRA·771",
             "amount": "$0.85",
@@ -300,7 +300,7 @@
             "status": "Charged"
           },
           "r3": {
-            "when": { "value": "23 jul · 19:05" },
+            "when": { "value": "23 Jul · 19:05" },
             "plaza": { "value": "Teodoro Moscoso · AutoExpreso" },
             "plate": "KLM·908",
             "amount": "$2.25",
@@ -309,7 +309,7 @@
             "status": "Review"
           },
           "r4": {
-            "when": { "value": "23 jul · 16:31" },
+            "when": { "value": "23 Jul · 16:31" },
             "plaza": { "value": "Homestead Ext. · SunPass" },
             "plate": "FLA·2287",
             "amount": "$3.50",
@@ -318,7 +318,7 @@
             "status": "Charged"
           },
           "r5": {
-            "when": { "value": "22 jul · 14:57" },
+            "when": { "value": "22 Jul · 14:57" },
             "plaza": { "value": "Toa Baja · AutoExpreso" },
             "plate": "MSA·224",
             "amount": "$1.10",
@@ -367,7 +367,7 @@
       "q2": {
         "n": "02",
         "q": "What language is it in?",
-        "a": "Whichever you tick above, Spanish or English. If you are bringing someone who prefers the other one, say so in the message and we run it mixed — that is normal here."
+        "a": "Whichever you check above, Spanish or English. If you are bringing someone who prefers the other one, say so in the message and we run it in both — that is normal here."
       },
       "q3": {
         "n": "03",
@@ -383,13 +383,13 @@
       "q5": {
         "n": "05",
         "q": "Can I take just one module?",
-        "a": "Yes. Toll Bridge and Voz AI work on top of the fleet you already manage, even without Ride Fleet Manager. Tick only what interests you and the demo gets shorter — thirty useful minutes beat thirty full ones.",
+        "a": "Yes. Toll Bridge and Voz AI work on top of the fleet you already manage, even without Ride Fleet Manager. Check only what interests you and the demo gets shorter — thirty useful minutes beat thirty full ones.",
         "link": "See Toll Bridge on its own"
       }
     },
     "end": {
-      "title": "Not the one you had?",
-      "body": "Write it in the message field on the form. We answer in writing before the call, so the half hour does not go on clarifications.",
+      "title": "Not seeing yours?",
+      "body": "Write it in the message field on the form. We answer in writing before the call, so the half hour is not spent on clarifications.",
       "cta": "Back to the form"
     }
   }

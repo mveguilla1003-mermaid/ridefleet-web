@@ -225,7 +225,7 @@
     "chapter": "01",
     "of": "The leak",
     "title": "Nobody decides to lose this money. It leaks on its own.",
-    "aside": "Put in your own numbers. It computes right here, in your browser, and nothing is saved or sent anywhere."
+    "aside": "Put in your own numbers. It's calculated right here, in your browser, and nothing is saved or sent anywhere."
   },
   "calc": {
     "title": "Your numbers",
@@ -381,7 +381,7 @@
         {
           "num": "60–84",
           "title": "Proposed, and waits",
-          "body": "There is a likely booking but something doesn't close perfectly — the crossing landed minutes after the return, or the unit changed plates that day. We show you why, and you accept it or move it.",
+          "body": "There is a likely booking but something doesn't quite add up — the crossing landed minutes after the return, or the unit changed plates that day. We show you why, and you accept it or move it.",
           "chip": "Suggested"
         },
         {
@@ -575,7 +575,7 @@
       }
     ],
     "note": {
-      "body": "No other toll authority is connected today. If you run fleet outside Puerto Rico and Florida, the path is file upload — matching, the review queue and billing all work the same — and you tell us which authority matters to you so we can queue it up.",
+      "body": "No other toll authority is connected today. If you run a fleet outside Puerto Rico and Florida, the path is file upload — matching, the review queue and billing all work the same — and you tell us which authority matters to you so we can queue it up.",
       "ask": "Ask for yours"
     },
     "toggle": {
@@ -596,7 +596,7 @@
       },
       {
         "q": "Can it charge the wrong customer?",
-        "a": "It can propose wrong, which is exactly why the confidence score exists. When two bookings overlap on the same vehicle, or the crossing lands on the edge of a return, the case stops and waits for a person. And even when it matches on its own, the charge is still reviewable before it bills."
+        "a": "It can propose the wrong match, which is exactly why the confidence score exists. When two bookings overlap on the same vehicle, or the crossing lands on the edge of a return, the case stops and waits for a person. And even when it matches on its own, the charge is still reviewable before it bills."
       },
       {
         "q": "How long until a crossing shows up?",

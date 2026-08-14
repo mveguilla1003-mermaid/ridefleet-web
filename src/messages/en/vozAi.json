@@ -8,7 +8,7 @@
     "badge": "Voz AI",
     "titleLead": "Your AI front desk — ",
     "titleAccent": "with a human team behind it.",
-    "lede": "Every call answered. In Spanish or in English. At any hour. Voz AI takes the phone, chat, email and messages for your fleet on the same reservation record your team already works from — and hands the mic to a person when it matters.",
+    "lede": "Every call answered. In Spanish or in English. At any hour. Voz AI handles the phone, chat, email and messages for your fleet on the same reservation record your team already works from — and hands the mic to a person when it matters.",
     "ctaDemo": "Book a demo",
     "ctaCall": "Call it and hear for yourself",
     "note": {
@@ -213,7 +213,7 @@
       },
       "1": {
         "title": "Ask it for something real.",
-        "desc": "A quote, an hour, extending a rental, where the unit gets delivered."
+        "desc": "A quote, your hours, extending a rental, where the unit gets delivered."
       },
       "2": {
         "title": "Ask to speak to a person.",
@@ -236,7 +236,7 @@
         "note": "All four, below",
         "points": {
           "0": {
-            "title": "No four separate inboxes",
+            "title": "Not four separate inboxes",
             "text": "A customer who texted and then called is one conversation, not two tickets."
           },
           "1": {
@@ -260,7 +260,7 @@
           },
           "1": {
             "title": "Two languages, not \"any\"",
-            "text": "Spanish and English is what is built. We do not promise a catalogue that does not exist."
+            "text": "Spanish and English is what is built. We do not promise a catalog that does not exist."
           },
           "2": {
             "title": "Written for here",
@@ -442,7 +442,7 @@
         "3": {
           "title": "Follow-up",
           "sub": "Outbound · SMS and voice",
-          "does": "Reminds on returns, confirms pickups and chases missing documents.",
+          "does": "Sends return reminders, confirms pickups and chases missing documents.",
           "touches": "Booking calendar, contacts",
           "confirm": "Automatic"
         },
@@ -478,11 +478,11 @@
       },
       "2": {
         "q": "Does it replace my team?",
-        "a": "No. It eats the repetitive queue — hours, directions, booking status, reminders — so your team handles what actually needs judgement. The design is explicitly human-in-the-loop."
+        "a": "No. It eats the repetitive queue — hours, directions, booking status, reminders — so your team handles what actually needs judgment. The design is explicitly human-in-the-loop."
       },
       "3": {
         "q": "Does it work if I do not use Ride Fleet Manager?",
-        "a": "Where it shines is on the operations spine, because there it can look up and write the record. If you run another system, let us talk about what can be connected before we sell you anything."
+        "a": "Where it shines is on the operations spine, because there it can look up and write the record. If you run another system, let's talk about what can be connected before we sell you anything."
       },
       "4": {
         "q": "Which languages, exactly?",
@@ -503,7 +503,7 @@
   "toggle": {
     "eyebrow": "One module at a time",
     "title": "Start with one leak. Expand when it pays for itself.",
-    "sub": "Toll Bridge and Voz AI already live on the same booking record — turning on the next module is a configuration, not an integration project.",
+    "sub": "Toll Bridge and Voz AI already live on the same booking record — turning on the next module is configuration, not an integration project.",
     "rfm": {
       "title": "Ride Fleet Manager",
       "body": "Run it. Booking, check-out, inspection, billing and close-out on a single spine."
@@ -526,7 +526,7 @@
     "demo": "Book a demo",
     "call": "Call {phone}",
     "list": {
-      "0": "No contract to talk",
+      "0": "No contract just to talk",
       "1": "In Spanish or in English",
       "2": "Built in Puerto Rico"
     }
