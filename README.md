@@ -76,6 +76,14 @@ allowance in `scripts/audit.mjs` cites its tokens.css line; gradient-backed mock
 text is skipped, not guessed at); and the full axe-core WCAG A/AA rule set passes
 (color-contrast off — the solid-background gate is the authority there).
 
+`verify:diff` (CI only, by default) pixel-diffs the fresh `verify:shots` captures
+against the baseline artifact of the last successful run on `main` and fails any
+page where more than 1% of pixels changed, uploading diff images as an artifact.
+Baselines are run artifacts, never committed: full-page shots would bloat the
+repo, and shots from different machines differ in font rasterisation anyway.
+Intentional restyles land with `[visual-baseline]` in the commit message. To use
+locally: put reference shots in `verify/baseline` and run `npm run verify:diff`.
+
 `verify:form` exercises the site's one conversion end to end: the API contract of
 `/api/lead` (bad JSON, missing fields, invalid email, honeypot and under-3-seconds
 discards, happy path), and the real UI — an empty submit must trap focus in the

@@ -57,6 +57,37 @@ jobs:
       - name: Screenshot sweep (console errors fail here)
         run: npm run verify:shots
 
+      # Visual regression: compare this run's shots against the baseline
+      # artifact of the last successful run on main (same runner image, so
+      # font rasterisation matches — the reason baselines are not committed).
+      # First run, or expired artifacts: no baseline, diff politely skips.
+      - name: Download visual baseline (last successful main run)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          run_id=$(gh run list --workflow gates --branch main --status success --limit 1 --json databaseId --jq '.[0].databaseId' || true)
+          if [ -n "$run_id" ]; then
+            gh run download "$run_id" --name shots-baseline --dir verify/baseline \
+              && echo "baseline from run $run_id" \
+              || echo "run $run_id has no shots-baseline artifact — skipping"
+          else
+            echo "no successful main run yet"
+          fi
+
+      - name: Visual diff against baseline
+        # Intentional restyles land with [visual-baseline] in the commit
+        # message; this run's shots then become the next baseline unopposed.
+        if: ${{ !contains(github.event.head_commit.message, '[visual-baseline]') }}
+        run: npm run verify:diff
+
+      - name: Upload visual diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-diffs
+          path: verify/diffs
+          if-no-files-found: ignore
+
       - name: Accessibility + metadata audit
         run: npm run verify:a11y
 
@@ -70,3 +101,12 @@ jobs:
           name: verify-shots
           path: verify/shots
           if-no-files-found: ignore
+
+      # Only fully green runs on main set the bar for the next one.
+      - name: Publish shots as next baseline
+        if: success() && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: shots-baseline
+          path: verify/shots
+          retention-days: 30
