@@ -129,10 +129,11 @@ set them, the site shows an honest gap rather than an invented value.
 
 Four more items live outside env config:
 
-The eleven partner logo slots on `/design-partners` render as visibly empty dashed
-boxes. That is deliberate — replace them with real logos as partners sign, and note
-that the page's own copy commits to a cohort of three to five, so eleven slots is
-more room than the promise. Reconcile one or the other before launch.
+The five partner logo slots on `/design-partners` render as visibly empty dashed
+boxes. That is deliberate — replace them with real logos as partners sign. The
+count matches the largest cohort the page's own copy promises ("three to five");
+it used to be eleven, which advertised more vacancies than the promise and
+contradicted the page's claim that it only advertises real scarcity.
 
 The demo form posts to `/api/lead`, which validates, spam-screens and logs. The CRM
 hand-off is already wired: set `CRM_WEBHOOK_URL` (and optionally

@@ -30,11 +30,13 @@ const GET_ITEMS = [0, 1, 2, 3] as const;
 const EXPECT_ITEMS = [0, 1, 2, 3] as const;
 
 /**
- * Eleven slots, every one of them empty. The count is the wall's layout, not a
- * promise of eleven partnerships — the cohort size is stated in words in
- * `slots.body`. Nothing here may ever be filled with an invented logo.
+ * Five slots, every one of them empty — one per partner in the largest cohort
+ * `slots.body` promises ("three to five"). It used to be eleven, which quietly
+ * contradicted both that sentence and `slots.note`, which claims the site only
+ * advertises scarcity that is real: eleven vacancies advertise the opposite.
+ * Nothing here may ever be filled with an invented logo.
  */
-const PARTNER_SLOTS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+const PARTNER_SLOTS = [0, 1, 2, 3, 4] as const;
 
 export default function DesignPartnersPage({
   params
@@ -138,7 +140,7 @@ export default function DesignPartnersPage({
           <p className="small measure" style={{ marginTop: 'var(--sp-3)' }}>
             {t('wall.body')}
           </p>
-          <div className="grid grid-4" style={{ marginTop: 'var(--sp-6)' }}>
+          <div className="grid grid-5" style={{ marginTop: 'var(--sp-6)' }}>
             {PARTNER_SLOTS.map((i) => (
               <div className="logo-slot" key={i}>
                 {common('logoSlot')}
