@@ -657,7 +657,9 @@ body{--sec-y:clamp(56px,5.9vw,84px)}
 #columna{padding-bottom:clamp(46px,5vw,70px)}
 #faq{padding-block:clamp(52px,5.6vw,80px)}
 .spine-note{margin-bottom:0}
-.site-footer{margin-top:clamp(48px,5vw,72px)}
+/* the page's own .site-footer margin (48-72px) was already dead — the shell
+   block pasted below it re-set 36-52px by order; the join now comes from
+   additions.css like every other route */
 
 /* --- 10. The spine table clips at <=900 with no affordance; the 28px mask
    fade is too quiet to read as "there is more". Show an explicit swipe cue in
@@ -682,11 +684,9 @@ body{--sec-y:clamp(56px,5.9vw,84px)}
 .btn--teal,.fauxbtn--p{background:linear-gradient(180deg,var(--teal-700),var(--teal-800))}
 .btn--teal{box-shadow:0 1px 2px rgba(6,60,54,.30),0 8px 18px -6px rgba(6,78,70,.42),
   inset 0 1px 0 rgba(255,255,255,.20)}
-/* inactive EN|ES label measured 4.44 on --surface-3 */
-.lang button{color:var(--n-700)}
-/* the "|" was a text node at 1.94 — it is a divider, so make it a rule */
-.lang .sep{width:1px;height:15px;background:var(--border-strong);font-size:0;line-height:0;
-  overflow:hidden;padding:0;margin-inline:3px;flex:0 0 auto;color:transparent}
+/* (.lang fixes that sat here were an older generation of the shell rules,
+   already annulled by the shared block that followed — the canonical .lang
+   styling is components.css + additions.css now) */
 /* channel index numeral measured 4.05 on the tinted lead surface */
 .chan-h .cn{color:var(--n-700)}
 /* logo slots carried min-width:150px into a 3-col grid and broke out of the
@@ -694,22 +694,5 @@ body{--sec-y:clamp(56px,5.9vw,84px)}
 .slot-row .logo-slot{min-width:0;padding-inline:6px;font-size:9.5px;letter-spacing:.07em;
   white-space:nowrap;overflow:hidden}
 
-/* =========================================================================
-   X. CROSS-PAGE SHELL NORMALISATION  (identical block in all five pages)
-   The nav and footer are byte-identical across the set; these rules keep the
-   chrome that carries them identical too.
-   ====================================================================== */
-.lang button{color:var(--text-2)}            /* 8.13 AAA on --surface-3 */
-.lang button:hover{color:var(--text-1)}
-.lang button.is-active{background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1)} /* 9.93 AAA */
-.lang .sep{width:1px;align-self:stretch;margin-block:4px;margin-inline:0;padding:0;
-  font-size:0;line-height:0;background:var(--n-400);flex:0 0 auto;border-radius:1px;
-  height:auto;min-height:15px;color:transparent}
-.nav-links .nl-abbr{display:none}
-@media (max-width:1080px){
-  .nav-links .nl-full{display:none}
-  .nav-links .nl-abbr{display:inline}
-}
-/* Every page now closes on a beat that carries its own breathing room, so the
-   footer joins at the same distance on all five. One number, not five. */
-.site-footer{margin-top:clamp(36px,3.8vw,52px)}
+/* Shell rules (header, footer, .lang) live ONLY in additions.css — see its
+   CROSS-PAGE SHELL NORMALISATION block for what used to sit here and why. */

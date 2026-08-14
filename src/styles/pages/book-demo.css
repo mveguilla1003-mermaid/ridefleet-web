@@ -492,25 +492,7 @@
 }
 
 /* ---- Contrast touch-ups: --text-3 clears 4.5 on white but only 4.44 on the
-   --n-100 tinted chrome, so those instances step up one rung. --------------- */
-.lang button,.searchpill kbd{color:var(--text-2)}
-
-/* =========================================================================
-   X. CROSS-PAGE SHELL NORMALISATION  (identical block in all five pages)
-   The nav and footer are byte-identical across the set; these rules keep the
-   chrome that carries them identical too.
-   ====================================================================== */
-.lang button{color:var(--text-2)}            /* 8.13 AAA on --surface-3 */
-.lang button:hover{color:var(--text-1)}
-.lang button.is-active{background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1)} /* 9.93 AAA */
-.lang .sep{width:1px;align-self:stretch;margin-block:4px;margin-inline:0;padding:0;
-  font-size:0;line-height:0;background:var(--n-400);flex:0 0 auto;border-radius:1px;
-  height:auto;min-height:15px;color:transparent}
-.nav-links .nl-abbr{display:none}
-@media (max-width:1080px){
-  .nav-links .nl-full{display:none}
-  .nav-links .nl-abbr{display:inline}
-}
-/* Every page now closes on a beat that carries its own breathing room, so the
-   footer joins at the same distance on all five. One number, not five. */
-.site-footer{margin-top:clamp(36px,3.8vw,52px)}
+   --n-100 tinted chrome, so those instances step up one rung.
+   (.lang button used to be in this list — it is shell, and components.css
+   already sets it to --text-2; shell rules now live only in additions.css.) */
+.searchpill kbd{color:var(--text-2)}

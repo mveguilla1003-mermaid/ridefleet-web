@@ -220,3 +220,50 @@
 body.nav-open {
   overflow: hidden;
 }
+
+/* ============================================================================
+   5. CROSS-PAGE SHELL NORMALISATION
+   One home for every rule that styles the SHARED chrome (header, footer,
+   ES|EN switch). These used to be pasted into the five per-page sheets, so
+   the seven routes that ship no page sheet rendered a different shell — the
+   footer joined at 112px instead of 52px, and the .sep divider lost its
+   radius and min-height. Shell rules must never live in a page sheet again:
+   page sheets load after this file and win by cascade, which is exactly how
+   the duplicated-menu bug shipped once already.
+
+   NOT restated here: the .lang button colours (idle --text-2 = 8.13 AAA on
+   --surface-3, active --p-800 on --n-0 = 9.93 AAA) already live in
+   components.css; the five per-page copies were byte-identical duplicates
+   and were removed outright. voz-ai.css also carried an older generation
+   (.lang button --n-700, .sep with a fixed 15px height) that its own pasted
+   copy of this block was already overriding by order — both generations are
+   gone. The .nl-abbr/.nl-full rules were dead everywhere: the React header
+   renders .nav-long/.nav-short, handled in components.css.
+   ========================================================================= */
+
+/* The static mockups rendered the sep as a text "|" node (1.94 contrast —
+   it is a divider, not text). These neutralise any glyph and keep the
+   radius/min-height identical on routes without a page sheet. */
+.lang .sep {
+  width: 1px;
+  align-self: stretch;
+  margin-block: 4px;
+  margin-inline: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  background: var(--n-400);
+  flex: 0 0 auto;
+  border-radius: 1px;
+  height: auto;
+  min-height: 15px;
+  color: transparent;
+}
+
+/* The footer joins every page at the SAME distance — one number for all
+   routes, not five sheets' worth. Overrides both footer margin variants in
+   components.css (the 72–112px default, and the :has(.sec--cta) special
+   case, which this rule makes redundant but harmless). */
+.site-footer {
+  margin-top: clamp(36px, 3.8vw, 52px);
+}
