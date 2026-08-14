@@ -108,8 +108,11 @@ boxes. That is deliberate — replace them with real logos as partners sign, and
 that the page's own copy commits to a cohort of three to five, so eleven slots is
 more room than the promise. Reconcile one or the other before launch.
 
-The demo form posts to `/api/lead`, which currently validates and logs. Point it at
-your CRM or form provider before you take real leads.
+The demo form posts to `/api/lead`, which validates, spam-screens and logs. The CRM
+hand-off is already wired: set `CRM_WEBHOOK_URL` (and optionally
+`CRM_WEBHOOK_TOKEN` for a Bearer header) in the deploy environment and leads POST
+there as JSON, falling back to logs if delivery fails. Until that variable is set,
+leads are retained in logs only.
 
 `/privacy`, `/terms` and `/cookies` were drafted to be structurally complete and
 legally reviewable, not to be legally correct out of the box. They take positions —
