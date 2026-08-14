@@ -96,13 +96,19 @@ with a non-skipped API reply; a honeypot submission must ALSO land on thank-you
 ```bash
 npm run build:icons    # 7 icon files + manifest.webmanifest from site.brandHex
 npm run build:og       # one 1200×630 OG card per route per locale → public/og/
+npm run check:og       # fails if any card's text has moved on since it rendered
 ```
 
 `build:icons` FAILS if `site.brandHex` drifts from `--p-700` in tokens.css —
 brandHex is the one sanctioned colour outside tokens.css (theme-color is parsed
 before any stylesheet loads), and the gate keeps the exception honest. `build:og`
-titles every card from the route's own `meta` strings; rerun it after copy
-changes. Both write committed files in `public/`.
+titles every card from the route's own `meta` strings and records a hash of each
+card's text in `public/og/manifest.json`; `check:og` (a CI gate) recomputes those
+hashes so editing a meta description without rerunning `build:og` fails the build
+instead of silently shipping a stale social card. The hash covers the TEXT, not
+the pixels, because the cards use the system font stack — the same content
+renders to different bytes on different machines. Both write committed files in
+`public/`.
 
 Current status: all gates pass. 1963 message keys are in parity; 96 full-page
 screenshots render clean with no console errors and no element left unrevealed.

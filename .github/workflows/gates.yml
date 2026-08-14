@@ -35,6 +35,11 @@ jobs:
         env:
           I18N_STRICT: '1'
 
+      # Cheap and browserless, so it runs before anything Playwright-shaped:
+      # catches a meta string edited without regenerating its social card.
+      - name: Open Graph cards are current
+        run: npm run check:og
+
       - name: Production build
         run: npm run build
 

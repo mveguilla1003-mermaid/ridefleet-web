@@ -13,6 +13,7 @@
     "start": "next start",
     "build:icons": "node scripts/build-icons.mjs",
     "build:og": "node scripts/build-og.mjs",
+    "check:og": "node scripts/build-og.mjs --check",
     "check:i18n": "node scripts/check-i18n.mjs",
     "verify": "npm run check:i18n && npm run build",
     "verify:shots": "node scripts/capture.mjs",
