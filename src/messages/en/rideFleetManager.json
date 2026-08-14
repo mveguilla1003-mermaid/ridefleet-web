@@ -648,6 +648,39 @@
       }
     }
   },
+  "bookings": {
+    "eyebrow": "Reservations",
+    "title": "Every booking, from every channel, in one place",
+    "lede": "Reservations arrive from your franchise systems, your brokers, your own website and your counter, and land in a single queue, already matched to a customer, priced, and ready to hand over.",
+    "beats": {
+      "0": {
+        "value": "Bookings arrive on their own",
+        "body": "Franchise and broker reservations pull themselves in, match against the customers and vehicles you already have, and pass a duplicate check before they ever reach your staff."
+      },
+      "1": {
+        "value": "The handover is a guided flow",
+        "body": "Agreement, terms, payment, eight-angle photo inspection and signature, in order, from a tablet or a phone. The customer can do their part before they reach the counter."
+      },
+      "2": {
+        "value": "The return closes the money",
+        "body": "Mileage, fuel, cleaning, late return and tolls are worked out at check-in, charged to the card on file where you hold a signed authorization, and receipted without anyone asking."
+      }
+    },
+    "trust": {
+      "title": "The awkward cases are the ones that cost money",
+      "body": "An imported booking that does not match cleanly is never guessed at: it waits in a review tray, with what the system found, for a person to decide. A car returned with a balance owing gets its own status instead of being filed as closed. What usually gets papered over is what gets expensive, so here it does not."
+    },
+    "precision": {
+      "title": "Said precisely",
+      "items": {
+        "0": "Each franchise or broker connection is built for that partner. Six run in production today, and adding one is real work, not a switch.",
+        "1": "Clean imports promote themselves and ambiguous ones go to review. That is the feature, not a limitation.",
+        "2": "Charging the card on file rests on the authorization the customer signed on the agreement, which names the categories: fuel, mileage, cleaning, tolls and damage.",
+        "3": "Pre-check-in, digital signature and the customer portal are real, but someone still hands over a key unless you run a kiosk."
+      }
+    },
+    "proof": "As of August 2026: seven rental operations and more than four thousand reservations moved in the last thirty days."
+  },
   "market": {
     "eyebrow": "A Ride Fleet Manager add-on",
     "title": "Know what the market charges before you set your rates",

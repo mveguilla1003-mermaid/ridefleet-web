@@ -648,6 +648,39 @@
       }
     }
   },
+  "bookings": {
+    "eyebrow": "Reservas",
+    "title": "Cada reserva, de cada canal, en un mismo sitio",
+    "lede": "Las reservas llegan de tus sistemas de franquicia, de tus brokers, de tu propia web y del mostrador, y caen en una sola fila, ya emparejadas con un cliente, tarifadas y listas para entregar.",
+    "beats": {
+      "0": {
+        "value": "Las reservas entran solas",
+        "body": "Las de franquicia y broker se importan por su cuenta, se emparejan contra los clientes y vehículos que ya tienes, y pasan por revisión de duplicados antes de llegar a tu personal."
+      },
+      "1": {
+        "value": "La entrega es un flujo guiado",
+        "body": "Contrato, términos, pago, inspección fotográfica de ocho ángulos y firma, en orden, desde una tableta o un teléfono. El cliente puede adelantar su parte antes de llegar al mostrador."
+      },
+      "2": {
+        "value": "La devolución cierra el dinero",
+        "body": "Millaje, gasolina, limpieza, devolución tardía y peajes se calculan en el check-in, se cobran a la tarjeta en archivo donde tienes autorización firmada, y el recibo sale solo."
+      }
+    },
+    "trust": {
+      "title": "Los casos incómodos son justo los que cuestan dinero",
+      "body": "Una reserva importada que no cuadra limpio no se adivina: espera en una bandeja de revisión, con lo que el sistema encontró, para que una persona decida. Un carro devuelto con saldo pendiente tiene su propio estado en vez de archivarse como cerrado. Lo que suele taparse es lo que sale caro, así que aquí no se tapa."
+    },
+    "precision": {
+      "title": "Dicho con precisión",
+      "items": {
+        "0": "Cada conexión de franquicia o broker se construye para ese socio. Hoy hay seis corriendo en producción, y sumar una es trabajo real, no un interruptor.",
+        "1": "Las importaciones limpias se promueven solas y las ambiguas van a revisión. Eso es la función, no una limitación.",
+        "2": "El cobro a la tarjeta en archivo se apoya en la autorización que el cliente firmó en el contrato, que nombra las categorías: gasolina, millaje, limpieza, peajes y daños.",
+        "3": "El pre-check-in, la firma digital y el portal del cliente son reales, pero alguien sigue entregando una llave salvo que operes un kiosco."
+      }
+    },
+    "proof": "A agosto de 2026: siete operaciones de renta y más de cuatro mil reservas movidas en los últimos treinta días."
+  },
   "market": {
     "eyebrow": "Complemento de Ride Fleet Manager",
     "title": "Sabe lo que cobra el mercado antes de que fijes tus tarifas",

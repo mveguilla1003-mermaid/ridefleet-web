@@ -102,6 +102,10 @@ const STATION_ICONS: IconName[] = [
 
 const SPINE_DETAIL_ICONS: IconName[] = ['i-clock', 'i-link', 'i-refresh'];
 
+/** Reservations: one icon per beat, then the four precisions. */
+const BOOKING_BEATS: IconName[] = ['i-refresh', 'i-clipboard', 'i-receipt'];
+const BOOKING_PRECISIONS = [0, 1, 2, 3] as const;
+
 /** Market Intelligence: one icon per beat, then the four precisions. */
 const MARKET_BEATS: IconName[] = ['i-search', 'i-layers', 'i-trend'];
 const MARKET_PRECISIONS = [0, 1, 2, 3] as const;
@@ -907,6 +911,60 @@ export default function RideFleetManagerPage({
             </div>
           </div>
         ))}
+      </Section>
+
+      {/* ========================= RESERVATIONS =========================
+          From a source brief verified against production on 2026-08-14. The
+          angle the site was missing entirely: most bookings are not typed by
+          anyone, they arrive from franchise and broker feeds and are matched
+          and de-duplicated on the way in.
+
+          The partner systems are deliberately NOT named — naming third
+          parties needs their written permission, and "six in production"
+          carries the same weight. The proof line is dated for the same
+          reason a stale number is worse than no number: a dated fact stays
+          true, an undated one rots. Re-verify the counts before launch. */}
+      <Section id="reservas">
+        <div className="sec-head reveal">
+          <Eyebrow>{t('bookings.eyebrow')}</Eyebrow>
+          <h2>{t('bookings.title')}</h2>
+          <p className="lede">{t('bookings.lede')}</p>
+        </div>
+
+        <div className="feature-grid reveal" style={{ marginTop: 'var(--sp-8)' }}>
+          {BOOKING_BEATS.map((icon, i) => (
+            <div className="feature" key={i}>
+              <span className="fic">
+                <Icon name={icon} />
+              </span>
+              <h3>{t(`bookings.beats.${i}.value`)}</h3>
+              <p>{t(`bookings.beats.${i}.body`)}</p>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="split reveal"
+          style={{ marginTop: 'var(--sp-10)', alignItems: 'start' }}
+        >
+          <div>
+            <h3>{t('bookings.trust.title')}</h3>
+            <p style={{ marginTop: 'var(--sp-3)' }}>{t('bookings.trust.body')}</p>
+            <p className="meta" style={{ marginTop: 'var(--sp-4)' }}>
+              {t('bookings.proof')}
+            </p>
+          </div>
+          <div>
+            <h3>{t('bookings.precision.title')}</h3>
+            <div className="prose" style={{ marginTop: 'var(--sp-3)' }}>
+              <ul>
+                {BOOKING_PRECISIONS.map((i) => (
+                  <li key={i}>{t(`bookings.precision.items.${i}`)}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
       </Section>
 
       {/* ==================== MARKET INTELLIGENCE (add-on) ====================
