@@ -51,6 +51,30 @@ for (const [file, check, minBytes] of ICON_FILES) {
   }
 }
 
+/* ---- Security headers on page responses ----------------------------------
+   The middleware must send the CSP (with a nonce) and its companions on
+   every page. Asserted once — the middleware runs identically for all
+   matched routes. HSTS is production-only, and `npm start`/deploys are
+   production, so it is required here. */
+{
+  const resp = await ctx.request.get(`${BASE}/es`);
+  const h = (name) => resp.headers()[name.toLowerCase()] ?? '';
+  const cspHeader = h('Content-Security-Policy');
+  if (!/script-src [^;]*'nonce-[A-Za-z0-9+/=]+'/.test(cspHeader))
+    note(`headers: CSP missing or without a script-src nonce: "${cspHeader.slice(0, 80)}"`);
+  if (!/default-src 'self'/.test(cspHeader)) note("headers: CSP lacks default-src 'self'");
+  for (const [name, expected] of [
+    ['Referrer-Policy', 'strict-origin-when-cross-origin'],
+    ['X-Content-Type-Options', 'nosniff'],
+    ['X-Frame-Options', 'DENY']
+  ]) {
+    if (h(name) !== expected) note(`headers: ${name} = "${h(name)}", expected "${expected}"`);
+  }
+  if (!h('Permissions-Policy')) note('headers: Permissions-Policy missing');
+  if (!/max-age=\d+/.test(h('Strict-Transport-Security')))
+    note('headers: Strict-Transport-Security missing');
+}
+
 /* ---- The 404, in both locale prefixes ------------------------------------
    The pre-rebuild bug was an EMPTY 404: Next's default shell with no <html>,
    English only, unstyled. Assert on the RAW served HTML (request.get, no JS)

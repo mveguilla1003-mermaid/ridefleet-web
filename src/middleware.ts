@@ -52,6 +52,24 @@ export default function middleware(request: NextRequest) {
 
   const response = handleI18nRouting(request);
   response.headers.set('Content-Security-Policy', csp);
+
+  // Companions to the CSP. frame-ancestors already blocks framing in every
+  // current browser; X-Frame-Options is the legacy spelling for older ones.
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('X-Frame-Options', 'DENY');
+  // The site uses none of these; saying so explicitly also silences
+  // permission prompts from anything a future embed might try.
+  response.headers.set(
+    'Permissions-Policy',
+    'camera=(), microphone=(), geolocation=(), payment=()'
+  );
+  if (!isDev) {
+    response.headers.set(
+      'Strict-Transport-Security',
+      'max-age=31536000; includeSubDomains'
+    );
+  }
   return response;
 }
 
