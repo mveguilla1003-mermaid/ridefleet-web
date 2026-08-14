@@ -79,19 +79,28 @@ for (const [file, check, minBytes] of ICON_FILES) {
 /* ---- The 404, in both locale prefixes ------------------------------------
    The pre-rebuild bug was an EMPTY 404: Next's default shell with no <html>,
    English only, unstyled. Assert on the RAW served HTML (request.get, no JS)
-   so hydration can never mask a regression, then render it once for the
-   focus-ring check. */
-for (const prefix of ['es', 'en']) {
+   so hydration can never mask a regression. The 404 is LOCALISED per prefix
+   (the site renders dynamically and the middleware resolves the locale on
+   the way in) and carries the real shell — so each prefix must serve its own
+   language, header/footer/ES|EN switch must be present, and the response
+   must bear a nonce (proof it did not fall back to a locale-blind static
+   render), plus stylesheet, noindex, one h1, and the focus-ring check on a
+   rendered pass. */
+const h1By404 = {};
+for (const [prefix, expectLang] of [['es', 'es-PR'], ['en', 'en-US']]) {
   const url = `${BASE}/${prefix}/audit-404-probe`;
   const resp = await ctx.request.get(url);
   const tag = `${prefix}/404`;
   if (resp.status() !== 404) note(`${tag}: HTTP ${resp.status()}, expected 404`);
   const raw = (await resp.body()).toString('utf8');
-  if (!raw.includes('lang="es-PR"')) note(`${tag}: served HTML lacks the es-PR block`);
-  if (!raw.includes('lang="en-US"')) note(`${tag}: served HTML lacks the en-US block`);
+  if (!raw.includes(`<html lang="${expectLang}"`)) note(`${tag}: served HTML is not ${expectLang}-localised`);
+  if (!/nonce="/.test(raw)) note(`${tag}: no nonce in served HTML — 404 fell back to a static render`);
+  if (!raw.includes('site-footer')) note(`${tag}: footer missing — the 404 lost the shell`);
+  if (!/class="lang"/.test(raw)) note(`${tag}: ES|EN switch missing — the 404 lost the shell`);
   if (!/rel="stylesheet"/.test(raw)) note(`${tag}: no stylesheet in served HTML — unstyled 404`);
   if (!/noindex/.test(raw)) note(`${tag}: missing robots noindex`);
   if ((raw.match(/<h1[\s>]/g) ?? []).length !== 1) note(`${tag}: expected exactly one h1 in served HTML`);
+  h1By404[prefix] = (raw.match(/<h1[^>]*>([^<]*)<\/h1>/) ?? [])[1] ?? '';
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   const focus = await page.evaluate(() => {
     const el = document.querySelector('a[href]');
@@ -101,6 +110,8 @@ for (const prefix of ['es', 'en']) {
   });
   if (!/rgb\(11, 99, 214\)/.test(focus)) note(`${tag}: focus ring = ${focus}`);
 }
+if (h1By404.es && h1By404.es === h1By404.en)
+  note(`404: identical h1 under both prefixes ("${h1By404.es}") — localisation regressed`);
 
 /* ---- Machine-measured text contrast --------------------------------------
    Rule 3 of the repo requires measured ratios; this makes the measuring

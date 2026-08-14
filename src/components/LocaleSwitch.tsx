@@ -1,8 +1,7 @@
 'use client';
 
 import type { MouseEvent } from 'react';
-import { useParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import {
   Link,
   usePathname,
@@ -30,8 +29,9 @@ export function LocaleSwitch() {
   const t = useTranslations('nav');
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
-  const active = (params?.locale as Locale) ?? routing.defaultLocale;
+  // Provider locale, not route params: the root 404 renders outside
+  // `[locale]`, where params are empty but the provider is always right.
+  const active = useLocale() as Locale;
 
   function keepHash(e: MouseEvent<HTMLAnchorElement>, locale: Locale) {
     // Only plain same-tab activations are upgraded; modified clicks

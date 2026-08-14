@@ -1,95 +1,93 @@
 import type { Metadata } from 'next';
-import esCore from '@/messages/es/_core.json';
-import enCore from '@/messages/en/_core.json';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import type { Locale } from '@/i18n/routing';
 import { localeTags, routes } from '@/lib/site';
+import { IconSprite } from '@/components/Icons';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { StickyCta } from '@/components/StickyCta';
+import { Section, Eyebrow, ButtonLink, ArrowLink } from '@/components/ui';
 
 /**
- * Global 404 — lives at the ROOT, outside `[locale]`, on purpose.
+ * Global 404 — lives at the ROOT, outside `[locale]`, on purpose: unknown
+ * URLs resolve to the root not-found boundary in Next 14.2 (a nested
+ * `[locale]/not-found.tsx` never renders for them), and the pass-through
+ * root layout means this file owns the full document.
  *
- * A nested `[locale]/not-found.tsx` never renders for unknown URLs in
- * Next 14.2: unmatched routes resolve to the root not-found boundary, and
- * with a pass-through root layout that meant Next's unbranded English-only
- * default 404 with no `<html>`/`<body>` at all. So this file owns the full
- * document (the root layout deliberately emits no markup) and serves BOTH
- * languages in one statically rendered page — there is no locale context out
- * here, and a server-rendered bilingual page beats a client-side locale guess
- * that breaks without JavaScript.
- *
- * Strings come straight from the `notFound` namespace of both catalogs; no
- * next-intl runtime is involved because there is no request locale to give it.
+ * It is LOCALISED per request, not bilingual: every page renders dynamically
+ * (the nonce CSP requires it), and the next-intl middleware resolves the
+ * locale from the URL prefix on the way in — so /es/nope renders Spanish and
+ * /en/nope English, each with the REAL shell (header, ES|EN switch, footer,
+ * sticky CTA) wired through NextIntlClientProvider. Paths the middleware
+ * matcher skips (dotted files) fall back to the default locale. This
+ * replaces an earlier both-languages-in-one-page 404 from before the site
+ * went dynamic; if the site ever returns to static rendering, that is the
+ * design to bring back.
  */
 
-const es = esCore.notFound;
-const en = enCore.notFound;
-
-export const metadata: Metadata = {
-  // Both catalog titles end in " · Ride Fleet"; strip the Spanish one so the
-  // brand appears once in the combined bilingual title.
-  title: `${es.meta.title.replace(/\s·\sRide Fleet$/, '')} · ${en.meta.title}`,
-  description: `${es.meta.description} ${en.meta.description}`,
-  robots: { index: false, follow: false }
-  // icons + manifest are inherited from the root layout's metadata.
-};
-
-function LangBlock({
-  tag,
-  copy,
-  navHome,
-  heading
-}: {
-  tag: string;
-  copy: typeof es;
-  navHome: string;
-  heading: 'h1' | 'h2';
-}) {
-  const Heading = heading;
-  const prefix = `/${tag.split('-')[0]}`;
-  return (
-    <div lang={tag}>
-      <p className="eyebrow">
-        <span className="dot" aria-hidden="true" />
-        {copy.eyebrow}
-      </p>
-      <Heading>{copy.title}</Heading>
-      <p className="lede">{copy.lede}</p>
-      <div className="btn-row" style={{ marginTop: 'var(--sp-6)' }}>
-        <a className="btn btn--primary" href={`${prefix}${routes.demo}`}>
-          {copy.cta}
-        </a>
-        <a className="btn btn--secondary" href={prefix}>
-          {navHome}
-        </a>
-      </div>
-    </div>
-  );
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('notFound');
+  return {
+    title: t('meta.title'),
+    description: t('meta.description'),
+    robots: { index: false, follow: false }
+    // icons + manifest are inherited from the root layout's metadata.
+  };
 }
 
-export default function NotFound() {
+export default async function NotFound() {
+  const locale = (await getLocale()) as Locale;
+  const messages = await getMessages();
+  const t = await getTranslations('notFound');
+  const nav = await getTranslations('nav');
+  const a11y = await getTranslations('a11y');
+
   return (
-    <html lang={localeTags.es}>
+    <html lang={localeTags[locale]}>
       <body>
-        <main id="main">
-          <section className="sec">
-            <div
-              className="container"
-              style={{ maxWidth: 'var(--container-narrow)' }}
-            >
-              <LangBlock
-                tag={localeTags.es}
-                copy={es}
-                navHome={esCore.nav.home}
-                heading="h1"
-              />
-              <hr className="rule" style={{ margin: 'var(--sp-10) 0' }} />
-              <LangBlock
-                tag={localeTags.en}
-                copy={en}
-                navHome={enCore.nav.home}
-                heading="h2"
-              />
-            </div>
-          </section>
-        </main>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <IconSprite />
+          <a className="skip-link" href="#main">
+            {a11y('skipToContent')}
+          </a>
+          <Header />
+          <main id="main">
+            <Section>
+              <div style={{ maxWidth: 'var(--container-narrow)' }}>
+                <Eyebrow tone="neutral">{t('eyebrow')}</Eyebrow>
+                <h1>{t('title')}</h1>
+                <p className="lede">{t('lede')}</p>
+                <div className="btn-row" style={{ marginTop: 'var(--sp-6)' }}>
+                  <ButtonLink href={routes.demo}>{t('cta')}</ButtonLink>
+                  <ButtonLink href={routes.home} tone="secondary">
+                    {nav('home')}
+                  </ButtonLink>
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: 'var(--sp-5)',
+                    marginTop: 'var(--sp-8)'
+                  }}
+                >
+                  <ArrowLink href={routes.rideFleetManager}>
+                    {nav('rideFleetManager')}
+                  </ArrowLink>
+                  <ArrowLink href={routes.tollBridge} tone="gold">
+                    {nav('tollBridge')}
+                  </ArrowLink>
+                  <ArrowLink href={routes.vozAi} tone="teal">
+                    {nav('vozAi')}
+                  </ArrowLink>
+                </div>
+              </div>
+            </Section>
+          </main>
+          <Footer />
+          <StickyCta />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
