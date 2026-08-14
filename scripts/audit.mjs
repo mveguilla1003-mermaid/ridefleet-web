@@ -101,6 +101,127 @@ for (const prefix of ['es', 'en']) {
   if (!/rgb\(11, 99, 214\)/.test(focus)) note(`${tag}: focus ring = ${focus}`);
 }
 
+/* ---- Machine-measured text contrast --------------------------------------
+   Rule 3 of the repo requires measured ratios; this makes the measuring
+   automatic. Every visible text node over a SOLID composited background is
+   checked: below WCAG AA (4.5:1 normal, 3:1 large) always fails; below AAA
+   (7:1 / 4.5:1) fails unless the (colour, surface) pair is one of the AA
+   decisions documented in tokens.css (each allowance cites its line).
+   Gradient- and image-backed text is skipped and counted: product-mockup
+   surfaces paint with multi-stop gradients and ::before overlays that
+   computed-style compositing cannot see — pixel truth would need rendering,
+   and a wrong guess here would drown real findings in false ones (measured:
+   the naive worst-stop approach reported 1.0:1 on correctly-contrasted hero
+   text). This gate found one real bug on day one: .foot-legal at 3.25:1. */
+async function contrastScan(pageRef) {
+  return pageRef.evaluate(() => {
+    const parse = (s) => {
+      const m = s.match(/rgba?\(([\d.]+), ([\d.]+), ([\d.]+)(?:, ([\d.]+))?\)/);
+      return m ? { r: +m[1], g: +m[2], b: +m[3], a: m[4] === undefined ? 1 : +m[4] } : null;
+    };
+    const lum = ({ r, g, b }) => {
+      const f = (v) => { v /= 255; return v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; };
+      return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b);
+    };
+    const ratioOf = (c1, c2) => {
+      const [hi, lo] = [lum(c1), lum(c2)].sort((x, y) => y - x);
+      return (hi + 0.05) / (lo + 0.05);
+    };
+    const comp = (top, bot) => ({
+      r: top.r * top.a + bot.r * (1 - top.a),
+      g: top.g * top.a + bot.g * (1 - top.a),
+      b: top.b * top.a + bot.b * (1 - top.a),
+      a: 1
+    });
+    const hex = (c) => '#' + [c.r, c.g, c.b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('');
+
+    // Solid background only: ascend compositing semi-transparent layers until
+    // an opaque colour; bail on any background-image on the way up.
+    function solidBg(el) {
+      const semis = [];
+      let node = el;
+      while (node && node.nodeType === 1) {
+        const cs = getComputedStyle(node);
+        if (cs.backgroundImage && cs.backgroundImage !== 'none') return null;
+        const bc = parse(cs.backgroundColor);
+        if (bc && bc.a > 0) {
+          if (bc.a >= 1) {
+            let c = bc;
+            for (let i = semis.length - 1; i >= 0; i--) c = comp(semis[i], c);
+            return c;
+          }
+          semis.push(bc);
+        }
+        node = node.parentElement;
+      }
+      let c = { r: 255, g: 255, b: 255, a: 1 };
+      for (let i = semis.length - 1; i >= 0; i--) c = comp(semis[i], c);
+      return c;
+    }
+
+    /* AA-by-design pairs, each documented in tokens.css with its measured
+       ratio. Keyed by exact fg colour + the surface's luminance band, so a
+       colour drifting onto the wrong kind of surface still fails. */
+    function allowedAA(fg, bg, bgL, large) {
+      if (fg === '#675e7c' && bgL >= 0.55) return true; // tokens.css:19 meta text on light surfaces
+      if (['#8a84a1', '#9a94b1', '#b7b2cd'].includes(fg) && bgL <= 0.05) return true; // tokens.css:78-81 ink text ramp
+      if (fg === '#8a5606' && bgL >= 0.8) return true; // tokens.css:66 warn-tx
+      if (fg === '#08674e' && bgL >= 0.8) return true; // tokens.css:64 ok-tx
+      if (fg === '#086a5e' && bgL >= 0.8) return true; // tokens.css:58 teal-700 text
+      if (fg === '#7d4d08' && bgL >= 0.8) return true; // tokens.css:46 gold-700 text (6.65 on gold-50)
+      if (fg === '#0b63d6' && bgL >= 0.8) return true; // tokens.css:70 info-tx
+      if (fg === '#a3660f' && bgL >= 0.8 && large) return true; // tokens.css:45 gold-600, large only
+      if (fg === '#ffffff' && bg === '#6a35e0') return true; // tokens.css:33 button fill
+      return false;
+    }
+
+    const fails = [];
+    let checked = 0;
+    let skipped = 0;
+    const seenEl = new Set();
+    const seenCombo = new Set();
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let t;
+    while ((t = walker.nextNode())) {
+      if (!t.textContent.trim()) continue;
+      const el = t.parentElement;
+      if (!el || seenEl.has(el)) continue;
+      seenEl.add(el);
+      if (el.closest('script,style,noscript')) continue;
+      const cs = getComputedStyle(el);
+      if (cs.display === 'none' || cs.visibility === 'hidden') continue;
+      const fs = parseFloat(cs.fontSize);
+      if (!fs) continue;
+      const rect = el.getBoundingClientRect();
+      if (rect.width === 0 && rect.height === 0) continue;
+      const fg0 = parse(cs.color);
+      if (!fg0 || fg0.a === 0) continue;
+      const bg = solidBg(el);
+      if (!bg) { skipped++; continue; }
+      checked++;
+      const fg = fg0.a < 1 ? comp(fg0, bg) : fg0;
+      const ratio = ratioOf(fg, bg);
+      const weight = parseInt(cs.fontWeight, 10) || 400;
+      const large = fs >= 24 || (fs >= 18.66 && weight >= 700);
+      const aa = large ? 3 : 4.5;
+      const aaa = large ? 4.5 : 7;
+      if (ratio >= aaa) continue;
+      const fgH = hex(fg);
+      const bgH = hex(bg);
+      const hardFail = ratio < aa;
+      if (!hardFail && allowedAA(fgH, bgH, lum(bg), large)) continue;
+      const combo = `${fgH} on ${bgH} ${large ? 'L' : 'n'}`;
+      if (seenCombo.has(combo)) continue;
+      seenCombo.add(combo);
+      const where = el.className ? `.${String(el.className).split(' ')[0]}` : el.tagName;
+      fails.push(
+        `${ratio.toFixed(2)} ${fgH} on ${bgH} (${large ? 'large' : 'normal'}${hardFail ? ', BELOW AA' : ''}) ${where} "${t.textContent.trim().slice(0, 30)}"`
+      );
+    }
+    return { checked, skipped, fails };
+  });
+}
+
 /* Footer separation must be ONE number across every route — this is the
    regression the CROSS-PAGE SHELL NORMALISATION block in additions.css
    exists to prevent (it used to be 52px on five routes and 112px on the
@@ -202,6 +323,9 @@ for (const locale of ['es', 'en']) {
     if (res.navLabels.long === res.navLabels.short)
       note(`${tag}: demo button labels long=${res.navLabels.long} short=${res.navLabels.short} — exactly one must be visible`);
     footerJoins.set(tag, res.footerMarginTop);
+
+    const contrast = await contrastScan(page);
+    for (const f of contrast.fails) note(`${tag}: contrast ${f}`);
   }
 }
 
@@ -213,4 +337,4 @@ if (joinValues.size !== 1) {
 }
 
 await b.close();
-console.log(fail.length ? 'FINDINGS:\n' + fail.join('\n') : 'audit clean: 24 page renders + 2 404s + 7 icons + manifest');
+console.log(fail.length ? 'FINDINGS:\n' + fail.join('\n') : 'audit clean: 24 page renders + 2 404s + 7 icons + manifest + solid-bg contrast');

@@ -139,6 +139,13 @@
 }
 
 /* ---- 4. Placeholders, logo slots, legal row --------------------------- */
+/* MEASURED (contrast gate): this row sits on the dark footer (ink-800), and
+   it originally used the LIGHT-surface text aliases — --text-3 landed at
+   3.25:1 (an AA failure) and the --text-1 hover was near-black on black.
+   It now uses the ink text ramp like the rest of the footer:
+   --ink-tx-3 = 6.19:1 on ink-800, --ink-tx-1 hover = 17.79:1. The border
+   matches the footer's own hairline (same literal components.css uses —
+   there is no token for translucent white). */
 .foot-legal {
   display: flex;
   flex-wrap: wrap;
@@ -146,20 +153,20 @@
   gap: var(--sp-2) var(--sp-4);
   padding-top: var(--sp-4);
   margin-top: var(--sp-4);
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
   font-size: var(--fs-2xs);
-  color: var(--text-3);
+  color: var(--ink-tx-3);
 }
 .foot-legal a {
-  color: var(--text-3);
+  color: var(--ink-tx-3);
   text-underline-offset: 2px;
 }
 .foot-legal a:hover {
-  color: var(--text-1);
+  color: var(--ink-tx-1);
   text-decoration: underline;
 }
 .foot-legal .dot {
-  color: var(--n-400);
+  color: var(--ink-tx-4);
 }
 
 /* A deliberately empty partner slot. It must LOOK empty — never a fake logo. */
