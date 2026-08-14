@@ -623,7 +623,7 @@
           },
           "2": {
             "value": "Dynamic pricing",
-            "body": "Rate adjustment by demand, season and utilization. Today rates run on fixed rules for season, location and length of rental."
+            "body": "Rate adjustment against what the market charges, class by class and inside the caps you set. It runs with the Market Intelligence add-on; without it, rates follow your fixed rules for season, location and length of rental."
           }
         }
       },
@@ -721,8 +721,7 @@
       },
       "3": {
         "cap": "Pricing",
-        "us": "Rate rules by season, location and length of rental.",
-        "badge": "Dynamic pricing under construction",
+        "us": "Rate rules by season, location and length of rental, plus market-based pricing with the Market Intelligence add-on.",
         "them": "Fixed rates, edited by hand when someone remembers."
       },
       "4": {

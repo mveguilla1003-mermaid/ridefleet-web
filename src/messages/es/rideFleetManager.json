@@ -623,7 +623,7 @@
           },
           "2": {
             "value": "Precios dinámicos",
-            "body": "Ajuste de tarifa por demanda, temporada y ocupación. Hoy las tarifas se manejan por reglas fijas de temporada, ubicación y duración."
+            "body": "Ajuste de tarifa contra lo que cobra el mercado, clase por clase y dentro de los topes que tú fijas. Corre con el complemento Market Intelligence; sin él, las tarifas siguen tus reglas fijas de temporada, ubicación y duración."
           }
         }
       },
@@ -721,8 +721,7 @@
       },
       "3": {
         "cap": "Precios",
-        "us": "Reglas de tarifa por temporada, ubicación y duración.",
-        "badge": "Precios dinámicos en construcción",
+        "us": "Reglas de tarifa por temporada, ubicación y duración, y precios contra el mercado con el complemento Market Intelligence.",
         "them": "Tarifas fijas editadas a mano cuando alguien se acuerda."
       },
       "4": {

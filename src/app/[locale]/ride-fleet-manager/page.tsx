@@ -119,11 +119,9 @@ const CAP_ROWS: { features: { icon: IconName; building?: boolean }[] }[] = [
     features: [{ icon: 'i-grid' }, { icon: 'i-camera' }, { icon: 'i-clipboard' }]
   },
   {
-    features: [
-      { icon: 'i-gauge' },
-      { icon: 'i-route' },
-      { icon: 'i-bolt', building: true }
-    ]
+    // Dynamic pricing lost its Building badge on 2026-08-14: it ships today
+    // through the Market Intelligence add-on, which the section above covers.
+    features: [{ icon: 'i-gauge' }, { icon: 'i-route' }, { icon: 'i-bolt' }]
   },
   {
     features: [
@@ -139,7 +137,7 @@ const COMPARE_ROWS: { sub?: boolean; badge?: boolean }[] = [
   { sub: true },
   { sub: true },
   { sub: true },
-  { badge: true },
+  {}, // pricing — shipped via the Market Intelligence add-on, no longer building
   { badge: true },
   { sub: true },
   { badge: true },
