@@ -9,6 +9,15 @@ import type { Locale } from '@/i18n/routing';
  */
 export const site = {
   name: 'Ride Fleet',
+  /**
+   * The ONLY colour constant outside tokens.css — documented exception to the
+   * no-colours-outside-tokens rule. `<meta name="theme-color">` is parsed by
+   * the browser before any stylesheet loads, so it cannot read a custom
+   * property. Must equal `--p-700` in tokens.css; `npm run build:icons` FAILS
+   * if the two ever drift apart, and the generated icons + manifest inherit
+   * this value so the whole icon set re-syncs in the same run.
+   */
+  brandHex: '#5a26c9',
   /** Set NEXT_PUBLIC_SITE_URL in the deploy environment. */
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ridefleet.com').replace(
     /\/$/,

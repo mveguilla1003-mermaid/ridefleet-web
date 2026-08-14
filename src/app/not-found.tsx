@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   // brand appears once in the combined bilingual title.
   title: `${es.meta.title.replace(/\s·\sRide Fleet$/, '')} · ${en.meta.title}`,
   description: `${es.meta.description} ${en.meta.description}`,
-  robots: { index: false, follow: false },
-  icons: { icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }] }
+  robots: { index: false, follow: false }
+  // icons + manifest are inherited from the root layout's metadata.
 };
 
 function LangBlock({

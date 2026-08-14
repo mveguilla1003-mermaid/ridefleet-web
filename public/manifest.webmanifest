@@ -1,0 +1,35 @@
+{
+  "name": "Ride Fleet",
+  "short_name": "Ride Fleet",
+  "description": "Una sola columna de operaciones para renta, car-sharing y unidades de cortesía — con peajes y servicio al cliente con IA. Hecha en Puerto Rico, lista para EE. UU. continental.",
+  "start_url": "/es",
+  "display": "browser",
+  "theme_color": "#5a26c9",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
