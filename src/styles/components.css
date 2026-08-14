@@ -132,15 +132,18 @@
   display:inline-flex;align-items:center;gap:2px;padding:2px;flex:0 0 auto;
   background:var(--surface-3);border:1px solid var(--border);border-radius:var(--r-sm);
 }
-.lang button{
-  border:0;background:transparent;cursor:pointer;border-radius:var(--r-xs);
+/* `.lang a`, not `.lang button`: switching language is navigation, so the
+   control is a real link (crawlable, new-tab-able, works without JS). */
+.lang a{
+  display:inline-block;border:0;background:transparent;cursor:pointer;border-radius:var(--r-xs);
   padding:5px 10px;font-size:var(--fs-2xs);font-weight:700;letter-spacing:.06em;
+  text-decoration:none;
   /* RECONCILED from 03: --text-2, not --text-3. On --surface-3 that is
      8.13 AAA; --text-3 measured 4.44 — an outright AA failure. */
   color:var(--text-2);transition:var(--dur-2);font-family:var(--font-mono);
 }
-.lang button:hover{color:var(--text-1)}
-.lang button.is-active{background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1)} /* 9.93 AAA on p-50 */
+.lang a:hover{color:var(--text-1)}
+.lang a.is-active{background:var(--n-0);color:var(--p-800);box-shadow:var(--sh-1)} /* 9.93 AAA on p-50 */
 /* RECONCILED from 03: a rule, not a glyph. A text "|" at this weight and
    size cannot reach AA at any colour that still reads as a separator. */
 .lang .sep{width:1px;align-self:stretch;margin-block:4px;background:var(--n-400);flex:0 0 auto}
@@ -1108,8 +1111,8 @@ main:has(.sec--cta) + .site-footer{margin-top:clamp(36px,3.8vw,52px)}
 .band--ink .btn--ghost:hover{background:rgba(127,79,240,.14);color:var(--p-200)}
 
 .band--ink .lang{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
-.band--ink .lang button{color:var(--ink-tx-3)}
-.band--ink .lang button.is-active{background:rgba(159,121,255,.20);color:var(--p-300);box-shadow:none}
+.band--ink .lang a{color:var(--ink-tx-3)}
+.band--ink .lang a.is-active{background:rgba(159,121,255,.20);color:var(--p-300);box-shadow:none}
 
 .band--ink .app,.band--ink .console{
   background:linear-gradient(180deg,#151322,#0f0d18);

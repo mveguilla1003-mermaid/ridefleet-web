@@ -1,19 +1,30 @@
 'use client';
 
+import type { MouseEvent } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { usePathname, useRouter, routing, type Locale } from '@/i18n/routing';
+import {
+  Link,
+  usePathname,
+  useRouter,
+  routing,
+  type Locale
+} from '@/i18n/routing';
 
 /**
- * ES | EN control.
+ * ES | EN control — real links, not buttons. Switching language IS
+ * navigation: as an <a> the alternate URL is crawlable, opens in a new tab,
+ * and works with JavaScript disabled. `usePathname` from the i18n navigation
+ * returns the locale-less path, so each link points at the SAME page in the
+ * other locale, never back at the home page.
  *
- * Swaps locale while staying on the same page (`usePathname` from the i18n
- * navigation returns the locale-less path), preserving the hash so a visitor
- * deep in a section does not get thrown back to the top.
+ * The one thing an href cannot carry is the visitor's current #fragment
+ * (server-rendered markup cannot know it), so a same-tab click is upgraded
+ * on the client to keep the hash — a visitor deep in a section stays there.
+ * Without JS the link still works, minus the hash.
  *
- * The two buttons are a radio-style group: `aria-pressed` tracks the active
- * locale. That attribute was a real WCAG 4.1.2 defect in the static mockups —
- * it is now derived from state rather than hand-written per page.
+ * Active state: `aria-current` (aria-pressed is for buttons) plus the
+ * `.is-active` chip styling (--p-800 on --n-0, 9.93 AAA) from components.css.
  */
 export function LocaleSwitch() {
   const t = useTranslations('nav');
@@ -22,9 +33,14 @@ export function LocaleSwitch() {
   const params = useParams();
   const active = (params?.locale as Locale) ?? routing.defaultLocale;
 
-  function go(locale: Locale) {
-    if (locale === active) return;
-    const hash = typeof window !== 'undefined' ? window.location.hash : '';
+  function keepHash(e: MouseEvent<HTMLAnchorElement>, locale: Locale) {
+    // Only plain same-tab activations are upgraded; modified clicks
+    // (new tab / window) keep native link behaviour.
+    if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)
+      return;
+    const hash = window.location.hash;
+    if (!hash || locale === active) return;
+    e.preventDefault();
     router.replace(`${pathname}${hash}`, { locale });
   }
 
@@ -33,20 +49,16 @@ export function LocaleSwitch() {
       {routing.locales.map((locale, i) => (
         <span key={locale} style={{ display: 'contents' }}>
           {i > 0 ? <span className="sep" aria-hidden="true" /> : null}
-          <button
-            type="button"
-            className={[
-              `${locale}-btn`,
-              locale === active ? 'is-active' : ''
-            ]
-              .filter(Boolean)
-              .join(' ')}
-            aria-pressed={locale === active}
+          <Link
+            href={pathname}
+            locale={locale}
+            className={locale === active ? 'is-active' : undefined}
+            aria-current={locale === active ? 'true' : undefined}
             aria-label={t(`switchTo.${locale}`)}
-            onClick={() => go(locale)}
+            onClick={(e) => keepHash(e, locale)}
           >
             {locale.toUpperCase()}
-          </button>
+          </Link>
         </span>
       ))}
     </div>
