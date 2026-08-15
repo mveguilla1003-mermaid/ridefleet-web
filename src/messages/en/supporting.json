@@ -136,6 +136,42 @@
       "after": "If there is a fit, a written proposal follows: pilot scope, price, duration, and what will be measured."
     }
   },
+  "pricing": {
+    "meta": {
+      "title": "Pricing · Ride Fleet",
+      "description": "What you pay depends on the size of your fleet and the modules you switch on. We give you the number on the call, not in a generic table."
+    },
+    "eyebrow": "Pricing",
+    "title": "You get the number on the call",
+    "lede": "We do not publish a price table, and we would rather say why: what you pay depends on how many units you run and which modules you switch on. A generic table would waste your time and ours.",
+    "drivers": {
+      "title": "What moves the price",
+      "items": {
+        "0": {
+          "value": "The size of the fleet",
+          "body": "Ten units and four hundred are not the same operation or the same support load, and they should not cost the same."
+        },
+        "1": {
+          "value": "The modules you switch on",
+          "body": "Ride Fleet Manager is the base. Toll Bridge and Voz AI switch on if you need them, and there is a market-pricing add-on that is billed separately."
+        },
+        "2": {
+          "value": "Where you operate",
+          "body": "An operator at one airport and one with branches across two markets are not carrying the same system. Standing up each market is real work."
+        }
+      }
+    },
+    "included": {
+      "title": "What is included, said before you ask",
+      "body": "Training your team through Ride University is not billed separately: it comes with the product, with the whole syllabus in Spanish and English, because a system your staff cannot work is not worth what it costs. The market-intelligence add-on is billed separately, and we tell you how much on the same call.",
+      "note": "We do not charge to set your people up, or by how many of them you train."
+    },
+    "cta": {
+      "title": "Half an hour, and you leave with the number",
+      "body": "Tell us how many units you run and how you operate. On the call we give you the price, and if we are not right for you we say so there rather than chasing you for three weeks.",
+      "button": "Book a demo"
+    }
+  },
   "security": {
     "meta": {
       "title": "Security and data handling · Ride Fleet",

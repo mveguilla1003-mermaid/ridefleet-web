@@ -47,6 +47,7 @@ const INPUTS = {
   rideFleetManager: ['src/app/[locale]/ride-fleet-manager', 'src/styles/pages/ride-fleet-manager.css', 'src/messages/es/rideFleetManager.json', 'src/messages/en/rideFleetManager.json'],
   tollBridge: ['src/app/[locale]/toll-bridge', 'src/styles/pages/toll-bridge.css', 'src/messages/es/tollBridge.json', 'src/messages/en/tollBridge.json'],
   vozAi: ['src/app/[locale]/voz-ai', 'src/styles/pages/voz-ai.css', 'src/messages/es/vozAi.json', 'src/messages/en/vozAi.json'],
+  pricing: ['src/app/[locale]/pricing', 'src/messages/es/supporting.json', 'src/messages/en/supporting.json'],
   demo: ['src/app/[locale]/demo/page.tsx', 'src/app/[locale]/demo/DemoForm.tsx', 'src/styles/pages/book-demo.css', 'src/messages/es/demo.json', 'src/messages/en/demo.json'],
   demoThankYou: ['src/app/[locale]/demo/thank-you', 'src/messages/es/demo.json', 'src/messages/en/demo.json'],
   designPartners: ['src/app/[locale]/design-partners', 'src/messages/es/supporting.json', 'src/messages/en/supporting.json'],

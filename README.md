@@ -51,8 +51,8 @@ Styling is plain CSS with a token layer — no Tailwind, no CSS-in-JS. Nothing o
 ```bash
 npm run check:i18n     # key parity across locales, no empty values, no emoji
 npm run build          # typecheck + production build
-npm run verify:shots   # 12 routes × 2 locales × 4 viewports → verify/shots/*.png
-npm run verify:a11y    # 24 renders + both 404s + icon downloads (below)
+npm run verify:shots   # 13 routes × 2 locales × 4 viewports → verify/shots/*.png
+npm run verify:a11y    # every route × 2 + both 404s + icon downloads (below)
 npm run verify:form    # the demo form, end to end (below)
 ```
 
@@ -110,8 +110,15 @@ the pixels, because the cards use the system font stack — the same content
 renders to different bytes on different machines. Both write committed files in
 `public/`.
 
-Current status: all gates pass. 1963 message keys are in parity; 96 full-page
-screenshots render clean with no console errors and no element left unrevealed.
+Adding a route means touching the route list in four scripts — `capture.mjs`,
+`audit.mjs`, `build-og.mjs` and `build-lastmod.mjs` — plus `routes` in
+`src/lib/site.ts`, which the sitemap and navigation derive from. There is no
+single registry; if you add a page and skip one of them, that page silently
+falls out of a gate.
+
+Current status: all gates pass, with every message key in locale parity and
+every full-page screenshot rendering clean — no console errors, no element left
+unrevealed.
 
 ## Placeholders — these are yours to fill
 

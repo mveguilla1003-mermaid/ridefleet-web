@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 // Target defaults to the local production server; point it at a deploy with
 // BASE_URL=https://example.com npm run verify:a11y
 const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:3000').replace(/\/$/, '');
-const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/voz-ai', '/demo',
+const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/voz-ai', '/pricing', '/demo',
   '/demo/thank-you', '/design-partners', '/security', '/privacy', '/terms', '/cookies', '/accessibility'];
 // The CI sandbox preinstalls Chromium at a fixed path; anywhere else we fall
 // back to Playwright's own managed browser (npx playwright install chromium).
@@ -383,4 +383,11 @@ if (joinValues.size !== 1) {
 }
 
 await b.close();
-console.log(fail.length ? 'FINDINGS:\n' + fail.join('\n') : 'audit clean: 24 page renders + 2 404s + 7 icons + manifest + solid-bg contrast + axe WCAG A/AA');
+// Counted, not hard-coded: the summary said "24 renders" for a while after a
+// 13th route was added, which is exactly the kind of quietly-wrong number this
+// audit exists to catch elsewhere.
+console.log(
+  fail.length
+    ? 'FINDINGS:\n' + fail.join('\n')
+    : `audit clean: ${ROUTES.length * 2} page renders + 2 404s + ${ICON_FILES.length} icons + manifest + solid-bg contrast + axe WCAG A/AA`
+);

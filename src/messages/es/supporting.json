@@ -136,6 +136,42 @@
       "after": "Si hay encaje, sigue una propuesta escrita: alcance del piloto, precio, duración y qué se va a medir."
     }
   },
+  "pricing": {
+    "meta": {
+      "title": "Precios · Ride Fleet",
+      "description": "Lo que pagas depende del tamaño de tu flota y de los módulos que enciendas. Te damos el número en la llamada, no en una tabla genérica."
+    },
+    "eyebrow": "Precios",
+    "title": "El número te lo damos en la llamada",
+    "lede": "No publicamos una tabla de precios, y preferimos decir por qué: lo que pagas depende de cuántas unidades manejas y de qué módulos enciendes. Una tabla genérica nos haría perder el tiempo a los dos.",
+    "drivers": {
+      "title": "Qué mueve el precio",
+      "items": {
+        "0": {
+          "value": "El tamaño de la flota",
+          "body": "Diez unidades y cuatrocientas no son la misma operación ni el mismo trabajo de soporte, y no deberían costar igual."
+        },
+        "1": {
+          "value": "Los módulos que enciendes",
+          "body": "Ride Fleet Manager es la base. Toll Bridge y Voz AI se encienden si los necesitas, y hay un complemento de precios contra el mercado que se contrata aparte."
+        },
+        "2": {
+          "value": "Dónde operas",
+          "body": "Un operador en un aeropuerto y uno con sucursales en dos mercados no cargan el mismo sistema. El alta de cada mercado es trabajo real."
+        }
+      }
+    },
+    "included": {
+      "title": "Lo que va incluido, dicho antes de que preguntes",
+      "body": "El entrenamiento del equipo con Ride University no se cobra aparte: viene con el producto, con el temario completo en español e inglés, porque un sistema que tu personal no sabe usar no vale lo que cuesta. El complemento de inteligencia de mercado sí se contrata aparte, y te decimos cuánto en la misma llamada.",
+      "note": "No cobramos por dar de alta a tu gente ni por el número de personas que entrenas."
+    },
+    "cta": {
+      "title": "Media hora y sales con el número",
+      "body": "Cuéntanos cuántas unidades manejas y cómo operas. En la llamada te damos el precio, y si no somos para ti te lo decimos ahí mismo en vez de perseguirte tres semanas.",
+      "button": "Agendar un demo"
+    }
+  },
   "security": {
     "meta": {
       "title": "Seguridad y manejo de datos · Ride Fleet",

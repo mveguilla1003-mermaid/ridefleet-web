@@ -56,6 +56,7 @@ export const routes = {
   rideFleetManager: '/ride-fleet-manager',
   tollBridge: '/toll-bridge',
   vozAi: '/voz-ai',
+  pricing: '/pricing',
   demo: '/demo',
   demoThankYou: '/demo/thank-you',
   designPartners: '/design-partners',
@@ -73,7 +74,8 @@ export const primaryNav: { key: RouteKey; navKey: string }[] = [
   { key: 'home', navKey: 'home' },
   { key: 'rideFleetManager', navKey: 'rideFleetManager' },
   { key: 'tollBridge', navKey: 'tollBridge' },
-  { key: 'vozAi', navKey: 'vozAi' }
+  { key: 'vozAi', navKey: 'vozAi' },
+  { key: 'pricing', navKey: 'pricing' }
 ];
 
 export const footerNav: {
