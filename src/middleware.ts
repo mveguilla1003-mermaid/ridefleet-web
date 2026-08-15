@@ -73,6 +73,12 @@ export default function middleware(request: NextRequest) {
     'Permissions-Policy',
     'camera=(), microphone=(), geolocation=(), payment=()'
   );
+  // Reservation of rights against text and data mining, as a header so it
+  // travels with every response rather than only with robots.txt. `noai`
+  // is an emerging convention rather than a standard, and honouring it is
+  // voluntary — it does not block anything on its own. `noindex` is
+  // deliberately NOT here: search engines are welcome.
+  response.headers.set('X-Robots-Tag', 'noai, noimageai');
   if (!isDev) {
     response.headers.set(
       'Strict-Transport-Security',

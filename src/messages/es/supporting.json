@@ -349,7 +349,8 @@
           "0": "Intentar acceder a sistemas, cuentas o datos sin autorización.",
           "1": "Extraer contenido de forma automatizada a una escala que degrade el servicio para los demás.",
           "2": "Enviar datos falsos o de otra persona por los formularios.",
-          "3": "Usar el sitio para actividades ilegales o para molestar a terceros."
+          "3": "Usar el sitio para actividades ilegales o para molestar a terceros.",
+        "4": "Extraer el contenido de este sitio, por cualquier medio automatizado, para entrenar modelos de inteligencia artificial o construir conjuntos de datos. Nos reservamos ese derecho de forma expresa, y esa reserva no depende de que un rastreador respete o no nuestro robots.txt."
         }
       },
       "ip": {

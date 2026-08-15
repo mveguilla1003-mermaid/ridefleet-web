@@ -19,7 +19,7 @@ export async function generateMetadata({
   });
 }
 
-const ACCEPTABLE_ITEMS = [0, 1, 2, 3] as const;
+const ACCEPTABLE_ITEMS = [0, 1, 2, 3, 4] as const;
 
 export default function TermsPage({ params }: { params: { locale: Locale } }) {
   setRequestLocale(params.locale);

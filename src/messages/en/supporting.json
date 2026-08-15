@@ -349,7 +349,8 @@
           "0": "Attempt to reach systems, accounts or data without authorization.",
           "1": "Extract content automatically at a scale that degrades the service for everyone else.",
           "2": "Submit false details, or somebody else's details, through the forms.",
-          "3": "Use the site for anything illegal or to harass others."
+          "3": "Use the site for anything illegal or to harass others.",
+        "4": "Extract this site's content, by any automated means, to train artificial-intelligence models or build datasets. That right is expressly reserved, and the reservation does not depend on whether a crawler honours our robots.txt."
         }
       },
       "ip": {

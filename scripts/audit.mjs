@@ -74,6 +74,29 @@ for (const [file, check, minBytes] of ICON_FILES) {
   if (!h('Permissions-Policy')) note('headers: Permissions-Policy missing');
   if (!/max-age=\d+/.test(h('Strict-Transport-Security')))
     note('headers: Strict-Transport-Security missing');
+  // Reservation of rights against text and data mining. Must never become
+  // `noindex` — search engines are welcome, model trainers are not.
+  const xr = h('X-Robots-Tag');
+  if (!/noai/.test(xr)) note(`headers: X-Robots-Tag lacks noai ("${xr}")`);
+  if (/noindex/.test(xr)) note(`headers: X-Robots-Tag says noindex — that de-lists the site`);
+}
+
+/* ---- robots.txt keeps the AI crawlers out, and the search engines in ----
+   Both halves matter: a regression that drops the AI block is invisible,
+   and so is one that accidentally disallows everything. */
+{
+  const resp = await ctx.request.get(`${BASE}/robots.txt`);
+  if (resp.status() !== 200) note(`robots.txt: HTTP ${resp.status()}`);
+  else {
+    const body = (await resp.body()).toString('utf8');
+    for (const bot of ['GPTBot', 'ClaudeBot', 'CCBot', 'Google-Extended', 'Bytespider']) {
+      if (!body.includes(bot)) note(`robots.txt: ${bot} is not listed`);
+    }
+    if (!/User-Agent:\s*\*/i.test(body)) note('robots.txt: no wildcard group');
+    if (/User-Agent:\s*\*\s*\nDisallow:\s*\/\s*$/im.test(body))
+      note('robots.txt: the wildcard group disallows everything — the site would de-list');
+    if (!body.includes('/sitemap.xml')) note('robots.txt: sitemap not advertised');
+  }
 }
 
 /* ---- The 404, in both locale prefixes ------------------------------------
