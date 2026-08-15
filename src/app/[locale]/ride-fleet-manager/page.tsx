@@ -109,6 +109,7 @@ const BOOKING_PRECISIONS = [0, 1, 2, 3] as const;
 /** Market Intelligence: one icon per beat, then the four precisions. */
 const MARKET_BEATS: IconName[] = ['i-search', 'i-layers', 'i-trend'];
 const MARKET_PRECISIONS = [0, 1, 2, 3] as const;
+const CASE_MONTHS = [0, 1, 2] as const;
 
 /** Four capability rows × three features. `building` mirrors the static page. */
 const CAP_ROWS: { features: { icon: IconName; building?: boolean }[] }[] = [
@@ -1024,6 +1025,43 @@ export default function RideFleetManagerPage({
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* ---- The one customer result on the site ------------------------
+            Published with the customer named, on the owner's decision. The
+            framing is deliberate and should survive edits: percentages
+            rather than the underlying dollar figures (a customer who agrees
+            to a testimonial is not agreeing to publish its books, and the
+            percentages carry the story anyway); the metric labelled as OTA
+            prepaid sales rather than "revenue", which it is not; the result
+            attributed to the customer rather than asserted by us; what was
+            held constant stated plainly; and no promise of replication. */}
+        <div className="card reveal" style={{ marginTop: 'var(--sp-12)' }}>
+          <Eyebrow tone="neutral">{t('market.case.kicker')}</Eyebrow>
+          <h3>{t('market.case.title')}</h3>
+          <p className="measure" style={{ marginTop: 'var(--sp-3)' }}>
+            {t('market.case.body')}
+          </p>
+
+          <div className="stat-grid stat-grid--3" style={{ marginTop: 'var(--sp-8)' }}>
+            {CASE_MONTHS.map((i) => (
+              <div className="stat" key={i}>
+                <div className="num num--brand">
+                  {t(`market.case.months.${i}.value`)}
+                </div>
+                <div className="lab">{t(`market.case.months.${i}.label`)}</div>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ marginTop: 'var(--sp-6)' }}>
+            <b>{t('market.case.total.label')}: {t('market.case.total.value')}.</b>{' '}
+            {t('market.case.reading')}
+          </p>
+
+          <p className="meta measure" style={{ marginTop: 'var(--sp-5)' }}>
+            {t('market.case.note')}
+          </p>
         </div>
       </Section>
 

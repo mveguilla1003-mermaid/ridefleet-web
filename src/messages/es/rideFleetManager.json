@@ -712,7 +712,20 @@
         "3": "Cada mercado se da de alta por aeropuerto. Hoy corren San Juan y Los Ángeles."
       }
     },
-    "addon": "Se contrata aparte de Ride Fleet Manager."
+    "addon": "Se contrata aparte de Ride Fleet Manager.",
+    "case": {
+      "kicker": "Caso real",
+      "title": "Tres meses, la misma flota, otro software",
+      "body": "International Rental Corp opera en Puerto Rico. Estas son sus ventas prepagadas por agencias de viaje en línea de mayo a julio de 2026, con Ride Fleet Manager y Market Intelligence, frente a los mismos tres meses de 2025, cuando trabajaba con otro sistema y fijaba los precios a mano.",
+      "months": {
+        "0": { "label": "Mayo", "value": "+102%" },
+        "1": { "label": "Junio", "value": "+126%" },
+        "2": { "label": "Julio", "value": "+192%" }
+      },
+      "total": { "label": "Los tres meses juntos", "value": "+150%" },
+      "reading": "Lo interesante no es el total sino que el salto crece cada mes, que es la señal de un sistema que se afina con el uso y no de un golpe de suerte.",
+      "note": "Cifras reportadas por el cliente, sobre ventas prepagadas por agencias de viaje en línea y no sobre ingreso total. Misma flota, mismo periodo del año y mismo mercado: lo que cambió fue el software y la manera de fijar precios. Es el resultado de un operador, no un promedio ni una promesa de lo que vas a obtener."
+    }
   },
   "compare": {
     "head": {

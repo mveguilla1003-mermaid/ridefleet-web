@@ -712,7 +712,20 @@
         "3": "Each market is set up per airport. San Juan and Los Angeles are the two running today."
       }
     },
-    "addon": "Billed separately from Ride Fleet Manager."
+    "addon": "Billed separately from Ride Fleet Manager.",
+    "case": {
+      "kicker": "A real case",
+      "title": "Three months, the same fleet, different software",
+      "body": "International Rental Corp operates in Puerto Rico. These are its prepaid sales through online travel agencies from May to July 2026, running Ride Fleet Manager and Market Intelligence, set against the same three months of 2025, when it ran on another system and priced by hand.",
+      "months": {
+        "0": { "label": "May", "value": "+102%" },
+        "1": { "label": "June", "value": "+126%" },
+        "2": { "label": "July", "value": "+192%" }
+      },
+      "total": { "label": "All three months together", "value": "+150%" },
+      "reading": "The interesting part is not the total but that the jump grows every month, which is the signature of a system that sharpens with use rather than a stroke of luck.",
+      "note": "Figures reported by the customer, covering prepaid sales through online travel agencies and not total revenue. Same fleet, same time of year, same market: what changed was the software and the way prices were set. This is one operator's result, not an average and not a promise of what you will get."
+    }
   },
   "compare": {
     "head": {
