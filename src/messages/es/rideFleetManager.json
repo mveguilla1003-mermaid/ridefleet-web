@@ -713,7 +713,16 @@
         "4": "El recorrido se lanza con un clic. No salta solo la primera vez que alguien entra al sistema."
       }
     },
-    "included": "Viene incluido en Ride Fleet Manager, sin costo aparte, y con todo el temario en español e inglés."
+    "included": "Viene incluido en Ride Fleet Manager, sin costo aparte, y con todo el temario en español e inglés.",
+    "gotchas": {
+      "title": "Del temario, palabra por palabra",
+      "intro": "Cada módulo lleva escrito el error caro de su tarea. Estos tres van tal cual están redactados, y son la mejor prueba de quién escribió el temario.",
+      "items": {
+        "0": "El paso de las fotos se siente saltable cuando el lote está lleno. Es la única evidencia de cómo estaba el carro al entregarlo, y en el check-in el agente ve esas mismas fotos al lado de la cámara.",
+        "1": "Un carro parado en uno de tus propios lotes no levanta alerta. Eso es un check-in que se olvidó, no un carro perdido: dos problemas distintos con soluciones distintas.",
+        "2": "Una reserva en la bandeja de revisión no es un error. Es el sistema negándose a adivinar, casi siempre un cliente que no pudo emparejar con confianza."
+      }
+    }
   },
   "market": {
     "eyebrow": "Complemento de Ride Fleet Manager",
@@ -882,6 +891,10 @@
       "5": {
         "q": "¿Trabajan fuera de Puerto Rico?",
         "a": "Sí. El producto se construyó aquí y se opera aquí, y está listo para operadores en EE. UU. continental — empezando por los mercados donde SunPass y la operación bilingüe pesan."
+      },
+      "6": {
+        "q": "¿Hay app para iOS y Android?",
+        "a": "En construcción. Hoy Ride Fleet Manager corre en el navegador del teléfono y de la tableta, que es donde de verdad trabaja el mostrador: la entrega, las ocho fotos y la firma están hechas para pantalla táctil. Las apps nativas vienen después, y no ponemos fecha hasta tener una que podamos cumplir."
       }
     }
   },

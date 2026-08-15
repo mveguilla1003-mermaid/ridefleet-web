@@ -713,7 +713,16 @@
         "4": "The walkthrough is launched with a click. It does not fire by itself the first time somebody signs in."
       }
     },
-    "included": "Included in Ride Fleet Manager at no extra cost, with the whole syllabus in Spanish and English."
+    "included": "Included in Ride Fleet Manager at no extra cost, with the whole syllabus in Spanish and English.",
+    "gotchas": {
+      "title": "From the syllabus, word for word",
+      "intro": "Every module carries the expensive mistake of its own task written down. These three are verbatim, and they are the best evidence of who wrote the syllabus.",
+      "items": {
+        "0": "The photo step feels skippable when the lot is busy. It is the only evidence of the vehicle condition at handover, and at check-in the agent sees those exact photos beside the camera.",
+        "1": "A car sitting on one of your own lots raises no alert. That is a missed check-in, not a missing car: two different problems with two different fixes.",
+        "2": "A booking in the review tray is not an error. It is the system refusing to guess, usually a customer it could not match with confidence."
+      }
+    }
   },
   "market": {
     "eyebrow": "A Ride Fleet Manager add-on",
@@ -882,6 +891,10 @@
       "5": {
         "q": "Do you work outside Puerto Rico?",
         "a": "Yes. The product was built here and runs here, and it's ready for operators on the US mainland — starting with the markets where SunPass and bilingual operations matter."
+      },
+      "6": {
+        "q": "Is there an iOS and Android app?",
+        "a": "Under construction. Ride Fleet Manager runs in the phone and tablet browser today, which is where the counter actually works: the hand-over, the eight photos and the signature are all built for touch. Native apps come after that, and we are not putting a date on it until we have one we can keep."
       }
     }
   },

@@ -109,6 +109,7 @@ const BOOKING_PRECISIONS = [0, 1, 2, 3] as const;
 /** Ride University: one icon per beat, then the five precisions. */
 const UNIVERSITY_BEATS: IconName[] = ['i-check-circle', 'i-shield', 'i-route'];
 const UNIVERSITY_PRECISIONS = [0, 1, 2, 3, 4] as const;
+const GOTCHAS = [0, 1, 2] as const;
 
 /** Market Intelligence: one icon per beat, then the four precisions. */
 const MARKET_BEATS: IconName[] = ['i-search', 'i-layers', 'i-trend'];
@@ -181,7 +182,7 @@ export default function RideFleetManagerPage({
     grad: (chunks: ReactNode) => <span className="grad">{chunks}</span>
   };
 
-  const faqItems = range(6).map((i) => ({
+  const faqItems = range(7).map((i) => ({
     q: t(`faq.items.${i}.q`),
     a: t(`faq.items.${i}.a`)
   }));
@@ -1030,6 +1031,28 @@ export default function RideFleetManagerPage({
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+
+        {/* ---- Sample of the curriculum itself ---------------------------
+            Quoted verbatim from the shipped curriculum (both locales), and
+            framed as "from the syllabus" rather than as something the
+            trainee is shown on screen: the `gotcha` field is authored and
+            fully translated but no component renders it yet. If RFM
+            surfaces it, this framing can be strengthened to a claim about
+            what the product shows. Until then it is what it says it is —
+            the syllabus, quoted. */}
+        <div className="reveal" style={{ marginTop: 'var(--sp-12)' }}>
+          <h3>{t('university.gotchas.title')}</h3>
+          <p className="measure" style={{ marginTop: 'var(--sp-3)' }}>
+            {t('university.gotchas.intro')}
+          </p>
+          <div className="grid grid-3" style={{ marginTop: 'var(--sp-6)' }}>
+            {GOTCHAS.map((i) => (
+              <blockquote className="card" key={i}>
+                <p>{t(`university.gotchas.items.${i}`)}</p>
+              </blockquote>
+            ))}
           </div>
         </div>
       </Section>
