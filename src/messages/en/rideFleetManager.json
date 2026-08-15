@@ -681,6 +681,40 @@
     },
     "proof": "As of August 2026: seven rental operations and more than four thousand reservations moved in the last thirty days."
   },
+  "university": {
+    "eyebrow": "Ride University",
+    "title": "Your team learns the software by doing the work, not by watching a video",
+    "lede": "Eleven guided modules inside the product, across four courses. Four of them cannot be passed by reading: they close when the person does the real work and the server confirms it against the operation's own records.",
+    "beats": {
+      "0": {
+        "value": "Learned by doing, not by watching",
+        "body": "The modules for creating a booking, handing a car over, taking it back and recording a payment complete themselves the next time that person actually does it. There is no I-have-read-this button: the server goes looking for the record."
+      },
+      "1": {
+        "value": "It never asks for pretend work",
+        "body": "No module asks anyone to create a booking or record a payment in order to score, because that would move real inventory and real money. The module sits armed and closes when the work happens on shift, on its own."
+      },
+      "2": {
+        "value": "The walkthrough survives real use",
+        "body": "The tour highlights the actual element and still lets you click it, changes screen when a step calls for it, and survives navigation. If a required step cannot find its element it stops, rather than pointing at nothing."
+      }
+    },
+    "trust": {
+      "title": "Teaching is the easy half; knowing who can work alone is the other one",
+      "body": "On your team screen each person shows the percentage of what their own role is expected to know, not a generic syllabus and not a comparison with their colleagues. There is no leaderboard and no ranking, and someone who has not started yet shows a dash rather than a zero, because not having begun is not the same as having failed. Whether a person is ready to work alone stays your call: the screen gives you what you need to make it."
+    },
+    "precision": {
+      "title": "And what it is not",
+      "items": {
+        "0": "It is not a certificate course. There is no exam, no badge and no recertification: there are points and a percentage.",
+        "1": "Only work done after starting a module counts. Earlier work is not inherited, so an account that changes hands does not carry over what someone else learned.",
+        "2": "Four kinds of real work are verified: booking created, hand-over, return, and a payment recorded by the agent. A payment arriving through the customer portal carries no record of who took it.",
+        "3": "Progress is picked up when the person next opens Ride University, not in real time and not by a background job.",
+        "4": "The walkthrough is launched with a click. It does not fire by itself the first time somebody signs in."
+      }
+    },
+    "included": "Included in Ride Fleet Manager at no extra cost, with the whole syllabus in Spanish and English."
+  },
   "market": {
     "eyebrow": "A Ride Fleet Manager add-on",
     "title": "Know what the market charges before you set your rates",

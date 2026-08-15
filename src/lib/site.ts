@@ -97,6 +97,7 @@ export const footerNav: {
       { key: 'vozAi', labelKey: 'callLine', hash: 'llamar' },
       // The separately-billed add-on had no route into it from anywhere on
       // the site; a deep link is the cheapest way to make it discoverable.
+      { key: 'rideFleetManager', labelKey: 'rideUniversity', hash: 'university' },
       { key: 'rideFleetManager', labelKey: 'marketIntelligence', hash: 'market' },
       { key: 'security', labelKey: 'security' }
     ]

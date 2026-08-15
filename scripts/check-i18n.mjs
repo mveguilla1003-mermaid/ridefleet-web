@@ -42,6 +42,7 @@ const SHARED_OK = new Set([
   'Toll Bridge',
   'Voz AI',
   'Market Intelligence',
+  'Ride University',
   'AutoExpreso',
   'SunPass',
   'Puerto Rico',

@@ -106,6 +106,10 @@ const SPINE_DETAIL_ICONS: IconName[] = ['i-clock', 'i-link', 'i-refresh'];
 const BOOKING_BEATS: IconName[] = ['i-refresh', 'i-clipboard', 'i-receipt'];
 const BOOKING_PRECISIONS = [0, 1, 2, 3] as const;
 
+/** Ride University: one icon per beat, then the five precisions. */
+const UNIVERSITY_BEATS: IconName[] = ['i-check-circle', 'i-shield', 'i-route'];
+const UNIVERSITY_PRECISIONS = [0, 1, 2, 3, 4] as const;
+
 /** Market Intelligence: one icon per beat, then the four precisions. */
 const MARKET_BEATS: IconName[] = ['i-search', 'i-layers', 'i-trend'];
 const MARKET_PRECISIONS = [0, 1, 2, 3] as const;
@@ -961,6 +965,68 @@ export default function RideFleetManagerPage({
               <ul>
                 {BOOKING_PRECISIONS.map((i) => (
                   <li key={i}>{t(`bookings.precision.items.${i}`)}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ========================= RIDE UNIVERSITY =========================
+          Verified against the current RFM tree (origin/main, 0d0887b) on
+          2026-08-15 — the local checkout was four months stale, so this was
+          read from an isolated worktree.
+
+          The claim that carries the section is that four of the eleven
+          modules are proved from domain records, not self-reported. Five
+          things the code does NOT do, each of which a demo would tempt you
+          into claiming, are stated in `precision` instead: there is no
+          certificate or exam, work before arming never counts, only four
+          verification types exist (portal payments carry no actor), detection
+          happens when the page is next opened rather than in real time, and
+          the tour does not auto-launch on first login.
+
+          Also deliberately absent: "the system tells you who is ready". It
+          shows a percentage of that role's own curriculum; readiness is the
+          question the screen frames, not a boolean it computes. */}
+      <Section id="university" variant="alt">
+        <div className="sec-head reveal">
+          <Eyebrow>{t('university.eyebrow')}</Eyebrow>
+          <h2>{t('university.title')}</h2>
+          <p className="lede">{t('university.lede')}</p>
+        </div>
+
+        <div className="feature-grid reveal" style={{ marginTop: 'var(--sp-8)' }}>
+          {UNIVERSITY_BEATS.map((icon, i) => (
+            <div className="feature" key={i}>
+              <span className="fic">
+                <Icon name={icon} />
+              </span>
+              <h3>{t(`university.beats.${i}.value`)}</h3>
+              <p>{t(`university.beats.${i}.body`)}</p>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="split reveal"
+          style={{ marginTop: 'var(--sp-10)', alignItems: 'start' }}
+        >
+          <div>
+            <h3>{t('university.trust.title')}</h3>
+            <p style={{ marginTop: 'var(--sp-3)' }}>
+              {t('university.trust.body')}
+            </p>
+            <p className="meta" style={{ marginTop: 'var(--sp-4)' }}>
+              {t('university.included')}
+            </p>
+          </div>
+          <div>
+            <h3>{t('university.precision.title')}</h3>
+            <div className="prose" style={{ marginTop: 'var(--sp-3)' }}>
+              <ul>
+                {UNIVERSITY_PRECISIONS.map((i) => (
+                  <li key={i}>{t(`university.precision.items.${i}`)}</li>
                 ))}
               </ul>
             </div>

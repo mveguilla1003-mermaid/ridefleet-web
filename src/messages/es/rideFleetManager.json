@@ -681,6 +681,40 @@
     },
     "proof": "A agosto de 2026: siete operaciones de renta y más de cuatro mil reservas movidas en los últimos treinta días."
   },
+  "university": {
+    "eyebrow": "Ride University",
+    "title": "Tu equipo aprende el software haciendo el trabajo, no viendo un video",
+    "lede": "Once módulos guiados dentro del producto, repartidos en cuatro cursos. Cuatro de ellos no se aprueban leyendo: se cierran cuando la persona hace el trabajo de verdad y el servidor lo confirma contra los registros de la operación.",
+    "beats": {
+      "0": {
+        "value": "Se aprende haciendo, no mirando",
+        "body": "Los módulos de crear una reserva, entregar el carro, recibirlo y cobrar se completan solos la próxima vez que esa persona lo hace de verdad. No hay botón de «ya lo vi»: el servidor busca el registro y lo comprueba."
+      },
+      "1": {
+        "value": "Nunca te pide trabajo de mentira",
+        "body": "Ningún módulo pide crear una reserva o registrar un pago para sumar puntos, porque eso movería inventario e ingresos reales. El módulo queda armado y se cierra cuando el trabajo ocurre en el turno, por su cuenta."
+      },
+      "2": {
+        "value": "El recorrido aguanta el uso real",
+        "body": "El tour ilumina el elemento de verdad y te deja hacerle clic, cambia de pantalla cuando el paso lo pide y sobrevive a la navegación. Si un paso obligatorio no encuentra su elemento, se detiene en vez de señalar al vacío."
+      }
+    },
+    "trust": {
+      "title": "Lo difícil no es enseñar, es saber quién ya puede trabajar solo",
+      "body": "En la ficha de tu equipo cada persona aparece con el porcentaje de lo que su propio rol necesita saber, no contra un temario genérico ni contra sus compañeros. No hay tabla de posiciones ni ranking, y quien todavía no ha entrado aparece con una raya en vez de un cero, porque no haber empezado no es haber fallado. La decisión de si alguien ya puede solo sigue siendo tuya: la pantalla te da con qué tomarla."
+    },
+    "precision": {
+      "title": "Y lo que no es",
+      "items": {
+        "0": "No es un curso con certificado. No hay examen, ni insignia, ni recertificación: hay puntos y un porcentaje.",
+        "1": "Solo cuenta el trabajo hecho después de empezar el módulo. Lo anterior no se hereda, para que una cuenta que cambia de manos no arrastre lo que aprendió otra persona.",
+        "2": "Se comprueban cuatro tipos de trabajo real: reserva creada, entrega, devolución y pago registrado por el agente. Un pago que entra por el portal del cliente no lleva firma de quién lo tomó.",
+        "3": "El avance se detecta cuando la persona vuelve a abrir Ride University, no en tiempo real ni por un proceso en segundo plano.",
+        "4": "El recorrido se lanza con un clic. No salta solo la primera vez que alguien entra al sistema."
+      }
+    },
+    "included": "Viene incluido en Ride Fleet Manager, sin costo aparte, y con todo el temario en español e inglés."
+  },
   "market": {
     "eyebrow": "Complemento de Ride Fleet Manager",
     "title": "Sabe lo que cobra el mercado antes de que fijes tus tarifas",
