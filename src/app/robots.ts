@@ -45,21 +45,24 @@ const AI_TRAINING_CRAWLERS = [
 ];
 
 /**
- * Assistants that fetch a page live to answer a question about it.
+ * Assistants that fetch a page live to answer somebody's question about it
+ * are deliberately NOT blocked, and the distinction is the whole point of
+ * this file.
  *
- * Blocking these has a REAL COST: it takes the site out of ChatGPT and
- * Perplexity answers, which is a growing discovery channel for a company
- * this size. It is blocked here because the owner asked for bots and AI
- * both. To trade that back for reach, delete this list from the rules
- * below — one line — and leave the training crawlers blocked.
+ * Training crawlers take the text and give nothing back, so blocking them
+ * is free. These ones bring a reader who asked about us — increasingly the
+ * first place somebody looks for "fleet software in Puerto Rico" — so
+ * blocking them costs real discovery and buys no protection: the copy is
+ * visible to anyone with a browser either way. What is actually hard to
+ * copy is the toll reconciliation, the per-partner franchise connections
+ * and a curriculum proved against domain records, and none of that is on
+ * this site.
+ *
+ * They were blocked briefly on 2026-08-15 and unblocked the same day on
+ * that reasoning. If they are ever blocked again, know what is being
+ * traded: ChatGPT-User, OAI-SearchBot, PerplexityBot, Perplexity-User and
+ * YouBot are the tokens involved.
  */
-const AI_ASSISTANT_CRAWLERS = [
-  'ChatGPT-User',
-  'OAI-SearchBot',
-  'PerplexityBot',
-  'Perplexity-User',
-  'YouBot'
-];
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -71,7 +74,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/es/demo/thank-you', '/en/demo/thank-you', '/api/']
       },
       {
-        userAgent: [...AI_TRAINING_CRAWLERS, ...AI_ASSISTANT_CRAWLERS],
+        userAgent: AI_TRAINING_CRAWLERS,
         disallow: '/'
       }
     ],

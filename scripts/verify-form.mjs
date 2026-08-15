@@ -90,6 +90,36 @@ const VALID = {
     note(`api: valid lead → ${r.status} ${JSON.stringify(r.json)}, expected ok:true delivered:false (no CRM configured)`);
 }
 
+/* Rate limit. Local requests carry no x-forwarded-for and are exempt on
+   purpose (otherwise this suite would throttle itself), so the limit is
+   exercised by forging the header the proxy would set. A spoofable header
+   is fine here: it is the same one the real limiter reads, and this asserts
+   the counting, not the trust model. */
+{
+  const ip = `203.0.113.${Math.floor(Date.now() / 1000) % 200}`;
+  const send = () =>
+    fetch(`${BASE}/api/lead`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-forwarded-for': ip },
+      body: JSON.stringify(VALID)
+    });
+  let limitedAt = 0;
+  for (let i = 1; i <= 14; i++) {
+    const res = await send();
+    if (res.status === 429) { limitedAt = i; break; }
+  }
+  if (!limitedAt) note('api: 14 rapid submissions from one IP were never rate limited');
+  else if (limitedAt <= 5) note(`api: rate limit tripped at request ${limitedAt} — too tight for a person who resubmits`);
+
+  // A different IP must be unaffected by the first one's limit.
+  const other = await fetch(`${BASE}/api/lead`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', 'x-forwarded-for': '198.51.100.7' },
+    body: JSON.stringify(VALID)
+  });
+  if (other.status === 429) note('api: rate limit is global, not per IP — one abuser would block everyone');
+}
+
 /* ---- 2. Browser flow ----------------------------------------------------- */
 
 const SANDBOX_CHROMIUM = '/opt/pw-browsers/chromium';
@@ -169,6 +199,6 @@ await browser.close();
 console.log(
   fail.length
     ? 'FINDINGS:\n' + fail.join('\n')
-    : 'form clean: 6 API contracts + empty-submit a11y + routing note + happy path + honeypot discard'
+    : 'form clean: API contracts + per-IP rate limit + empty-submit a11y + routing note + happy path + honeypot discard'
 );
 process.exit(fail.length ? 1 : 0);

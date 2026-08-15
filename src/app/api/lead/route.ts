@@ -17,6 +17,50 @@ export const runtime = 'nodejs';
 
 type Payload = Record<string, unknown>;
 
+/* ---- Rate limit ---------------------------------------------------------
+ * Defence in depth behind the honeypot and the timing floor, aimed at the
+ * one thing abuse here actually costs: a pipeline full of junk leads.
+ *
+ * KNOWN LIMIT, stated rather than papered over: this counter lives in the
+ * instance's memory. On serverless each warm instance keeps its own, and a
+ * cold start resets it, so a distributed flood is only partly slowed. The
+ * robust version needs a shared store (Vercel KV / Upstash); this stops the
+ * trivial script, which is what actually shows up.
+ *
+ * Loopback callers are exempt. `next start` sets `x-forwarded-for` even
+ * locally — so testing for a missing header was not enough — and without
+ * the exemption verify:form throttles itself: its own eight submissions
+ * survive one run and then trip the limit on the second, since the counter
+ * outlives the run. Behind a real proxy a client IP is never loopback, so
+ * nothing is weakened in production.
+ */
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const RATE_MAX = 10;
+const LOOPBACK = new Set(['127.0.0.1', '::1', '::ffff:127.0.0.1', 'localhost']);
+const hits = new Map<string, number[]>();
+
+function rateLimited(request: Request): boolean {
+  const forwarded = request.headers.get('x-forwarded-for');
+  if (!forwarded) return false;
+  const ip = forwarded.split(',')[0].trim();
+  if (!ip || LOOPBACK.has(ip)) return false;
+
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < RATE_WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+
+  // Opportunistic sweep so the map cannot grow without bound on a long-lived
+  // instance; cheap because it only runs when the map is already large.
+  if (hits.size > 500) {
+    for (const [key, times] of hits) {
+      if (times.every((t) => now - t >= RATE_WINDOW_MS)) hits.delete(key);
+    }
+  }
+
+  return recent.length > RATE_MAX;
+}
+
 const REQUIRED = ['name', 'company', 'email', 'fleetSize', 'locale'] as const;
 const MAX_LEN = 2000;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -26,6 +70,13 @@ function clean(value: unknown): string {
 }
 
 export async function POST(request: Request) {
+  if (rateLimited(request)) {
+    return NextResponse.json(
+      { ok: false, error: 'rate_limited' },
+      { status: 429, headers: { 'retry-after': '600' } }
+    );
+  }
+
   let body: Payload;
   try {
     body = (await request.json()) as Payload;

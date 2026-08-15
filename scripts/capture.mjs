@@ -21,13 +21,26 @@ const SANDBOX_CHROMIUM = '/opt/pw-browsers/chromium';
 const launchOpts = existsSync(SANDBOX_CHROMIUM) ? { executablePath: SANDBOX_CHROMIUM } : {};
 const browser = await chromium.launch(launchOpts);
 const problems = [];
+const framingNoted = new Set();
 
 for (const locale of ['es', 'en']) {
   for (const [w, h] of VIEWPORTS) {
     const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
     const page = await ctx.newPage();
     const errs = [];
-    page.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
+    // The framed showcase sets `frame-ancestors` to the production origins,
+    // so it refuses to render from 127.0.0.1 — every local and CI run logs
+    // that refusal. It is the far end being correctly locked down, not a
+    // defect here, so it is reported once rather than failing the sweep.
+    // The trade-off is real: a genuinely broken embed looks the same from
+    // localhost, so the embed is only provable on a deployed origin.
+    const framingRefusal = /Refused to frame .*ridefleetmanager\.com/;
+    page.on('console', m => {
+      if (m.type() !== 'error') return;
+      const text = m.text();
+      if (framingRefusal.test(text)) { framingNoted.add(text.slice(0, 120)); return; }
+      errs.push(text);
+    });
     page.on('pageerror', e => errs.push('pageerror: ' + e.message));
     for (const r of ROUTES) {
       const url = `${BASE}/${locale}${r}`;
@@ -65,4 +78,7 @@ for (const locale of ['es', 'en']) {
   }
 }
 await browser.close();
+for (const note of framingNoted) {
+  console.log(`  · expected off-production: ${note}`);
+}
 console.log(problems.length ? 'PROBLEMS:\n' + problems.join('\n') : 'captures clean: no non-200, no unrevealed .reveal, no console errors');
