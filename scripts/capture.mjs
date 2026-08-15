@@ -46,6 +46,14 @@ for (const locale of ['es', 'en']) {
         window.scrollTo({ top: 0, behavior: 'instant' });
         await new Promise((r) => setTimeout(r, 200));
       });
+      // Blank any embedded frame before the shot. The product showcase
+      // auto-advances every 7s, so its content differs on every capture —
+      // left visible it would fail verify:diff on every run for a reason
+      // that has nothing to do with our own markup. `visibility` rather
+      // than `display` so the frame keeps its box and the page below it
+      // does not shift.
+      await page.addStyleTag({ content: 'iframe{visibility:hidden}' });
+
       const hidden = await page.evaluate(() =>
         document.querySelectorAll('.reveal:not(.is-in)').length);
       if (hidden) problems.push(`${hidden} unrevealed .reveal on ${url}`);

@@ -3,13 +3,14 @@ import { useMessages, useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
-import { routes } from '@/lib/site';
+import { routes, site } from '@/lib/site';
 import { Icon, type IconName } from '@/components/Icons';
 import {
   ArrowLink,
   BuildingBadge,
   ButtonAnchor,
   ButtonLink,
+  Eyebrow,
   SampleDataNote
 } from '@/components/ui';
 
@@ -756,6 +757,51 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
               <b>{t('spine.toggle.strong')}</b> {t('spine.toggle.rest')}
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ========================== SHOWCASE =============================
+          Framed from the app origin, never copied here: the chapter copy
+          comes from the same file that feeds the in-product training, so a
+          copy would drift the day someone corrects a training line.
+
+          Two things this depends on and that break silently if changed:
+          the origin must stay in the middleware's `frame-src`, and the
+          <iframe> needs its title (axe treats a nameless frame as a WCAG
+          failure, so the audit would catch that one).
+
+          Below 900px the frame collapses to a single column and is not
+          worth reading, so the CSS swaps it for a link to the full page
+          rather than shipping a squashed embed. */}
+      <section className="sec sec--alt" id="showcase">
+        <div className="container">
+          <div className="sec-head">
+            <Eyebrow>{t('showcase.eyebrow')}</Eyebrow>
+            <h2 className="balance">{t('showcase.title')}</h2>
+            <p className="lede">{t('showcase.lede')}</p>
+          </div>
+
+          <div className="showcase-frame" style={{ marginTop: 'var(--sp-8)' }}>
+            <iframe
+              src={site.showcaseUrl}
+              title={t('showcase.frameTitle')}
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+
+          <p className="showcase-small">
+            {t('showcase.smallScreen.body')}{' '}
+            <a
+              href={site.showcaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('showcase.smallScreen.cta')}
+            </a>
+          </p>
+
+          <SampleDataNote>{t('showcase.note')}</SampleDataNote>
         </div>
       </section>
 

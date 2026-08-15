@@ -25,9 +25,18 @@ const handleI18nRouting = createMiddleware(routing);
  *    this concedes.
  *  - The JSON-LD <script type="application/ld+json"> blocks are data, not
  *    executable scripts — CSP does not block them, so they need no nonce.
- *  - frame-src: when the scheduler embed goes live (site.schedulerUrl), its
- *    origin must be added here or the embed will be silently blocked.
+ *  - frame-src: the product showcase is framed from the app origin, so that
+ *    origin is listed. Any future embed (the scheduler, site.schedulerUrl)
+ *    must be added here too or it will be blocked with no visible cause
+ *    beyond a console error.
  */
+/**
+ * Origin of the framed product showcase. Kept as a literal rather than
+ * derived from site.showcaseUrl because the middleware runs on the edge
+ * runtime and a CSP typo fails silently — the frame just never paints.
+ */
+const SHOWCASE_ORIGIN = 'https://ridefleetmanager.com';
+
 export default function middleware(request: NextRequest) {
   const nonce = btoa(crypto.randomUUID());
   const isDev = process.env.NODE_ENV === 'development';
@@ -43,7 +52,7 @@ export default function middleware(request: NextRequest) {
     `form-action 'self'`,
     `frame-ancestors 'none'`,
     `connect-src 'self'`,
-    `frame-src 'self'`,
+    `frame-src 'self' ${SHOWCASE_ORIGIN}`,
     ...(isDev ? [] : ['upgrade-insecure-requests'])
   ].join('; ');
 

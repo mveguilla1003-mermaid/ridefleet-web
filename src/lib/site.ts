@@ -29,6 +29,14 @@ export const site = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hola@ridefleet.com',
   /** PLACEHOLDER Q6 — scheduler embed. Empty renders the form-only path. */
   schedulerUrl: process.env.NEXT_PUBLIC_SCHEDULER_URL ?? '',
+  /**
+   * The product showcase, framed on the home page. It is NOT copied into
+   * this repo on purpose: its chapter copy comes from the same file that
+   * feeds the in-product training, so a duplicate would drift the day
+   * someone corrects a training line. Its origin must stay listed in the
+   * middleware's `frame-src`.
+   */
+  showcaseUrl: 'https://ridefleetmanager.com/showcase',
   locationLabel: 'San Juan, Puerto Rico · AST (UTC−4)',
   founded: 2026
 } as const;

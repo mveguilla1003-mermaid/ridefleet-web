@@ -285,6 +285,29 @@
 @media (max-width:520px){.slots{grid-template-columns:minmax(0,1fr)}}
 .sec--cta{padding-bottom:clamp(8px,1.2vw,18px)}
 
+/* ---- Framed product showcase -------------------------------------------
+   The embedded page is served from the app origin and collapses to a single
+   column below 900px, where it is not worth reading — so below that width
+   the frame is replaced by a link to the full page rather than shipping a
+   squashed embed. `loading="lazy"` keeps the hidden frame from costing a
+   request on phones. 600px is the height the embedded layout is built for. */
+.showcase-frame{
+  border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;
+  background:var(--surface-1);box-shadow:var(--sh-2);
+}
+.showcase-frame iframe{display:block;width:100%;height:600px;border:0}
+.showcase-small{display:none}
+@media (max-width:900px){
+  .showcase-frame{display:none}
+  .showcase-small{
+    display:block;padding:var(--sp-5);margin-top:var(--sp-6);
+    border:1px dashed var(--border-strong);border-radius:var(--r-md);
+    background:var(--surface-2);color:var(--text-2);font-size:var(--fs-sm);
+  }
+  .showcase-small a{color:var(--text-brand);text-decoration:underline;
+    text-underline-offset:2px}
+}
+
 /* ---- AA touch-ups: --text-3 clears 4.5 on white but lands at 4.44 on the
    tinted chips it sits in here, so those instances step up one rung.
    (.lang button used to be in this list — it is shell, and components.css
