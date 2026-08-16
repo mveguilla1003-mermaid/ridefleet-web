@@ -136,6 +136,44 @@
       "after": "Si hay encaje, sigue una propuesta escrita: alcance del piloto, precio, duración y qué se va a medir."
     }
   },
+  "valet": {
+    "meta": {
+      "title": "Recogida en el aeropuerto · Ride Fleet",
+      "description": "El cliente aterriza, llama y Voz AI identifica su reserva y pide la guagua. El piso la despacha. Cerrar la recogida sigue siendo un acto humano."
+    },
+    "eyebrow": "Voz AI con Ride Fleet Manager",
+    "title": "El cliente aterriza, llama, y la guagua sale",
+    "lede": "Alguien que acaba de recoger su maleta no quiere un formulario: quiere que lo recojan. Marca, Voz AI identifica su reserva y deja la solicitud puesta en el piso. En el producto aparece como solicitudes de shuttle.",
+    "beats": {
+      "0": {
+        "value": "La llamada encuentra la reserva",
+        "body": "El asistente busca por número de confirmación, tolerando los prefijos de cada canal de reserva y lo que se pierde al deletrear un código por teléfono. Si eso falla, busca por nombre dentro de una ventana de fechas."
+      },
+      "1": {
+        "value": "El asistente solo puede pedir la recogida",
+        "body": "Puede crear la solicitud y nada más. No puede ver la cola, ni marcarla completada, ni cancelarla, ni darla por no presentada. Cerrar una guagua es un acto humano, y hay una prueba automática que lo exige."
+      },
+      "2": {
+        "value": "Un cliente en la acera gana a cualquier pantalla",
+        "body": "El aviso aparece sobre la pantalla en la que esté el agente, con el nombre, la reserva, cuántos son y cuánto llevan esperando. Si vuelve a llamar, la fila se marca y el contador sube en vez de duplicarse."
+      }
+    },
+    "trust": {
+      "title": "Lo delicado no es despachar la guagua, es no contarle la reserva de otro a quien llama",
+      "body": "Si el código no calza exacto, el asistente no ve la reserva: ve el nombre de pila con la inicial del apellido y el mes de la recogida, nada más. Para destaparla hace falta un dato que la búsqueda no usó, y el dato que sirvió para encontrar a alguien nunca sirve para probar que es esa persona. Ante la duda, no se destapa. Y el límite contra el que adivina a ciegas está afinado para no castigar el fallo más común de una llamada, que es un código mal escuchado: si eso contara, un cliente honesto pagaría por el ruido de la línea."
+    },
+    "precision": {
+      "title": "Y lo que no es",
+      "items": {
+        "0": "No asigna conductor ni rastrea el vehículo. No hay mapa, ni tiempo estimado, ni página de estado para el cliente: el despacho lo hace una persona que lee el aviso.",
+        "1": "No escala por su cuenta. Si nadie atiende la cola, el aviso sigue puesto; no hay alerta por tiempo transcurrido ni aviso a un supervisor.",
+        "2": "El aviso de retraso sale por correo. Si el cliente no tiene correo en ficha, el sistema te da su teléfono para que llames tú, en vez de fallar callado.",
+        "3": "La identidad se comprueba cuando el asistente busca la reserva, no otra vez al despachar. Lo que el sistema revalida al crear la solicitud es la reserva: que exista, que sea de tu operación, que se pueda recoger y que sea de esa sede.",
+        "4": "La cola se refresca cada veinte segundos. No es push."
+      }
+    },
+    "close": "El check-out cierra la solicitud solo, en la misma transacción que entrega el carro. Nadie tiene que acordarse."
+  },
   "pricing": {
     "meta": {
       "title": "Precios · Ride Fleet",

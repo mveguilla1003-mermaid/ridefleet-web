@@ -64,6 +64,7 @@ export const routes = {
   rideFleetManager: '/ride-fleet-manager',
   tollBridge: '/toll-bridge',
   vozAi: '/voz-ai',
+  valet: '/valet',
   pricing: '/pricing',
   demo: '/demo',
   demoThankYou: '/demo/thank-you',
@@ -107,6 +108,7 @@ export const footerNav: {
       { key: 'vozAi', labelKey: 'callLine', hash: 'llamar' },
       // The separately-billed add-on had no route into it from anywhere on
       // the site; a deep link is the cheapest way to make it discoverable.
+      { key: 'valet', labelKey: 'valet' },
       { key: 'rideFleetManager', labelKey: 'rideUniversity', hash: 'university' },
       { key: 'rideFleetManager', labelKey: 'marketIntelligence', hash: 'market' },
       { key: 'security', labelKey: 'security' }

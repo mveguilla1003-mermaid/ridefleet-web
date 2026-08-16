@@ -136,6 +136,44 @@
       "after": "If there is a fit, a written proposal follows: pilot scope, price, duration, and what will be measured."
     }
   },
+  "valet": {
+    "meta": {
+      "title": "Airport pickup · Ride Fleet",
+      "description": "The customer lands, calls, and Voz AI identifies the reservation and files the pickup. The floor dispatches it. Closing a pickup stays a human act."
+    },
+    "eyebrow": "Voz AI with Ride Fleet Manager",
+    "title": "The customer lands, calls, and the shuttle goes",
+    "lede": "Somebody who has just picked up their bag does not want a form: they want a ride. They call, Voz AI identifies the reservation, and the request lands on the floor. In the product it shows up as shuttle requests.",
+    "beats": {
+      "0": {
+        "value": "The call finds the reservation",
+        "body": "The assistant searches by confirmation number, tolerating each booking channel's prefix and what gets lost when a code is read out over a phone. If that fails, it searches by name within a date window."
+      },
+      "1": {
+        "value": "The assistant can only ask for the pickup",
+        "body": "It can create the request and nothing else. It cannot see the queue, mark it complete, cancel it or record a no-show. Closing a shuttle is a human act, and an automated test insists on it."
+      },
+      "2": {
+        "value": "A customer at the curb outranks any screen",
+        "body": "The notice appears over whatever screen the agent is on, with the name, the reservation, how many they are and how long they have waited. A second call marks the row and raises a counter instead of creating a duplicate."
+      }
+    },
+    "trust": {
+      "title": "The delicate part is not sending the shuttle, it is not reading somebody else's reservation to whoever called",
+      "body": "If the code does not match exactly, the assistant does not get the reservation: it gets a first name, a last initial and the month of the pickup, and nothing more. Unmasking it takes a detail the search did not already use, and the detail that found someone can never be the one that proves it is them. In doubt, it stays masked. And the limit that stops blind guessing is tuned not to punish the most common failure on a call, a misheard code: if that counted against you, an honest customer would pay for a noisy line."
+    },
+    "precision": {
+      "title": "And what it is not",
+      "items": {
+        "0": "It does not assign a driver or track the vehicle. There is no map, no ETA and no status page for the customer: a person reads the notice and dispatches.",
+        "1": "It does not escalate on its own. If nobody works the queue the notice simply stays up; there is no time-based alert and no supervisor ping.",
+        "2": "The delay notice goes by email. If the customer has no email on file, the system hands you their phone number to call rather than failing quietly.",
+        "3": "Identity is checked when the assistant looks the reservation up, not again at dispatch. What the system re-validates when the request is created is the reservation: that it exists, belongs to your operation, can be picked up, and is at that branch.",
+        "4": "The queue refreshes every twenty seconds. It is not push."
+      }
+    },
+    "close": "Check-out closes the request by itself, in the same transaction that hands the car over. Nobody has to remember."
+  },
   "pricing": {
     "meta": {
       "title": "Pricing · Ride Fleet",

@@ -18,6 +18,7 @@ const priorities: Partial<Record<keyof typeof routes, number>> = {
   pricing: 0.9,
   vozAi: 0.8,
   rideFleetManager: 0.8,
+  valet: 0.7,
   designPartners: 0.7,
   security: 0.6
 };
