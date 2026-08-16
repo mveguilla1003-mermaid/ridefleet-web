@@ -781,9 +781,13 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
             <p className="lede">{t('showcase.lede')}</p>
           </div>
 
+          {/* `?lang` is the only parameter the showcase accepts, and it
+              defaults to English — without this, Spanish visitors got English
+              chapter narration. There is no height, autoplay or start-chapter
+              param, so do not invent one. */}
           <div className="showcase-frame" style={{ marginTop: 'var(--sp-8)' }}>
             <iframe
-              src={site.showcaseUrl}
+              src={`${site.showcaseUrl}?lang=${params.locale}`}
               title={t('showcase.frameTitle')}
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -793,7 +797,7 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           <p className="showcase-small">
             {t('showcase.smallScreen.body')}{' '}
             <a
-              href={site.showcaseUrl}
+              href={`${site.showcaseUrl}?lang=${params.locale}`}
               target="_blank"
               rel="noopener noreferrer"
             >

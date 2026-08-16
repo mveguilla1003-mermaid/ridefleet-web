@@ -162,14 +162,33 @@
       "title": "Lo delicado no es despachar la guagua, es no contarle la reserva de otro a quien llama",
       "body": "Si el código no calza exacto, el asistente no ve la reserva: ve el nombre de pila con la inicial del apellido y el mes de la recogida, nada más. Para destaparla hace falta un dato que la búsqueda no usó, y el dato que sirvió para encontrar a alguien nunca sirve para probar que es esa persona. Ante la duda, no se destapa. Y el límite contra el que adivina a ciegas está afinado para no castigar el fallo más común de una llamada, que es un código mal escuchado: si eso contara, un cliente honesto pagaría por el ruido de la línea."
     },
+    "tracker": {
+      "title": "Y desde hace poco, el cliente ve por dónde viene",
+      "body": "Veinticuatro horas antes de la recogida le llega, por correo y por mensaje de texto, un enlace personal con un mapa en vivo de la guagua. No hay que instalar nada ni escribir nada: la identidad va en el enlace. Si tu sede lo permite, desde ahí mismo puede pedir la recogida, y si además llama por teléfono no salen dos solicitudes: sale una.",
+      "items": {
+        "0": {
+          "value": "El enlace no cuenta nada de más",
+          "body": "Muestra por dónde va la guagua y dónde esperarla. No lleva el nombre del cliente, ni el número de reserva, ni su teléfono, ni la tablilla. La lista de lo que puede salir está fijada en el código y hay una prueba que lo verifica."
+        },
+        "1": {
+          "value": "Nadie mirando, nadie esperando, nada que consultar",
+          "body": "El GPS solo se consulta cuando alguien tiene el mapa abierto o hay alguien en la cola esperando recogida. El resto del tiempo el sistema no gasta ni una llamada al proveedor."
+        },
+        "2": {
+          "value": "Dice cada cuánto pasa, no cuánto falta",
+          "body": "La página promete la frecuencia que tú configuras, no una cuenta regresiva. Prometer un minuto exacto que no se puede cumplir es peor que no prometer nada."
+        }
+      }
+    },
     "precision": {
       "title": "Y lo que no es",
       "items": {
-        "0": "No asigna conductor ni rastrea el vehículo. No hay mapa, ni tiempo estimado, ni página de estado para el cliente: el despacho lo hace una persona que lee el aviso.",
-        "1": "No escala por su cuenta. Si nadie atiende la cola, el aviso sigue puesto; no hay alerta por tiempo transcurrido ni aviso a un supervisor.",
-        "2": "El aviso de retraso sale por correo. Si el cliente no tiene correo en ficha, el sistema te da su teléfono para que llames tú, en vez de fallar callado.",
-        "3": "La identidad se comprueba cuando el asistente busca la reserva, no otra vez al despachar. Lo que el sistema revalida al crear la solicitud es la reserva: que exista, que sea de tu operación, que se pueda recoger y que sea de esa sede.",
-        "4": "La cola se refresca cada veinte segundos. No es push."
+        "0": "El mapa necesita un GPS instalado en la guagua. Sin ese equipo la página existe igual, pero no enseña posición.",
+        "1": "No hay tiempo estimado de llegada. Nada lo calcula, y la frecuencia que se muestra es un número que escribe tu administración.",
+        "2": "No asigna conductor. Nadie queda ligado a la solicitud: el despacho lo hace una persona que lee el aviso.",
+        "3": "El punto del mapa suele llevar entre quince y treinta segundos de retraso, y la página lo sigue dando por bueno hasta minuto y medio.",
+        "4": "El enlace es personal y expira, pero funciona para quien lo tenga: si tu cliente se lo reenvía a alguien, esa persona ve el mismo mapa.",
+        "5": "No escala por su cuenta. Si nadie atiende la cola, el aviso sigue puesto; no hay alerta por tiempo ni aviso a un supervisor."
       }
     },
     "close": "El check-out cierra la solicitud solo, en la misma transacción que entrega el carro. Nadie tiene que acordarse."

@@ -162,14 +162,33 @@
       "title": "The delicate part is not sending the shuttle, it is not reading somebody else's reservation to whoever called",
       "body": "If the code does not match exactly, the assistant does not get the reservation: it gets a first name, a last initial and the month of the pickup, and nothing more. Unmasking it takes a detail the search did not already use, and the detail that found someone can never be the one that proves it is them. In doubt, it stays masked. And the limit that stops blind guessing is tuned not to punish the most common failure on a call, a misheard code: if that counted against you, an honest customer would pay for a noisy line."
     },
+    "tracker": {
+      "title": "And lately, the customer can see it coming",
+      "body": "Twenty-four hours before pickup they get a personal link by email and text message, with a live map of the shuttle. Nothing to install and nothing to type: identity travels in the link. If your branch allows it they can call the shuttle from that same screen, and if they also phone in, it does not become two requests: it stays one.",
+      "items": {
+        "0": {
+          "value": "The link gives nothing away",
+          "body": "It shows where the shuttle is and where to wait. It does not carry the customer's name, the reservation number, their phone or the plate. The list of what may leave the building is fixed in the code, and a test checks it."
+        },
+        "1": {
+          "value": "Nobody watching, nobody waiting, nothing to ask",
+          "body": "The GPS is only queried while someone has the map open or somebody is in the queue waiting for a pickup. The rest of the time the system does not spend a single call on the provider."
+        },
+        "2": {
+          "value": "It says how often, not how soon",
+          "body": "The page promises the frequency you configure, not a countdown. Promising an exact minute you cannot keep is worse than promising nothing."
+        }
+      }
+    },
     "precision": {
       "title": "And what it is not",
       "items": {
-        "0": "It does not assign a driver or track the vehicle. There is no map, no ETA and no status page for the customer: a person reads the notice and dispatches.",
-        "1": "It does not escalate on its own. If nobody works the queue the notice simply stays up; there is no time-based alert and no supervisor ping.",
-        "2": "The delay notice goes by email. If the customer has no email on file, the system hands you their phone number to call rather than failing quietly.",
-        "3": "Identity is checked when the assistant looks the reservation up, not again at dispatch. What the system re-validates when the request is created is the reservation: that it exists, belongs to your operation, can be picked up, and is at that branch.",
-        "4": "The queue refreshes every twenty seconds. It is not push."
+        "0": "The map needs a GPS unit fitted to the shuttle. Without that hardware the page still exists, but it shows no position.",
+        "1": "There is no ETA. Nothing computes one, and the frequency on screen is a number your admin typed.",
+        "2": "It does not assign a driver. Nobody is bound to the request: a person reads the notice and dispatches.",
+        "3": "The dot on the map is routinely fifteen to thirty seconds behind, and the page keeps calling it live for up to a minute and a half.",
+        "4": "The link is personal and it expires, but it works for whoever holds it: if your customer forwards it, that person sees the same map.",
+        "5": "It does not escalate on its own. If nobody works the queue the notice simply stays up; there is no time-based alert and no supervisor ping."
       }
     },
     "close": "Check-out closes the request by itself, in the same transaction that hands the car over. Nobody has to remember."

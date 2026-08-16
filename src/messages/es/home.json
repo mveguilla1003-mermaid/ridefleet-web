@@ -293,7 +293,7 @@
     "title": "Siete capítulos, con datos de ejemplo, andando solos",
     "lede": "Esto es el producto real, servido desde la aplicación. Avanza cada siete segundos y puedes pausarlo o moverte con las flechas y los puntos.",
     "frameTitle": "Recorrido del producto Ride Fleet, siete capítulos con datos de ejemplo",
-    "note": "Datos de ejemplo. No es la pantalla de un cliente real. Los capítulos del recorrido todavía están en inglés.",
+    "note": "Datos de ejemplo. No es la pantalla de un cliente real.",
     "smallScreen": {
       "body": "El recorrido necesita una pantalla ancha para leerse. Ábrelo en una pestaña aparte y vuelve cuando quieras.",
       "cta": "Abrir el recorrido"

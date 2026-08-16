@@ -715,8 +715,8 @@
     },
     "included": "Viene incluido en Ride Fleet Manager, sin costo aparte, y con todo el temario en español e inglés.",
     "gotchas": {
-      "title": "Del temario, palabra por palabra",
-      "intro": "Cada módulo lleva escrito el error caro de su tarea. Estos tres van tal cual están redactados, y son la mejor prueba de quién escribió el temario.",
+      "title": "Dónde se traba la gente",
+      "intro": "Cada módulo termina enseñando el error caro de esa tarea, bajo ese mismo título. Estos tres salen tal cual, y son la mejor prueba de quién escribió el temario.",
       "items": {
         "0": "El paso de las fotos se siente saltable cuando el lote está lleno. Es la única evidencia de cómo estaba el carro al entregarlo, y en el check-in el agente ve esas mismas fotos al lado de la cámara.",
         "1": "Un carro parado en uno de tus propios lotes no levanta alerta. Eso es un check-in que se olvidó, no un carro perdido: dos problemas distintos con soluciones distintas.",

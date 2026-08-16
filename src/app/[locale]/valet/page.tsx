@@ -42,7 +42,8 @@ export async function generateMetadata({
 }
 
 const BEATS: IconName[] = ['i-search', 'i-shield', 'i-bell'];
-const PRECISIONS = [0, 1, 2, 3, 4] as const;
+const TRACKER_ITEMS: IconName[] = ['i-lock', 'i-gauge', 'i-clock'];
+const PRECISIONS = [0, 1, 2, 3, 4, 5] as const;
 
 export default function ValetPage({ params }: { params: { locale: Locale } }) {
   setRequestLocale(params.locale);
@@ -81,7 +82,39 @@ export default function ValetPage({ params }: { params: { locale: Locale } }) {
         </div>
       </Section>
 
+      {/* ---- Live tracker, shipped 2026-08-15 (RFM 6d8173c) ----------------
+          This section is why three lines of `precision` had to change: the
+          page previously said there was no map, no vehicle tracking and no
+          customer status page, and all three became false the day the
+          tracker landed. "No driver assignment" and "no ETA" survived
+          verification and stay.
+
+          The honest boundaries are load-bearing here. The map depends on a
+          GPS unit being fitted; without it the page is permanently offline.
+          What the product shows is a HEADWAY the admin typed, never a
+          countdown — the code says so in as many words, and repeating that
+          on the site is the whole reason a buyer would believe the rest. */}
       <Section>
+        <div className="measure">
+          <h2>{t('tracker.title')}</h2>
+          <p className="lede" style={{ marginTop: 'var(--sp-4)' }}>
+            {t('tracker.body')}
+          </p>
+        </div>
+        <div className="feature-grid" style={{ marginTop: 'var(--sp-8)' }}>
+          {TRACKER_ITEMS.map((icon, i) => (
+            <div className="feature" key={i}>
+              <span className="fic">
+                <Icon name={icon} />
+              </span>
+              <h3>{t(`tracker.items.${i}.value`)}</h3>
+              <p>{t(`tracker.items.${i}.body`)}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section variant="alt">
         <div className="split" style={{ alignItems: 'start' }}>
           <div>
             <h2>{t('trust.title')}</h2>
