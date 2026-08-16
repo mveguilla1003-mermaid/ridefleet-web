@@ -383,7 +383,15 @@ const axePage = await axeCtx.newPage();
 for (const locale of ['es', 'en']) {
   for (const r of ROUTES) {
     await axePage.goto(`${BASE}/${locale}${r}`, { waitUntil: 'domcontentloaded' });
-    await axePage.addScriptTag({ content: axeSource });
+    // evaluate(), not addScriptTag(). addScriptTag waits for the page to
+    // settle, and the framed showcase refuses to load from any origin its
+    // frame-ancestors does not list — which is every origin except
+    // production. That refusal surfaced as a rejection from addScriptTag
+    // roughly half the time, depending on whether the frame lost its race
+    // with the injection: a genuinely flaky gate, and it failed CI before
+    // it failed here. evaluate() runs the source directly and never waits
+    // on subresources.
+    await axePage.evaluate(axeSource);
     const result = await axePage.evaluate(() =>
       axe.run(document, {
         runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] },
