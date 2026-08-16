@@ -81,8 +81,17 @@ against the baseline artifact of the last successful run on `main` and fails any
 page where more than 1% of pixels changed, uploading diff images as an artifact.
 Baselines are run artifacts, never committed: full-page shots would bloat the
 repo, and shots from different machines differ in font rasterisation anyway.
-Intentional restyles land with `[visual-baseline]` in the commit message. To use
-locally: put reference shots in `verify/baseline` and run `npm run verify:diff`.
+Intentional restyles land with `[visual-baseline]` in the commit message — and
+remember that editing copy on a prose page moves pixels exactly as CSS does. To
+use locally: put reference shots in `verify/baseline` and run `npm run
+verify:diff`.
+
+A run publishes its shots as the next baseline when the sweep captured cleanly
+and the diff did not object — deliberately **not** only when the whole job is
+green. Tying it to the whole job made one failure poison the next commit: a run
+whose diff was skipped but whose audit failed published nothing, so the
+following commit compared against a stale baseline and failed for changes it
+had not made.
 
 `verify:form` exercises the site's one conversion end to end: the API contract of
 `/api/lead` (bad JSON, missing fields, invalid email, honeypot and under-3-seconds

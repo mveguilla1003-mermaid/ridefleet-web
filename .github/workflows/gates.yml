@@ -60,6 +60,7 @@ jobs:
           exit 1
 
       - name: Screenshot sweep (console errors fail here)
+        id: shots
         run: npm run verify:shots
 
       # Visual regression: compare this run's shots against the baseline
@@ -82,6 +83,7 @@ jobs:
       - name: Visual diff against baseline
         # Intentional restyles land with [visual-baseline] in the commit
         # message; this run's shots then become the next baseline unopposed.
+        id: diff
         if: ${{ !contains(github.event.head_commit.message, '[visual-baseline]') }}
         run: npm run verify:diff
 
@@ -107,9 +109,22 @@ jobs:
           path: verify/shots
           if-no-files-found: ignore
 
-      # Only fully green runs on main set the bar for the next one.
+      # Publish whenever the SHOTS are trustworthy — captured cleanly and not
+      # opposed by the diff — rather than only when the whole job is green.
+      #
+      # It used to require success(), and that cascaded: the /valet run was
+      # tagged [visual-baseline] so its diff was skipped, then the audit
+      # failed for an unrelated reason, so no baseline was published. The
+      # next commit touched only a script, yet compared against a baseline
+      # from before /valet existed — and /valet had added a footer link to
+      # every page, so every shot differed. One failure poisoned the
+      # following commit. Visual state and the a11y/form gates are
+      # independent, and the artifact should reflect that.
       - name: Publish shots as next baseline
-        if: success() && github.ref == 'refs/heads/main'
+        if: >-
+          always() && github.ref == 'refs/heads/main'
+          && steps.shots.outcome == 'success'
+          && steps.diff.outcome != 'failure'
         uses: actions/upload-artifact@v4
         with:
           name: shots-baseline
