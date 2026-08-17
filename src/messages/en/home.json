@@ -290,13 +290,13 @@
   },
   "showcase": {
     "eyebrow": "The product itself",
-    "title": "Seven chapters, sample data, running on their own",
+    "title": "Chapter by chapter, sample data, running on their own",
     "lede": "This is the real product, served from the application. It advances every seven seconds, and you can pause it or move with the arrows and the chapter dots.",
-    "frameTitle": "Ride Fleet product walkthrough, seven chapters with sample data",
+    "frameTitle": "Ride Fleet product walkthrough, chapter by chapter with sample data",
     "note": "Sample data. Not a real customer's screen.",
     "smallScreen": {
-      "body": "The walkthrough needs a wide screen to read properly. Open it in its own tab and come back whenever you like.",
-      "cta": "Open the walkthrough"
+      "body": "Not seeing the walkthrough here, or want it bigger?",
+      "cta": "Open it in its own tab"
     }
   },
   "diff": {

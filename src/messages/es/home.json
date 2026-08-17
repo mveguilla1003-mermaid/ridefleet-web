@@ -290,13 +290,13 @@
   },
   "showcase": {
     "eyebrow": "El producto por dentro",
-    "title": "Siete capítulos, con datos de ejemplo, andando solos",
+    "title": "Capítulo a capítulo, con datos de ejemplo, andando solos",
     "lede": "Esto es el producto real, servido desde la aplicación. Avanza cada siete segundos y puedes pausarlo o moverte con las flechas y los puntos.",
-    "frameTitle": "Recorrido del producto Ride Fleet, siete capítulos con datos de ejemplo",
+    "frameTitle": "Recorrido del producto Ride Fleet, por capítulos y con datos de ejemplo",
     "note": "Datos de ejemplo. No es la pantalla de un cliente real.",
     "smallScreen": {
-      "body": "El recorrido necesita una pantalla ancha para leerse. Ábrelo en una pestaña aparte y vuelve cuando quieras.",
-      "cta": "Abrir el recorrido"
+      "body": "¿No se ve el recorrido aquí, o lo prefieres en grande?",
+      "cta": "Ábrelo en su propia pestaña"
     }
   },
   "diff": {

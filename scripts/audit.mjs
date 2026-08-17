@@ -351,15 +351,26 @@ for (const locale of ['es', 'en']) {
       // to arrive rather than guessing how long it takes: a fixed 300ms pause
       // passed on an idle machine and failed on a busy one, which is a flaky
       // gate — the same defect class as timing out an injected script.
+      // Wait for the value to STOP CHANGING, not merely to become non-zero:
+      // the transition steps 0 → 1px → 2px → 3px, so "> 0" still samples the
+      // animation mid-flight. Two identical consecutive reads means the
+      // outline has settled. (Third attempt at this check — the first used a
+      // fixed pause, the second stopped at the first non-zero frame.)
       const ring = await page.evaluate(async () => {
+        const read = () => {
+          const cs = getComputedStyle(document.activeElement);
+          return `${cs.outlineColor} / ${cs.outlineWidth} / ${cs.outlineStyle}`;
+        };
         const deadline = Date.now() + 2000;
-        const read = () => getComputedStyle(document.activeElement);
-        let cs = read();
-        while (Date.now() < deadline && parseFloat(cs.outlineWidth) === 0) {
-          await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 16)));
-          cs = read();
+        let prev = read();
+        let stable = 0;
+        while (Date.now() < deadline && stable < 2) {
+          await new Promise((r) => setTimeout(r, 60));
+          const now = read();
+          if (now === prev) stable += 1;
+          else { stable = 0; prev = now; }
         }
-        return cs.outlineColor + ' / ' + cs.outlineWidth + ' / ' + cs.outlineStyle;
+        return prev;
       });
       if (!/rgb\(11, 99, 214\)/.test(ring)) note(`${tag}: keyboard focus ring on ${sel} = ${ring}`);
     }
