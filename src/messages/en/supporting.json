@@ -163,21 +163,25 @@
       "body": "If the code does not match exactly, the assistant does not get the reservation: it gets a first name, a last initial and the month of the pickup, and nothing more. Unmasking it takes a detail the search did not already use, and the detail that found someone can never be the one that proves it is them. In doubt, it stays masked. And the limit that stops blind guessing is tuned not to punish the most common failure on a call, a misheard code: if that counted against you, an honest customer would pay for a noisy line."
     },
     "tracker": {
-      "title": "And lately, the customer can see it coming",
-      "body": "Twenty-four hours before pickup they get a personal link by email and text message, with a live map of the shuttle. Nothing to install and nothing to type: identity travels in the link. If your branch allows it they can call the shuttle from that same screen, and if they also phone in, it does not become two requests: it stays one.",
+      "title": "Your shuttle, live",
+      "body": "Every customer gets a personal link to watch the shuttle move on the map, know exactly where to stand and wait for it, and request it with one tap.",
       "items": {
         "0": {
-          "value": "The link gives nothing away",
-          "body": "It shows where the shuttle is and where to wait. It does not carry the customer's name, the reservation number, their phone or the plate. The list of what may leave the building is fixed in the code, and a test checks it."
+          "value": "Their link arrives",
+          "body": "Twenty-four hours before pickup, by email and text message. Personal, tied to their reservation, and alive until the rental ends, so it serves the return trip too. Nothing to install and nothing to type."
         },
         "1": {
-          "value": "Nobody watching, nobody waiting, nothing to ask",
-          "body": "The GPS is only queried while someone has the map open or somebody is in the queue waiting for a pickup. The rest of the time the system does not spend a single call on the provider."
+          "value": "They open the map",
+          "body": "The shuttle moving, a pin on the exact waiting spot, and the instructions your branch wrote. If they share their location they see how far they still have to walk. And they switch between Spanish and English with one tap."
         },
         "2": {
-          "value": "It says how often, not how soon",
-          "body": "The page promises the frequency you configure, not a countdown. Promising an exact minute you cannot keep is worse than promising nothing."
+          "value": "They request the shuttle",
+          "body": "One button, and the request lands on the branch team's screen. If they also phone in, or tap twice, it does not become two requests: it stays one bus."
         }
+      },
+      "privacy": {
+        "title": "There is no public link to your fleet",
+        "body": "There is no fixed address here and no code anyone can paste anywhere: each link is personal, tied to one reservation, and it expires. What it shows is deliberately trimmed, with an automated test watching the list: where the shuttle is and where to wait, without the customer's name, without the reservation number, without their phone and without the plate. The GPS is not even queried while nobody has the map open and nobody is waiting."
       }
     },
     "precision": {
@@ -186,9 +190,10 @@
         "0": "The map needs a GPS unit fitted to the shuttle. Without that hardware the page still exists, but it shows no position.",
         "1": "There is no ETA. Nothing computes one, and the frequency on screen is a number your admin typed.",
         "2": "It does not assign a driver. Nobody is bound to the request: a person reads the notice and dispatches.",
-        "3": "The dot on the map is routinely fifteen to thirty seconds behind, and the page keeps calling it live for up to a minute and a half.",
-        "4": "The link is personal and it expires, but it works for whoever holds it: if your customer forwards it, that person sees the same map.",
-        "5": "It does not escalate on its own. If nobody works the queue the notice simply stays up; there is no time-based alert and no supervisor ping."
+        "3": "The dot on the map is routinely fifteen to thirty seconds behind, and the page keeps calling it live for up to a minute and a half. When the signal is genuinely lost it says so, rather than leaving a stale dot up.",
+        "4": "The line to the waiting spot is direction and distance, not turn-by-turn navigation.",
+        "5": "The link is personal and it expires, but it works for whoever holds it: if your customer forwards it, that person sees the same map.",
+        "6": "It does not escalate on its own. If nobody works the queue the notice simply stays up; there is no time-based alert and no supervisor ping."
       }
     },
     "close": "Check-out closes the request by itself, in the same transaction that hands the car over. Nobody has to remember."

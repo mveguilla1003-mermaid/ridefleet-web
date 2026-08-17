@@ -42,8 +42,8 @@ export async function generateMetadata({
 }
 
 const BEATS: IconName[] = ['i-search', 'i-shield', 'i-bell'];
-const TRACKER_ITEMS: IconName[] = ['i-lock', 'i-gauge', 'i-clock'];
-const PRECISIONS = [0, 1, 2, 3, 4, 5] as const;
+const TRACKER_ITEMS: IconName[] = ['i-mail', 'i-location', 'i-check-circle'];
+const PRECISIONS = [0, 1, 2, 3, 4, 5, 6] as const;
 
 export default function ValetPage({ params }: { params: { locale: Locale } }) {
   setRequestLocale(params.locale);
@@ -111,6 +111,14 @@ export default function ValetPage({ params }: { params: { locale: Locale } }) {
               <p>{t(`tracker.items.${i}.body`)}</p>
             </div>
           ))}
+        </div>
+
+        {/* The differentiator, and the reason RFM asked us NOT to embed a
+            live tracker on this site: a fixed public URL would break the
+            model this paragraph sells. */}
+        <div className="card measure" style={{ marginTop: 'var(--sp-10)' }}>
+          <h3>{t('tracker.privacy.title')}</h3>
+          <p style={{ marginTop: 'var(--sp-3)' }}>{t('tracker.privacy.body')}</p>
         </div>
       </Section>
 

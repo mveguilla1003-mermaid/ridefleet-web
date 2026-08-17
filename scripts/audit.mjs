@@ -346,12 +346,19 @@ for (const locale of ['es', 'en']) {
       if (!parked) { note(`${tag}: shell focus target missing: ${sel}`); continue; }
       await page.keyboard.press('Tab');
       await page.keyboard.press('Shift+Tab');
-      // Nav links transition `all` over --dur-2 (180ms), which includes the
-      // outline — measuring immediately reads 0-1px mid-animation, so let the
-      // ring settle first.
-      await page.waitForTimeout(300);
-      const ring = await page.evaluate(() => {
-        const cs = getComputedStyle(document.activeElement);
+      // Nav links transition `all` over --dur-2 (180ms), outline included, so
+      // an immediate read catches 0-1px mid-animation. Wait for the property
+      // to arrive rather than guessing how long it takes: a fixed 300ms pause
+      // passed on an idle machine and failed on a busy one, which is a flaky
+      // gate — the same defect class as timing out an injected script.
+      const ring = await page.evaluate(async () => {
+        const deadline = Date.now() + 2000;
+        const read = () => getComputedStyle(document.activeElement);
+        let cs = read();
+        while (Date.now() < deadline && parseFloat(cs.outlineWidth) === 0) {
+          await new Promise((r) => requestAnimationFrame(() => setTimeout(r, 16)));
+          cs = read();
+        }
         return cs.outlineColor + ' / ' + cs.outlineWidth + ' / ' + cs.outlineStyle;
       });
       if (!/rgb\(11, 99, 214\)/.test(ring)) note(`${tag}: keyboard focus ring on ${sel} = ${ring}`);

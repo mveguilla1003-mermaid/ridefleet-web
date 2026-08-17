@@ -163,21 +163,25 @@
       "body": "Si el código no calza exacto, el asistente no ve la reserva: ve el nombre de pila con la inicial del apellido y el mes de la recogida, nada más. Para destaparla hace falta un dato que la búsqueda no usó, y el dato que sirvió para encontrar a alguien nunca sirve para probar que es esa persona. Ante la duda, no se destapa. Y el límite contra el que adivina a ciegas está afinado para no castigar el fallo más común de una llamada, que es un código mal escuchado: si eso contara, un cliente honesto pagaría por el ruido de la línea."
     },
     "tracker": {
-      "title": "Y desde hace poco, el cliente ve por dónde viene",
-      "body": "Veinticuatro horas antes de la recogida le llega, por correo y por mensaje de texto, un enlace personal con un mapa en vivo de la guagua. No hay que instalar nada ni escribir nada: la identidad va en el enlace. Si tu sede lo permite, desde ahí mismo puede pedir la recogida, y si además llama por teléfono no salen dos solicitudes: sale una.",
+      "title": "Tu shuttle, en vivo",
+      "body": "Cada cliente recibe un enlace personal para ver la guagua moverse en el mapa, saber exactamente dónde pararse a esperarla, y pedirla con un botón.",
       "items": {
         "0": {
-          "value": "El enlace no cuenta nada de más",
-          "body": "Muestra por dónde va la guagua y dónde esperarla. No lleva el nombre del cliente, ni el número de reserva, ni su teléfono, ni la tablilla. La lista de lo que puede salir está fijada en el código y hay una prueba que lo verifica."
+          "value": "Le llega su enlace",
+          "body": "Veinticuatro horas antes de la recogida, por correo y por mensaje de texto. Personal, atado a su reserva, y vivo hasta que termina la renta, así que le sirve también para el shuttle de vuelta. No hay nada que instalar ni que escribir."
         },
         "1": {
-          "value": "Nadie mirando, nadie esperando, nada que consultar",
-          "body": "El GPS solo se consulta cuando alguien tiene el mapa abierto o hay alguien en la cola esperando recogida. El resto del tiempo el sistema no gasta ni una llamada al proveedor."
+          "value": "Abre el mapa",
+          "body": "La guagua moviéndose, un pin en el punto exacto de espera y las instrucciones que escribió tu sede. Si comparte su ubicación, ve cuánto le falta caminar. Y cambia entre español e inglés con un toque."
         },
         "2": {
-          "value": "Dice cada cuánto pasa, no cuánto falta",
-          "body": "La página promete la frecuencia que tú configuras, no una cuenta regresiva. Prometer un minuto exacto que no se puede cumplir es peor que no prometer nada."
+          "value": "Pide el shuttle",
+          "body": "Un botón, y la solicitud cae en la pantalla del equipo de la sede. Si además llama por teléfono, o toca dos veces, no salen dos solicitudes: sale un solo bus."
         }
+      },
+      "privacy": {
+        "title": "No existe un enlace público de tu flota",
+        "body": "Aquí no hay una dirección fija ni un código que alguien pueda pegar en cualquier sitio: cada enlace es personal, va atado a una reserva y caduca. Y lo que muestra está recortado a propósito, con una prueba automática que lo vigila: por dónde va la guagua y dónde esperarla, sin el nombre del cliente, sin el número de reserva, sin su teléfono y sin la tablilla. El GPS ni se consulta mientras nadie tenga el mapa abierto y no haya nadie esperando."
       }
     },
     "precision": {
@@ -186,9 +190,10 @@
         "0": "El mapa necesita un GPS instalado en la guagua. Sin ese equipo la página existe igual, pero no enseña posición.",
         "1": "No hay tiempo estimado de llegada. Nada lo calcula, y la frecuencia que se muestra es un número que escribe tu administración.",
         "2": "No asigna conductor. Nadie queda ligado a la solicitud: el despacho lo hace una persona que lee el aviso.",
-        "3": "El punto del mapa suele llevar entre quince y treinta segundos de retraso, y la página lo sigue dando por bueno hasta minuto y medio.",
-        "4": "El enlace es personal y expira, pero funciona para quien lo tenga: si tu cliente se lo reenvía a alguien, esa persona ve el mismo mapa.",
-        "5": "No escala por su cuenta. Si nadie atiende la cola, el aviso sigue puesto; no hay alerta por tiempo ni aviso a un supervisor."
+        "3": "El punto del mapa suele llevar entre quince y treinta segundos de retraso, y la página lo sigue dando por bueno hasta minuto y medio. Cuando la señal se pierde de verdad, lo dice, en vez de dejar puesto un punto viejo.",
+        "4": "La línea hasta el punto de espera es dirección y distancia, no navegación paso a paso.",
+        "5": "El enlace es personal y expira, pero funciona para quien lo tenga: si tu cliente se lo reenvía a alguien, esa persona ve el mismo mapa.",
+        "6": "No escala por su cuenta. Si nadie atiende la cola, el aviso sigue puesto; no hay alerta por tiempo ni aviso a un supervisor."
       }
     },
     "close": "El check-out cierra la solicitud solo, en la misma transacción que entrega el carro. Nadie tiene que acordarse."
