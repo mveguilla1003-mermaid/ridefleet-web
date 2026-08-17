@@ -151,11 +151,26 @@ count matches the largest cohort the page's own copy promises ("three to five");
 it used to be eleven, which advertised more vacancies than the promise and
 contradicted the page's claim that it only advertises real scarcity.
 
-The demo form posts to `/api/lead`, which validates, spam-screens and logs. The CRM
-hand-off is already wired: set `CRM_WEBHOOK_URL` (and optionally
-`CRM_WEBHOOK_TOKEN` for a Bearer header) in the deploy environment and leads POST
-there as JSON, falling back to logs if delivery fails. Until that variable is set,
-leads are retained in logs only.
+The demo form posts to `/api/lead`, which validates, spam-screens, rate-limits and
+delivers. **Until one of the two destinations below is configured, a submitted
+lead reaches nobody — it is written to the server log and nothing else.**
+
+| Destination | Set | Notes |
+|---|---|---|
+| HubSpot | `HUBSPOT_PORTAL_ID` + `HUBSPOT_FORM_GUID` | Preferred. Both are public form ids, not secrets, and the Forms API needs no key. The lead arrives as a contact. |
+| Any other CRM | `CRM_WEBHOOK_URL` (+ `CRM_WEBHOOK_TOKEN` for a Bearer header) | Flat JSON POST of the whole lead. |
+
+HubSpot is checked first. Delivery failures never fail the visitor's submission —
+the lead falls back to the log and the form still thanks them.
+
+Only standard HubSpot contact properties are used, so this works against a brand
+new portal with nothing configured. Everything the qualifying form asks that
+HubSpot has no standard property for — fleet size, business model, products of
+interest, demo language, consent, UTM set — is folded into the note rather than
+mapped onto custom properties, because a property name the portal does not know
+is rejected silently and the lead would look delivered and arrive empty. Promote
+individual lines to real properties later if sales wants to filter on them; see
+`src/lib/crm.ts`.
 
 `/privacy`, `/terms` and `/cookies` were drafted to be structurally complete and
 legally reviewable, not to be legally correct out of the box. They take positions —

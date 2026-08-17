@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { hubspotEndpoint, toHubspotSubmission, type Lead } from '@/lib/crm';
 
 export const runtime = 'nodejs';
 
@@ -110,7 +111,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const lead = {
+  const lead: Lead = {
     receivedAt: new Date().toISOString(),
     name: clean(body.name),
     company: clean(body.company),
@@ -138,24 +139,41 @@ export async function POST(request: Request) {
     landingPath: clean(body.landingPath)
   };
 
+  // HubSpot first (two public form ids, no secret), then a generic webhook,
+  // then logs. See src/lib/crm.ts for why the extra answers ride inside the
+  // note instead of custom properties.
+  const hubspot = hubspotEndpoint();
   const webhook = process.env.CRM_WEBHOOK_URL;
-  if (!webhook) {
-    console.info('[lead] no CRM_WEBHOOK_URL configured — lead retained in logs only', lead);
+
+  if (!hubspot && !webhook) {
+    console.info(
+      '[lead] no CRM configured (HUBSPOT_PORTAL_ID + HUBSPOT_FORM_GUID, or CRM_WEBHOOK_URL) — lead retained in logs only',
+      lead
+    );
     return NextResponse.json({ ok: true, delivered: false });
   }
 
+  const target = hubspot ?? (webhook as string);
+  const payload = hubspot ? toHubspotSubmission(lead) : lead;
+
   try {
-    const res = await fetch(webhook, {
+    const res = await fetch(target, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        ...(process.env.CRM_WEBHOOK_TOKEN
+        ...(!hubspot && process.env.CRM_WEBHOOK_TOKEN
           ? { authorization: `Bearer ${process.env.CRM_WEBHOOK_TOKEN}` }
           : {})
       },
-      body: JSON.stringify(lead)
+      body: JSON.stringify(payload)
     });
-    if (!res.ok) throw new Error(`crm responded ${res.status}`);
+    if (!res.ok) {
+      // HubSpot explains a rejected submission in the body, and the usual
+      // cause is a field name the portal does not know — worth logging,
+      // because a silent 400 looks exactly like a delivered lead.
+      const detail = await res.text().catch(() => '');
+      throw new Error(`crm responded ${res.status} ${detail.slice(0, 300)}`);
+    }
   } catch (error) {
     // The visitor already typed everything; never lose the lead to a 500.
     console.error('[lead] CRM delivery failed, lead retained in logs', error, lead);
