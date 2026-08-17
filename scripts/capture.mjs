@@ -65,7 +65,27 @@ for (const locale of ['es', 'en']) {
       // that has nothing to do with our own markup. `visibility` rather
       // than `display` so the frame keeps its box and the page below it
       // does not shift.
-      await page.addStyleTag({ content: 'iframe{visibility:hidden}' });
+      // Freeze motion. The scroll sweep above arms every `.reveal`, but their
+      // transitions were still running 200ms later, and two elements animate
+      // forever regardless: the voice waveform bars on /valet and the
+      // turn-ready ring's arc on the home page. Shooting mid-animation made
+      // 46 of 112 captures differ between two runs of IDENTICAL code —
+      // measured, not guessed. The noise stayed under the 1% allowance
+      // locally, but it is exactly the kind of drift that fails on a loaded
+      // CI runner and teaches people to re-run until green.
+      //
+      // Killing `animation`/`transition` outright (rather than zeroing their
+      // duration) leaves every element at the state its CSS declares, so
+      // `.reveal.is-in` still lands fully revealed and the ring still draws
+      // its arc — verified by eye against the pre-freeze captures.
+      await page.addStyleTag({
+        content: `iframe{visibility:hidden}
+          *,*::before,*::after{
+            animation:none !important;
+            transition:none !important;
+            caret-color:transparent !important;
+          }`
+      });
 
       const hidden = await page.evaluate(() =>
         document.querySelectorAll('.reveal:not(.is-in)').length);
