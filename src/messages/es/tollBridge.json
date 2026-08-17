@@ -12,7 +12,7 @@
     "ctaDemo": "Reservar una demo",
     "ctaCalc": "Calcular lo que se te va",
     "notes": [
-      "AutoExpreso (PR) y SunPass (FL) conectados",
+      "AutoExpreso (PR), SunPass y E-PASS (FL), FasTrak (CA)",
       "Credenciales cifradas, acceso de solo lectura",
       "Nada se factura sin que alguien lo apruebe"
     ]
@@ -215,7 +215,10 @@
     "items": [
       { "value": "AutoExpreso" },
       { "value": "SunPass" },
-      { "value": "Stripe" },
+      { "value": "E-PASS" },
+      { "value": "FasTrak" },
+      { "value": "Flex Pass" },
+      { "value": "Múltiples pasarelas de pago" },
       { "value": "Zubie" },
       { "value": "VoltSwitch" },
       { "value": "Telnyx" }

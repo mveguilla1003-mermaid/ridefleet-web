@@ -280,7 +280,7 @@
       "title": "Encryption at rest",
       "body": "The disks holding the data are encrypted at rest by the infrastructure provider, with keys managed by that provider and rotation on its side.",
       "vault": "Encrypted vault for toll portal credentials",
-      "vaultBody": "Toll Bridge needs AutoExpreso and SunPass credentials. The design is a vault with per-customer encryption, credentials that are never shown in full on screen, and a record of every use. That module is being built, and until it runs with a customer in production we are not going to call it finished."
+      "vaultBody": "Toll Bridge needs credentials for each toll authority you use. The design is a vault with per-customer encryption, credentials that are never shown in full on screen, and a record of every use. That module is being built, and until it runs with a customer in production we are not going to call it finished."
     },
     "access": {
       "title": "Who can see what",
@@ -436,7 +436,7 @@
       },
       "thirdParty": {
         "title": "Third-party marks",
-        "body": "AutoExpreso, SunPass and any other third-party names belong to their owners. We name them to describe compatibility and integration. That implies no affiliation, sponsorship or endorsement by those entities."
+        "body": "AutoExpreso, SunPass, E-PASS, FasTrak and any other third-party names belong to their owners. We name them to describe compatibility and integration. That implies no affiliation, sponsorship or endorsement by those entities."
       },
       "warranty": {
         "title": "No warranty on the site",

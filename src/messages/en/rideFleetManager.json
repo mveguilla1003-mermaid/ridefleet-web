@@ -237,15 +237,24 @@
         "value": "SunPass"
       },
       "2": {
-        "value": "Stripe"
+        "value": "E-PASS"
       },
       "3": {
-        "value": "Zubie"
+        "value": "FasTrak"
       },
       "4": {
-        "value": "VoltSwitch"
+        "value": "Flex Pass"
       },
       "5": {
+        "value": "Multiple payment gateways"
+      },
+      "6": {
+        "value": "Zubie"
+      },
+      "7": {
+        "value": "VoltSwitch"
+      },
+      "8": {
         "value": "Telnyx"
       }
     }
@@ -268,7 +277,7 @@
           "body": "License, card and agreement uploaded from the customer portal."
         },
         "1": {
-          "title": "Deposits and charges through Stripe",
+          "title": "Deposits and charges online",
           "body": "Hold at check-out, release at closeout, all against the same booking."
         },
         "2": {
@@ -296,7 +305,7 @@
           "1": {
             "no": "02",
             "title": "Deposit held",
-            "sub": "Stripe · authorization",
+            "sub": "Gateway · authorization",
             "amount": "$250.00"
           },
           "2": {
@@ -518,7 +527,7 @@
         },
         "2": {
           "time": "07:20",
-          "text": "<b>Agreement signed</b> — <em>$300.00</em> deposit held via Stripe"
+          "text": "<b>Agreement signed</b> — <em>$300.00</em> deposit held at the gateway"
         },
         "3": {
           "time": "09:15",
@@ -633,16 +642,16 @@
         "body": "Tolls, deposits, commissions and damage reconciled against the same booking.",
         "features": {
           "0": {
-            "value": "Payments and deposits through Stripe",
-            "body": "Hold at check-out, charges during the rental, release at closeout. Payment state lives inside the record, not on another screen."
+            "value": "Payments and deposits through multiple gateways",
+            "body": "Hold at check-out, charges during the rental, release at closeout, on whichever gateway you already use. Payment state lives inside the record, not on another screen."
           },
           "1": {
             "value": "Tolls with Toll Bridge",
-            "body": "AutoExpreso and SunPass matched by plate and timestamp to the right booking, then billed to the driver who crossed."
+            "body": "AutoExpreso, SunPass, E-PASS and FasTrak matched by plate and timestamp to the right booking, then billed to the driver who crossed."
           },
           "2": {
             "value": "Claims workspace",
-            "body": "Taking damage from inspection to insurer inside the system. Evidence capture and triage exist today; the claim file itself is what's missing."
+            "body": "Damage goes from inspection to insurer without leaving the system: the evidence, the triage and the claim file all live in one place."
           }
         }
       }
@@ -815,14 +824,13 @@
       },
       "4": {
         "cap": "Inspections and damage",
-        "us": "Check-out and check-in photos in the record, compared side by side, with triage and a next action.",
-        "badge": "Claims workspace under construction",
+        "us": "Check-out and check-in photos in the record, compared side by side, with triage, a next action and the claim file all the way to the insurer.",
         "them": "Photos on the employee's phone and loose notes on the contract."
       },
       "5": {
         "cap": "Tolls",
         "sub": {
-          "value": "AutoExpreso · SunPass"
+          "value": "AutoExpreso · SunPass · E-PASS · FasTrak"
         },
         "us": "Each crossing matches by plate and timestamp to the booking that held the unit, then bills the driver.",
         "them": "Manual statement reconciliation at month end, with whatever can't be identified written off."

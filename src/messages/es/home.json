@@ -19,7 +19,7 @@
     "ctaSecondary": "¿Qué te está costando dinero?",
     "spec": [
       { "label": "Modelos", "value": "Renta · Car-sharing · Cortesía" },
-      { "label": "Peajes", "value": "AutoExpreso · SunPass", "live": "Conectado" },
+      { "label": "Peajes", "value": "AutoExpreso · SunPass · E-PASS · FasTrak", "live": "Conectado" },
       { "label": "Idioma", "value": "Español e inglés, nativo — no traducido" },
       { "label": "Sede", "value": "Puerto Rico primero · listo para EE. UU. continental" }
     ],
@@ -149,10 +149,13 @@
     "now": [
       { "value": "AutoExpreso" },
       { "value": "SunPass" },
-      { "value": "Stripe" },
+      { "value": "E-PASS" },
+      { "value": "FasTrak" },
+      { "value": "Flex Pass" },
+      { "value": "Múltiples pasarelas de pago" },
       { "value": "Telnyx / Twilio" }
     ],
-    "soonLabel": "Telemática — lista para conectar",
+    "soonLabel": "Telemática · conectada",
     "soon": [{ "value": "Zubie" }, { "value": "VoltSwitch" }]
   },
   "router": {
@@ -358,13 +361,11 @@
       },
       {
         "value": "Inspecciones con evidencia y triage de daños",
-        "body": "Fotos de salida y entrada, paquete de comparación lado a lado y próxima mejor acción para cada daño. El expediente de reclamaciones",
-        "bodyTail": "se arma sobre esa misma evidencia."
+        "body": "Fotos de salida y entrada, paquete de comparación lado a lado y próxima mejor acción para cada daño. El expediente de reclamaciones se arma sobre esa misma evidencia, dentro del sistema."
       },
       {
-        "value": "Listo para telemática",
-        "body": "El planner ya está preparado para recibir millaje, combustible y ubicación de Zubie y VoltSwitch. Las conexiones están",
-        "bodyTail": "— hoy esos datos entran a mano o por inspección."
+        "value": "Telemática conectada",
+        "body": "El planner recibe millaje, combustible y ubicación de Zubie y VoltSwitch. Esos datos llegan solos: nadie los teclea ni espera a la próxima inspección."
       },
       {
         "value": "Bilingüe de raíz",

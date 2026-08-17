@@ -280,7 +280,7 @@
       "title": "Cifrado en reposo",
       "body": "Los discos donde se guardan los datos están cifrados en reposo por el proveedor de infraestructura, con llaves administradas por él y rotación a su cargo.",
       "vault": "Bóveda cifrada para credenciales de portales de peaje",
-      "vaultBody": "Toll Bridge necesita credenciales de AutoExpreso y SunPass. El diseño es una bóveda con cifrado por cliente, credenciales que nunca se muestran completas en pantalla y registro de cada uso. Ese módulo está en construcción y hasta que corra con un cliente en producción no vamos a decir que está terminado."
+      "vaultBody": "Toll Bridge necesita credenciales de cada autoridad de peaje que uses. El diseño es una bóveda con cifrado por cliente, credenciales que nunca se muestran completas en pantalla y registro de cada uso. Ese módulo está en construcción y hasta que corra con un cliente en producción no vamos a decir que está terminado."
     },
     "access": {
       "title": "Quién puede ver qué",
@@ -436,7 +436,7 @@
       },
       "thirdParty": {
         "title": "Marcas de terceros",
-        "body": "AutoExpreso, SunPass y cualquier otro nombre de tercero pertenecen a sus dueños. Los mencionamos para describir compatibilidad e integración. No implican afiliación, patrocinio ni respaldo de esas entidades."
+        "body": "AutoExpreso, SunPass, E-PASS, FasTrak y cualquier otro nombre de tercero pertenecen a sus dueños. Los mencionamos para describir compatibilidad e integración. No implican afiliación, patrocinio ni respaldo de esas entidades."
       },
       "warranty": {
         "title": "Sin garantías sobre el sitio",

@@ -393,7 +393,7 @@
         "label": "SMS"
       },
       "2": {
-        "value": "Stripe",
+        "value": "Payment gateways",
         "label": "Payments"
       },
       "3": {
@@ -436,7 +436,7 @@
           "title": "Collections",
           "sub": "Balances, tolls, payment links",
           "does": "Explains the breakdown, sends the payment link and logs the promise to pay.",
-          "touches": "Billing, Toll Bridge tolls, Stripe",
+          "touches": "Billing, Toll Bridge tolls, payment gateway",
           "confirm": "Person if disputed"
         },
         "3": {

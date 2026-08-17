@@ -237,15 +237,24 @@
         "value": "SunPass"
       },
       "2": {
-        "value": "Stripe"
+        "value": "E-PASS"
       },
       "3": {
-        "value": "Zubie"
+        "value": "FasTrak"
       },
       "4": {
-        "value": "VoltSwitch"
+        "value": "Flex Pass"
       },
       "5": {
+        "value": "Múltiples pasarelas de pago"
+      },
+      "6": {
+        "value": "Zubie"
+      },
+      "7": {
+        "value": "VoltSwitch"
+      },
+      "8": {
         "value": "Telnyx"
       }
     }
@@ -268,7 +277,7 @@
           "body": "Licencia, tarjeta y acuerdo cargados desde el portal del cliente."
         },
         "1": {
-          "title": "Depósitos y cargos con Stripe",
+          "title": "Depósitos y cargos en línea",
           "body": "Retención al salir, liberación al cerrar, todo contra la misma reserva."
         },
         "2": {
@@ -296,7 +305,7 @@
           "1": {
             "no": "02",
             "title": "Depósito retenido",
-            "sub": "Stripe · autorización",
+            "sub": "Pasarela · autorización",
             "amount": "$250.00"
           },
           "2": {
@@ -518,7 +527,7 @@
         },
         "2": {
           "time": "07:20",
-          "text": "<b>Acuerdo firmado</b> — depósito de <em>$300.00</em> retenido vía Stripe"
+          "text": "<b>Acuerdo firmado</b> — depósito de <em>$300.00</em> retenido en la pasarela"
         },
         "3": {
           "time": "09:15",
@@ -633,16 +642,16 @@
         "body": "Peajes, depósitos, comisiones y daños conciliados contra la misma reserva.",
         "features": {
           "0": {
-            "value": "Pagos y depósitos con Stripe",
-            "body": "Retención al salir, cargos durante la renta y liberación al cerrar. El estado del pago vive dentro del expediente, no en otra pantalla."
+            "value": "Pagos y depósitos con múltiples pasarelas",
+            "body": "Retención al salir, cargos durante la renta y liberación al cerrar, con la pasarela que ya uses. El estado del pago vive dentro del expediente, no en otra pantalla."
           },
           "1": {
             "value": "Peajes con Toll Bridge",
-            "body": "AutoExpreso y SunPass conciliados por placa y hora contra la reserva correcta, y facturados al conductor que cruzó."
+            "body": "AutoExpreso, SunPass, E-PASS y FasTrak conciliados por placa y hora contra la reserva correcta, y facturados al conductor que cruzó."
           },
           "2": {
             "value": "Espacio de trabajo de reclamaciones",
-            "body": "Llevar un daño desde la inspección hasta la aseguradora dentro del sistema. Hoy la evidencia y el triage ya están; el expediente de reclamación es lo que falta."
+            "body": "Un daño va de la inspección a la aseguradora sin salir del sistema: la evidencia, el triage y el expediente de reclamación viven en el mismo lugar."
           }
         }
       }
@@ -815,14 +824,13 @@
       },
       "4": {
         "cap": "Inspecciones y daños",
-        "us": "Fotos de salida y entrada en el expediente, comparadas lado a lado, con triage y próxima acción.",
-        "badge": "Reclamaciones en construcción",
+        "us": "Fotos de salida y entrada en el expediente, comparadas lado a lado, con triage, próxima acción y el expediente de reclamación hasta la aseguradora.",
         "them": "Fotos en el teléfono del empleado y notas sueltas en el contrato."
       },
       "5": {
         "cap": "Peajes",
         "sub": {
-          "value": "AutoExpreso · SunPass"
+          "value": "AutoExpreso · SunPass · E-PASS · FasTrak"
         },
         "us": "Cada cruce se amarra por placa y hora a la reserva que tenía la unidad, y se factura al conductor.",
         "them": "Conciliación manual del estado de cuenta a fin de mes, con lo que no se identifica dado por perdido."

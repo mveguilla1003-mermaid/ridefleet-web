@@ -12,7 +12,7 @@
     "ctaDemo": "Book a demo",
     "ctaCalc": "Add up what you're losing",
     "notes": [
-      "AutoExpreso (PR) and SunPass (FL) connected",
+      "AutoExpreso (PR), SunPass and E-PASS (FL), FasTrak (CA)",
       "Encrypted credentials, read-only access",
       "Nothing bills without a human approving it"
     ]
@@ -215,7 +215,10 @@
     "items": [
       { "value": "AutoExpreso" },
       { "value": "SunPass" },
-      { "value": "Stripe" },
+      { "value": "E-PASS" },
+      { "value": "FasTrak" },
+      { "value": "Flex Pass" },
+      { "value": "Multiple payment gateways" },
       { "value": "Zubie" },
       { "value": "VoltSwitch" },
       { "value": "Telnyx" }

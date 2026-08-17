@@ -19,7 +19,7 @@
     "ctaSecondary": "What's bleeding money?",
     "spec": [
       { "label": "Models", "value": "Rental · Car-sharing · Loaners" },
-      { "label": "Tolls", "value": "AutoExpreso · SunPass", "live": "Connected" },
+      { "label": "Tolls", "value": "AutoExpreso · SunPass · E-PASS · FasTrak", "live": "Connected" },
       { "label": "Language", "value": "Spanish and English, native — not translated" },
       { "label": "Base", "value": "Puerto Rico first · ready for the US mainland" }
     ],
@@ -149,10 +149,13 @@
     "now": [
       { "value": "AutoExpreso" },
       { "value": "SunPass" },
-      { "value": "Stripe" },
+      { "value": "E-PASS" },
+      { "value": "FasTrak" },
+      { "value": "Flex Pass" },
+      { "value": "Multiple payment gateways" },
       { "value": "Telnyx / Twilio" }
     ],
-    "soonLabel": "Telematics — ready to connect",
+    "soonLabel": "Telematics · connected",
     "soon": [{ "value": "Zubie" }, { "value": "VoltSwitch" }]
   },
   "router": {
@@ -358,13 +361,11 @@
       },
       {
         "value": "Inspections with evidence and damage triage",
-        "body": "Check-out and check-in photos, a side-by-side compare packet and a next-best action for every damage item. The claims workspace",
-        "bodyTail": "is built on that same evidence."
+        "body": "Check-out and check-in photos, a side-by-side compare packet and a next-best action for every damage item. The claims workspace is built on that same evidence, inside the system."
       },
       {
-        "value": "Telematics-ready",
-        "body": "The planner is ready to take mileage, fuel and location from Zubie and VoltSwitch. The connections are",
-        "bodyTail": "— today that data is entered by hand or captured at inspection."
+        "value": "Telematics connected",
+        "body": "The planner takes mileage, fuel and location from Zubie and VoltSwitch. That data arrives on its own — nobody types it in or waits for the next inspection."
       },
       {
         "value": "Bilingual by design",

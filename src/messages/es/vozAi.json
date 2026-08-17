@@ -393,7 +393,7 @@
         "label": "SMS"
       },
       "2": {
-        "value": "Stripe",
+        "value": "Pasarelas de pago",
         "label": "Cobros"
       },
       "3": {
@@ -436,7 +436,7 @@
           "title": "Cobros",
           "sub": "Saldos, peajes, enlaces de pago",
           "does": "Explica el desglose, manda el enlace de pago y registra la promesa de pago.",
-          "touches": "Facturación, peajes de Toll Bridge, Stripe",
+          "touches": "Facturación, peajes de Toll Bridge, pasarela de pago",
           "confirm": "Persona si hay disputa"
         },
         "3": {

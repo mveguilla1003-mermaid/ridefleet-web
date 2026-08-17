@@ -69,9 +69,15 @@ const BOARD_ROWS: { icon: IconName; tone: ChipTone; fill: string }[] = [
   { icon: 'i-gauge', tone: 'neutral', fill: 'fill fill--warn' }
 ];
 
+/* Index-aligned with `trust.integrations`. The four toll networks deliberately
+   share one glyph: they are one capability with four sources, and four
+   different icons read as four different features. */
 const INTEGRATION_ICONS: IconName[] = [
   'i-toll-gantry',
   'i-toll-gantry',
+  'i-toll-gantry',
+  'i-toll-gantry',
+  'i-road',
   'i-dollar',
   'i-route',
   'i-bolt',
@@ -134,10 +140,12 @@ const CAP_ROWS: { features: { icon: IconName; building?: boolean }[] }[] = [
     features: [{ icon: 'i-gauge' }, { icon: 'i-route' }, { icon: 'i-bolt' }]
   },
   {
+    // The claims workspace lost its Building badge on 2026-08-17: the case file
+    // now runs end to end, so the row is all shipped.
     features: [
       { icon: 'i-dollar' },
       { icon: 'i-toll-gantry' },
-      { icon: 'i-shield', building: true }
+      { icon: 'i-shield' }
     ]
   }
 ];
@@ -148,7 +156,7 @@ const COMPARE_ROWS: { sub?: boolean; badge?: boolean }[] = [
   { sub: true },
   { sub: true },
   {}, // pricing — shipped via the Market Intelligence add-on, no longer building
-  { badge: true },
+  {}, // inspections/damage — the claims workspace shipped on 2026-08-17
   { sub: true },
   { badge: true },
   {}

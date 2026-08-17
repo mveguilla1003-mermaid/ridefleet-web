@@ -7,7 +7,6 @@ import { routes, site } from '@/lib/site';
 import { Icon, type IconName } from '@/components/Icons';
 import {
   ArrowLink,
-  BuildingBadge,
   ButtonAnchor,
   ButtonLink,
   Eyebrow,
@@ -78,7 +77,7 @@ type HomeMessages = {
   };
   diff: {
     score: { rows: { title: string; sub: string; value: string }[] };
-    list: { value: string; body: string; bodyTail?: string }[];
+    list: { value: string; body: string }[];
   };
   partners: { perks: { title: string; body: string }[] };
   cta: { list: string[] };
@@ -133,7 +132,13 @@ const ROW_STYLES: {
   }
 ];
 
+/* Index-aligned with `home.trust.now`. The four toll networks share one icon
+   on purpose — they are the same kind of integration, and giving each a
+   different glyph read as four different capabilities. */
 const TRUST_NOW_ICONS: IconName[] = [
+  'i-toll-gantry',
+  'i-toll-gantry',
+  'i-toll-gantry',
   'i-toll-gantry',
   'i-road',
   'i-dollar',
@@ -195,10 +200,11 @@ const DIFF_ICONS: IconName[] = [
   'i-bolt',
   'i-globe'
 ];
-/** Feature rows whose *title* carries the "still building" badge. */
-const DIFF_BADGE_IN_TITLE = [1];
-/** Feature rows whose *body* is split around the badge (`body` + `bodyTail`). */
-const DIFF_BADGE_IN_BODY = [3, 4];
+/* No Building badge survives in this list. Planner Copilot, the damage-triage
+   claim and telematics all shipped on 2026-08-17, so the three rows that
+   carried one (title index 1, body indices 3 and 4) lost it, and the split
+   `body` + `bodyTail` shape those two body rows needed — the badge used to sit
+   between the halves — collapsed back into a single `body` string. */
 
 const PERK_ICONS: IconName[] = [
   'i-check-circle',
@@ -223,9 +229,6 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
   const common = useTranslations('common');
   const a11y = useTranslations('a11y');
   const m = (useMessages() as unknown as { home: HomeMessages }).home;
-
-  /** Inline "still being built" marker — never a footnote (guardrail #3). */
-  const building = <BuildingBadge label={common('building')} />;
 
   return (
     <>
@@ -576,9 +579,12 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           </div>
           <div className="trust-div" aria-hidden="true" />
           <div className="trust-soon">
-            <p className="tlab">
-              {t('trust.soonLabel')} {building}
-            </p>
+            {/* Telematics left the "soon" state on 2026-08-17 and no longer
+                carries a Building badge. The two groups stay split because
+                they are different KINDS of integration (money/voice vs.
+                vehicle data), not because one of them is unfinished — the
+                .trust-soon class name is now historical. */}
+            <p className="tlab">{t('trust.soonLabel')}</p>
             <div className="integration-strip">
               {m.trust.soon.map((item, i) => (
                 <span className="integration" key={item.value}>
@@ -877,19 +883,8 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
                     <Icon name={DIFF_ICONS[i]} />
                   </span>
                   <span>
-                    <b>
-                      {item.value}
-                      {DIFF_BADGE_IN_TITLE.includes(i) ? <> {building}</> : null}
-                    </b>
-                    <span className="d">
-                      {item.body}
-                      {DIFF_BADGE_IN_BODY.includes(i) ? (
-                        <>
-                          {' '}
-                          {building} {item.bodyTail}
-                        </>
-                      ) : null}
-                    </span>
+                    <b>{item.value}</b>
+                    <span className="d">{item.body}</span>
                   </span>
                 </li>
               ))}
