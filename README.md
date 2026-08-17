@@ -1,6 +1,7 @@
 # Ride Fleet — marketing site
 
-Next.js 14 App Router marketing site for Ride Fleet Manager, Toll Bridge and Voz AI.
+Next.js 14 App Router marketing site for Ride Fleet Manager, Toll Bridge and Valet
+(the voice product, renamed from Voz AI on 2026-08-17).
 Built from the approved `site-v2` design ("Direction C — Product-Led Premium") and
 `WEBSITE_PLAN.md` §8. Spanish is the default locale; English is a full peer, not a
 translation afterthought.
@@ -119,11 +120,18 @@ the pixels, because the cards use the system font stack — the same content
 renders to different bytes on different machines. Both write committed files in
 `public/`.
 
-Adding a route means touching the route list in four scripts — `capture.mjs`,
-`audit.mjs`, `build-og.mjs` and `build-lastmod.mjs` — plus `routes` in
-`src/lib/site.ts`, which the sitemap and navigation derive from. There is no
-single registry; if you add a page and skip one of them, that page silently
-falls out of a gate.
+Adding **or removing** a route means touching the route list in four scripts —
+`capture.mjs`, `audit.mjs`, `build-og.mjs` and `build-lastmod.mjs` — plus
+`routes` in `src/lib/site.ts`, which the sitemap and navigation derive from.
+There is no single registry; if you add a page and skip one of them, that page
+silently falls out of a gate. Only the `site.ts` entry is type-checked, so
+`tsc` will not catch the other four.
+
+Editing a `meta.title` or `meta.description` obliges a `npm run build:og`.
+`check:og` compares each committed card against the current meta strings and
+fails CI if they drifted — and it is the one gate that is not in the local list
+above, so it passes on your machine and fails on push. Run
+`node scripts/build-og.mjs --check` before pushing a copy change.
 
 Current status: all gates pass, with every message key in locale parity and
 every full-page screenshot rendering clean — no console errors, no element left
