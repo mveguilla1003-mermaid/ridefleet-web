@@ -17,8 +17,9 @@ const priorities: Partial<Record<keyof typeof routes, number>> = {
   demo: 0.9,
   pricing: 0.9,
   rideFleetManager: 0.8,
-  valet: 0.7,
-  designPartners: 0.7,
+  // Valet carries a product's weight now, not the 0.7 the airport-pickup arc
+  // had when it owned this path.
+  valet: 0.8,
   security: 0.6
 };
 

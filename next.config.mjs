@@ -21,6 +21,15 @@ const nextConfig = {
         source: '/:locale(es|en)/voz-ai',
         destination: '/:locale/valet',
         permanent: true
+      },
+      // The founding-partner programme closed, so /design-partners went with
+      // it. Its only call to action was "apply with your operation", which is
+      // the conversation /demo starts — better than a 404 for anyone holding
+      // the old link.
+      {
+        source: '/:locale(es|en)/design-partners',
+        destination: '/:locale/demo',
+        permanent: true
       }
     ];
   },

@@ -151,13 +151,7 @@ set them, the site shows an honest gap rather than an invented value.
 | `NEXT_PUBLIC_CONTACT_EMAIL` | `hola@ridefleet.com` | confirm this mailbox exists |
 | `NEXT_PUBLIC_SCHEDULER_URL` | *(empty)* | the scheduler embed. Empty renders the form-only path, with space already reserved so adding it costs no layout shift |
 
-Four more items live outside env config:
-
-The five partner logo slots on `/design-partners` render as visibly empty dashed
-boxes. That is deliberate — replace them with real logos as partners sign. The
-count matches the largest cohort the page's own copy promises ("three to five");
-it used to be eleven, which advertised more vacancies than the promise and
-contradicted the page's claim that it only advertises real scarcity.
+Three more items live outside env config:
 
 The demo form posts to `/api/lead`, which validates, spam-screens, rate-limits and
 delivers. **Until one of the two destinations below is configured, a submitted

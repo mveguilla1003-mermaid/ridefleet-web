@@ -50,7 +50,6 @@ const INPUTS = {
   pricing: ['src/app/[locale]/pricing', 'src/messages/es/supporting.json', 'src/messages/en/supporting.json'],
   demo: ['src/app/[locale]/demo/page.tsx', 'src/app/[locale]/demo/DemoForm.tsx', 'src/styles/pages/book-demo.css', 'src/messages/es/demo.json', 'src/messages/en/demo.json'],
   demoThankYou: ['src/app/[locale]/demo/thank-you', 'src/messages/es/demo.json', 'src/messages/en/demo.json'],
-  designPartners: ['src/app/[locale]/design-partners', 'src/messages/es/supporting.json', 'src/messages/en/supporting.json'],
   security: ['src/app/[locale]/security', 'src/messages/es/supporting.json', 'src/messages/en/supporting.json'],
   privacy: ['src/app/[locale]/privacy', 'src/messages/es/supporting.json', 'src/messages/en/supporting.json'],
   terms: ['src/app/[locale]/terms', 'src/messages/es/supporting.json', 'src/messages/en/supporting.json'],

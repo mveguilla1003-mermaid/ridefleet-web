@@ -112,7 +112,6 @@ export function Header() {
             </Link>
           ))}
           <Link href={routes.security}>{t('security')}</Link>
-          <Link href={routes.designPartners}>{t('designPartners')}</Link>
           <Link className="btn btn--primary" href={routes.demo}>
             {t('bookDemo')}
           </Link>

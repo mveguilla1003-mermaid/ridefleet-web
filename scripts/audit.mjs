@@ -6,7 +6,7 @@ import { createRequire } from 'node:module';
 // BASE_URL=https://example.com npm run verify:a11y
 const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:3000').replace(/\/$/, '');
 const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/valet', '/pricing',
-  '/demo', '/demo/thank-you', '/design-partners', '/security', '/privacy', '/terms',
+  '/demo', '/demo/thank-you', '/security', '/privacy', '/terms',
   '/cookies', '/accessibility'];
 // The CI sandbox preinstalls Chromium at a fixed path; anywhere else we fall
 // back to Playwright's own managed browser (npx playwright install chromium).

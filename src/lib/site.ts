@@ -71,7 +71,10 @@ export const routes = {
   pricing: '/pricing',
   demo: '/demo',
   demoThankYou: '/demo/thank-you',
-  designPartners: '/design-partners',
+  // /design-partners was deleted on 2026-08-17 with the founding-partner
+  // programme it recruited for. next.config.mjs redirects it to /demo: the
+  // page's only action was "apply with your operation", and that is the same
+  // conversation the demo form starts. 12 routes.
   security: '/security',
   privacy: '/privacy',
   terms: '/terms',
@@ -122,7 +125,7 @@ export const footerNav: {
     links: [
       { key: 'demo', labelKey: 'bookDemo' },
       { key: 'demo', labelKey: 'faq', hash: 'faq' },
-      { key: 'designPartners', labelKey: 'designPartners' }
+      { key: 'pricing', labelKey: 'pricing' }
     ]
   }
 ];
