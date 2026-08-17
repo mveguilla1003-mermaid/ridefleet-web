@@ -80,11 +80,24 @@ jobs:
             echo "no successful main run yet"
           fi
 
+      # Intentional restyles carry the opt-out tag in the commit SUBJECT, and
+      # only the subject is read. It used to match anywhere in the message,
+      # which meant a commit that merely EXPLAINED the tag in its body opted
+      # itself out and lost the check without anyone noticing — that is
+      # exactly how a run meant to prove the gate silently skipped it.
+      - name: Read the commit subject for the restyle opt-out
+        id: restyle
+        run: |
+          subject=$(git log -1 --pretty=%s)
+          echo "subject: $subject"
+          case "$subject" in
+            *'[visual-baseline]'*) echo "optout=true"  >> "$GITHUB_OUTPUT" ;;
+            *)                     echo "optout=false" >> "$GITHUB_OUTPUT" ;;
+          esac
+
       - name: Visual diff against baseline
-        # Intentional restyles land with [visual-baseline] in the commit
-        # message; this run's shots then become the next baseline unopposed.
         id: diff
-        if: ${{ !contains(github.event.head_commit.message, '[visual-baseline]') }}
+        if: steps.restyle.outputs.optout != 'true'
         run: npm run verify:diff
 
       - name: Upload visual diffs
