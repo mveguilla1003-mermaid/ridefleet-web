@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Agendar un demo de 30 minutos · Ride Fleet",
-    "description": "Reserva una demo en vivo de 30 minutos sobre tu operación de flota: Ride Fleet Manager, Toll Bridge y Voz AI, con datos de ejemplo parecidos a los tuyos. En español o en inglés, y te contestamos el mismo día hábil."
+    "description": "Reserva una demo en vivo de 30 minutos sobre tu operación de flota: Ride Fleet Manager, Toll Bridge y Valet, con datos de ejemplo parecidos a los tuyos. En español o en inglés, y te contestamos el mismo día hábil."
   },
   "hero": {
     "eyebrow": "Demo en vivo · 30 minutos",
@@ -85,7 +85,7 @@
         "desc": "AutoExpreso y SunPass conciliados al contrato."
       },
       "voz": {
-        "value": "Voz AI",
+        "value": "Valet",
         "desc": "La línea que contesta en español e inglés."
       }
     },
@@ -163,7 +163,7 @@
       },
       "r4": {
         "time": "21–27",
-        "title": "Voz AI",
+        "title": "Valet",
         "desc": "Una llamada real de principio a fin, en español y en inglés, con la transcripción al lado."
       },
       "r5": {
@@ -347,7 +347,7 @@
       },
       "l3": {
         "range": "21–27",
-        "title": "Voz AI",
+        "title": "Valet",
         "body": "Una llamada de sábado, en español, con la transcripción y la reserva creada al lado."
       }
     }
@@ -382,7 +382,7 @@
       "q5": {
         "n": "05",
         "q": "¿Puedo llevarme un solo módulo?",
-        "a": "Sí. Toll Bridge y Voz AI funcionan sobre la flota que ya administras, aunque no uses Ride Fleet Manager. Marca solo lo que te interesa y la demo se acorta — mejor treinta minutos útiles que treinta minutos completos.",
+        "a": "Sí. Toll Bridge y Valet funcionan sobre la flota que ya administras, aunque no uses Ride Fleet Manager. Marca solo lo que te interesa y la demo se acorta — mejor treinta minutos útiles que treinta minutos completos.",
         "link": "Ver Toll Bridge por su cuenta"
       }
     },

@@ -781,10 +781,10 @@
   },
   "modules": {
     "eyebrow": "Turns on module by module",
-    "title": "Toll Bridge and Voz AI run on the same fleet",
+    "title": "Toll Bridge and Valet run on the same fleet",
     "body": "You start with Ride Fleet Manager. When you want tolls billed without chasing statements, you switch on Toll Bridge. When the phone stops keeping up, you switch on your AI reception. Same record, same invoice, same log.",
     "linkToll": "See Toll Bridge",
-    "linkVoz": "See Voz AI",
+    "linkVoz": "See Valet",
     "mods": {
       "0": {
         "code": "RFM",
@@ -798,7 +798,7 @@
       },
       "2": {
         "code": "VOZ",
-        "name": "Voz AI",
+        "name": "Valet",
         "desc": "Your AI reception, answered in Spanish or English"
       }
     }

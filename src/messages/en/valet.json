@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Voz AI — AI front desk for your fleet, in Spanish and English",
-    "description": "Voz AI answers your fleet's phone, chat, email and SMS in Spanish and English on the same reservation record, and hands the mic to a person when it matters."
+    "title": "Valet — AI front desk for your fleet, in Spanish and English",
+    "description": "Valet answers your fleet's phone, chat, email and SMS in Spanish and English on the same reservation record, and hands the mic to a person when it matters."
   },
-  "chapterOf": "of 03",
+  "chapterOf": "of 04",
   "hero": {
-    "badge": "Voz AI",
+    "badge": "Valet",
     "titleLead": "Your AI front desk — ",
     "titleAccent": "with a human team behind it.",
-    "lede": "Every call answered. In Spanish or in English. At any hour. Voz AI handles the phone, chat, email and messages for your fleet on the same reservation record your team already works from — and hands the mic to a person when it matters.",
+    "lede": "Every call answered. In Spanish or in English. At any hour. Valet handles the phone, chat, email and messages for your fleet on the same reservation record your team already works from — and hands the mic to a person when it matters.",
     "ctaDemo": "Book a demo",
     "ctaCall": "Call it and hear for yourself",
     "note": {
@@ -41,7 +41,7 @@
     }
   },
   "console": {
-    "label": "Sample of a call handled by Voz AI",
+    "label": "Sample of a call handled by Valet",
     "crumbSection": "Calls",
     "crumb": {
       "code": "#2148"
@@ -51,7 +51,7 @@
       "value": "MR"
     },
     "call": {
-      "persona": "Voz AI reception",
+      "persona": "Valet reception",
       "line": "Inbound · masked number",
       "lang": {
         "value": "ES → EN"
@@ -63,7 +63,7 @@
       "status": "Transcribing"
     },
     "transcript": {
-      "ai": "Voz AI",
+      "ai": "Valet",
       "caller": "Caller",
       "lines": {
         "0": {
@@ -203,7 +203,7 @@
   "line": {
     "eyebrow": "Direct proof",
     "title": "Don't take our word for it. Call it.",
-    "lede": "The most honest demo we have is not a video — it is the phone. Dial it, talk the way you would talk to your own front desk, and judge for yourself. Voz AI already runs in production on <mono>valet.ridefleetmanager.com</mono>.",
+    "lede": "The most honest demo we have is not a video — it is the phone. Dial it, talk the way you would talk to your own front desk, and judge for yourself. Valet already runs in production on <mono>valet.ridefleetmanager.com</mono>.",
     "kicker": "Call and hear it yourself",
     "note": "The X's are honest: the public demo line is being provisioned and will appear here the moment it exists. Until then, we dial it together on the demo call and you listen live.",
     "steps": {
@@ -302,7 +302,7 @@
           },
           "2": {
             "title": "Switch on, don't integrate",
-            "text": "If you already run Ride Fleet Manager, turning Voz AI on is configuration, not a project."
+            "text": "If you already run Ride Fleet Manager, turning Valet on is configuration, not a project."
           }
         }
       }
@@ -327,7 +327,7 @@
         },
         "out": {
           "text": "Quote sent · RES-4907",
-          "value": "Voz AI · 0.94"
+          "value": "Valet · 0.94"
         }
       }
     },
@@ -342,7 +342,7 @@
         },
         "out": {
           "text": "Yes — LMM delivery runs until midnight. Shall I book it?",
-          "value": "10:41 PM · Voz AI"
+          "value": "10:41 PM · Valet"
         }
       }
     },
@@ -408,12 +408,12 @@
   },
   "spine": {
     "title": "Where it plugs into the operations spine.",
-    "aside": "An assistant that cannot touch the record is an expensive answering machine. This is exactly what Voz AI reads, what it writes, and who confirms it.",
+    "aside": "An assistant that cannot touch the record is an expensive answering machine. This is exactly what Valet reads, what it writes, and who confirms it.",
     "table": {
-      "caption": "Situations Voz AI handles, what it touches in the record, and who confirms",
+      "caption": "Situations Valet handles, what it touches in the record, and who confirms",
       "headers": {
         "situation": "Situation",
-        "does": "What Voz AI does",
+        "does": "What Valet does",
         "touches": "What it touches in the record",
         "confirms": "Who confirms"
       },
@@ -458,7 +458,7 @@
       "swipe": "Swipe the table",
       "updated": "Updated each release"
     },
-    "note": "None of this happens in a separate database. Voz AI uses the same reservation record your counter sees, and the tolls it explains over the phone are the same ones Toll Bridge reconciles with AutoExpreso. One truth, four ways in.",
+    "note": "None of this happens in a separate database. Valet uses the same reservation record your counter sees, and the tolls it explains over the phone are the same ones Toll Bridge reconciles with AutoExpreso. One truth, four ways in.",
     "check": {
       "k": "Check it",
       "v": "Ask it about the tolls on a booking and compare with the invoice.",
@@ -496,14 +496,14 @@
   },
   "partner": {
     "title": "We are looking for design partners",
-    "body": "Voz AI runs in production today, but we are not publishing testimonials or customer numbers yet — because we are not going to invent them. If you run a fleet in Puerto Rico and want to shape what gets built, there is a seat here.",
+    "body": "Valet runs in production today, but we are not publishing testimonials or customer numbers yet — because we are not going to invent them. If you run a fleet in Puerto Rico and want to shape what gets built, there is a seat here.",
     "cta": "Let's talk",
     "slotsCaption": "These slots are empty on purpose"
   },
   "toggle": {
     "eyebrow": "One module at a time",
     "title": "Start with one leak. Expand when it pays for itself.",
-    "sub": "Toll Bridge and Voz AI already live on the same booking record — turning on the next module is configuration, not an integration project.",
+    "sub": "Toll Bridge and Valet already live on the same booking record — turning on the next module is configuration, not an integration project.",
     "rfm": {
       "title": "Ride Fleet Manager",
       "body": "Run it. Booking, check-out, inspection, billing and close-out on a single spine."
@@ -513,14 +513,14 @@
       "body": "Recover it. AutoExpreso tolls matched to the right driver and billed."
     },
     "voz": {
-      "title": "Voz AI",
+      "title": "Valet",
       "body": "Answer it. Voice, chat, email and SMS in Spanish and English, with a person behind it."
     },
     "see": "See the product",
     "here": "You are here"
   },
   "cta": {
-    "eyebrow": "Voz AI",
+    "eyebrow": "Valet",
     "title": "Stop losing the 7:40 PM call.",
     "body": "Half an hour. We bring your hours, your policies and your most repeated questions, and we dial the line together so you hear it answer.",
     "demo": "Book a demo",

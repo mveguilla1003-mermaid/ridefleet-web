@@ -9,6 +9,21 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp']
   },
+  // Voz AI became Valet on 2026-08-17 and moved from /voz-ai to /valet. These
+  // are permanent because the old path is never coming back: search engines
+  // should transfer the ranking rather than index both, and anyone holding an
+  // old link — RFM's docs, a signature, a deck — still lands on the page.
+  // Locale-prefixed only: `localePrefix: 'always'`, so a bare /voz-ai never
+  // existed and needs no rule.
+  async redirects() {
+    return [
+      {
+        source: '/:locale(es|en)/voz-ai',
+        destination: '/:locale/valet',
+        permanent: true
+      }
+    ];
+  },
   async headers() {
     return [
       {

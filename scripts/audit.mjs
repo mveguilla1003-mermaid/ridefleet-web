@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 // Target defaults to the local production server; point it at a deploy with
 // BASE_URL=https://example.com npm run verify:a11y
 const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:3000').replace(/\/$/, '');
-const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/voz-ai', '/valet', '/pricing',
+const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/valet', '/pricing',
   '/demo', '/demo/thank-you', '/design-partners', '/security', '/privacy', '/terms',
   '/cookies', '/accessibility'];
 // The CI sandbox preinstalls Chromium at a fixed path; anywhere else we fall

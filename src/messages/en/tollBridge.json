@@ -587,7 +587,7 @@
       "mods": [
         { "name": "Ride Fleet Manager", "sub": "The operations spine" },
         { "name": "Toll Bridge", "sub": "Tolls matched and billed" },
-        { "name": "Voz AI", "sub": "AI reception · optional" }
+        { "name": "Valet", "sub": "AI reception · optional" }
       ]
     }
   },

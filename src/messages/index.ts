@@ -17,7 +17,7 @@ import esCore from './es/_core.json';
 import esHome from './es/home.json';
 import esRideFleetManager from './es/rideFleetManager.json';
 import esTollBridge from './es/tollBridge.json';
-import esVozAi from './es/vozAi.json';
+import esValet from './es/valet.json';
 import esDemo from './es/demo.json';
 import esSupporting from './es/supporting.json';
 
@@ -25,7 +25,7 @@ import enCore from './en/_core.json';
 import enHome from './en/home.json';
 import enRideFleetManager from './en/rideFleetManager.json';
 import enTollBridge from './en/tollBridge.json';
-import enVozAi from './en/vozAi.json';
+import enValet from './en/valet.json';
 import enDemo from './en/demo.json';
 import enSupporting from './en/supporting.json';
 
@@ -42,7 +42,7 @@ const catalogs = {
     home: esHome,
     rideFleetManager: esRideFleetManager,
     tollBridge: esTollBridge,
-    vozAi: esVozAi,
+    valet: esValet,
     demo: esDemo,
     ...esSupporting
   },
@@ -51,7 +51,7 @@ const catalogs = {
     home: enHome,
     rideFleetManager: enRideFleetManager,
     tollBridge: enTollBridge,
-    vozAi: enVozAi,
+    valet: enValet,
     demo: enDemo,
     ...enSupporting
   }

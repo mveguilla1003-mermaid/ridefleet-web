@@ -74,7 +74,7 @@ const FLEET_SIZES = [
 const PRODUCTS = [
   { key: 'rfm', id: 'p-rfm', value: 'fleet-manager', icon: 'i-vehicle' },
   { key: 'toll', id: 'p-toll', value: 'toll-bridge', icon: 'i-toll-gantry' },
-  { key: 'voz', id: 'p-voz', value: 'voz-ai', icon: 'i-waveform' }
+  { key: 'voz', id: 'p-voz', value: 'valet', icon: 'i-waveform' }
 ] as const;
 
 const DEMO_LANGUAGES = [

@@ -63,7 +63,10 @@ export const routes = {
   home: '/',
   rideFleetManager: '/ride-fleet-manager',
   tollBridge: '/toll-bridge',
-  vozAi: '/voz-ai',
+  // Voz AI was renamed Valet on 2026-08-17 and took over /valet. The airport
+  // pickup arc that used to own that path is now a section inside the same
+  // page — one product doing one job, not two routes. /voz-ai still resolves:
+  // next.config.js redirects it here permanently, in both locales.
   valet: '/valet',
   pricing: '/pricing',
   demo: '/demo',
@@ -83,7 +86,7 @@ export const primaryNav: { key: RouteKey; navKey: string }[] = [
   { key: 'home', navKey: 'home' },
   { key: 'rideFleetManager', navKey: 'rideFleetManager' },
   { key: 'tollBridge', navKey: 'tollBridge' },
-  { key: 'vozAi', navKey: 'vozAi' },
+  { key: 'valet', navKey: 'valet' },
   { key: 'pricing', navKey: 'pricing' }
 ];
 
@@ -96,7 +99,7 @@ export const footerNav: {
     links: [
       { key: 'rideFleetManager', labelKey: 'rideFleetManager' },
       { key: 'tollBridge', labelKey: 'tollBridge' },
-      { key: 'vozAi', labelKey: 'vozAi' }
+      { key: 'valet', labelKey: 'valet' }
     ]
   },
   {
@@ -105,10 +108,10 @@ export const footerNav: {
       { key: 'home', labelKey: 'home' },
       { key: 'home', labelKey: 'router', hash: 'router' },
       { key: 'tollBridge', labelKey: 'calculator', hash: 'calculadora' },
-      { key: 'vozAi', labelKey: 'callLine', hash: 'llamar' },
-      // The separately-billed add-on had no route into it from anywhere on
-      // the site; a deep link is the cheapest way to make it discoverable.
-      { key: 'valet', labelKey: 'valet' },
+      { key: 'valet', labelKey: 'callLine', hash: 'llamar' },
+      // Airport pickup is a section of the Valet page now, not its own route,
+      // so this is a deep link rather than a page link.
+      { key: 'valet', labelKey: 'pickup', hash: 'recogida' },
       { key: 'rideFleetManager', labelKey: 'rideUniversity', hash: 'university' },
       { key: 'rideFleetManager', labelKey: 'marketIntelligence', hash: 'market' },
       { key: 'security', labelKey: 'security' }

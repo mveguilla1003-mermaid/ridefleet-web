@@ -157,7 +157,7 @@ const DOORS: {
     href: routes.tollBridge,
     linkTone: 'gold'
   },
-  { tone: 'voz', icon: 'i-waveform', href: routes.vozAi, linkTone: 'teal' },
+  { tone: 'voz', icon: 'i-waveform', href: routes.valet, linkTone: 'teal' },
   { tone: 'rfm', icon: 'i-vehicle', href: routes.rideFleetManager }
 ];
 

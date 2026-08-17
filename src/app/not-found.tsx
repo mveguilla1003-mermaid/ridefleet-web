@@ -78,8 +78,8 @@ export default async function NotFound() {
                   <ArrowLink href={routes.tollBridge} tone="gold">
                     {nav('tollBridge')}
                   </ArrowLink>
-                  <ArrowLink href={routes.vozAi} tone="teal">
-                    {nav('vozAi')}
+                  <ArrowLink href={routes.valet} tone="teal">
+                    {nav('valet')}
                   </ArrowLink>
                 </div>
               </div>

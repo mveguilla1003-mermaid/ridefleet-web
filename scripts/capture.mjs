@@ -7,7 +7,7 @@ import { dirname, join } from 'node:path';
 // BASE_URL=https://example.com npm run verify:a11y
 const BASE = (process.env.BASE_URL ?? 'http://127.0.0.1:3000').replace(/\/$/, '');
 
-const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/voz-ai', '/valet',
+const ROUTES = ['', '/ride-fleet-manager', '/toll-bridge', '/valet',
   '/pricing', '/demo', '/demo/thank-you', '/design-partners', '/security',
   '/privacy', '/terms', '/cookies', '/accessibility'];
 const VIEWPORTS = [[390, 844], [768, 1024], [1024, 900], [1440, 1000]];

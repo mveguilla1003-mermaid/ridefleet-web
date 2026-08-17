@@ -1133,7 +1133,7 @@ export default function RideFleetManagerPage({
               <ArrowLink href={routes.tollBridge}>
                 {t('modules.linkToll')}
               </ArrowLink>
-              <ArrowLink href={routes.vozAi}>{t('modules.linkVoz')}</ArrowLink>
+              <ArrowLink href={routes.valet}>{t('modules.linkVoz')}</ArrowLink>
             </div>
           </div>
           <div className="toggle-mods" aria-hidden="true">

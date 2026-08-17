@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Voz AI — recepción con IA para tu flota, en español e inglés",
-    "description": "Voz AI contesta el teléfono, el chat, el correo y los SMS de tu flota en español e inglés, sobre el mismo expediente de reserva, y le pasa el micrófono a una persona cuando toca."
+    "title": "Valet — recepción con IA para tu flota, en español e inglés",
+    "description": "Valet contesta el teléfono, el chat, el correo y los SMS de tu flota en español e inglés, sobre el mismo expediente de reserva, y le pasa el micrófono a una persona cuando toca."
   },
-  "chapterOf": "de 03",
+  "chapterOf": "de 04",
   "hero": {
-    "badge": "Voz AI",
+    "badge": "Valet",
     "titleLead": "Tu recepción con IA — ",
     "titleAccent": "con un equipo humano detrás.",
-    "lede": "Cada llamada contestada. En español o en inglés. A toda hora. Voz AI atiende el teléfono, el chat, el correo y los mensajes de tu flota sobre el mismo expediente de reserva que usa tu equipo — y le pasa el micrófono a una persona cuando toca.",
+    "lede": "Cada llamada contestada. En español o en inglés. A toda hora. Valet atiende el teléfono, el chat, el correo y los mensajes de tu flota sobre el mismo expediente de reserva que usa tu equipo — y le pasa el micrófono a una persona cuando toca.",
     "ctaDemo": "Reservar una demo",
     "ctaCall": "Llama y escúchalo tú mismo",
     "note": {
@@ -41,7 +41,7 @@
     }
   },
   "console": {
-    "label": "Ejemplo de una llamada atendida por Voz AI",
+    "label": "Ejemplo de una llamada atendida por Valet",
     "crumbSection": "Llamadas",
     "crumb": {
       "code": "#2148"
@@ -51,7 +51,7 @@
       "value": "MR"
     },
     "call": {
-      "persona": "Recepción Voz AI",
+      "persona": "Recepción Valet",
       "line": "Entrante · número enmascarado",
       "lang": {
         "value": "ES → EN"
@@ -63,7 +63,7 @@
       "status": "Transcribiendo"
     },
     "transcript": {
-      "ai": "Voz AI",
+      "ai": "Valet",
       "caller": "Cliente",
       "lines": {
         "0": {
@@ -203,7 +203,7 @@
   "line": {
     "eyebrow": "Prueba directa",
     "title": "No nos creas. Llámala.",
-    "lede": "La demo más honesta que tenemos no es un video: es el teléfono. Marca, habla como hablarías con tu propia recepción y juzga tú. Voz AI ya corre en producción sobre <mono>valet.ridefleetmanager.com</mono>.",
+    "lede": "La demo más honesta que tenemos no es un video: es el teléfono. Marca, habla como hablarías con tu propia recepción y juzga tú. Valet ya corre en producción sobre <mono>valet.ridefleetmanager.com</mono>.",
     "kicker": "Llama y escúchalo tú mismo",
     "note": "Las X son honestas: la línea pública de demostración se está aprovisionando y aparecerá aquí en cuanto exista. Mientras tanto, en la demo marcamos juntos y escuchas la llamada en vivo.",
     "steps": {
@@ -302,7 +302,7 @@
           },
           "2": {
             "title": "Activar, no integrar",
-            "text": "Si ya corres Ride Fleet Manager, encender Voz AI es configuración, no un proyecto."
+            "text": "Si ya corres Ride Fleet Manager, encender Valet es configuración, no un proyecto."
           }
         }
       }
@@ -327,7 +327,7 @@
         },
         "out": {
           "text": "Cotización enviada · RES-4907",
-          "value": "Voz AI · 0.94"
+          "value": "Valet · 0.94"
         }
       }
     },
@@ -342,7 +342,7 @@
         },
         "out": {
           "text": "Sí — entrega en LMM hasta medianoche. ¿Reservo?",
-          "value": "10:41 PM · Voz AI"
+          "value": "10:41 PM · Valet"
         }
       }
     },
@@ -408,12 +408,12 @@
   },
   "spine": {
     "title": "Dónde se enchufa en la columna de operaciones.",
-    "aside": "Un asistente que no puede tocar el expediente es un contestador caro. Esto es exactamente lo que Voz AI lee, lo que escribe y quién lo confirma.",
+    "aside": "Un asistente que no puede tocar el expediente es un contestador caro. Esto es exactamente lo que Valet lee, lo que escribe y quién lo confirma.",
     "table": {
-      "caption": "Situaciones que atiende Voz AI, qué toca del expediente y quién confirma",
+      "caption": "Situaciones que atiende Valet, qué toca del expediente y quién confirma",
       "headers": {
         "situation": "Situación",
-        "does": "Lo que hace Voz AI",
+        "does": "Lo que hace Valet",
         "touches": "Qué toca del expediente",
         "confirms": "Quién confirma"
       },
@@ -458,7 +458,7 @@
       "swipe": "Desliza la tabla",
       "updated": "Actualizado con cada versión"
     },
-    "note": "Nada de esto pasa en una base de datos aparte. Voz AI usa el mismo expediente de reserva que ve tu mostrador, y los peajes que explica por teléfono son los mismos que Toll Bridge concilia con AutoExpreso. Una sola verdad, cuatro canales de entrada.",
+    "note": "Nada de esto pasa en una base de datos aparte. Valet usa el mismo expediente de reserva que ve tu mostrador, y los peajes que explica por teléfono son los mismos que Toll Bridge concilia con AutoExpreso. Una sola verdad, cuatro canales de entrada.",
     "check": {
       "k": "Compruébalo",
       "v": "Pregúntale por los peajes de una reserva y compara con la factura.",
@@ -496,14 +496,14 @@
   },
   "partner": {
     "title": "Buscamos socios de diseño",
-    "body": "Voz AI corre hoy en producción, pero todavía no publicamos testimonios ni números de clientes — porque no vamos a inventarlos. Si operas una flota en Puerto Rico y quieres moldear lo que se construye, aquí hay un asiento.",
+    "body": "Valet corre hoy en producción, pero todavía no publicamos testimonios ni números de clientes — porque no vamos a inventarlos. Si operas una flota en Puerto Rico y quieres moldear lo que se construye, aquí hay un asiento.",
     "cta": "Hablemos",
     "slotsCaption": "Estos espacios están vacíos a propósito"
   },
   "toggle": {
     "eyebrow": "Un módulo a la vez",
     "title": "Empieza por una fuga. Expande cuando se pague solo.",
-    "sub": "Toll Bridge y Voz AI ya viven sobre el mismo registro de reserva — activar el siguiente módulo es una configuración, no un proyecto de integración.",
+    "sub": "Toll Bridge y Valet ya viven sobre el mismo registro de reserva — activar el siguiente módulo es una configuración, no un proyecto de integración.",
     "rfm": {
       "title": "Ride Fleet Manager",
       "body": "Córrelo. Reserva, check-out, inspección, facturación y cierre sobre una sola columna."
@@ -513,14 +513,14 @@
       "body": "Recupéralo. Peajes de AutoExpreso conciliados al conductor correcto y facturados."
     },
     "voz": {
-      "title": "Voz AI",
+      "title": "Valet",
       "body": "Contéstalo. Voz, chat, correo y SMS en español e inglés, con una persona detrás."
     },
     "see": "Ver el producto",
     "here": "Estás aquí"
   },
   "cta": {
-    "eyebrow": "Voz AI",
+    "eyebrow": "Valet",
     "title": "Deja de perder la llamada de las 7:40 PM.",
     "body": "Media hora. Traemos tu horario, tus políticas y tus preguntas más repetidas, y marcamos la línea juntos para que la escuches contestar.",
     "demo": "Reservar una demo",

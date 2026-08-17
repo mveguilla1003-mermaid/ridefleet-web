@@ -40,7 +40,8 @@ const SHARED_OK = new Set([
   'Ride Fleet',
   'Ride Fleet Manager',
   'Toll Bridge',
-  'Voz AI',
+  // Renamed from "Voz AI" on 2026-08-17. Product names are not translated.
+  'Valet',
   'Market Intelligence',
   'Ride University',
   'AutoExpreso',
@@ -66,7 +67,7 @@ const SHARED_KEY_PATTERNS = [
   /^nav\.switchTo\./,
   /^nav\.rideFleetManager$/,
   /^nav\.tollBridge$/,
-  /^nav\.vozAi$/,
+  /^nav\.valet$/,
   /^nav\.bookDemoShort$/
 ];
 

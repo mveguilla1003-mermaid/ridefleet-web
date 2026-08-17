@@ -185,7 +185,7 @@
       },
       {
         "idx": "02",
-        "badge": "Voz AI",
+        "badge": "Valet",
         "title": "Calls nobody answers after 5",
         "sub": "The customer doesn't leave a message — they call the next shop. The rental you lost doesn't show up in any report.",
         "ledger": [
@@ -200,7 +200,7 @@
         },
         "verb": "Answer it",
         "verbSub": "Every call answered, in Spanish or English, around the clock — with a human team behind it for what shouldn't be decided alone.",
-        "link": "See Voz AI"
+        "link": "See Valet"
       },
       {
         "idx": "03",
@@ -226,7 +226,7 @@
   "spine": {
     "chapter": { "num": "02", "label": "The spine" },
     "title": "One record. Three products.",
-    "aside": "Toll Bridge and Voz AI don't \"integrate\" with Ride Fleet Manager — they write to the same booking, the same customer and the same vehicle.",
+    "aside": "Toll Bridge and Valet don't \"integrate\" with Ride Fleet Manager — they write to the same booking, the same customer and the same vehicle.",
     "chain": [
       { "value": "Tenants", "sub": "Accounts and rooftops" },
       { "value": "Customers", "sub": "Profile and license" },
@@ -243,7 +243,7 @@
       "events": [
         {
           "time": "09:41",
-          "tag": "Voz AI",
+          "tag": "Valet",
           "text": "Call answered in Spanish. Booking created in the conversation.",
           "conf": "confidence 0.94"
         },
@@ -275,7 +275,7 @@
         },
         {
           "time": "14:26",
-          "tag": "Voz AI",
+          "tag": "Valet",
           "text": "Receipt sent by SMS plus confirmation of the next rental."
         }
       ]
@@ -284,7 +284,7 @@
     "lanes": [
       { "product": "Ride Fleet Manager" },
       { "product": "Toll Bridge" },
-      { "product": "Voz AI" }
+      { "product": "Valet" }
     ],
     "toggle": {
       "strong": "Start with one leak. Expand when it pays for itself.",

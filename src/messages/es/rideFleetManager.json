@@ -781,10 +781,10 @@
   },
   "modules": {
     "eyebrow": "Se activa por módulos",
-    "title": "Toll Bridge y Voz AI corren sobre la misma flota",
+    "title": "Toll Bridge y Valet corren sobre la misma flota",
     "body": "Empiezas con Ride Fleet Manager. Cuando quieras cobrar peajes sin perseguir estados de cuenta, activas Toll Bridge. Cuando el teléfono deje de dar abasto, activas tu recepción con IA. Mismo expediente, misma factura, misma bitácora.",
     "linkToll": "Ver Toll Bridge",
-    "linkVoz": "Ver Voz AI",
+    "linkVoz": "Ver Valet",
     "mods": {
       "0": {
         "code": "RFM",
@@ -798,7 +798,7 @@
       },
       "2": {
         "code": "VOZ",
-        "name": "Voz AI",
+        "name": "Valet",
         "desc": "Tu recepción con IA, contestada en español o inglés"
       }
     }

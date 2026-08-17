@@ -587,7 +587,7 @@
       "mods": [
         { "name": "Ride Fleet Manager", "sub": "La columna de operaciones" },
         { "name": "Toll Bridge", "sub": "Peajes conciliados y facturados" },
-        { "name": "Voz AI", "sub": "Recepción con IA · opcional" }
+        { "name": "Valet", "sub": "Recepción con IA · opcional" }
       ]
     }
   },

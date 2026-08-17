@@ -117,8 +117,8 @@ export default function ThankYouPage({ params }: { params: { locale: Locale } })
           </div>
           <div className="stack stack-3">
             <p className="small">{t('onward.voz')}</p>
-            <ArrowLink href={routes.vozAi} tone="teal">
-              {nav('vozAi')}
+            <ArrowLink href={routes.valet} tone="teal">
+              {nav('valet')}
             </ArrowLink>
           </div>
         </div>

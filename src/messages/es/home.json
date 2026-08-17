@@ -185,7 +185,7 @@
       },
       {
         "idx": "02",
-        "badge": "Voz AI",
+        "badge": "Valet",
         "title": "Llamadas que nadie contesta después de las 5:00",
         "sub": "El cliente no deja mensaje: llama al próximo. La renta que perdiste no aparece en ningún reporte.",
         "ledger": [
@@ -200,7 +200,7 @@
         },
         "verb": "Contéstalo",
         "verbSub": "Cada llamada contestada, en español o inglés, a toda hora — con un equipo humano detrás para lo que no se decide solo.",
-        "link": "Ver Voz AI"
+        "link": "Ver Valet"
       },
       {
         "idx": "03",
@@ -226,7 +226,7 @@
   "spine": {
     "chapter": { "num": "02", "label": "La columna" },
     "title": "Un solo registro. Tres productos.",
-    "aside": "Toll Bridge y Voz AI no se «integran» con Ride Fleet Manager: escriben sobre el mismo registro de reserva, el mismo cliente y el mismo vehículo.",
+    "aside": "Toll Bridge y Valet no se «integran» con Ride Fleet Manager: escriben sobre el mismo registro de reserva, el mismo cliente y el mismo vehículo.",
     "chain": [
       { "value": "Tenants", "sub": "Cuentas y sucursales" },
       { "value": "Clientes", "sub": "Perfil y licencia" },
@@ -243,7 +243,7 @@
       "events": [
         {
           "time": "09:41",
-          "tag": "Voz AI",
+          "tag": "Valet",
           "text": "Llamada contestada en español. Reserva creada en la conversación.",
           "conf": "confianza 0.94"
         },
@@ -275,7 +275,7 @@
         },
         {
           "time": "14:26",
-          "tag": "Voz AI",
+          "tag": "Valet",
           "text": "Recibo enviado por SMS y confirmación de la próxima renta."
         }
       ]
@@ -284,7 +284,7 @@
     "lanes": [
       { "product": "Ride Fleet Manager" },
       { "product": "Toll Bridge" },
-      { "product": "Voz AI" }
+      { "product": "Valet" }
     ],
     "toggle": {
       "strong": "Empieza por una fuga. Expande cuando se pague solo.",

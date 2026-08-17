@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Book a 30-minute demo · Ride Fleet",
-    "description": "Book a live 30-minute demo on your own fleet operation: Ride Fleet Manager, Toll Bridge and Voz AI, run on sample data close to yours. In Spanish or English, and we reply the same business day."
+    "description": "Book a live 30-minute demo on your own fleet operation: Ride Fleet Manager, Toll Bridge and Valet, run on sample data close to yours. In Spanish or English, and we reply the same business day."
   },
   "hero": {
     "eyebrow": "Live demo · 30 minutes",
@@ -85,7 +85,7 @@
         "desc": "AutoExpreso and SunPass matched to the contract."
       },
       "voz": {
-        "value": "Voz AI",
+        "value": "Valet",
         "desc": "The line that answers in Spanish and English."
       }
     },
@@ -163,7 +163,7 @@
       },
       "r4": {
         "time": "21–27",
-        "title": "Voz AI",
+        "title": "Valet",
         "desc": "A real call start to finish, in Spanish and in English, with the transcript alongside."
       },
       "r5": {
@@ -347,7 +347,7 @@
       },
       "l3": {
         "range": "21–27",
-        "title": "Voz AI",
+        "title": "Valet",
         "body": "A Saturday call, in Spanish, with the transcript and the booking it created alongside."
       }
     }
@@ -382,7 +382,7 @@
       "q5": {
         "n": "05",
         "q": "Can I take just one module?",
-        "a": "Yes. Toll Bridge and Voz AI work on top of the fleet you already manage, even without Ride Fleet Manager. Check only what interests you and the demo gets shorter — thirty useful minutes beat thirty full ones.",
+        "a": "Yes. Toll Bridge and Valet work on top of the fleet you already manage, even without Ride Fleet Manager. Check only what interests you and the demo gets shorter — thirty useful minutes beat thirty full ones.",
         "link": "See Toll Bridge on its own"
       }
     },

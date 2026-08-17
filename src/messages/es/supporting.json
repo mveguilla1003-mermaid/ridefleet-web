@@ -136,14 +136,9 @@
       "after": "Si hay encaje, sigue una propuesta escrita: alcance del piloto, precio, duración y qué se va a medir."
     }
   },
-  "valet": {
-    "meta": {
-      "title": "Recogida en el aeropuerto · Ride Fleet",
-      "description": "El cliente aterriza, llama y Voz AI identifica su reserva y pide la guagua. El piso la despacha. Cerrar la recogida sigue siendo un acto humano."
-    },
-    "eyebrow": "Voz AI con Ride Fleet Manager",
+  "pickup": {
     "title": "El cliente aterriza, llama, y la guagua sale",
-    "lede": "Alguien que acaba de recoger su maleta no quiere un formulario: quiere que lo recojan. Marca, Voz AI identifica su reserva y deja la solicitud puesta en el piso. En el producto aparece como solicitudes de shuttle.",
+    "lede": "Alguien que acaba de recoger su maleta no quiere un formulario: quiere que lo recojan. Marca, Valet identifica su reserva y deja la solicitud puesta en el piso. En el producto aparece como solicitudes de shuttle.",
     "beats": {
       "0": {
         "value": "La llamada encuentra la reserva",
@@ -230,7 +225,7 @@
         },
         "1": {
           "value": "Los módulos que enciendes",
-          "body": "Ride Fleet Manager es la base. Toll Bridge y Voz AI se encienden si los necesitas, y hay un complemento de precios contra el mercado que se contrata aparte."
+          "body": "Ride Fleet Manager es la base. Toll Bridge y Valet se encienden si los necesitas, y hay un complemento de precios contra el mercado que se contrata aparte."
         },
         "2": {
           "value": "Dónde operas",

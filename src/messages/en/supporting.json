@@ -136,14 +136,9 @@
       "after": "If there is a fit, a written proposal follows: pilot scope, price, duration, and what will be measured."
     }
   },
-  "valet": {
-    "meta": {
-      "title": "Airport pickup · Ride Fleet",
-      "description": "The customer lands, calls, and Voz AI identifies the reservation and files the pickup. The floor dispatches it. Closing a pickup stays a human act."
-    },
-    "eyebrow": "Voz AI with Ride Fleet Manager",
+  "pickup": {
     "title": "The customer lands, calls, and the shuttle goes",
-    "lede": "Somebody who has just picked up their bag does not want a form: they want a ride. They call, Voz AI identifies the reservation, and the request lands on the floor. In the product it shows up as shuttle requests.",
+    "lede": "Somebody who has just picked up their bag does not want a form: they want a ride. They call, Valet identifies the reservation, and the request lands on the floor. In the product it shows up as shuttle requests.",
     "beats": {
       "0": {
         "value": "The call finds the reservation",
@@ -230,7 +225,7 @@
         },
         "1": {
           "value": "The modules you switch on",
-          "body": "Ride Fleet Manager is the base. Toll Bridge and Voz AI switch on if you need them, and there is a market-pricing add-on that is billed separately."
+          "body": "Ride Fleet Manager is the base. Toll Bridge and Valet switch on if you need them, and there is a market-pricing add-on that is billed separately."
         },
         "2": {
           "value": "Where you operate",
