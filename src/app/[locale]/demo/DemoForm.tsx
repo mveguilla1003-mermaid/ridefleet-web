@@ -57,7 +57,11 @@ const FIELD_ORDER: FieldKey[] = [
   'consent'
 ];
 
-const OPERATIONS = ['rental', 'carsharing', 'loaner', 'other'] as const;
+/* 'carsharing' was dropped on 2026-08-17 along with the rest of the
+   car-sharing story — the site no longer offers that model, so the form must
+   not collect it. Anyone who ran that operation picks 'other' and says so in
+   the message field. */
+const OPERATIONS = ['rental', 'loaner', 'other'] as const;
 
 const FLEET_SIZES = [
   { key: 'r1', value: '1-9' },
@@ -440,9 +444,7 @@ export function DemoForm() {
               <option value="">{t('form.operation.options.empty')}</option>
               {OPERATIONS.map((key) => (
                 <option key={key} value={key}>
-                  {key === 'carsharing'
-                    ? t('form.operation.options.carsharing.value')
-                    : t(`form.operation.options.${key}`)}
+                  {t(`form.operation.options.${key}`)}
                 </option>
               ))}
             </select>

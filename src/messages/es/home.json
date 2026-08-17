@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Ride Fleet — una sola columna de operaciones para tu flota",
-    "description": "Renta, car-sharing y unidades de cortesía sobre una sola columna de operaciones, con peajes de AutoExpreso y SunPass conciliados y servicio al cliente con IA en español e inglés. Hecho en Puerto Rico, listo para EE. UU. continental."
+    "description": "Renta y unidades de cortesía sobre una sola columna de operaciones, con peajes de AutoExpreso y SunPass conciliados y servicio al cliente con IA en español e inglés. Hecho en Puerto Rico, listo para EE. UU. continental."
   },
   "terms": {
     "turnReady": { "value": "Turn-ready" },
@@ -14,11 +14,11 @@
     "eyebrow": "Plataforma de operaciones de flota",
     "titleLead": "Una sola columna.",
     "titleGrad": "Todos tus modelos de negocio.",
-    "lede": "Renta tradicional, car-sharing y unidades de cortesía (loaners) — con peajes y servicio al cliente con IA — sobre una sola columna de operaciones. De la reserva al cierre, sin brincar entre sistemas.",
+    "lede": "Renta tradicional y unidades de cortesía (loaners) — con peajes y servicio al cliente con IA — sobre una sola columna de operaciones. De la reserva al cierre, sin brincar entre sistemas.",
     "ctaPrimary": "Reservar una demo",
     "ctaSecondary": "¿Qué te está costando dinero?",
     "spec": [
-      { "label": "Modelos", "value": "Renta · Car-sharing · Cortesía" },
+      { "label": "Modelos", "value": "Renta · Cortesía" },
       { "label": "Peajes", "value": "AutoExpreso · SunPass · E-PASS · FasTrak", "live": "Conectado" },
       { "label": "Idioma", "value": "Español e inglés, nativo — no traducido" },
       { "label": "Sede", "value": "Puerto Rico primero · listo para EE. UU. continental" }
@@ -95,7 +95,7 @@
           {
             "plate": "KLM·908",
             "vehicle": "Kia Sportage",
-            "meta": "2023 · Car-sharing",
+            "meta": "2023 · Renta",
             "status": "En lavado",
             "location": "Base Bayamón",
             "score": "71",
@@ -205,8 +205,8 @@
       {
         "idx": "03",
         "badge": "Ride Fleet Manager",
-        "title": "Tres sistemas para tres modelos de negocio",
-        "sub": "Renta en uno, car-sharing en otro, cortesías en una hoja de cálculo. Cuadrar el mes es un trabajo completo.",
+        "title": "Un sistema distinto por cada modelo de negocio",
+        "sub": "Renta en un sistema, cortesías en una hoja de cálculo. Cuadrar el mes es un trabajo completo.",
         "ledger": [
           { "label": "6 h/semana cuadrando a mano", "value": "26 h/mes" },
           { "label": "× $32/hora cargada", "value": "$832.00" },
@@ -218,7 +218,7 @@
           "suffix": "/mes"
         },
         "verb": "Opéralo",
-        "verbSub": "Renta, car-sharing y unidades de cortesía en un solo motor, con módulos y permisos por sucursal.",
+        "verbSub": "Renta y unidades de cortesía en un solo motor, con módulos y permisos por sucursal.",
         "link": "Ver Ride Fleet Manager"
       }
     ]
@@ -375,7 +375,7 @@
   },
   "cta": {
     "title": "Ve las tres piezas sobre un mismo registro",
-    "body": "Media hora, en vivo, con tu modelo de negocio en pantalla — renta, car-sharing o unidades de cortesía. Sin presentación genérica.",
+    "body": "Media hora, en vivo, con tu modelo de negocio en pantalla — renta o unidades de cortesía. Sin presentación genérica.",
     "primary": "Reservar una demo",
     "secondary": "Empezar por los peajes",
     "list": [

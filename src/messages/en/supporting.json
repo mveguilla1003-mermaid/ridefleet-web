@@ -32,7 +32,7 @@
       "lede": "None of this is required. The more concrete the starting point, the more you get out of the half hour.",
       "items": {
         "0": "How many vehicles you run today, and how many you expect to run in twelve months.",
-        "1": "How the business operates: traditional rental, car-sharing, dealership loaners, or a mix.",
+        "1": "How the business operates: traditional rental, dealership loaners, or a mix.",
         "2": "Which toll accounts you use, AutoExpreso or SunPass, and how you reconcile tolls today.",
         "3": "What you work with now: spreadsheets, a booking system, accounting software.",
         "4": "Who answers the phone after hours, and how many calls go unanswered.",
@@ -65,7 +65,7 @@
       "items": {
         "0": {
           "title": "Operators in Puerto Rico",
-          "body": "Traditional rental, car-sharing or dealership loaners, running your own fleet day to day."
+          "body": "Traditional rental or dealership loaners, running your own fleet day to day."
         },
         "1": {
           "title": "With a problem that can be measured",

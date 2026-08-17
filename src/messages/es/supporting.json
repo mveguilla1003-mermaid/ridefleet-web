@@ -32,7 +32,7 @@
       "lede": "Nada de esto es obligatorio. Mientras más concreto sea el punto de partida, más rinde la media hora.",
       "items": {
         "0": "Cuántos vehículos manejas hoy y cuántos esperas manejar en doce meses.",
-        "1": "Cómo opera el negocio: renta tradicional, car-sharing, unidades de cortesía (loaners) o una mezcla.",
+        "1": "Cómo opera el negocio: renta tradicional, unidades de cortesía (loaners) o una mezcla.",
         "2": "Qué cuentas de peaje usas, AutoExpreso o SunPass, y cómo cuadras los peajes hoy.",
         "3": "Con qué herramientas trabajas ahora: hojas de cálculo, sistema de reservas, contabilidad.",
         "4": "Quién contesta el teléfono fuera de horario y cuántas llamadas se quedan sin contestar.",
@@ -65,7 +65,7 @@
       "items": {
         "0": {
           "title": "Operadores en Puerto Rico",
-          "body": "Renta tradicional, car-sharing o unidades de cortesía (loaners), con flota propia y operación diaria."
+          "body": "Renta tradicional o unidades de cortesía (loaners), con flota propia y operación diaria."
         },
         "1": {
           "title": "Con un problema que se pueda medir",

@@ -85,11 +85,6 @@ const INTEGRATION_ICONS: IconName[] = [
 ];
 
 const RENTAL_FEATURE_ICONS: IconName[] = ['i-user', 'i-lock', 'i-chart'];
-const SHARING_FEATURE_ICONS: IconName[] = [
-  'i-building',
-  'i-location',
-  'i-dollar'
-];
 const LOANER_FEATURE_ICONS: IconName[] = [
   'i-wrench',
   'i-clipboard',
@@ -258,8 +253,10 @@ export default function RideFleetManagerPage({
               </p>
             </div>
             <div>
+              {/* Two entries since car-sharing left on 2026-08-17. `pad2(i+1)`
+                  renumbers itself, so the list still reads 01, 02. */}
               <ul className="hero-index">
-                {range(3).map((i) => (
+                {range(2).map((i) => (
                   <li key={i}>
                     <span className="ix">{pad2(i + 1)}</span>
                     <span>{t.rich(`hero.index.${i}`, rich)}</span>
@@ -628,114 +625,12 @@ export default function RideFleetManagerPage({
           </div>
         </div>
 
-        {/* -- Model 2: car-sharing marketplace -- */}
+        {/* -- Model 2: dealership loaners --
+             The car-sharing marketplace used to sit between the two, and it
+             carried `model--flip`. The models alternate copy-left/copy-right
+             down the page, so with the middle one gone this block inherits the
+             flip; without it, two identical layouts would stack. */}
         <div className="model model--flip reveal">
-          <div className="m-copy">
-            <div className="m-kicker">
-              <span className="mi">{t('models.sharing.n')}</span>
-              <span className="mw">{t('models.sharing.kicker')}</span>
-            </div>
-            <h3>{t('models.sharing.title')}</h3>
-            <p>{t('models.sharing.body')}</p>
-            <ul className="flist">
-              {SHARING_FEATURE_ICONS.map((icon, i) => (
-                <li key={icon}>
-                  <span className="fi">
-                    <Icon name={icon} />
-                  </span>
-                  <span>
-                    <b>{t(`models.sharing.features.${i}.title`)}</b>
-                    <span className="d">
-                      {t(`models.sharing.features.${i}.body`)}
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="app-stage mini">
-            <div
-              className="app"
-              role="img"
-              aria-label={t('models.sharing.app.ariaLabel')}
-            >
-              <div className="app-bar">
-                <span className="app-dots" aria-hidden="true">
-                  <i />
-                  <i />
-                  <i />
-                </span>
-                <span className="app-crumbs">
-                  <b>{t('models.sharing.app.crumb')}</b>
-                  <Icon name="i-chevron" />
-                  <span>{t('models.sharing.app.host.value')}</span>
-                </span>
-              </div>
-              <div className="app-pane">
-                <div className="pane-head">
-                  <div>
-                    <p className="pane-title">{t('models.sharing.app.title')}</p>
-                    <p className="psub">{t('models.sharing.app.sub')}</p>
-                  </div>
-                </div>
-                <div className="tbl tbl--compact">
-                  <div className="tbl-scroll">
-                    <table className="data">
-                      <caption className="sr-only">
-                        {t('models.sharing.app.caption')}
-                      </caption>
-                      <thead>
-                        <tr>
-                          <th scope="col">
-                            {t('models.sharing.app.head.unit')}
-                          </th>
-                          <th scope="col">
-                            {t('models.sharing.app.head.bookings')}
-                          </th>
-                          <th scope="col">
-                            {t('models.sharing.app.head.rate')}
-                          </th>
-                          <th scope="col" className="right">
-                            {t('models.sharing.app.head.payout')}
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {range(3).map((i) => (
-                          <tr key={i}>
-                            <td>
-                              {t(`models.sharing.app.rows.${i}.vehicle.value`)} ·{' '}
-                              <span className="plate">
-                                {t(`models.sharing.app.rows.${i}.vehicle.plate`)}
-                              </span>
-                            </td>
-                            <td>{t(`models.sharing.app.rows.${i}.bookings`)}</td>
-                            <td>{t(`models.sharing.app.rows.${i}.rate`)}</td>
-                            <td className="right">
-                              <span className="money">
-                                {t(`models.sharing.app.rows.${i}.payout`)}
-                              </span>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div className="mini-foot">
-                  <span>{t('models.sharing.app.foot.label')}</span>
-                  <span className="tot">
-                    {t('models.sharing.app.foot.total')}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <SampleDataNote>{tA11y('sampleData')}</SampleDataNote>
-          </div>
-        </div>
-
-        {/* -- Model 3: dealership loaners -- */}
-        <div className="model reveal">
           <div className="m-copy">
             <div className="m-kicker">
               <span className="mi">{t('models.loaners.n')}</span>
@@ -1311,8 +1206,10 @@ export default function RideFleetManagerPage({
             <span className="cta-eyebrow">{t('cta.eyebrow')}</span>
             <h2>{t('cta.title')}</h2>
             <p>{t('cta.body')}</p>
+            {/* Three chips: rental, loaners, fleet size. Car-sharing was the
+                fourth until 2026-08-17. */}
             <p className="cta-tags">
-              {range(4).map((i) => (
+              {range(3).map((i) => (
                 <span key={i}>{t(`cta.tags.${i}.value`)}</span>
               ))}
             </p>

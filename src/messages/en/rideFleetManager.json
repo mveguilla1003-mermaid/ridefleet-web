@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Ride Fleet Manager — one operations spine for your whole fleet",
-    "description": "Traditional rental, a car-sharing marketplace and dealership loaners on one booking engine: inspections, tolls, deposits and billing in a single record, in Spanish and English."
+    "description": "Traditional rental and dealership loaners on one booking engine: inspections, tolls, deposits and billing in a single record, in Spanish and English."
   },
   "hero": {
     "badge": "Ride Fleet Manager",
     "title": "One platform. One operations spine. <grad>Every business model.</grad>",
-    "lede": "Traditional rental, a car-sharing marketplace and dealership loaners running on the same booking engine, the same daily operation and the same reporting layer. From booking to closeout, without leaving the record.",
+    "lede": "Traditional rental and dealership loaners running on the same booking engine, the same daily operation and the same reporting layer. From booking to closeout, without leaving the record.",
     "primary": "Book a demo",
     "secondary": "See the operations spine",
     "notes": {
@@ -16,8 +16,7 @@
     },
     "index": {
       "0": "<b>Traditional rental</b> — counter, agreements, deposits and returns.",
-      "1": "<b>Car-sharing marketplace</b> — hosts, listings and revenue split.",
-      "2": "<b>Dealership loaners</b> — service lane, repair orders and internal billing."
+      "1": "<b>Dealership loaners</b> — service lane, repair orders and internal billing."
     }
   },
   "board": {
@@ -144,7 +143,7 @@
         "2": {
           "vehicle": {
             "value": "Jeep Wrangler 2023",
-            "sub": "Car-sharing · host M. Rivera"
+            "sub": "Rental · Condado"
           },
           "plate": "IVR-238",
           "status": {
@@ -207,7 +206,7 @@
         }
       },
       "foot": {
-        "left": "44 units · 3 locations · 3 business models",
+        "left": "44 units · 3 locations · 2 business models",
         "updated": "Updated 2:06 PM",
         "code": "AST (UTC−4)"
       }
@@ -263,8 +262,8 @@
     "head": {
       "mark": "01",
       "of": "Models",
-      "title": "Three different businesses, one system underneath",
-      "aside": "These aren't three products bundled together. It's one booking engine, one record and one reporting layer that change shape depending on the model you run — and you can run all three at once."
+      "title": "Two different businesses, one system underneath",
+      "aside": "These aren't two products bundled together. It's one booking engine, one record and one reporting layer that change shape depending on the model you run — and you can run both at once."
     },
     "rental": {
       "n": "01",
@@ -338,77 +337,8 @@
         }
       }
     },
-    "sharing": {
-      "n": "02",
-      "kicker": "Host marketplaces · mixed fleets",
-      "title": "Car-sharing marketplace",
-      "body": "A host isn't just another user — it's a business inside yours. They list a unit, set rates and availability, and see their payout. You approve vehicles, take commission, and keep the operation under the same inspection and toll rules as the rest of the fleet.",
-      "features": {
-        "0": {
-          "title": "Vehicle approval",
-          "body": "Photos, documents and insurance reviewed before a unit goes live."
-        },
-        "1": {
-          "title": "Location-first search",
-          "body": "Guests search where and when; operator complexity stays hidden."
-        },
-        "2": {
-          "title": "Automatic commission and payout",
-          "body": "The split is calculated on the closed booking, tolls and fees already in."
-        }
-      },
-      "app": {
-        "ariaLabel": "Host dashboard with three listed units and the month's payout.",
-        "crumb": "Host",
-        "host": {
-          "value": "M. Rivera"
-        },
-        "title": "My units",
-        "sub": "March · 3 listed · 1 in review",
-        "caption": "Host units with bookings, rate and payout",
-        "head": {
-          "unit": "Unit",
-          "bookings": "Bookings",
-          "rate": "Rate",
-          "payout": "Payout"
-        },
-        "rows": {
-          "0": {
-            "vehicle": {
-              "value": "Jeep Wrangler",
-              "plate": "IVR-238"
-            },
-            "bookings": "7",
-            "rate": "$96",
-            "payout": "$551.04"
-          },
-          "1": {
-            "vehicle": {
-              "value": "Toyota RAV4",
-              "plate": "DPX-415"
-            },
-            "bookings": "5",
-            "rate": "$78",
-            "payout": "$319.80"
-          },
-          "2": {
-            "vehicle": {
-              "value": "Honda Civic",
-              "plate": "CWA-902"
-            },
-            "bookings": "6",
-            "rate": "$64",
-            "payout": "$314.88"
-          }
-        },
-        "foot": {
-          "label": "18% platform commission · tolls already reconciled",
-          "total": "$1,185.72"
-        }
-      }
-    },
     "loaners": {
-      "n": "03",
+      "n": "02",
       "kicker": "Dealerships · service departments",
       "title": "Dealership loaners",
       "body": "A loaner isn't a rental with a different label. It comes in through the service lane, ties to a repair order, charges the customer nothing, and ends up billed internally. Ride Fleet Manager treats it that way from the ground up, on the same booking engine and the same inspections.",
@@ -519,7 +449,7 @@
       "events": {
         "0": {
           "time": "07:12",
-          "text": "<b>Booking created</b> — Jeep Wrangler 2023 · IVR-238 · host M. Rivera · 2 days"
+          "text": "<b>Booking created</b> — Jeep Wrangler 2023 · IVR-238 · customer M. Rivera · 2 days"
         },
         "1": {
           "time": "07:14",
@@ -796,9 +726,9 @@
       "0": {
         "cap": "Business models",
         "sub": {
-          "value": "Rental, car-sharing, loaners"
+          "value": "Rental and loaners"
         },
-        "us": "All three on the same booking engine, with shared operations and reporting.",
+        "us": "Both on the same booking engine, with shared operations and reporting.",
         "them": "One system per model, or a rental system pushed into doing loaners."
       },
       "1": {
@@ -877,8 +807,8 @@
     "title": "Questions we get",
     "items": {
       "0": {
-        "q": "Do I have to run all three business models?",
-        "a": "No. Most operators start with one. What you avoid is having to migrate systems the day you open car-sharing or start offering loaners: the new model switches on over the fleet you already have loaded."
+        "q": "Do I have to run both business models?",
+        "a": "No. Most operators start with one. What you avoid is having to migrate systems the day you start offering loaners: the new model switches on over the fleet you already have loaded."
       },
       "1": {
         "q": "How do AutoExpreso tolls reach the right customer?",
@@ -915,18 +845,15 @@
   "cta": {
     "eyebrow": "Next step",
     "title": "Bring your operation to the demo",
-    "body": "Tell us how many units you run and in which model, and we'll build the demo around your case: rental, car-sharing or loaners.",
+    "body": "Tell us how many units you run and in which model, and we'll build the demo around your case: rental or loaners.",
     "tags": {
       "0": {
         "value": "Rental"
       },
       "1": {
-        "value": "Car-sharing"
-      },
-      "2": {
         "value": "Loaners"
       },
-      "3": {
+      "2": {
         "value": "1 – 500 units"
       }
     },

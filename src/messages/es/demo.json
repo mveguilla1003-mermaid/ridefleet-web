@@ -52,7 +52,6 @@
       "options": {
         "empty": "Selecciona una opción",
         "rental": "Renta tradicional",
-        "carsharing": { "value": "Car-sharing" },
         "loaner": "Loaner de concesionario",
         "other": "Otro"
       }

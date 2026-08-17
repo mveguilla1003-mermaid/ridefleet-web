@@ -52,7 +52,6 @@
       "options": {
         "empty": "Select an option",
         "rental": "Traditional rental",
-        "carsharing": { "value": "Car-sharing" },
         "loaner": "Dealership loaner",
         "other": "Other"
       }

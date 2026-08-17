@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Ride Fleet — one operations spine for your whole fleet",
-    "description": "Rental, car-sharing and dealership loaners on one operations spine, with AutoExpreso and SunPass tolls reconciled and AI customer service in Spanish and English. Built in Puerto Rico, ready for the US mainland."
+    "description": "Rental and dealership loaners on one operations spine, with AutoExpreso and SunPass tolls reconciled and AI customer service in Spanish and English. Built in Puerto Rico, ready for the US mainland."
   },
   "terms": {
     "turnReady": { "value": "Turn-ready" },
@@ -14,11 +14,11 @@
     "eyebrow": "Fleet operations platform",
     "titleLead": "One spine.",
     "titleGrad": "Every business model.",
-    "lede": "Traditional rental, car-sharing and dealership loaners — with tolls and AI customer service — on one operations spine. From booking to closeout, without jumping between systems.",
+    "lede": "Traditional rental and dealership loaners — with tolls and AI customer service — on one operations spine. From booking to closeout, without jumping between systems.",
     "ctaPrimary": "Book a demo",
     "ctaSecondary": "What's bleeding money?",
     "spec": [
-      { "label": "Models", "value": "Rental · Car-sharing · Loaners" },
+      { "label": "Models", "value": "Rental · Loaners" },
       { "label": "Tolls", "value": "AutoExpreso · SunPass · E-PASS · FasTrak", "live": "Connected" },
       { "label": "Language", "value": "Spanish and English, native — not translated" },
       { "label": "Base", "value": "Puerto Rico first · ready for the US mainland" }
@@ -95,7 +95,7 @@
           {
             "plate": "KLM·908",
             "vehicle": "Kia Sportage",
-            "meta": "2023 · Car-sharing",
+            "meta": "2023 · Rental",
             "status": "In wash",
             "location": "Bayamón hub",
             "score": "71",
@@ -205,8 +205,8 @@
       {
         "idx": "03",
         "badge": "Ride Fleet Manager",
-        "title": "Three systems for three business models",
-        "sub": "Rental in one tool, car-sharing in another, loaners in a spreadsheet. Closing the month is a full-time job.",
+        "title": "A different system for every business model",
+        "sub": "Rental in one tool, loaners in a spreadsheet. Closing the month is a full-time job.",
         "ledger": [
           { "label": "6 hrs/week reconciling by hand", "value": "26 hrs/mo" },
           { "label": "× $32/hr loaded cost", "value": "$832.00" },
@@ -218,7 +218,7 @@
           "suffix": "/mo"
         },
         "verb": "Run it",
-        "verbSub": "Rental, car-sharing and loaners on one engine, with modules and permissions per rooftop.",
+        "verbSub": "Rental and loaners on one engine, with modules and permissions per rooftop.",
         "link": "See Ride Fleet Manager"
       }
     ]
@@ -375,7 +375,7 @@
   },
   "cta": {
     "title": "See all three on one record",
-    "body": "Half an hour, live, with your business model on screen — rental, car-sharing or loaners. No generic slide deck.",
+    "body": "Half an hour, live, with your business model on screen — rental or loaners. No generic slide deck.",
     "primary": "Book a demo",
     "secondary": "Start with tolls",
     "list": [

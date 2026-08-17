@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Ride Fleet Manager — una columna de operaciones para toda tu flota",
-    "description": "Renta tradicional, marketplace de car-sharing y unidades de cortesía sobre el mismo motor de reservas: inspecciones, peajes, depósitos y facturación en un solo expediente, en español e inglés."
+    "description": "Renta tradicional y unidades de cortesía sobre el mismo motor de reservas: inspecciones, peajes, depósitos y facturación en un solo expediente, en español e inglés."
   },
   "hero": {
     "badge": "Ride Fleet Manager",
     "title": "Una sola plataforma. Una columna de operaciones. <grad>Todos tus modelos.</grad>",
-    "lede": "Renta tradicional, marketplace de car-sharing y unidades de cortesía (loaners) de concesionario corriendo sobre el mismo motor de reservas, la misma operación diaria y la misma capa de reportes. De la reserva al cierre, sin salir del expediente.",
+    "lede": "Renta tradicional y unidades de cortesía (loaners) de concesionario corriendo sobre el mismo motor de reservas, la misma operación diaria y la misma capa de reportes. De la reserva al cierre, sin salir del expediente.",
     "primary": "Reservar una demo",
     "secondary": "Ver la columna de operaciones",
     "notes": {
@@ -16,8 +16,7 @@
     },
     "index": {
       "0": "<b>Renta tradicional</b> — counter, contratos, depósitos y devoluciones.",
-      "1": "<b>Marketplace de car-sharing</b> — anfitriones, listados y reparto de ingresos.",
-      "2": "<b>Unidades de cortesía</b> — taller, órdenes de servicio y facturación interna."
+      "1": "<b>Unidades de cortesía</b> — taller, órdenes de servicio y facturación interna."
     }
   },
   "board": {
@@ -144,7 +143,7 @@
         "2": {
           "vehicle": {
             "value": "Jeep Wrangler 2023",
-            "sub": "Car-sharing · anfitrión M. Rivera"
+            "sub": "Renta · Condado"
           },
           "plate": "IVR-238",
           "status": {
@@ -207,7 +206,7 @@
         }
       },
       "foot": {
-        "left": "44 unidades · 3 sucursales · 3 modelos de negocio",
+        "left": "44 unidades · 3 sucursales · 2 modelos de negocio",
         "updated": "Actualizado 14:06",
         "code": "AST (UTC−4)"
       }
@@ -263,8 +262,8 @@
     "head": {
       "mark": "01",
       "of": "Modelos",
-      "title": "Tres negocios distintos, un solo sistema debajo",
-      "aside": "No son tres productos empacados juntos. Es un motor de reservas, un expediente y una capa de reportes que cambian de forma según el modelo que corras — y que puedes correr los tres a la vez."
+      "title": "Dos negocios distintos, un solo sistema debajo",
+      "aside": "No son dos productos empacados juntos. Es un motor de reservas, un expediente y una capa de reportes que cambian de forma según el modelo que corras — y que puedes correr los dos a la vez."
     },
     "rental": {
       "n": "01",
@@ -338,77 +337,8 @@
         }
       }
     },
-    "sharing": {
-      "n": "02",
-      "kicker": "Marketplaces con anfitriones · flotas mixtas",
-      "title": "Marketplace de car-sharing",
-      "body": "El anfitrión no es un usuario más: es un negocio dentro del tuyo. Publica su unidad, fija tarifas y disponibilidad, y ve su liquidación. Tú apruebas vehículos, cobras comisión y mantienes la operación bajo las mismas reglas de inspección y peajes que el resto de la flota.",
-      "features": {
-        "0": {
-          "title": "Aprobación de vehículos",
-          "body": "Fotos, documentos y seguro revisados antes de que la unidad se publique."
-        },
-        "1": {
-          "title": "Búsqueda por ubicación",
-          "body": "El invitado busca dónde y cuándo; la complejidad del operador queda escondida."
-        },
-        "2": {
-          "title": "Comisión y liquidación automáticas",
-          "body": "El reparto se calcula sobre la reserva cerrada, con peajes y cargos ya incluidos."
-        }
-      },
-      "app": {
-        "ariaLabel": "Panel de anfitrión con tres unidades publicadas y su liquidación del mes.",
-        "crumb": "Anfitrión",
-        "host": {
-          "value": "M. Rivera"
-        },
-        "title": "Mis unidades",
-        "sub": "Marzo · 3 publicadas · 1 en revisión",
-        "caption": "Unidades del anfitrión con reservas, tarifa y liquidación",
-        "head": {
-          "unit": "Unidad",
-          "bookings": "Reservas",
-          "rate": "Tarifa",
-          "payout": "Liquidación"
-        },
-        "rows": {
-          "0": {
-            "vehicle": {
-              "value": "Jeep Wrangler",
-              "plate": "IVR-238"
-            },
-            "bookings": "7",
-            "rate": "$96",
-            "payout": "$551.04"
-          },
-          "1": {
-            "vehicle": {
-              "value": "Toyota RAV4",
-              "plate": "DPX-415"
-            },
-            "bookings": "5",
-            "rate": "$78",
-            "payout": "$319.80"
-          },
-          "2": {
-            "vehicle": {
-              "value": "Honda Civic",
-              "plate": "CWA-902"
-            },
-            "bookings": "6",
-            "rate": "$64",
-            "payout": "$314.88"
-          }
-        },
-        "foot": {
-          "label": "Comisión de plataforma 18% · peajes ya conciliados",
-          "total": "$1,185.72"
-        }
-      }
-    },
     "loaners": {
-      "n": "03",
+      "n": "02",
       "kicker": "Concesionarios · departamentos de servicio",
       "title": "Unidades de cortesía (loaners)",
       "body": "Un loaner no es una renta con otro nombre. Entra por el taller, se amarra a una orden de servicio, no cobra tarifa al cliente y termina facturándose por dentro. Ride Fleet Manager lo trata así de raíz, sobre el mismo motor de reservas y las mismas inspecciones.",
@@ -519,7 +449,7 @@
       "events": {
         "0": {
           "time": "07:12",
-          "text": "<b>Reserva creada</b> — Jeep Wrangler 2023 · IVR-238 · anfitrión M. Rivera · 2 días"
+          "text": "<b>Reserva creada</b> — Jeep Wrangler 2023 · IVR-238 · cliente M. Rivera · 2 días"
         },
         "1": {
           "time": "07:14",
@@ -796,9 +726,9 @@
       "0": {
         "cap": "Modelos de negocio",
         "sub": {
-          "value": "Renta, car-sharing, cortesía"
+          "value": "Renta y cortesía"
         },
-        "us": "Los tres sobre el mismo motor de reservas, con la operación y los reportes compartidos.",
+        "us": "Los dos sobre el mismo motor de reservas, con la operación y los reportes compartidos.",
         "them": "Un sistema por modelo, o un sistema de renta forzado a hacer de loaner."
       },
       "1": {
@@ -877,8 +807,8 @@
     "title": "Preguntas que nos hacen",
     "items": {
       "0": {
-        "q": "¿Tengo que correr los tres modelos de negocio?",
-        "a": "No. La mayoría empieza con uno. Lo que evitas es tener que migrar de sistema el día que abras car-sharing o empieces a prestar unidades de cortesía: el modelo nuevo se activa sobre la flota que ya tienes cargada."
+        "q": "¿Tengo que correr los dos modelos de negocio?",
+        "a": "No. La mayoría empieza con uno. Lo que evitas es tener que migrar de sistema el día que empieces a prestar unidades de cortesía: el modelo nuevo se activa sobre la flota que ya tienes cargada."
       },
       "1": {
         "q": "¿Cómo llegan los peajes de AutoExpreso al cliente correcto?",
@@ -915,18 +845,15 @@
   "cta": {
     "eyebrow": "Próximo paso",
     "title": "Trae tu operación a la demo",
-    "body": "Dinos cuántas unidades corres y en qué modelo, y montamos la demo con tu caso: renta, car-sharing o unidades de cortesía.",
+    "body": "Dinos cuántas unidades corres y en qué modelo, y montamos la demo con tu caso: renta o unidades de cortesía.",
     "tags": {
       "0": {
         "value": "Renta"
       },
       "1": {
-        "value": "Car-sharing"
-      },
-      "2": {
         "value": "Cortesía"
       },
-      "3": {
+      "2": {
         "value": "1 – 500 unidades"
       }
     },
