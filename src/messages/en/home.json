@@ -373,34 +373,6 @@
       }
     ]
   },
-  "partners": {
-    "chapter": { "num": "04", "label": "Invitation" },
-    "title": "We're looking for 3 to 5 operators in Puerto Rico",
-    "aside": "No invented testimonials. A working product and room to work closely with the first operators who put it to the test.",
-    "eyebrow": "Founding-partner program",
-    "heading": "What we put in, and what you ask for",
-    "body": "You won't find testimonials here — we don't have them yet, and we're not going to invent them. What we do have is a working product and room to work closely with the first operators who put it to the test.",
-    "cta": "Apply with your operation",
-    "slotNote": "The first three go here — with real names, once they exist.",
-    "perks": [
-      {
-        "title": "Founder pricing",
-        "body": "Locked for the life of the program."
-      },
-      {
-        "title": "Hands-on onboarding",
-        "body": "We migrate your data with you — no manual handoff."
-      },
-      {
-        "title": "A direct line to the builders",
-        "body": "Your priorities enter the roadmap, with a date."
-      },
-      {
-        "title": "In exchange: a case study with real numbers",
-        "body": "Yours — measured and published with your sign-off."
-      }
-    ]
-  },
   "cta": {
     "title": "See all three on one record",
     "body": "Half an hour, live, with your business model on screen — rental, car-sharing or loaners. No generic slide deck.",

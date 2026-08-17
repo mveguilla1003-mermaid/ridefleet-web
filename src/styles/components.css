@@ -958,13 +958,9 @@ table.data .right{text-align:right}
   .trust--rail .integration{padding-inline:var(--sp-4)}
 }
 
-/* --- .partner-invite--flush (RECONCILED from 01): solid card, left-aligned.
-   Still an honest empty slot — never a fabricated logo. ----------------- */
-.partner-invite--flush{
-  border:1px solid var(--border-strong);background:var(--n-0);
-  box-shadow:var(--sh-2);text-align:left;
-}
-.partner-invite--flush p{max-width:46ch;margin-inline:0}
+/* .partner-invite--flush (the solid, left-aligned card variant) went out with
+   the home page's chapter 04 on 2026-08-17. The base .partner-invite above
+   stays: Toll Bridge, Valet and Ride Fleet Manager still render it, centred. */
 
 /* RECONCILED from 01: a CTA section already ends on a card with its own
    breathing room — the footer default on top of that reads as a hole. */

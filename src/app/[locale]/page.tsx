@@ -79,7 +79,6 @@ type HomeMessages = {
     score: { rows: { title: string; sub: string; value: string }[] };
     list: { value: string; body: string }[];
   };
-  partners: { perks: { title: string; body: string }[] };
   cta: { list: string[] };
 };
 
@@ -205,15 +204,6 @@ const DIFF_ICONS: IconName[] = [
    carried one (title index 1, body indices 3 and 4) lost it, and the split
    `body` + `bodyTail` shape those two body rows needed — the badge used to sit
    between the halves — collapsed back into a single `body` string. */
-
-const PERK_ICONS: IconName[] = [
-  'i-check-circle',
-  'i-users',
-  'i-message',
-  'i-chart'
-];
-
-const LOGO_SLOTS = [0, 1, 2];
 
 /** The ring arc is driven by `--pct` on `.ring`, exactly as the CSS expects. */
 const RING_88 = { '--pct': 88 } as CSSProperties;
@@ -895,63 +885,15 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
         </div>
       </section>
 
-      {/* ======================== DESIGN PARTNERS ======================== */}
-      <section className="sec sec--well" id="partners">
-        <div className="container">
-          <div className="editorial-head">
-            <span className="chapter-mark">
-              {t('partners.chapter.num')}
-              <span className="of">{t('partners.chapter.label')}</span>
-            </span>
-            <h2 className="balance">{t('partners.title')}</h2>
-            <p className="aside">{t('partners.aside')}</p>
-          </div>
-          <div className="partner-invite partner-invite--flush">
-            <div className="partner-grid">
-              <div>
-                <span className="eyebrow eyebrow--neutral">
-                  {t('partners.eyebrow')}
-                </span>
-                <h3 className="t-h3" style={{ marginTop: 'var(--sp-5)' }}>
-                  {t('partners.heading')}
-                </h3>
-                <p>{t('partners.body')}</p>
-
-                <div className="btn-row">
-                  <ButtonLink href={routes.demo} size="lg" icon="i-arrow-right">
-                    {t('partners.cta')}
-                  </ButtonLink>
-                </div>
-
-                {/* Guardrail #1: the slots stay visibly empty. No borrowed
-                    logos, no invented names — they fill when partners exist. */}
-                <div className="slots">
-                  {LOGO_SLOTS.map((slot) => (
-                    <span className="logo-slot" key={slot}>
-                      {common('logoSlot')}
-                    </span>
-                  ))}
-                </div>
-                <p className="slot-note">{t('partners.slotNote')}</p>
-              </div>
-
-              <div className="partner-aside">
-                <div className="partner-terms">
-                  {m.partners.perks.map((perk, i) => (
-                    <div className="pterm" key={perk.title}>
-                      <Icon name={PERK_ICONS[i]} />
-                      <span>
-                        <b>{perk.title}</b>
-                        <span>{perk.body}</span>
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* The founding-partner invitation used to sit here as chapter 04. It was
+          removed on 2026-08-17 — the cohort is no longer being recruited, so a
+          chapter asking for three to five operators was selling something that
+          is not on offer. It was the last numbered chapter, so 01–03 still run
+          without a gap. Its markup owned .partner-grid / .partner-aside /
+          .partner-terms / .pterm / .slots / .slot-note and the
+          .partner-invite--flush variant; all of those went with it. The plain
+          .partner-invite card stays in components.css — Toll Bridge, Valet and
+          Ride Fleet Manager still use it. */}
 
       {/* ============================== CTA ============================== */}
       <section className="sec sec--tight sec--cta">

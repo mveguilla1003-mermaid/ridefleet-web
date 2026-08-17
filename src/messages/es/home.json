@@ -373,34 +373,6 @@
       }
     ]
   },
-  "partners": {
-    "chapter": { "num": "04", "label": "Invitación" },
-    "title": "Buscamos de 3 a 5 operadores en Puerto Rico",
-    "aside": "Sin testimonios inventados. Un producto corriendo y espacio para trabajar de cerca con los primeros que lo pongan a prueba.",
-    "eyebrow": "Programa de socios fundadores",
-    "heading": "Lo que ponemos nosotros, y lo que pides tú",
-    "body": "Aquí no vas a encontrar testimonios: todavía no los tenemos, y no pensamos inventarlos. Lo que sí tenemos es un producto corriendo y espacio para trabajar de cerca con los primeros operadores que lo pongan a prueba.",
-    "cta": "Postula tu operación",
-    "slotNote": "Aquí van los primeros tres. Cuando existan, con nombre y apellido.",
-    "perks": [
-      {
-        "title": "Precio de fundador",
-        "body": "Congelado mientras dure el programa."
-      },
-      {
-        "title": "Implementación acompañada",
-        "body": "Migramos tu data contigo, no te mandamos un manual."
-      },
-      {
-        "title": "Línea directa con quien construye",
-        "body": "Tus prioridades entran al roadmap, con fecha."
-      },
-      {
-        "title": "A cambio: un caso con números reales",
-        "body": "Los tuyos, medidos y publicados con tu permiso."
-      }
-    ]
-  },
   "cta": {
     "title": "Ve las tres piezas sobre un mismo registro",
     "body": "Media hora, en vivo, con tu modelo de negocio en pantalla — renta, car-sharing o unidades de cortesía. Sin presentación genérica.",
