@@ -179,6 +179,21 @@
           "body": "Un botón, y la solicitud cae en la pantalla del equipo de la sede. Si además llama por teléfono, o toca dos veces, no salen dos solicitudes: sale un solo bus."
         }
       },
+      "shots": {
+        "0": {
+          "alt": "Pantalla del móvil con el mapa: la guagua marcada sobre el aeropuerto, la etiqueta EN VIVO, y abajo la sede, la frecuencia y dónde esperar.",
+          "caption": "El mapa, con la guagua y el punto de espera."
+        },
+        "1": {
+          "alt": "El mismo mapa con la ubicación del cliente: un punto azul, una línea hasta el punto de espera y el texto Estás a 360 metros del punto de espera.",
+          "caption": "Si comparte su ubicación, cuánto le falta caminar."
+        },
+        "2": {
+          "alt": "La tarjeta sin mapa: el shuttle no está transmitiendo ahora mismo, el servicio sigue corriendo, y el botón de solicitar el shuttle sigue disponible.",
+          "caption": "Sin señal lo dice, y el botón sigue ahí."
+        }
+      },
+      "shotsNote": "Capturas de demostración sobre datos simulados, no de una operación real.",
       "privacy": {
         "title": "No existe un enlace público de tu flota",
         "body": "Aquí no hay una dirección fija ni un código que alguien pueda pegar en cualquier sitio: cada enlace es personal, va atado a una reserva y caduca. Y lo que muestra está recortado a propósito, con una prueba automática que lo vigila: por dónde va la guagua y dónde esperarla, sin el nombre del cliente, sin el número de reserva, sin su teléfono y sin la tablilla. El GPS ni se consulta mientras nadie tenga el mapa abierto y no haya nadie esperando."

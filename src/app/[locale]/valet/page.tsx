@@ -43,6 +43,8 @@ export async function generateMetadata({
 
 const BEATS: IconName[] = ['i-search', 'i-shield', 'i-bell'];
 const TRACKER_ITEMS: IconName[] = ['i-mail', 'i-location', 'i-check-circle'];
+/** File slugs; the locale suffix picks the matching language pair. */
+const TRACKER_SHOTS = ['live', 'location', 'offline'] as const;
 const PRECISIONS = [0, 1, 2, 3, 4, 5, 6] as const;
 
 export default function ValetPage({ params }: { params: { locale: Locale } }) {
@@ -112,6 +114,38 @@ export default function ValetPage({ params }: { params: { locale: Locale } }) {
             </div>
           ))}
         </div>
+
+        {/* Screens from RFM's own demo tenant, one pair per locale so the
+            phone in the picture speaks the same language as the page around
+            it — the first set came back with an English heading over Spanish
+            branch instructions, which is what sent it back.
+
+            Every position in these is SIMULATED: the telematics provider has
+            not issued credentials yet, so no screenshot of real GPS exists.
+            RFM said so unprompted and their repo's README records it. Hence
+            the caption, which is not decoration — the site does not publish
+            anything as proof that is not. When real GPS lands they reshoot,
+            and that set ships without the caption. */}
+        <figure className="shot-figure" style={{ marginTop: 'var(--sp-10)' }}>
+          <div className="grid grid-3">
+            {TRACKER_SHOTS.map((slug, i) => (
+              <div key={slug}>
+                <img
+                  src={`/valet/tracker-${slug}-${params.locale}.png`}
+                  alt={t(`tracker.shots.${i}.alt`)}
+                  width={780}
+                  height={1688}
+                  loading="lazy"
+                />
+                <p className="small">{t(`tracker.shots.${i}.caption`)}</p>
+              </div>
+            ))}
+          </div>
+          <figcaption className="sample-note">
+            <Icon name="i-info" />
+            <span>{t('tracker.shotsNote')}</span>
+          </figcaption>
+        </figure>
 
         {/* The differentiator, and the reason RFM asked us NOT to embed a
             live tracker on this site: a fixed public URL would break the

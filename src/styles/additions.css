@@ -223,6 +223,30 @@
   color: var(--text-3);
 }
 
+/* ---- Product screenshots (phone captures) -----------------------------
+   The tracker shots are 780x1688 — a phone at 2x, so twice as tall as they
+   are wide. At a full third of a 1200px measure each one would stand ~760px
+   tall and the row would dwarf the copy it illustrates, so they are capped
+   and centred in their cell. `width`/`height` on the tag match the real
+   file, which is what reserves the space and keeps the page from jumping
+   as they load. */
+.shot-figure { margin: 0; }
+.shot-figure img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-inline: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-2);
+}
+.shot-figure .small {
+  margin-top: var(--sp-3);
+  text-align: center;
+  color: var(--text-3);
+}
+
 /* Body scroll lock while the mobile nav panel is open. */
 body.nav-open {
   overflow: hidden;

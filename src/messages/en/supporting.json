@@ -179,6 +179,21 @@
           "body": "One button, and the request lands on the branch team's screen. If they also phone in, or tap twice, it does not become two requests: it stays one bus."
         }
       },
+      "shots": {
+        "0": {
+          "alt": "Phone screen with the map: the shuttle marked over the airport, a LIVE badge, and below it the branch, the frequency and where to wait.",
+          "caption": "The map, with the shuttle and the waiting spot."
+        },
+        "1": {
+          "alt": "The same map with the customer's location: a blue dot, a line to the waiting spot, and the text You are 360 metres from the pickup spot.",
+          "caption": "Share your location and see the walk left."
+        },
+        "2": {
+          "alt": "The card with no map: the shuttle is not transmitting right now, service is still running, and the request button is still available.",
+          "caption": "No signal says so, and the button stays."
+        }
+      },
+      "shotsNote": "Demonstration screens over simulated data, not a live operation.",
       "privacy": {
         "title": "There is no public link to your fleet",
         "body": "There is no fixed address here and no code anyone can paste anywhere: each link is personal, tied to one reservation, and it expires. What it shows is deliberately trimmed, with an automated test watching the list: where the shuttle is and where to wait, without the customer's name, without the reservation number, without their phone and without the plate. The GPS is not even queried while nobody has the map open and nobody is waiting."
