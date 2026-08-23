@@ -169,7 +169,14 @@
     "lede": "Esta página describe el estado de hoy, no una aspiración. Ride Fleet es una empresa joven: hay cosas resueltas y cosas que no lo están, y ambas están escritas aquí.",
     "noCert": {
       "title": "Lo primero, sin rodeos",
-      "body": "Ride Fleet no tiene SOC 2, ni ISO 27001, ni certificación HIPAA, y no ha pasado una auditoría externa de seguridad. Si tu proceso de compra exige alguna de ellas hoy, todavía no la podemos satisfacer. Preferimos decirlo en esta página y no en la mesa."
+      "body": "Ride Fleet no tiene SOC 2, ni ISO 27001, ni certificación HIPAA, y no ha pasado una auditoría externa de seguridad. Si tu proceso de compra exige alguna de ellas hoy, todavía no la podemos satisfacer. Preferimos decirlo en esta página y no en la mesa. Lo único que sí revisa un tercero está justo debajo, con su alcance exacto."
+    },
+    "scan": {
+      "title": "Lo único que sí revisa un tercero",
+      "body": "La red desde la que trabaja el equipo pasa cada trimestre un escaneo de vulnerabilidades PCI de SecurityMetrics. El último salió limpio el 10 de junio de 2026.",
+      "scope": "Qué acredita, con precisión: que esa red no exponía vulnerabilidades conocidas en la fecha del escaneo, que es lo que se le exige a un comercio para aceptar tarjetas. No dice que Ride Fleet Manager esté certificado PCI, ni que este sitio o el producto hayan pasado una auditoría de seguridad. Preferimos que lo leas aquí y no que lo descubras al abrir el certificado.",
+      "seal": "Sello de SecurityMetrics: escaneo de vulnerabilidades PCI aprobado",
+      "link": "Ver el certificado en SecurityMetrics"
     },
     "holdings": {
       "title": "Qué datos tenemos hoy",

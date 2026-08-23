@@ -37,6 +37,17 @@ export const site = {
    * middleware's `frame-src`.
    */
   showcaseUrl: 'https://ridefleetmanager.com/showcase',
+
+  /**
+   * SecurityMetrics scan certificate, linked from /security. The token in the
+   * query string is the certificate's public identifier, not a secret — it is
+   * how their portal addresses a certificate, and the page it opens is public.
+   * Whatever this points at, the copy beside it must keep describing what the
+   * certificate ACTUALLY says: a quarterly vulnerability scan of the network
+   * the team works from. It is not a PCI certification of the product.
+   */
+  certificateUrl:
+    'https://www.securitymetrics.com/site_certificate?id=2576693&tk=eab3ba2c935c073e44d258a19cd4601a',
   locationLabel: 'San Juan, Puerto Rico · AST (UTC−4)',
   founded: 2026
 } as const;

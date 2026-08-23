@@ -252,6 +252,48 @@ body.nav-open {
   overflow: hidden;
 }
 
+/* ---- Third-party scan certificate -------------------------------------
+   The SecurityMetrics seal ships as WHITE artwork on transparency — there is
+   no dark-content variant (probed: every other filename on their CDN returns
+   text/html, not an image). So it only reads on a dark surface, which is why
+   its section is a .band--ink: that class remaps the surface AND text aliases
+   to the ink ramp, with the ratios already annotated in components.css
+   (--text-1 17.79 AAA, --text-2 9.81 AAA on --ink-900). Nothing here declares
+   a colour of its own, so guardrail #1 holds.
+
+   The image is served from /public, not hotlinked. Hotlinking would mean
+   opening img-src to a third party and pinging SecurityMetrics with every
+   visitor's IP — and /cookies states plainly that this site loads nothing
+   from third parties. The LINK still points at them, which is what makes the
+   certificate verifiable. -------------------------------------------------- */
+.cert{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  gap:var(--sp-6);
+  max-width:var(--container-narrow);
+  margin-top:var(--sp-6);
+}
+.cert-seal{
+  flex:0 0 auto;
+  display:block;
+  width:110px;
+  height:110px;
+}
+.cert-copy{flex:1 1 300px;min-width:0}
+.cert-copy p + p{margin-top:var(--sp-3)}
+.cert-scope{color:var(--text-2);font-size:var(--fs-sm);line-height:var(--lh-relaxed)}
+.cert-link{
+  display:inline-flex;
+  align-items:center;
+  gap:var(--sp-2);
+  margin-top:var(--sp-4);
+  color:var(--text-brand);
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+.cert-link .ic{width:15px;height:15px;flex:0 0 auto}
+
 /* ============================================================================
    5. CROSS-PAGE SHELL NORMALISATION
    One home for every rule that styles the SHARED chrome (header, footer,
