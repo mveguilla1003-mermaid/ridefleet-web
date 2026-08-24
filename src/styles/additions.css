@@ -283,6 +283,11 @@ body.nav-open {
 .cert-copy{flex:1 1 300px;min-width:0}
 .cert-copy p + p{margin-top:var(--sp-3)}
 .cert-scope{color:var(--text-2);font-size:var(--fs-sm);line-height:var(--lh-relaxed)}
+/* The payment bullets sit beside the seal, so they carry their own list
+   styling: .prose is not in scope inside the ink band. */
+.cert-list{display:grid;gap:var(--sp-2);margin:0;padding-left:var(--sp-5);list-style:disc}
+.cert-list li{color:var(--text-2);font-size:var(--fs-sm);line-height:var(--lh-relaxed)}
+.cert-list li::marker{color:var(--n-400)}
 .cert-link{
   display:inline-flex;
   align-items:center;

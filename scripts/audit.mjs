@@ -361,10 +361,17 @@ for (const locale of ['es', 'en']) {
           const cs = getComputedStyle(document.activeElement);
           return `${cs.outlineColor} / ${cs.outlineWidth} / ${cs.outlineStyle}`;
         };
-        const deadline = Date.now() + 2000;
+        // FOURTH attempt. "Two identical reads" alone is satisfied by two
+        // reads of 0px taken BEFORE the transition starts — the loop cannot
+        // tell "not begun" from "finished". That made this check fail about
+        // one run in three, always on /valet, which is the longest page and
+        // therefore the slowest to apply focus. Settled now means drawn AND
+        // stable; a genuinely missing outline still times out and reports.
+        const drawn = (v) => !/ 0px /.test(v);
+        const deadline = Date.now() + 3000;
         let prev = read();
         let stable = 0;
-        while (Date.now() < deadline && stable < 2) {
+        while (Date.now() < deadline && !(drawn(prev) && stable >= 2)) {
           await new Promise((r) => setTimeout(r, 60));
           const now = read();
           if (now === prev) stable += 1;
