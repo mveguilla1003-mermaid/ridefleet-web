@@ -140,17 +140,18 @@ const SOURCE_ICONS: IconName[] = ['i-link', 'i-clock'];
 const KPI_CLASSES = ['kpi', 'kpi kpi--brand', 'kpi kpi--gold', 'kpi'];
 const NOTE_ICONS: IconName[] = ['i-gauge', 'i-link', 'i-info'];
 const NOTE_CLASSES = ['sn', 'sn', 'sn sn--note'];
-/* Index-aligned with `trust.items`. One glyph for all four toll networks —
+/* Index-aligned with `trust.items`. One glyph for all five toll networks —
    see the same note on the Ride Fleet Manager strip. */
 const TRUST_ICONS: IconName[] = [
   'i-toll-gantry',
   'i-toll-gantry',
   'i-toll-gantry',
   'i-toll-gantry',
-  'i-road',
+  'i-toll-gantry',
   'i-dollar',
   'i-route',
   'i-bolt',
+  'i-location',
   'i-sms'
 ];
 const GUARD_ICONS: IconName[] = ['i-lock', 'i-layers', 'i-shield', 'i-refresh'];

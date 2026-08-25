@@ -131,19 +131,19 @@ const ROW_STYLES: {
   }
 ];
 
-/* Index-aligned with `home.trust.now`. The four toll networks share one icon
+/* Index-aligned with `home.trust.now`. The five toll networks share one icon
    on purpose — they are the same kind of integration, and giving each a
-   different glyph read as four different capabilities. */
+   different glyph read as five different capabilities. */
 const TRUST_NOW_ICONS: IconName[] = [
   'i-toll-gantry',
   'i-toll-gantry',
   'i-toll-gantry',
   'i-toll-gantry',
-  'i-road',
+  'i-toll-gantry',
   'i-dollar',
   'i-sms'
 ];
-const TRUST_SOON_ICONS: IconName[] = ['i-gauge', 'i-bolt'];
+const TRUST_SOON_ICONS: IconName[] = ['i-gauge', 'i-bolt', 'i-location'];
 
 const DOORS: {
   tone: string;

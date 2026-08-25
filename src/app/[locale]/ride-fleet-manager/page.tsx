@@ -69,18 +69,19 @@ const BOARD_ROWS: { icon: IconName; tone: ChipTone; fill: string }[] = [
   { icon: 'i-gauge', tone: 'neutral', fill: 'fill fill--warn' }
 ];
 
-/* Index-aligned with `trust.integrations`. The four toll networks deliberately
-   share one glyph: they are one capability with four sources, and four
-   different icons read as four different features. */
+/* Index-aligned with `trust.integrations`. The five toll networks deliberately
+   share one glyph: they are one capability with five sources, and five
+   different icons read as five different features. */
 const INTEGRATION_ICONS: IconName[] = [
   'i-toll-gantry',
   'i-toll-gantry',
   'i-toll-gantry',
   'i-toll-gantry',
-  'i-road',
+  'i-toll-gantry',
   'i-dollar',
   'i-route',
   'i-bolt',
+  'i-location',
   'i-sms'
 ];
 

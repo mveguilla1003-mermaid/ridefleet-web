@@ -175,7 +175,7 @@
     },
     "noCert": {
       "title": "First, plainly",
-      "body": "Ride Fleet holds no SOC 2, no ISO 27001 and no HIPAA certification, and no independent third party has run a penetration test. If your buying process requires one of those today, we cannot satisfy it yet, and we would rather say so here than across a table. What we do have is set out below, in the same detail."
+      "body": "Ride Fleet holds no SOC 2, no ISO 27001 and no HIPAA certification, and no independent third party has run a penetration test. We are pursuing SOC 2 Type II attestation and the compliance programme is under way; no report exists yet, and until one does this page will say nothing else. If your buying process requires one of those today, we cannot satisfy it yet, and we would rather say so here than across a table. What we do have is set out below, in the same detail."
     },
     "encryption": {
       "title": "Encryption",

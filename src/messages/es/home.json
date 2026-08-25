@@ -19,7 +19,7 @@
     "ctaSecondary": "¿Qué te está costando dinero?",
     "spec": [
       { "label": "Modelos", "value": "Renta · Cortesía" },
-      { "label": "Peajes", "value": "AutoExpreso · SunPass · E-PASS · FasTrak", "live": "Conectado" },
+      { "label": "Peajes", "value": "AutoExpreso · SunPass · E-PASS · FasTrak · Flex Pass", "live": "Conectado" },
       { "label": "Idioma", "value": "Español e inglés, nativo — no traducido" },
       { "label": "Sede", "value": "Puerto Rico primero · listo para EE. UU. continental" }
     ],
@@ -156,7 +156,11 @@
       { "value": "Telnyx / Twilio" }
     ],
     "soonLabel": "Telemática · conectada",
-    "soon": [{ "value": "Zubie" }, { "value": "VoltSwitch" }]
+    "soon": [
+      { "value": "Zubie" },
+      { "value": "VoltSwitch" },
+      { "value": "One Step GPS" }
+    ]
   },
   "router": {
     "chapter": { "num": "01", "label": "Diagnóstico" },
@@ -365,7 +369,7 @@
       },
       {
         "value": "Telemática conectada",
-        "body": "El planner recibe millaje, combustible y ubicación de Zubie y VoltSwitch. Esos datos llegan solos: nadie los teclea ni espera a la próxima inspección."
+        "body": "El planner recibe millaje, combustible y ubicación de Zubie, VoltSwitch y One Step GPS. Esos datos llegan solos: nadie los teclea ni espera a la próxima inspección."
       },
       {
         "value": "Bilingüe de raíz",

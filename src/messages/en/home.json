@@ -19,7 +19,7 @@
     "ctaSecondary": "What's bleeding money?",
     "spec": [
       { "label": "Models", "value": "Rental · Loaners" },
-      { "label": "Tolls", "value": "AutoExpreso · SunPass · E-PASS · FasTrak", "live": "Connected" },
+      { "label": "Tolls", "value": "AutoExpreso · SunPass · E-PASS · FasTrak · Flex Pass", "live": "Connected" },
       { "label": "Language", "value": "Spanish and English, native — not translated" },
       { "label": "Base", "value": "Puerto Rico first · ready for the US mainland" }
     ],
@@ -156,7 +156,11 @@
       { "value": "Telnyx / Twilio" }
     ],
     "soonLabel": "Telematics · connected",
-    "soon": [{ "value": "Zubie" }, { "value": "VoltSwitch" }]
+    "soon": [
+      { "value": "Zubie" },
+      { "value": "VoltSwitch" },
+      { "value": "One Step GPS" }
+    ]
   },
   "router": {
     "chapter": { "num": "01", "label": "Diagnosis" },
@@ -365,7 +369,7 @@
       },
       {
         "value": "Telematics connected",
-        "body": "The planner takes mileage, fuel and location from Zubie and VoltSwitch. That data arrives on its own — nobody types it in or waits for the next inspection."
+        "body": "The planner takes mileage, fuel and location from Zubie, VoltSwitch and One Step GPS. That data arrives on its own — nobody types it in or waits for the next inspection."
       },
       {
         "value": "Bilingual by design",

@@ -12,7 +12,7 @@
     "ctaDemo": "Book a demo",
     "ctaCalc": "Add up what you're losing",
     "notes": [
-      "AutoExpreso (PR), SunPass and E-PASS (FL), FasTrak (CA)",
+      "AutoExpreso (PR), SunPass and E-PASS (FL), FasTrak and Flex Pass",
       "Encrypted credentials, read-only access",
       "Nothing bills without a human approving it"
     ]
@@ -221,6 +221,7 @@
       { "value": "Multiple payment gateways" },
       { "value": "Zubie" },
       { "value": "VoltSwitch" },
+      { "value": "One Step GPS" },
       { "value": "Telnyx" }
     ]
   },
