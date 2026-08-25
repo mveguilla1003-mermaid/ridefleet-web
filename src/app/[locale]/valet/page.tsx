@@ -884,23 +884,6 @@ export default function ValetPage({ params }: { params: { locale: Locale } }) {
                 ))}
               </div>
             </div>
-
-            <div className="partner">
-              <div className="partner-invite">
-                <h3 className="t-h4">{t('partner.title')}</h3>
-                <p>{t('partner.body')}</p>
-                <ButtonLink href={routes.demo} icon="i-arrow-right">
-                  {t('partner.cta')}
-                </ButtonLink>
-              </div>
-              {/* Three slots, deliberately empty — no invented customer logos. */}
-              <div className="slot-row">
-                <span className="logo-slot">{common('logoSlot')}</span>
-                <span className="logo-slot">{common('logoSlot')}</span>
-                <span className="logo-slot">{common('logoSlot')}</span>
-              </div>
-              <p className="slot-cap">{t('partner.slotsCaption')}</p>
-            </div>
           </div>
         </div>
       </section>

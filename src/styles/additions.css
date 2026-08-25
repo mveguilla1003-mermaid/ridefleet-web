@@ -170,21 +170,6 @@
 }
 
 /* A deliberately empty partner slot. It must LOOK empty — never a fake logo. */
-.logo-slot {
-  display: grid;
-  place-items: center;
-  min-height: 68px;
-  padding: var(--sp-3);
-  border: 1px dashed var(--border-strong);
-  border-radius: var(--r-md);
-  background: var(--surface-2);
-  color: var(--text-3);
-  font-size: var(--fs-2xs);
-  letter-spacing: var(--tr-caps);
-  text-transform: uppercase;
-  text-align: center;
-}
-
 /* Prose pages (legal, security) — narrow measure, no decoration. */
 .prose {
   max-width: var(--container-narrow);

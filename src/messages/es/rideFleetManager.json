@@ -839,12 +839,6 @@
       }
     }
   },
-  "partner": {
-    "title": "Buscamos socios de diseño",
-    "body": "Estamos en etapa temprana y lo decimos claro: en vez de inventar testimonios, preferimos trabajar de cerca con unos pocos operadores que quieran meter mano en cómo se construye esto. A cambio, ustedes fijan la prioridad del roadmap.",
-    "cta": "Hablemos",
-    "slotsNote": "Estos espacios quedan vacíos a propósito hasta que un cliente real nos autorice a usar su nombre."
-  },
   "cta": {
     "eyebrow": "Próximo paso",
     "title": "Trae tu operación a la demo",

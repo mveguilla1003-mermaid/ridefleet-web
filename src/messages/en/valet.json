@@ -494,12 +494,6 @@
       }
     }
   },
-  "partner": {
-    "title": "We are looking for design partners",
-    "body": "Valet runs in production today, but we are not publishing testimonials or customer numbers yet — because we are not going to invent them. If you run a fleet in Puerto Rico and want to shape what gets built, there is a seat here.",
-    "cta": "Let's talk",
-    "slotsCaption": "These slots are empty on purpose"
-  },
   "toggle": {
     "eyebrow": "One module at a time",
     "title": "Start with one leak. Expand when it pays for itself.",

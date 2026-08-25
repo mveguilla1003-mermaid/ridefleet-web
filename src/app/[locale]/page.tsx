@@ -891,9 +891,9 @@ export default function HomePage({ params }: { params: { locale: Locale } }) {
           is not on offer. It was the last numbered chapter, so 01–03 still run
           without a gap. Its markup owned .partner-grid / .partner-aside /
           .partner-terms / .pterm / .slots / .slot-note and the
-          .partner-invite--flush variant; all of those went with it. The plain
-          .partner-invite card stays in components.css — Toll Bridge, Valet and
-          Ride Fleet Manager still use it. */}
+          .partner-invite--flush variant; all of those went with it. The base
+          .partner-invite card outlived it by a week and then went too, on
+          2026-08-25, when the last three design-partner sections were removed. */}
 
       {/* ============================== CTA ============================== */}
       <section className="sec sec--tight sec--cta">

@@ -977,25 +977,6 @@ export default function TollBridgePage({
                 </details>
               ))}
             </div>
-
-            <aside className="partner reveal">
-              <div className="partner-invite">
-                <h3>{t('partner.title')}</h3>
-                <p>{t('partner.body')}</p>
-                <ButtonLink
-                  href={routes.demo}
-                  tone="secondary"
-                  icon="i-arrow-right"
-                >
-                  {t('partner.cta')}
-                </ButtonLink>
-              </div>
-              <div className="slot-row">
-                <span className="logo-slot">{common('logoSlot')}</span>
-                <span className="logo-slot">{common('logoSlot')}</span>
-              </div>
-              <p className="slot-cap">{t('partner.slotCap')}</p>
-            </aside>
           </div>
         </div>
       </section>

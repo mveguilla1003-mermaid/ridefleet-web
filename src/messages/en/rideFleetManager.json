@@ -839,12 +839,6 @@
       }
     }
   },
-  "partner": {
-    "title": "We're looking for design partners",
-    "body": "We're early and we say so plainly: instead of inventing testimonials, we'd rather work closely with a handful of operators who want a hand in how this gets built. In exchange, you set the roadmap priority.",
-    "cta": "Talk to us",
-    "slotsNote": "These slots stay empty on purpose until a real customer gives us permission to use their name."
-  },
   "cta": {
     "eyebrow": "Next step",
     "title": "Bring your operation to the demo",

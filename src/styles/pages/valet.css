@@ -423,7 +423,11 @@
 }
 
 /* ---- FAQ + partner ------------------------------------------------------- */
-.faq-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,3.6vw,56px);align-items:start}
+/* One column since 2026-08-25. This grid paired the FAQ with the
+   design-partner rail; with the rail gone, the second track left a 406px hole
+   down the right of the page — measured, not guessed. The FAQ answers already
+   cap themselves at 64ch, so a single full-width track still reads well. */
+.faq-split{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(28px,3.6vw,56px);align-items:start}
 .faq{border-top:2px solid var(--rule-heavy)}
 .faq details{border-bottom:1px solid var(--border)}
 .faq summary{
@@ -436,16 +440,7 @@
 .faq summary svg{width:18px;height:18px;color:var(--p-600);flex:0 0 auto;transition:transform var(--dur-3) var(--ease-out)}
 .faq details[open] summary svg{transform:rotate(180deg)}
 .faq .a{padding:0 0 var(--sp-5);font-size:var(--fs-sm);color:var(--text-2);line-height:1.62;max-width:64ch}
-.partner{position:sticky;top:96px}
-.partner .partner-invite{margin:0;text-align:left}
-.partner .partner-invite p{margin-inline:0}
-.slot-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sp-3);margin-top:var(--sp-6)}
-.slot-row .logo-slot{width:100%}
-.slot-cap{
-  margin-top:var(--sp-3);font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.08em;
-  text-transform:uppercase;color:var(--text-3);
-}
-@media (max-width:900px){.faq-split{grid-template-columns:minmax(0,1fr)}.partner{position:static}}
+@media (max-width:900px){.faq-split{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:900px){.hero-copy{grid-template-columns:minmax(0,1fr)}}
 
 /* ---- Toggle band --------------------------------------------------------- */
@@ -689,10 +684,6 @@ body{--sec-y:clamp(56px,5.9vw,84px)}
    styling is components.css + additions.css now) */
 /* channel index numeral measured 4.05 on the tinted lead surface */
 .chan-h .cn{color:var(--n-700)}
-/* logo slots carried min-width:150px into a 3-col grid and broke out of the
-   FAQ rail at 1024 — the grid track already sets the width */
-.slot-row .logo-slot{min-width:0;padding-inline:6px;font-size:9.5px;letter-spacing:.07em;
-  white-space:nowrap;overflow:hidden}
 
 /* Shell rules (header, footer, .lang) live ONLY in additions.css — see its
    CROSS-PAGE SHELL NORMALISATION block for what used to sit here and why. */

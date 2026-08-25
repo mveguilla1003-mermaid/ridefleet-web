@@ -400,7 +400,11 @@
 .tmod--gold.tmod--on .sw{background:var(--gold-500);border-color:var(--gold-600)}
 
 /* --- FAQ + PARTNER --------------------------------------------------------- */
-.faq-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+/* One column since 2026-08-25. This grid paired the FAQ with the
+   design-partner rail; with the rail gone, the second track left a 406px hole
+   down the right of the page — measured, not guessed. The FAQ answers already
+   cap themselves at 64ch, so a single full-width track still reads well. */
+.faq-split{display:grid;grid-template-columns:minmax(0,1fr);
   gap:clamp(28px,3.6vw,56px);align-items:start}
 .faq{border-top:2px solid var(--rule-heavy)}
 .faq details{border-bottom:1px solid var(--border)}
@@ -414,13 +418,6 @@
 .faq summary svg{width:18px;height:18px;color:var(--p-600);flex:0 0 auto;transition:transform var(--dur-3) var(--ease-out)}
 .faq details[open] summary svg{transform:rotate(180deg)}
 .faq .a{padding:0 0 var(--sp-5);font-size:var(--fs-sm);color:var(--text-2);line-height:1.62;max-width:64ch}
-.partner{position:sticky;top:96px}
-.partner .partner-invite{margin:0;text-align:left}
-.partner .partner-invite p{margin-inline:0}
-.slot-row{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-6)}
-.slot-row .logo-slot{flex:1 1 120px}
-.slot-cap{margin-top:var(--sp-3);font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.08em;
-  text-transform:uppercase;color:var(--text-3)}
 
 #demo{padding-bottom:clamp(40px,4.4vw,64px)}
 
@@ -433,7 +430,6 @@
   .hero-copy h1{max-width:18ch}
   .calc,.guard,.soc,.toggle-band,.faq-split{grid-template-columns:minmax(0,1fr);gap:var(--sp-8)}
   .calc-out .btn-row{margin-top:var(--sp-6)}
-  .partner{position:static}
   .lrow{grid-template-columns:70px 110px minmax(0,1fr);row-gap:var(--sp-3)}
   .lrow .chip{grid-column:3;justify-self:start}
   .dl-grid{grid-template-columns:minmax(0,1fr)}
@@ -476,7 +472,6 @@
   .lrow .lbar{grid-column:2}
   .lrow .ltx,.lrow .chip{grid-column:2}
   .hero-note{gap:var(--sp-2) var(--sp-4)}
-  .slot-row .logo-slot{flex:1 1 100%}
   .srow{grid-template-columns:26px minmax(0,1fr);row-gap:var(--sp-2)}
   .srow .sright{grid-column:2;align-items:flex-start;text-align:left;flex-direction:row;
     flex-wrap:wrap;gap:var(--sp-2) var(--sp-3)}

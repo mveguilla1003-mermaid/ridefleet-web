@@ -701,21 +701,7 @@ table.data .right{text-align:right}
 .integration svg{width:18px;height:18px;color:var(--n-500);flex:0 0 auto}
 .integration:hover{border-color:var(--border-strong);color:var(--text-1);transform:translateY(-1px)}
 /* Honest placeholder — NEVER a fabricated logo or testimonial */
-.logo-slot{
-  display:inline-flex;align-items:center;justify-content:center;min-width:150px;min-height:44px;
-  padding:9px 18px;border:1px dashed var(--border-strong);border-radius:var(--r-md);
-  background:var(--surface-1);
-  font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.12em;text-transform:uppercase;
-  color:var(--text-3);text-align:center;
-}   /* --text-3 on --n-25 = 4.86 AA */
-.partner-invite{
-  border:1px dashed var(--border-strong);border-radius:var(--r-xl);
-  background:linear-gradient(180deg,var(--surface-1),var(--p-50));
-  padding:clamp(26px,3vw,40px);text-align:center;
-}
-.partner-invite h3{margin-bottom:var(--sp-3)}
-.partner-invite p{color:var(--text-2);max-width:52ch;margin-inline:auto;margin-bottom:var(--sp-6)}
-
+   /* --text-3 on --n-25 = 4.86 AA */
 /* ============================================================================
    13. FORM CONTROLS
    ========================================================================= */
@@ -958,9 +944,10 @@ table.data .right{text-align:right}
   .trust--rail .integration{padding-inline:var(--sp-4)}
 }
 
-/* .partner-invite--flush (the solid, left-aligned card variant) went out with
-   the home page's chapter 04 on 2026-08-17. The base .partner-invite above
-   stays: Toll Bridge, Valet and Ride Fleet Manager still render it, centred. */
+/* The .partner-invite family is gone entirely as of 2026-08-25. The --flush
+   variant went first, with the home page's chapter 04 on 2026-08-17; the base
+   card followed when Toll Bridge, Valet and Ride Fleet Manager lost their
+   design-partner sections. */
 
 /* RECONCILED from 01: a CTA section already ends on a card with its own
    breathing room — the footer default on top of that reads as a hole. */
@@ -1198,7 +1185,6 @@ main:has(.sec--cta) + .site-footer{margin-top:clamp(36px,3.8vw,52px)}
   color:var(--ink-tx-2);box-shadow:none}
 .band--ink .integration svg{color:var(--ink-tx-4)}
 .band--ink .integration:hover{border-color:rgba(255,255,255,.20);color:var(--ink-tx-1)}
-.band--ink .logo-slot{background:rgba(255,255,255,.02);border-color:rgba(255,255,255,.17);color:var(--ink-tx-4)}
 .band--ink .trust{border-block-color:rgba(255,255,255,.07);background:transparent}
 .band--ink .callout{background:rgba(18,16,28,.94);border-color:rgba(255,255,255,.14)}
 .band--ink .callout::after{background:var(--ink-900)}
@@ -1226,8 +1212,6 @@ main:has(.sec--cta) + .site-footer{margin-top:clamp(36px,3.8vw,52px)}
 .band--ink .cta-band::before{background:radial-gradient(closest-side,rgba(127,79,240,.34),transparent)}
 .band--ink .cta-list{color:var(--ink-tx-3)}
 .band--ink .cta-list svg{color:var(--teal-300)}
-.band--ink .partner-invite{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.20)}
-
 /* Live status row / event log — console signature */
 .band--ink .live{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);
   font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-300)}
@@ -1321,7 +1305,6 @@ main:has(.sec--cta) + .site-footer{margin-top:clamp(36px,3.8vw,52px)}
 }
 @media (max-width:390px){
   .btn{padding:11px 16px;font-size:14.5px}
-  .logo-slot{min-width:0;width:100%}
   .app-bar{padding:9px 11px}
 }
 
@@ -1352,3 +1335,9 @@ main:has(.sec--cta) + .site-footer{margin-top:clamp(36px,3.8vw,52px)}
   .reveal{opacity:1;transform:none}
 }
 
+/* .partner-invite and .logo-slot were deleted on 2026-08-25 with the last three
+   design-partner sections (Ride Fleet Manager, Toll Bridge, Valet). The
+   founding-partner programme is closed: the home chapter went first, then the
+   /design-partners route, then these. The empty-slot pattern went with them —
+   it existed to hold customer logos honestly until real ones arrived, and
+   there is no longer a section for them to sit in. */

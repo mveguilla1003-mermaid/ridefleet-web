@@ -1174,29 +1174,6 @@ export default function RideFleetManagerPage({
               ))}
             </div>
           </div>
-
-          <aside className="partner">
-            <div className="partner-invite">
-              <h3>{t('partner.title')}</h3>
-              <p>{t('partner.body')}</p>
-              <ButtonLink
-                href={routes.demo}
-                tone="primary"
-                size="sm"
-                icon="i-arrow-right"
-              >
-                {t('partner.cta')}
-              </ButtonLink>
-            </div>
-            <div className="slot-row">
-              {range(3).map((i) => (
-                <span className="logo-slot" key={i}>
-                  {tCommon('logoSlot')}
-                </span>
-              ))}
-            </div>
-            <p className="slot-cap">{t('partner.slotsNote')}</p>
-          </aside>
         </div>
       </Section>
 

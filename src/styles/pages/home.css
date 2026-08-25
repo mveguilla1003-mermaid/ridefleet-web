@@ -269,9 +269,9 @@
    .partner-terms, .pterm, .slots, .slot-note and the
    `.partner-invite .btn-row` left-align override. Every one of those had
    exactly one call site — this page's chapter 04 — so nothing was left
-   styling anything. Do NOT restore them next to a .partner-invite on another
-   route: the card variants those pages use are centred, and the .btn-row rule
-   in particular would silently left-align their buttons.
+   styling anything. The .partner-invite card itself is gone too, as of
+   2026-08-25: the last three sections that rendered it were removed with the
+   founding-partner programme.
    `.slot-note` also lives in book-demo.css with its own values; that copy is
    unrelated and still in use. */
 .sec--cta{padding-bottom:clamp(8px,1.2vw,18px)}

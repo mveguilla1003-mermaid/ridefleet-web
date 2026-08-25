@@ -328,7 +328,11 @@
 .tmod--on .sw::after{left:auto;right:2px}
 
 /* --- FAQ + PARTNER ------------------------------------------------------- */
-.faq-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+/* One column since 2026-08-25. This grid paired the FAQ with the
+   design-partner rail; with the rail gone, the second track left a 406px hole
+   down the right of the page — measured, not guessed. The FAQ answers already
+   cap themselves at 64ch, so a single full-width track still reads well. */
+.faq-split{display:grid;grid-template-columns:minmax(0,1fr);
   gap:clamp(28px,3.6vw,56px);align-items:start}
 .faq{border-top:2px solid var(--rule-heavy)}
 .faq details{border-bottom:1px solid var(--border)}
@@ -343,15 +347,6 @@
 .faq details[open] summary svg{transform:rotate(180deg)}
 .faq .a{padding:0 0 var(--sp-5);font-size:var(--fs-sm);color:var(--text-2);line-height:1.62;max-width:64ch}
 .faq .a + .a{padding-top:0;margin-top:calc(var(--sp-3) * -1)}
-.partner{position:sticky;top:96px}
-.partner .partner-invite{margin:0;text-align:left}
-.partner .partner-invite p{margin-inline:0}
-.slot-row{display:flex;flex-wrap:wrap;gap:var(--sp-3);margin-top:var(--sp-6)}
-.slot-row .logo-slot{flex:1 1 120px}
-.slot-cap{
-  margin-top:var(--sp-3);font-family:var(--font-mono);font-size:var(--fs-2xs);letter-spacing:.08em;
-  text-transform:uppercase;color:var(--text-3);
-}
 
 /* The CTA card carries its own generous padding and the footer carries its own
    top margin — a section gutter on top of both opens a ~175px hole. */
@@ -382,7 +377,6 @@
   .cap-row{grid-template-columns:minmax(0,1fr);gap:var(--sp-6)}
   .cap-head p{max-width:60ch}
   .spine-head,.cmp-head,.spine-detail,.toggle-band,.faq-split{grid-template-columns:minmax(0,1fr);gap:var(--sp-8)}
-  .partner{position:static}
 }
 @media (max-width:900px){
   .kpis--lead{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -417,7 +411,6 @@
   .hero-note{gap:var(--sp-2) var(--sp-4)}
   .m-kicker{flex-wrap:wrap;gap:var(--sp-2)}
   .toggle-band h2{max-width:none}
-  .slot-row .logo-slot{flex:1 1 100%}
 }
 @media (max-width:430px){
   .spine{grid-template-columns:minmax(0,1fr)}
