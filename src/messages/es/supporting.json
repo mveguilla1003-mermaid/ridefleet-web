@@ -175,7 +175,7 @@
     },
     "noCert": {
       "title": "Lo primero, sin rodeos",
-      "body": "Ride Fleet no tiene SOC 2, ni ISO 27001, ni certificación HIPAA, y ningún tercero independiente ha hecho una prueba de penetración. Estamos persiguiendo la atestación SOC 2 Type II y el programa de cumplimiento está en marcha; todavía no existe un informe, y hasta que exista esta página no dirá otra cosa. Si tu proceso de compra exige alguna de esas cosas hoy, todavía no la podemos satisfacer, y preferimos decirlo aquí y no en la mesa. Lo que sí hay está descrito abajo, con el mismo detalle."
+      "body": "Ride Fleet no tiene SOC 2, ni ISO 27001, ni certificación HIPAA, y ningún tercero independiente ha hecho una prueba de penetración. Hay dos programas en marcha: la atestación SOC 2 Type II y la certificación ISO 27001. Ninguno ha emitido nada todavía — no hay informe ni certificado — y hasta que los haya, esta página no dirá otra cosa. Si tu proceso de compra exige alguna de esas cosas hoy, todavía no la podemos satisfacer, y preferimos decirlo aquí y no en la mesa. Lo que sí hay está descrito abajo, con el mismo detalle."
     },
     "encryption": {
       "title": "Cifrado",
