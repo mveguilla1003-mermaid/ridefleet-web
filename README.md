@@ -191,6 +191,19 @@ and the forms dashboard showed "1 submission has been flagged as spam" beside
 listed there. **Any new sending domain — a preview deploy, a second brand —
 needs adding too, or its leads disappear the same way.**
 
+**The domain HubSpot judges is the one in NEXT_PUBLIC_SITE_URL, not the host
+serving the request.** We send it as the pageUri of the submission context. In
+production that variable points at the Vercel deployment, so the first live
+submission was filed as spam with the reason "Unregistered Site Domain" even
+though ridefleet.com was already registered. Both ridefleet.com and
+ridefleet-web.vercel.app are listed now. When the real domain finally serves
+the site, set NEXT_PUBLIC_SITE_URL to it — that one variable fixes the
+canonical URLs, the sitemap and this spam filter at the same time.
+
+Also: Vercel only applies new environment variables on a NEW deployment. After
+adding the two HubSpot ids, redeploy, or /api/lead keeps answering
+delivered:false with the variables sitting in the dashboard unused.
+
 Two settings that matter just as much:
 
 - **"Create new contacts for email addresses" must be ON** for the form
