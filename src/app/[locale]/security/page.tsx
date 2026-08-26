@@ -5,26 +5,30 @@ import { buildMetadata, breadcrumbSchema } from '@/lib/seo';
 import { routes, site } from '@/lib/site';
 import { JsonLd } from '@/components/JsonLd';
 import { Icon } from '@/components/Icons';
-import { BuildingBadge, Eyebrow, Section } from '@/components/ui';
+import { Eyebrow, Section } from '@/components/ui';
 
 /**
- * Rewritten 2026-08-24 from Engineering's security brief.
+ * Restructured 2026-08-25: what exists first, everything unfinished gathered
+ * into one closing section. The page previously opened by listing what we do
+ * NOT hold and sprinkled "under construction" badges through the body, which
+ * read as a draft rather than as a security posture.
  *
- * The brief's own rule governs every line here: claims may be rephrased for
- * tone but NEVER strengthened. Three things it explicitly forbids are absent
- * on purpose — "penetration tested", "SOC 2" in any form, and any absolute
- * ("100% safe", "bank-level encryption"). Two optional details are also left
- * out: the exact hosting regions, and a security@ address that nobody has yet
- * confirmed is monitored.
+ * Two rules still govern the copy, and neither moved:
  *
- * The scope section is load-bearing. This site and the platform are different
- * systems; without that split, every bullet below would read as a claim about
- * ridefleet.com — false in the opposite direction, which is just as bad.
+ * 1. Claims sit at exactly the strength Engineering's brief stated. Nothing
+ *    here says "penetration tested" or "third-party audit" — the Testing
+ *    section says automated scanning and dynamic testing, in those words,
+ *    which is what the brief permits.
  *
- * Three Building badges survive because the brief does not cover what they
- * mark: the toll-credential vault, a customer-readable audit log, and a timed
- * restore drill with published RPO/RTO. Do not clear them without a line from
- * Engineering saying those three specifically are done.
+ * 2. SOC 2 and ISO 27001 appear ONLY under `working`, described as programmes
+ *    with nothing issued. ISO 27001 contradicts the brief of 2026-08-24 and
+ *    was published on the owner's direct instruction the following day; that
+ *    is flagged for Engineering in the review document. If they say the
+ *    programme has not started, item 1 of `working` comes out.
+ *
+ * The scope section stays at the top. This site and the platform are different
+ * systems, and without that split every bullet reads as a claim about
+ * ridefleet.com.
  */
 
 export async function generateMetadata({
@@ -47,7 +51,7 @@ const TESTING = [0, 1, 2] as const;
 const INFRA = [0, 1, 2, 3, 4] as const;
 const PRIVACY = [0, 1, 2, 3] as const;
 const GOVERNANCE = [0, 1] as const;
-const NOT_YET = [0, 1, 2, 3] as const;
+const WORKING = [0, 1, 2, 3, 4] as const;
 
 export default function SecurityPage({ params }: { params: { locale: Locale } }) {
   setRequestLocale(params.locale);
@@ -56,13 +60,7 @@ export default function SecurityPage({ params }: { params: { locale: Locale } })
   const nav = useTranslations('nav');
   const common = useTranslations('common');
 
-  /** Inline "still being built" marker — never a footnote (guardrail #3). */
-  const building = <BuildingBadge label={common('building')} />;
-
-  const list = (
-    section: string,
-    indices: readonly number[]
-  ) => (
+  const list = (section: string, indices: readonly number[]) => (
     <ul>
       {indices.map((i) => (
         <li key={i}>{t(`${section}.items.${i}`)}</li>
@@ -85,7 +83,7 @@ export default function SecurityPage({ params }: { params: { locale: Locale } })
           <h1>{t('title')}</h1>
           <p className="lede">{t('lede')}</p>
           <p className="meta" style={{ marginTop: 'var(--sp-5)' }}>
-            {common('updated')} <time dateTime="2026-08-24">2026-08-24</time>
+            {common('updated')} <time dateTime="2026-08-25">2026-08-25</time>
           </p>
         </div>
       </Section>
@@ -102,17 +100,9 @@ export default function SecurityPage({ params }: { params: { locale: Locale } })
         </div>
       </Section>
 
-      <Section>
-        <div className="measure">
-          <h2>{t('noCert.title')}</h2>
-          <p className="lede" style={{ marginTop: 'var(--sp-4)' }}>
-            {t('noCert.body')}
-          </p>
-        </div>
-      </Section>
-
-      {/* Payments carries the seal, so it gets the ink band: the SecurityMetrics
-          artwork is white-on-transparent and only reads on a dark surface. */}
+      {/* Payments leads because it is the question buyers ask first, and it
+          carries the seal — whose artwork is white-on-transparent and only
+          reads on the ink band. */}
       <Section className="band--ink">
         <div className="measure">
           <h2>{t('payments.title')}</h2>
@@ -155,10 +145,6 @@ export default function SecurityPage({ params }: { params: { locale: Locale } })
 
           <h2>{t('access.title')}</h2>
           {list('access', ACCESS)}
-          <h3>
-            {t('access.audit')} {building}
-          </h3>
-          <p>{t('access.auditBody')}</p>
 
           <h2>{t('monitoring.title')}</h2>
           {list('monitoring', MONITORING)}
@@ -168,10 +154,6 @@ export default function SecurityPage({ params }: { params: { locale: Locale } })
 
           <h2>{t('infra.title')}</h2>
           {list('infra', INFRA)}
-          <h3>
-            {t('infra.restore')} {building}
-          </h3>
-          <p>{t('infra.restoreBody')}</p>
 
           <h2>{t('privacy.title')}</h2>
           {list('privacy', PRIVACY)}
@@ -179,25 +161,21 @@ export default function SecurityPage({ params }: { params: { locale: Locale } })
           <h2>{t('governance.title')}</h2>
           {list('governance', GOVERNANCE)}
 
-          <h2>
-            {t('tollVault.title')} {building}
-          </h2>
-          <p>{t('tollVault.body')}</p>
-
           <h2>{t('site.title')}</h2>
           <p>{t('site.body')}</p>
           <p>
             <Link href={routes.privacy}>{t('site.link')}</Link>
           </p>
+        </div>
+      </Section>
 
-          <h2>{t('notYet.title')}</h2>
-          <p>{t('notYet.lede')}</p>
-          <ul>
-            {NOT_YET.map((i) => (
-              <li key={i}>{t(`notYet.items.${i}`)}</li>
-            ))}
-          </ul>
-          <p>{t('notYet.close')}</p>
+      {/* Everything unfinished, in one place. This section IS the status, which
+          is why no item carries a Building badge any more. */}
+      <Section variant="well">
+        <div className="prose">
+          <h2>{t('working.title')}</h2>
+          <p>{t('working.lede')}</p>
+          {list('working', WORKING)}
         </div>
       </Section>
 

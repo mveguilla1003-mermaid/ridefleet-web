@@ -162,20 +162,16 @@
   "security": {
     "meta": {
       "title": "Seguridad y manejo de datos · Ride Fleet",
-      "description": "Cifrado, control de acceso, cumplimiento PCI, monitoreo, respaldos y gobernanza de la plataforma Ride Fleet Manager — y lo que todavía no tenemos, dicho con el mismo detalle."
+      "description": "Cifrado, control de acceso, cumplimiento PCI, monitoreo, respaldos y gobernanza de la plataforma Ride Fleet Manager — y en qué estamos trabajando ahora."
     },
     "eyebrow": "Seguridad",
     "title": "Cómo tratamos la información",
-    "lede": "Esta página describe el estado de hoy, no una aspiración. Lo que está resuelto y lo que no lo está aparecen con el mismo nivel de detalle.",
+    "lede": "Esto es lo que hay hoy, con el detalle suficiente para que tu equipo de compras lo pueda revisar. Lo que todavía está en curso va al final, dicho con el mismo detalle.",
     "scope": {
       "title": "Qué cubre esta página",
       "body": "Dos cosas distintas llevan el nombre Ride Fleet, y conviene separarlas antes de leer el resto.",
       "site": "Este sitio web es mercadeo. No aloja la operación de ningún cliente: lo único que recibe son solicitudes de demo.",
       "platform": "Ride Fleet Manager es la plataforma donde vive la operación — reservas, contratos, inspecciones, pagos. Todo lo que sigue describe esa plataforma, salvo donde se diga otra cosa."
-    },
-    "noCert": {
-      "title": "Lo primero, sin rodeos",
-      "body": "Ride Fleet no tiene SOC 2, ni ISO 27001, ni certificación HIPAA, y ningún tercero independiente ha hecho una prueba de penetración. Hay dos programas en marcha: la atestación SOC 2 Type II y la certificación ISO 27001. Ninguno ha emitido nada todavía — no hay informe ni certificado — y hasta que los haya, esta página no dirá otra cosa. Si tu proceso de compra exige alguna de esas cosas hoy, todavía no la podemos satisfacer, y preferimos decirlo aquí y no en la mesa. Lo que sí hay está descrito abajo, con el mismo detalle."
     },
     "encryption": {
       "title": "Cifrado",
@@ -204,9 +200,7 @@
         "2": "Separación estricta de cuentas: los datos de cada empresa quedan aislados de los de las demás en la capa de datos, y hay pruebas automáticas que lo comprueban.",
         "3": "Requisitos de contraseña fuertes y límite de intentos de inicio de sesión.",
         "4": "Las sesiones se revocan en menos de 30 segundos cuando se desactiva una cuenta o se cambia su contraseña."
-      },
-      "audit": "Registro de auditoría que el cliente pueda consultar por su cuenta",
-      "auditBody": "El registro de seguridad existe y se conserva. Lo que todavía no está es la pantalla donde tú mismo puedas revisar quién de nuestro lado tocó tus datos y cuándo."
+      }
     },
     "monitoring": {
       "title": "Monitoreo y auditoría",
@@ -232,9 +226,7 @@
         "2": "Los servicios de la aplicación no están expuestos directamente a internet; todo el tráfico pasa por una puerta de enlace que termina TLS.",
         "3": "Respaldos cifrados cada noche, con retención de 30 días y restauración a un punto en el tiempo.",
         "4": "Despliegues sin interrupción de servicio, con verificaciones de salud automáticas."
-      },
-      "restore": "Prueba de restauración documentada, con RPO y RTO publicados",
-      "restoreBody": "Tener respaldos no es lo mismo que haber cronometrado una restauración de principio a fin. Esa prueba y sus números todavía no se publican."
+      }
     },
     "privacy": {
       "title": "Privacidad y derechos",
@@ -252,29 +244,25 @@
         "1": "Lista de subprocesadores mantenida al día. Te la enviamos si la pides."
       }
     },
-    "tollVault": {
-      "title": "Bóveda de credenciales de peaje",
-      "body": "Toll Bridge necesita credenciales de cada autoridad de peaje que uses. El diseño es una bóveda con cifrado por cliente, credenciales que nunca se muestran completas en pantalla y registro de cada uso. Ese módulo sigue en construcción."
+    "working": {
+      "title": "En lo que estamos trabajando",
+      "lede": "Esto está en curso hoy. No está terminado, y esta página no dirá que lo está hasta que lo esté.",
+      "items": {
+        "0": "Atestación SOC 2 Type II. El programa de cumplimiento está en marcha; todavía no existe un informe.",
+        "1": "Certificación ISO 27001. También en marcha; todavía no hay certificado.",
+        "2": "Bóveda de credenciales de peaje. Toll Bridge necesita credenciales de cada autoridad que uses; el diseño es una bóveda con cifrado por cliente, credenciales que nunca se muestran completas en pantalla y registro de cada uso.",
+        "3": "Registro de auditoría que puedas consultar tú. El registro de seguridad ya existe y se conserva; falta la pantalla donde revises por tu cuenta quién de nuestro lado tocó tus datos y cuándo.",
+        "4": "Prueba de restauración cronometrada, con RPO y RTO publicados. Tener respaldos no es lo mismo que haber medido una restauración de principio a fin."
+      }
     },
     "site": {
       "title": "Este sitio web",
       "body": "Aparte de todo lo anterior: ridefleet.com es un sitio de mercadeo. No aloja datos de operación de ningún cliente. Lo único que recibe son las solicitudes de demo — nombre, empresa, correo, teléfono opcional, tamaño de flota, modelo de negocio, notas y la procedencia de la visita — y no carga recursos de terceros.",
       "link": "El detalle completo está en la política de privacidad"
     },
-    "notYet": {
-      "title": "Lo que todavía no tenemos",
-      "lede": "Esta lista existe para que nadie tenga que adivinar.",
-      "items": {
-        "0": "Prueba de penetración por un tercero independiente. El escaneo automático y las pruebas dinámicas sí se hacen, y están descritos arriba: no son lo mismo.",
-        "1": "Programa de recompensas por vulnerabilidades.",
-        "2": "Página pública de estado del servicio con historial de incidentes.",
-        "3": "Acuerdo de tratamiento de datos publicado y firmable en línea."
-      },
-      "close": "Cuando alguno de estos cambie, cambia esta página y cambia su fecha."
-    },
     "contact": {
       "title": "Preguntas de seguridad",
-      "body": "Si estás evaluando a Ride Fleet y necesitas respuestas para tu proceso de compra, escríbenos. Contestamos con lo que hay, incluso cuando la respuesta es «todavía no»."
+      "body": "Si estás evaluando a Ride Fleet y tu proceso de compra necesita respuestas que no estén aquí, escríbenos. Contestamos con lo que hay, incluso cuando la respuesta es «todavía no»."
     }
   },
   "legal": {

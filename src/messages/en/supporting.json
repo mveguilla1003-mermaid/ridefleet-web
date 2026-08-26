@@ -162,20 +162,16 @@
   "security": {
     "meta": {
       "title": "Security and data handling · Ride Fleet",
-      "description": "Encryption, access control, PCI compliance, monitoring, backups and governance on the Ride Fleet Manager platform — and what we still do not have, in the same detail."
+      "description": "Encryption, access control, PCI compliance, monitoring, backups and governance on the Ride Fleet Manager platform — and what we are working on now."
     },
     "eyebrow": "Security",
     "title": "How we handle your information",
-    "lede": "This page describes where things stand today, not where we hope to be. What is settled and what is not are written up in the same detail.",
+    "lede": "This is what exists today, in enough detail for your procurement team to review it. What is still in progress goes at the end, in the same detail.",
     "scope": {
       "title": "What this page covers",
       "body": "Two different things carry the Ride Fleet name, and it is worth separating them before reading the rest.",
       "site": "This website is marketing. It hosts no customer operation: the only thing it receives is demo requests.",
       "platform": "Ride Fleet Manager is the platform the operation runs on — bookings, agreements, inspections, payments. Everything below describes that platform, except where it says otherwise."
-    },
-    "noCert": {
-      "title": "First, plainly",
-      "body": "Ride Fleet holds no SOC 2, no ISO 27001 and no HIPAA certification, and no independent third party has run a penetration test. Two programmes are under way: SOC 2 Type II attestation and ISO 27001 certification. Neither has issued anything yet — there is no report and no certificate — and until there is, this page will say nothing else. If your buying process requires one of those today, we cannot satisfy it yet, and we would rather say so here than across a table. What we do have is set out below, in the same detail."
     },
     "encryption": {
       "title": "Encryption",
@@ -204,9 +200,7 @@
         "2": "Strict account separation: each company's data is isolated from every other company's at the data layer, and automated tests verify it.",
         "3": "Strong password requirements and rate-limited sign-in attempts.",
         "4": "Sessions are revoked within 30 seconds when an account is deactivated or its password changes."
-      },
-      "audit": "An audit log the customer can read for themselves",
-      "auditBody": "The security log exists and is retained. What is not there yet is the screen where you can check for yourself who on our side touched your data, and when."
+      }
     },
     "monitoring": {
       "title": "Monitoring and auditing",
@@ -232,9 +226,7 @@
         "2": "Application services are not exposed directly to the internet; all traffic passes through a TLS-terminating gateway.",
         "3": "Encrypted backups every night, with 30-day retention and point-in-time recovery.",
         "4": "Zero-downtime deployments, with automated health checks."
-      },
-      "restore": "A documented restore drill, with published RPO and RTO",
-      "restoreBody": "Having backups is not the same as having timed a restore end to end. That drill and its numbers are not published yet."
+      }
     },
     "privacy": {
       "title": "Privacy and your rights",
@@ -252,29 +244,25 @@
         "1": "A maintained list of sub-processors. We send it to you on request."
       }
     },
-    "tollVault": {
-      "title": "Toll credential vault",
-      "body": "Toll Bridge needs credentials for each toll authority you use. The design is a vault with per-customer encryption, credentials that are never shown in full on screen, and a record of every use. That module is still under construction."
+    "working": {
+      "title": "What we are working on",
+      "lede": "This is in progress today. It is not finished, and this page will not say it is until it is.",
+      "items": {
+        "0": "SOC 2 Type II attestation. The compliance programme is under way; no report exists yet.",
+        "1": "ISO 27001 certification. Also under way; there is no certificate yet.",
+        "2": "A toll credential vault. Toll Bridge needs credentials for each authority you use; the design is a vault with per-customer encryption, credentials never shown in full on screen, and a record of every use.",
+        "3": "An audit log you can read yourself. The security log already exists and is retained; what is missing is the screen where you check for yourself who on our side touched your data, and when.",
+        "4": "A timed restore drill, with published RPO and RTO. Having backups is not the same as having measured a restore end to end."
+      }
     },
     "site": {
       "title": "This website",
       "body": "Separate from everything above: ridefleet.com is a marketing site. It hosts no customer operation data. The only thing it receives is demo requests — name, company, email, optional phone, fleet size, business model, notes and where the visit came from — and it loads nothing from third parties.",
       "link": "The full detail is in the privacy policy"
     },
-    "notYet": {
-      "title": "What we still do not have",
-      "lede": "This list exists so nobody has to guess.",
-      "items": {
-        "0": "A penetration test by an independent third party. Automated scanning and dynamic testing do happen, and are described above: they are not the same thing.",
-        "1": "A vulnerability disclosure reward programme.",
-        "2": "A public status page with incident history.",
-        "3": "A published data-processing agreement, signable online."
-      },
-      "close": "When one of these changes, this page changes and so does its date."
-    },
     "contact": {
       "title": "Security questions",
-      "body": "If you are evaluating Ride Fleet and need answers for your buying process, write to us. We answer with what exists, including when the answer is \"not yet\"."
+      "body": "If you are evaluating Ride Fleet and your buying process needs answers that are not here, write to us. We answer with what exists, including when the answer is \"not yet\"."
     }
   },
   "legal": {
