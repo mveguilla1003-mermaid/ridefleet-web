@@ -6,7 +6,13 @@
     },
     "eyebrow": "Solicitud recibida",
     "title": "Gracias. Ya tenemos tu solicitud",
-    "lede": "Una persona del equipo la revisa y te escribe para coordinar la fecha. Mientras tanto, esto es lo que sigue, qué conviene tener a mano y por dónde seguir leyendo.",
+    "lede": "Puedes escoger tu hora ahora mismo, sin esperar a que te escribamos. Abajo está lo que sigue, qué conviene tener a mano y por dónde seguir leyendo.",
+    "book": {
+      "title": "Escoge tu hora ahora",
+      "body": "No hace falta esperar el correo. Abre el calendario y toma el espacio que te sirva: ya tenemos tus datos, así que llegamos preparados.",
+      "cta": "Abrir el calendario",
+      "alt": "Si prefieres que lo coordinemos nosotros, no hagas nada — te escribimos el mismo día hábil."
+    },
     "next": {
       "title": "Qué pasa después",
       "lede": "Tres pasos, sin sorpresas.",
@@ -308,7 +314,7 @@
       },
       "sharing": {
         "title": "Con quién los compartimos",
-        "body": "Con los proveedores que necesitamos para operar: alojamiento del sitio, envío de correo y, cuando se conecte, el sistema de gestión de clientes. Hoy no hay uno conectado, así que las solicitudes quedan en los registros de la aplicación hasta que alguien te contesta. También podemos compartir información cuando una ley o una orden judicial lo exija."
+        "body": "Con los proveedores que necesitamos para operar, y son estos: Vercel aloja el sitio; HubSpot recibe las solicitudes de demo y es donde las contestamos; Cal.com recibe tu nombre y tu correo si reservas la demo tú mismo por el calendario. Los tres están en Estados Unidos. No vendemos tus datos ni los cedemos para publicidad. También podemos compartir información cuando una ley o una orden judicial lo exija."
       },
       "rights": {
         "title": "Tus derechos",

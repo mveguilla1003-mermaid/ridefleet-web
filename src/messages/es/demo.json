@@ -66,11 +66,6 @@
         "r3": "50 a 149 vehículos",
         "r4": "150 a 499 vehículos",
         "r5": "500 o más"
-      },
-      "routing": {
-        "lead": "Con menos de 10 vehículos",
-        "body": "la demo guiada casi siempre es demasiado. Envía el formulario igual: te ponemos en la lista de acceso temprano del plan de autoservicio",
-        "tail": "y te avisamos cuando abra."
       }
     },
     "products": {
@@ -201,18 +196,6 @@
     "note": "Así se va a ver cuando el calendario esté conectado. Hoy no reserva nada: el formulario de esta página hace exactamente el mismo trabajo y te contestamos el mismo día hábil.",
     "open": "Abrir el calendario",
     "openNote": "El calendario abre en una página aparte. Si prefieres no usarlo, el formulario de arriba hace el mismo trabajo."
-  },
-  "call": {
-    "title": "¿Prefieres llamar?",
-    "body": "Hay gente que no llena formularios, y está bien. Llama y coordinamos la demo por teléfono en dos minutos — la misma hora, sin pasar por aquí.",
-    "handyLabel": "Ten a mano",
-    "handy": {
-      "h1": "Cuántas unidades mueves",
-      "h2": "Qué sistemas usas hoy",
-      "h3": "Dos horarios que te sirvan"
-    },
-    "hours": "Lun a Vie · 8:00–18:00 AST",
-    "note": "Las X son honestas: la línea pública se está aprovisionando con Telnyx y aparecerá aquí en cuanto esté activa."
   },
   "onscreen": {
     "chapter": "02",

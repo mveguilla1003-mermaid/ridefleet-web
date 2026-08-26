@@ -23,9 +23,20 @@ export const site = {
     /\/$/,
     ''
   ),
-  /** PLACEHOLDER Q11 — the tracked demo line. Masked until provisioned. */
-  phoneDisplay: process.env.NEXT_PUBLIC_DEMO_PHONE_DISPLAY ?? '+1 787 XXX-XXXX',
-  phoneHref: process.env.NEXT_PUBLIC_DEMO_PHONE_E164 ?? '',
+  /**
+   * The Valet demo line — a real number that costs money per minute, so where
+   * it appears is a deliberate, narrow decision (RFM brief, 2026-08-26):
+   *
+   *   It is a DEMO of the AI voice agent. Anyone may call it and talk to the
+   *   agent. It is NOT support, NOT reservations, NOT customer service.
+   *
+   * That rules out the header, the footer, any contact page, and the global
+   * mobile bar — anywhere somebody with a rental problem could reach it by
+   * mistake. It ships on /valet only, beside copy that says "demo" out loud.
+   * Do not add a second call site without asking the owner first.
+   */
+  phoneDisplay: process.env.NEXT_PUBLIC_DEMO_PHONE_DISPLAY ?? '+1 (904) 921-2162',
+  phoneHref: process.env.NEXT_PUBLIC_DEMO_PHONE_E164 ?? '+19049212162',
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hola@ridefleet.com',
   /**
    * Cal.com booking page, live since 2026-08-25. The event is 60 minutes,
@@ -131,7 +142,6 @@ export const footerNav: {
       { key: 'home', labelKey: 'home' },
       { key: 'home', labelKey: 'router', hash: 'router' },
       { key: 'tollBridge', labelKey: 'calculator', hash: 'calculadora' },
-      { key: 'valet', labelKey: 'callLine', hash: 'llamar' },
       // Airport pickup is a section of the Valet page now, not its own route,
       // so this is a deep link rather than a page link.
       { key: 'valet', labelKey: 'pickup', hash: 'recogida' },

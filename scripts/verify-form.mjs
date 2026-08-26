@@ -152,11 +152,10 @@ if (!summary.focused) note('form: error summary did not take focus on empty subm
 if (summary.links !== 7) note(`form: error summary lists ${summary.links} fields, expected 7`);
 if (!summary.path.endsWith('/es/demo')) note(`form: empty submit navigated to ${summary.path}`);
 
-// 2b. Small-fleet routing note appears for 1-9 and goes away again.
+// 2b. The small-fleet routing note was removed on 2026-08-26, so nothing may
+// render it any more — asserting its ABSENCE is what keeps it from coming back.
 await page.selectOption('#f-size', '1-9');
-if ((await page.locator('#routing').count()) !== 1) note('form: 1-9 fleet size did not show the routing note');
-await page.selectOption('#f-size', '10-49');
-if ((await page.locator('#routing').count()) !== 0) note('form: routing note did not clear after leaving 1-9');
+if ((await page.locator('#routing').count()) !== 0) note('form: the removed small-fleet routing note is rendering again');
 
 // 2c. Happy path: real submission lands on thank-you, API says delivered (not skipped).
 await page.goto(`${BASE}/es/demo`, { waitUntil: 'networkidle' });
@@ -199,6 +198,6 @@ await browser.close();
 console.log(
   fail.length
     ? 'FINDINGS:\n' + fail.join('\n')
-    : 'form clean: API contracts + per-IP rate limit + empty-submit a11y + routing note + happy path + honeypot discard'
+    : 'form clean: API contracts + per-IP rate limit + empty-submit a11y + no routing note + happy path + honeypot discard'
 );
 process.exit(fail.length ? 1 : 0);

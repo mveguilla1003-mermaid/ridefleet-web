@@ -66,11 +66,6 @@
         "r3": "50 to 149 vehicles",
         "r4": "150 to 499 vehicles",
         "r5": "500 or more"
-      },
-      "routing": {
-        "lead": "Under 10 vehicles,",
-        "body": "a guided demo is usually more than you need. Send the form anyway: we add you to the early-access list for the self-serve plan",
-        "tail": "and tell you when it opens."
       }
     },
     "products": {
@@ -201,18 +196,6 @@
     "note": "This is how it will look once the scheduler is connected. It books nothing today: the form on this page does exactly the same job and we reply the same business day.",
     "open": "Open the scheduler",
     "openNote": "The scheduler opens on a separate page. If you would rather not use it, the form above does the same job."
-  },
-  "call": {
-    "title": "Rather just call?",
-    "body": "Some people do not fill in forms, and that is fine. Call and we set the demo up by phone in two minutes — the same hour, without going through this page.",
-    "handyLabel": "Have handy",
-    "handy": {
-      "h1": "How many units you move",
-      "h2": "What systems you run today",
-      "h3": "Two time slots that work"
-    },
-    "hours": "Mon to Fri · 8:00–18:00 AST",
-    "note": "The X's are honest: the public line is being provisioned with Telnyx and will appear here the moment it is live."
   },
   "onscreen": {
     "chapter": "02",

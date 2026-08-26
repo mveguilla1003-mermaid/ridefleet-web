@@ -520,10 +520,7 @@ export default function ValetPage({ params }: { params: { locale: Locale } }) {
                 </span>
               )}
 
-              <p className="tel-note" id="telNote">
-                <BuildingBadge label={common('building')} />{' '}
-                {t('line.note')}
-              </p>
+              <p className="tel-note" id="telNote">{t('line.note')}</p>
             </div>
 
             <div className="reveal reveal-2">

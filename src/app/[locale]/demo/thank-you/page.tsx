@@ -53,6 +53,32 @@ export default function ThankYouPage({ params }: { params: { locale: Locale } })
         </div>
       </Section>
 
+      {/* Added 2026-08-26. Without this, the only route from a submitted form
+          to a booked call was a person answering by hand: the form gathered the
+          qualifying answers and then someone had to trade emails about times.
+          The calendar was already live further up /demo, but nobody who
+          finished the form ever saw it again. */}
+      <Section variant="well">
+        <div className="measure">
+          <h2>{t('book.title')}</h2>
+          <p style={{ marginTop: 'var(--sp-3)' }}>{t('book.body')}</p>
+          <div className="btn-row">
+            <a
+              className="btn btn--primary btn--lg"
+              href={site.schedulerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('book.cta')}
+              <Icon name="i-arrow-up-right" />
+            </a>
+          </div>
+          <p className="meta" style={{ marginTop: 'var(--sp-4)' }}>
+            {t('book.alt')}
+          </p>
+        </div>
+      </Section>
+
       <Section variant="alt">
         <SectionHead title={t('next.title')} lede={t('next.lede')} />
         <div className="feature-grid">

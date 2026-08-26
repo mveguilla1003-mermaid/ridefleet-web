@@ -205,7 +205,7 @@
     "title": "Don't take our word for it. Call it.",
     "lede": "The most honest demo we have is not a video — it is the phone. Dial it, talk the way you would talk to your own front desk, and judge for yourself. Valet already runs in production on <mono>valet.ridefleetmanager.com</mono>.",
     "kicker": "Call and hear it yourself",
-    "note": "The X's are honest: the public demo line is being provisioned and will appear here the moment it exists. Until then, we dial it together on the demo call and you listen live.",
+    "note": "This is our demo line, and it answers around the clock, in English and in Spanish. Ask it about prices, ask it about hours, or have it look up a sample reservation. It is not a support or reservations line: it is the agent we are showing you, actually answering.",
     "steps": {
       "0": {
         "title": "Say hello in Spanish. Or in English.",

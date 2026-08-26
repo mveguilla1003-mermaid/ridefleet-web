@@ -6,7 +6,13 @@
     },
     "eyebrow": "Request received",
     "title": "Thank you. Your request is in",
-    "lede": "Someone on the team reviews it and writes to you to set the date. In the meantime, here is what happens next, what is worth having ready, and where to read on.",
+    "lede": "You can pick your time right now, without waiting for us to write. Below is what happens next, what is worth having ready, and where to read on.",
+    "book": {
+      "title": "Pick your time now",
+      "body": "No need to wait for the email. Open the calendar and take whichever slot suits you: we already have your details, so we will come prepared.",
+      "cta": "Open the calendar",
+      "alt": "If you would rather we arranged it, do nothing — we write back the same business day."
+    },
     "next": {
       "title": "What happens next",
       "lede": "Three steps, no surprises.",
@@ -308,7 +314,7 @@
       },
       "sharing": {
         "title": "Who we share it with",
-        "body": "With the providers we need in order to operate: site hosting, email delivery, and, once it is connected, the customer management system. None is connected today, so requests sit in the application logs until somebody answers you. We may also share information where a law or a court order requires it."
+        "body": "With the providers we need in order to operate, and they are these: Vercel hosts the site; HubSpot receives demo requests and is where we answer them; Cal.com receives your name and email if you book the demo yourself through the calendar. All three are in the United States. We do not sell your data and we do not hand it over for advertising. We may also share information where a law or a court order requires it."
       },
       "rights": {
         "title": "Your rights",

@@ -1,14 +1,23 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { Icon } from './Icons';
-import { hasPhone, routes, site } from '@/lib/site';
+import { routes } from '@/lib/site';
 
 /**
- * Sticky mobile bottom bar: Book a demo + tap-to-call.
+ * Sticky mobile bottom bar: Book a demo.
  *
- * The call button only renders once the tracked line is provisioned
- * (NEXT_PUBLIC_DEMO_PHONE_E164). A `tel:` link to a masked number would be a
- * dead control, so it is absent rather than broken.
+ * It used to carry a tap-to-call button beside it, gated on `hasPhone`. That
+ * button was REMOVED on 2026-08-26, the day a real number existed — which is
+ * exactly when it became a problem rather than a feature.
+ *
+ * This bar renders on EVERY route: /pricing, /terms, /privacy, the 404. The
+ * only number we have is the Valet demo line — a metered line for talking to
+ * the AI voice agent, explicitly not support and not reservations. A call
+ * button on every page is the "global footer" placement the owner asked us not
+ * to ship without checking, and it is the likeliest way a customer with a
+ * rental problem dials a sales demo by mistake.
+ *
+ * The number lives on /valet only, beside copy that says "demo" out loud. Do
+ * not reintroduce it here.
  */
 export function StickyCta() {
   const t = useTranslations('nav');
@@ -18,12 +27,6 @@ export function StickyCta() {
       <Link className="btn btn--primary" href={routes.demo}>
         {t('bookDemo')}
       </Link>
-      {hasPhone ? (
-        <a className="btn btn--secondary" href={`tel:${site.phoneHref}`}>
-          <Icon name="i-phone" />
-          <span className="sr-only">{t('callLine')}</span>
-        </a>
-      ) : null}
     </div>
   );
 }

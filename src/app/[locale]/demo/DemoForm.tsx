@@ -5,7 +5,7 @@
  *
  * Everything stateful on 05-book-demo.html lives here so `page.tsx` stays a
  * server component: field values, the `is-on` tile/pill states, the qualifying
- * routing note under "fleet size", inline errors and the `role="alert"` error
+ * inline errors and the `role="alert"` error
  * summary.
  *
  * Spam screening mirrors `src/app/api/lead/route.ts` exactly: a `company_website`
@@ -24,7 +24,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Link, useRouter } from '@/i18n/routing';
 import { routes } from '@/lib/site';
 import { Icon } from '@/components/Icons';
-import { BuildingBadge } from '@/components/ui';
 
 type FieldKey =
   | 'name'
@@ -82,9 +81,6 @@ const DEMO_LANGUAGES = [
   { key: 'en', id: 'l-en', value: 'en' }
 ] as const;
 
-/** The size band below which a guided demo is honestly too much. */
-const SMALL_FLEET = '1-9';
-
 /** Same test the API applies, so the two never disagree about one address. */
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -98,7 +94,6 @@ const UTM_KEYS = [
 
 export function DemoForm() {
   const t = useTranslations('demo');
-  const common = useTranslations('common');
   const locale = useLocale();
   const router = useRouter();
 
@@ -491,17 +486,13 @@ export function DemoForm() {
                 {messages.fleetSize}
               </p>
             )}
-            {fleetSize === SMALL_FLEET && (
-              <div className="routing" id="routing">
-                <Icon name="i-info" />
-                <p>
-                  <b>{t('form.fleetSize.routing.lead')}</b>{' '}
-                  {t('form.fleetSize.routing.body')}{' '}
-                  <BuildingBadge label={common('building')} />{' '}
-                  {t('form.fleetSize.routing.tail')}
-                </p>
-              </div>
-            )}
+            {/* A note used to appear here when someone picked 1-9 vehicles,
+                telling them a guided demo was probably too much and offering an
+                early-access list for a self-serve plan that does not exist —
+                which is why it carried an "under construction" badge. Removed
+                on 2026-08-26: it talked a qualified visitor out of the one
+                action this page exists for, in exchange for a waiting list we
+                cannot put anybody on. */}
           </div>
 
           <fieldset className="fieldset-b field--full">

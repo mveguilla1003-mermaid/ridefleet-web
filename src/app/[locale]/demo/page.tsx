@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 import { Link } from '@/i18n/routing';
 import { buildMetadata, breadcrumbSchema, faqSchema } from '@/lib/seo';
-import { routes, site, hasPhone } from '@/lib/site';
+import { routes, site } from '@/lib/site';
 import { Icon, type IconName } from '@/components/Icons';
 import { JsonLd } from '@/components/JsonLd';
 import { BuildingBadge, SampleDataNote } from '@/components/ui';
@@ -32,12 +32,6 @@ const AGENDA_ROWS = [
 ] as const satisfies readonly { key: string; icon: IconName }[];
 
 const STEPS = ['s1', 's2', 's3'] as const;
-const HANDY = [
-  { key: 'h1', icon: 'i-vehicle' },
-  { key: 'h2', icon: 'i-layers' },
-  { key: 'h3', icon: 'i-clock' }
-] as const satisfies readonly { key: string; icon: IconName }[];
-
 /** Week of the reserved scheduler preview. `state` drives the inert styling only. */
 const SLOT_DAYS = [
   { key: 'd1', state: 'is-off' },
@@ -281,54 +275,14 @@ export default function DemoPage({ params }: { params: { locale: Locale } }) {
             </aside>
           </div>
 
-          {/* Alternative route, not a second CTA: a phone number for the people
-              who will not fill in forms. */}
-          <section className="altcall reveal" aria-labelledby="callHead">
-            <div className="ac-copy">
-              <h2 id="callHead">{t('call.title')}</h2>
-              <p>{t('call.body')}</p>
-            </div>
-            <div className="ac-mid">
-              <span className="acl">{t('call.handyLabel')}</span>
-              <ul className="ac-list">
-                {HANDY.map((item) => (
-                  <li key={item.key}>
-                    <Icon name={item.icon} />
-                    {t(`call.handy.${item.key}`)}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="ac-tel">
-              {hasPhone ? (
-                <a className="telrow" href={`tel:${site.phoneHref}`}>
-                  <span className="ti" aria-hidden="true">
-                    <Icon name="i-phone" />
-                  </span>
-                  <span>
-                    <span className="tn">{site.phoneDisplay}</span>
-                    <span className="tk">{t('call.hours')}</span>
-                  </span>
-                </a>
-              ) : (
-                <div className="telrow">
-                  <span className="ti" aria-hidden="true">
-                    <Icon name="i-phone" />
-                  </span>
-                  <span>
-                    <span className="tn">{site.phoneDisplay}</span>
-                    <span className="tk">{t('call.hours')}</span>
-                  </span>
-                </div>
-              )}
-              {!hasPhone && (
-                <p className="telnote">
-                  <BuildingBadge label={common('building')} />
-                  <span>{t('call.note')}</span>
-                </p>
-              )}
-            </div>
-          </section>
+          {/* The "rather just call?" section lived here until 2026-08-26.
+              It offered a phone number to people who will not fill in forms —
+              and its own copy described that number as a human who would
+              "set the demo up by phone". The only line we have is the Valet
+              DEMO line: an AI voice agent, explicitly not sales and not
+              support. Publishing it here would have mislabelled it, so the
+              section went instead. The people it served now have the Cal.com
+              scheduler above, which books without a form. */}
         </div>
       </section>
 
