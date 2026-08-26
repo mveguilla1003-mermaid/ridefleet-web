@@ -263,7 +263,7 @@
     },
     "site": {
       "title": "This website",
-      "body": "Separate from everything above: ridefleet.com is a marketing site. It hosts no customer operation data. The only thing it receives is demo requests — name, company, email, optional phone, fleet size, business model, notes and where the visit came from — and it loads nothing from third parties.",
+      "body": "Separate from everything above: this site is a marketing site. It hosts no customer operation data. The only thing it receives is demo requests — name, company, email, optional phone, fleet size, business model, notes and where the visit came from — and it loads nothing from third parties.",
       "link": "The full detail is in the privacy policy"
     },
     "contact": {

@@ -177,6 +177,25 @@ lead reaches nobody — it is written to the server log and nothing else.**
 HubSpot is checked first. Delivery failures never fail the visitor's submission —
 the lead falls back to the log and the form still thanks them.
 
+### Moving the site to a new domain
+
+Four things move together. Missing any one of them fails quietly:
+
+1. **NEXT_PUBLIC_SITE_URL** in Vercel. It drives the canonical URLs, the
+   sitemap, the OG image URLs, and the pageUri we hand HubSpot.
+2. **Regenerate the OG cards** with that variable set (npm run build:og) and
+   commit them. The host is printed into the artwork, and the cards are
+   committed pngs — check:og compares TEXT, so it passes happily while the
+   images still show the old domain.
+3. **Add the new domain in HubSpot**, Settings -> Tracking & Analytics ->
+   Advanced Tracking -> Additional site domains. Otherwise every lead is filed
+   as spam while the API still answers delivered:true.
+4. **Ask RFM to add the origin to the showcase frame-ancestors.** The home page
+   frames https://ridefleetmanager.com/showcase, and that response allows only
+   the origins it lists. A subdomain is NOT covered by its 'self'. Left
+   undone, the home page shows an empty box and only a console error explains
+   it.
+
 ### The HubSpot trap that fails silently
 
 **The sending domain must be listed in HubSpot under Settings → Tracking &
