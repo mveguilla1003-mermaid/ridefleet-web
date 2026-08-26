@@ -177,6 +177,28 @@ lead reaches nobody — it is written to the server log and nothing else.**
 HubSpot is checked first. Delivery failures never fail the visitor's submission —
 the lead falls back to the log and the form still thanks them.
 
+### The HubSpot trap that fails silently
+
+**The sending domain must be listed in HubSpot under Settings → Tracking &
+Analytics → Advanced Tracking → Additional site domains.** If it is not,
+HubSpot accepts the submission, answers 200, and files it as **spam** — where
+it is deleted after 90 days and no contact is ever created. Our API sees the
+200, reports `delivered: true`, and nothing looks wrong from our side.
+
+This was hit on the very first live test, 2026-08-25: the submission vanished
+and the forms dashboard showed "1 submission has been flagged as spam" beside
+"Unknown domains sending submissions to your forms". `ridefleet.com` is now
+listed there. **Any new sending domain — a preview deploy, a second brand —
+needs adding too, or its leads disappear the same way.**
+
+Two settings that matter just as much:
+
+- **"Create new contacts for email addresses" must be ON** for the form
+  (Review and update → Automation). Off by default on a new form, and with it
+  off a submission updates nothing and creates nobody.
+- **Do NOT enable reCAPTCHA on the form.** Submissions arrive through the
+  Forms API without a captcha token, so turning it on rejects every one.
+
 Only standard HubSpot contact properties are used, so this works against a brand
 new portal with nothing configured. Everything the qualifying form asks that
 HubSpot has no standard property for — fleet size, business model, products of
