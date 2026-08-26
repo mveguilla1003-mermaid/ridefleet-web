@@ -149,7 +149,19 @@ set them, the site shows an honest gap rather than an invented value.
 | `NEXT_PUBLIC_DEMO_PHONE_DISPLAY` | `+1 787 XXX-XXXX` | the tracked demo line, as you want it printed |
 | `NEXT_PUBLIC_DEMO_PHONE_E164` | *(empty)* | same number in E.164. **While empty, no `tel:` link renders anywhere** — the masked number is display-only by design |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | `hola@ridefleet.com` | confirm this mailbox exists |
-| `NEXT_PUBLIC_SCHEDULER_URL` | *(empty)* | the scheduler embed. Empty renders the form-only path, with space already reserved so adding it costs no layout shift |
+| `NEXT_PUBLIC_SCHEDULER_URL` | *(empty)* | the booking link. Empty renders the form-only path, with space already reserved so adding it costs no layout shift |
+
+**Turning the scheduler on takes TWO changes, not one.** Setting
+`NEXT_PUBLIC_SCHEDULER_URL` flips `/demo` from the inert preview to a real
+"open the scheduler" link — verified by building with the variable set. But
+`/accessibility` also declares the scheduler as a known gap, with its own
+under-construction badge (`gaps.scheduler`), and that does **not** clear
+itself. Leave it and the site claims a gap it no longer has.
+
+The link opens in a new tab rather than embedding. That is deliberate: an
+iframe would need its origin added to `frame-src` in `src/middleware.ts` or it
+renders blank with nothing but a console error to explain why. It also keeps
+the promise made on `/cookies` — this site loads nothing from third parties.
 
 Three more items live outside env config:
 
