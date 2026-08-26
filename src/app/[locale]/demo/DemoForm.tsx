@@ -21,7 +21,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { useRouter } from '@/i18n/routing';
+import { Link, useRouter } from '@/i18n/routing';
 import { routes } from '@/lib/site';
 import { Icon } from '@/components/Icons';
 import { BuildingBadge } from '@/components/ui';
@@ -609,10 +609,15 @@ export function DemoForm() {
               />
               <span>
                 {t('form.consent.text')}{' '}
-                <b className="consent-note">
+                {/* This is the point where someone consents to their data being
+                    processed, so the notice has to be reachable — it was a bold
+                    <b> that led nowhere, wearing an "under construction" badge
+                    even though /privacy has been published all along. Both were
+                    wrong: the badge said the notice did not exist, and the
+                    missing href meant nobody could read it before agreeing. */}
+                <Link className="consent-note" href={routes.privacy}>
                   {t('form.consent.notice')}
-                  <BuildingBadge label={common('building')} />
-                </b>
+                </Link>
               </span>
             </label>
             {has('consent') && (
