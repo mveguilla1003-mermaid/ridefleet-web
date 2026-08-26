@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Book a 30-minute demo · Ride Fleet",
-    "description": "Book a live 30-minute demo on your own fleet operation: Ride Fleet Manager, Toll Bridge and Valet, run on sample data close to yours. In Spanish or English, and we reply the same business day."
+    "title": "Book a 60-minute demo · Ride Fleet",
+    "description": "Book a live 60-minute demo on your own fleet operation: Ride Fleet Manager, Toll Bridge and Valet, run on sample data close to yours. In Spanish or English, and we reply the same business day."
   },
   "hero": {
-    "eyebrow": "Live demo · 30 minutes",
-    "title": "30 minutes on your operation. Not on our slide deck.",
+    "eyebrow": "Live demo · 60 minutes",
+    "title": "60 minutes on your operation. Not on our slide deck.",
     "lede": "Fill in the form and we reply the same business day with two or three time slots. On the call we open the product with a case like yours — your fleet type, your tolls, your calls — and tell you straight what already works and what we are still building.",
     "rail": {
-      "duration": { "value": "30 min" },
+      "duration": { "value": "60 min" },
       "language": "Spanish or English",
       "who": "With the people building the product",
       "place": { "value": "San Juan · AST (UTC−4)" }
@@ -136,7 +136,7 @@
       },
       "s3": {
         "n": "03",
-        "title": "The half hour",
+        "title": "The hour",
         "body": "We open the product live with sample data close to your fleet. No sales deck and no obligation to continue."
       }
     },
@@ -144,44 +144,44 @@
   },
   "agenda": {
     "title": "What the demo covers",
-    "kicker": { "value": "30 MIN" },
+    "kicker": { "value": "60 MIN" },
     "rows": {
       "r1": {
-        "time": "00–05",
+        "time": "00–08",
         "title": "Your operation",
         "desc": "How many vehicles, how you hand them over, where your time goes."
       },
       "r2": {
-        "time": "05–14",
+        "time": "08–26",
         "title": "Ride Fleet Manager",
         "desc": "Contract, photo handover, maintenance and invoice — one rental end to end."
       },
       "r3": {
-        "time": "14–21",
+        "time": "26–40",
         "title": "Toll Bridge",
         "desc": "How an AutoExpreso or SunPass toll finds, on its own, the driver who generated it."
       },
       "r4": {
-        "time": "21–27",
+        "time": "40–52",
         "title": "Valet",
         "desc": "A real call start to finish, in Spanish and in English, with the transcript alongside."
       },
       "r5": {
-        "time": "27–30",
+        "time": "52–60",
         "title": "Price and next steps",
         "desc": "What it would cost in your case and what it would take to start."
       }
     },
     "foot": "We reorder it around what you checked",
-    "total": { "value": "30 MIN" }
+    "total": { "value": "60 MIN" }
   },
   "scheduler": {
     "title": "Pick the time yourself",
     "kicker": "Soon",
     "kickerLive": "Live",
-    "ariaLabel": "Preview of the booking calendar: week of July 27 to 31, half-hour slots in AST. Not connected yet.",
+    "ariaLabel": "Preview of the booking calendar: week of July 27 to 31, one-hour slots in AST. Not connected yet.",
     "stamp": "Preview · not connected",
-    "heading": "Book 30 min",
+    "heading": "Book 60 min",
     "tz": { "value": "AST (UTC−4)" },
     "days": {
       "d1": { "name": "Mon", "date": "27" },
@@ -192,11 +192,11 @@
     },
     "times": {
       "t1": "9:00",
-      "t2": "10:30",
-      "t3": "11:30",
+      "t2": "10:00",
+      "t3": "11:00",
       "t4": "13:00",
-      "t5": "14:30",
-      "t6": "16:00"
+      "t5": "14:00",
+      "t6": "15:00"
     },
     "note": "This is how it will look once the scheduler is connected. It books nothing today: the form on this page does exactly the same job and we reply the same business day.",
     "open": "Open the scheduler",
@@ -204,7 +204,7 @@
   },
   "call": {
     "title": "Rather just call?",
-    "body": "Some people do not fill in forms, and that is fine. Call and we set the demo up by phone in two minutes — the same half hour, without going through this page.",
+    "body": "Some people do not fill in forms, and that is fine. Call and we set the demo up by phone in two minutes — the same hour, without going through this page.",
     "handyLabel": "Have handy",
     "handy": {
       "h1": "How many units you move",
@@ -218,7 +218,7 @@
     "chapter": "02",
     "chapterOf": "On screen",
     "title": "No slides. This is what we open.",
-    "aside": "Minute 14 of the half hour: the week's tolls, already matched to the driver who generated them.",
+    "aside": "Minute 30 of the hour: the week's tolls, already matched to the driver who generated them.",
     "appLabel": "Toll Bridge: AutoExpreso and SunPass tolls reconciled against bookings, with plate, driver and match confidence. Sample data.",
     "app": {
       "product": { "value": "Toll Bridge" },
@@ -377,18 +377,18 @@
       "q4": {
         "n": "04",
         "q": "Do I have to hand over AutoExpreso or SunPass credentials?",
-        "a": "No. The demo runs on sample data. Credentials, if you ever decide to go ahead, get connected during implementation with your IT people present — never on a half-hour call."
+        "a": "No. The demo runs on sample data. Credentials, if you ever decide to go ahead, get connected during implementation with your IT people present — never on a demo call."
       },
       "q5": {
         "n": "05",
         "q": "Can I take just one module?",
-        "a": "Yes. Toll Bridge and Valet work on top of the fleet you already manage, even without Ride Fleet Manager. Check only what interests you and the demo gets shorter — thirty useful minutes beat thirty full ones.",
+        "a": "Yes. Toll Bridge and Valet work on top of the fleet you already manage, even without Ride Fleet Manager. Check only what interests you and the demo gets shorter — forty useful minutes beat sixty full ones.",
         "link": "See Toll Bridge on its own"
       }
     },
     "end": {
       "title": "Not seeing yours?",
-      "body": "Write it in the message field on the form. We answer in writing before the call, so the half hour is not spent on clarifications.",
+      "body": "Write it in the message field on the form. We answer in writing before the call, so the hour is not spent on clarifications.",
       "cta": "Back to the form"
     }
   }

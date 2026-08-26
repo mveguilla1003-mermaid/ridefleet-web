@@ -20,7 +20,7 @@
           "body": "The confirmation email carries the date, the time with its time zone, the language the call will be held in, and the link to join."
         },
         "2": {
-          "title": "Half an hour about your operation",
+          "title": "An hour about your operation",
           "body": "We go through how you work today, show you the product live, and finish with concrete next steps. No obligation and no filler slides."
         }
       },
@@ -29,7 +29,7 @@
     },
     "prep": {
       "title": "What is worth having ready",
-      "lede": "None of this is required. The more concrete the starting point, the more you get out of the half hour.",
+      "lede": "None of this is required. The more concrete the starting point, the more you get out of the hour.",
       "items": {
         "0": "How many vehicles you run today, and how many you expect to run in twelve months.",
         "1": "How the business operates: traditional rental, dealership loaners, or a mix.",
@@ -154,7 +154,7 @@
       "note": "We do not charge to set your people up, or by how many of them you train."
     },
     "cta": {
-      "title": "Half an hour, and you leave with the number",
+      "title": "An hour, and you leave with the number",
       "body": "Tell us how many units you run and how you operate. On the call we give you the price, and if we are not right for you we say so there rather than chasing you for three weeks.",
       "button": "Book a demo"
     }
@@ -475,7 +475,7 @@
           "2": "There is no audio or video on the site. When there is, it will carry captions and a transcript from day one."
         },
         "scheduler": "Third-party scheduler for booking demos",
-        "schedulerBody": "When one is integrated, its accessibility is validated before it is published, and the form stays available as an equivalent alternative route."
+        "schedulerBody": "The scheduler opens in a separate tab, on Cal.com, so its accessibility is in that third party's hands rather than ours. That is why the form on the same page stays: it does exactly the same job and is an equivalent alternative route."
       },
       "barriers": {
         "title": "If you hit a barrier",

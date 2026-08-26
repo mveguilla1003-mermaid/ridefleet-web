@@ -27,8 +27,17 @@ export const site = {
   phoneDisplay: process.env.NEXT_PUBLIC_DEMO_PHONE_DISPLAY ?? '+1 787 XXX-XXXX',
   phoneHref: process.env.NEXT_PUBLIC_DEMO_PHONE_E164 ?? '',
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hola@ridefleet.com',
-  /** PLACEHOLDER Q6 — scheduler embed. Empty renders the form-only path. */
-  schedulerUrl: process.env.NEXT_PUBLIC_SCHEDULER_URL ?? '',
+  /**
+   * Cal.com booking page, live since 2026-08-25. The event is 60 minutes,
+   * which is why every "30 minutes" promise on the site moved to 60 — the
+   * agenda on /demo is cut into five slots that sum to it. If this ever points
+   * at an event of a different length, those slots and ~35 strings move too.
+   * Opened in a new tab, never framed: an iframe would need its origin in
+   * frame-src, and /cookies promises no third-party loads.
+   */
+  schedulerUrl:
+    process.env.NEXT_PUBLIC_SCHEDULER_URL ??
+    'https://cal.com/ridefleetmanager-demo/60min',
   /**
    * The product showcase, framed on the home page. It is NOT copied into
    * this repo on purpose: its chapter copy comes from the same file that

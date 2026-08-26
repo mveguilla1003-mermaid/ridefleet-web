@@ -20,7 +20,7 @@
           "body": "El correo de confirmación trae la fecha, la hora con su zona horaria, el idioma en que se hará la llamada y el enlace para conectarte."
         },
         "2": {
-          "title": "Media hora sobre tu operación",
+          "title": "Una hora sobre tu operación",
           "body": "Repasamos cómo trabajas hoy, te enseñamos el producto en vivo y salimos con próximos pasos concretos. Sin compromiso y sin presentación de relleno."
         }
       },
@@ -29,7 +29,7 @@
     },
     "prep": {
       "title": "Qué conviene tener a mano",
-      "lede": "Nada de esto es obligatorio. Mientras más concreto sea el punto de partida, más rinde la media hora.",
+      "lede": "Nada de esto es obligatorio. Mientras más concreto sea el punto de partida, más rinde la hora.",
       "items": {
         "0": "Cuántos vehículos manejas hoy y cuántos esperas manejar en doce meses.",
         "1": "Cómo opera el negocio: renta tradicional, unidades de cortesía (loaners) o una mezcla.",
@@ -154,7 +154,7 @@
       "note": "No cobramos por dar de alta a tu gente ni por el número de personas que entrenas."
     },
     "cta": {
-      "title": "Media hora y sales con el número",
+      "title": "Una hora y sales con el número",
       "body": "Cuéntanos cuántas unidades manejas y cómo operas. En la llamada te damos el precio, y si no somos para ti te lo decimos ahí mismo en vez de perseguirte tres semanas.",
       "button": "Agendar un demo"
     }
@@ -475,7 +475,7 @@
           "2": "No hay medios audiovisuales en el sitio. Cuando los haya, llevarán subtítulos y transcripción desde el primer día."
         },
         "scheduler": "Calendario de terceros para agendar demos",
-        "schedulerBody": "Cuando se integre, su accesibilidad se valida antes de publicarlo y el formulario se mantiene como ruta alterna equivalente."
+        "schedulerBody": "El calendario abre en una pestaña aparte, en Cal.com, así que su accesibilidad la controla ese tercero y no nosotros. Por eso el formulario de la misma página se mantiene: hace exactamente el mismo trabajo y es una ruta alterna equivalente."
       },
       "barriers": {
         "title": "Si encuentras una barrera",

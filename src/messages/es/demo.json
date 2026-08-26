@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "Agendar un demo de 30 minutos · Ride Fleet",
-    "description": "Reserva una demo en vivo de 30 minutos sobre tu operación de flota: Ride Fleet Manager, Toll Bridge y Valet, con datos de ejemplo parecidos a los tuyos. En español o en inglés, y te contestamos el mismo día hábil."
+    "title": "Agendar un demo de 60 minutos · Ride Fleet",
+    "description": "Reserva una demo en vivo de 60 minutos sobre tu operación de flota: Ride Fleet Manager, Toll Bridge y Valet, con datos de ejemplo parecidos a los tuyos. En español o en inglés, y te contestamos el mismo día hábil."
   },
   "hero": {
-    "eyebrow": "Demo en vivo · 30 minutos",
-    "title": "30 minutos sobre tu operación. No sobre nuestras láminas.",
+    "eyebrow": "Demo en vivo · 60 minutos",
+    "title": "60 minutos sobre tu operación. No sobre nuestras láminas.",
     "lede": "Llena el formulario y te escribimos el mismo día hábil con dos o tres horarios. En la llamada abrimos el producto con un caso parecido al tuyo — tu tipo de flota, tus peajes, tus llamadas — y te decimos de frente qué ya funciona y qué todavía estamos construyendo.",
     "rail": {
-      "duration": { "value": "30 min" },
+      "duration": { "value": "60 min" },
       "language": "Español o inglés",
       "who": "Con quien construye el producto",
       "place": { "value": "San Juan · AST (UTC−4)" }
@@ -136,7 +136,7 @@
       },
       "s3": {
         "n": "03",
-        "title": "La media hora",
+        "title": "La hora",
         "body": "Abrimos el producto en vivo con datos de ejemplo parecidos a tu flota. Sin presentación de ventas y sin obligación de seguir."
       }
     },
@@ -144,44 +144,44 @@
   },
   "agenda": {
     "title": "Qué cubre la demo",
-    "kicker": { "value": "30 MIN" },
+    "kicker": { "value": "60 MIN" },
     "rows": {
       "r1": {
-        "time": "00–05",
+        "time": "00–08",
         "title": "Tu operación",
         "desc": "Cuántos vehículos, cómo entregas, dónde se te va el tiempo."
       },
       "r2": {
-        "time": "05–14",
+        "time": "08–26",
         "title": "Ride Fleet Manager",
         "desc": "Contrato, entrega con fotos, mantenimiento y factura — el recorrido completo de una renta."
       },
       "r3": {
-        "time": "14–21",
+        "time": "26–40",
         "title": "Toll Bridge",
         "desc": "Cómo un peaje de AutoExpreso o SunPass encuentra solo al conductor que lo generó."
       },
       "r4": {
-        "time": "21–27",
+        "time": "40–52",
         "title": "Valet",
         "desc": "Una llamada real de principio a fin, en español y en inglés, con la transcripción al lado."
       },
       "r5": {
-        "time": "27–30",
+        "time": "52–60",
         "title": "Precio y próximos pasos",
         "desc": "Qué costaría en tu caso y qué haría falta para arrancar."
       }
     },
     "foot": "Ajustamos el orden a lo que marcaste",
-    "total": { "value": "30 MIN" }
+    "total": { "value": "60 MIN" }
   },
   "scheduler": {
     "title": "Elegir el horario tú mismo",
     "kicker": "Pronto",
     "kickerLive": "En vivo",
-    "ariaLabel": "Vista previa del calendario de reservas: semana del 27 al 31 de julio, horarios de media hora en AST. Todavía no está conectado.",
+    "ariaLabel": "Vista previa del calendario de reservas: semana del 27 al 31 de julio, horarios de una hora en AST. Todavía no está conectado.",
     "stamp": "Vista previa · no conectado",
-    "heading": "Reservar 30 min",
+    "heading": "Reservar 60 min",
     "tz": { "value": "AST (UTC−4)" },
     "days": {
       "d1": { "name": "Lun", "date": "27" },
@@ -192,11 +192,11 @@
     },
     "times": {
       "t1": "9:00",
-      "t2": "10:30",
-      "t3": "11:30",
+      "t2": "10:00",
+      "t3": "11:00",
       "t4": "13:00",
-      "t5": "14:30",
-      "t6": "16:00"
+      "t5": "14:00",
+      "t6": "15:00"
     },
     "note": "Así se va a ver cuando el calendario esté conectado. Hoy no reserva nada: el formulario de esta página hace exactamente el mismo trabajo y te contestamos el mismo día hábil.",
     "open": "Abrir el calendario",
@@ -204,7 +204,7 @@
   },
   "call": {
     "title": "¿Prefieres llamar?",
-    "body": "Hay gente que no llena formularios, y está bien. Llama y coordinamos la demo por teléfono en dos minutos — la misma media hora, sin pasar por aquí.",
+    "body": "Hay gente que no llena formularios, y está bien. Llama y coordinamos la demo por teléfono en dos minutos — la misma hora, sin pasar por aquí.",
     "handyLabel": "Ten a mano",
     "handy": {
       "h1": "Cuántas unidades mueves",
@@ -218,7 +218,7 @@
     "chapter": "02",
     "chapterOf": "En pantalla",
     "title": "No hay láminas. Esto es lo que abrimos.",
-    "aside": "Minuto 14 de la media hora: los peajes de la semana, ya pegados al conductor que los generó.",
+    "aside": "Minuto 30 de la hora: los peajes de la semana, ya pegados al conductor que los generó.",
     "appLabel": "Toll Bridge: peajes de AutoExpreso y SunPass conciliados contra reservas, con placa, conductor y confianza del pareo. Datos de ejemplo.",
     "app": {
       "product": { "value": "Toll Bridge" },
@@ -377,18 +377,18 @@
       "q4": {
         "n": "04",
         "q": "¿Tengo que entregar credenciales de AutoExpreso o SunPass?",
-        "a": "No. La demo corre con datos de ejemplo. Las credenciales, si algún día decides seguir, se conectan en la implementación y con tu gente de sistemas presente — nunca en una llamada de media hora."
+        "a": "No. La demo corre con datos de ejemplo. Las credenciales, si algún día decides seguir, se conectan en la implementación y con tu gente de sistemas presente — nunca en una llamada de demo."
       },
       "q5": {
         "n": "05",
         "q": "¿Puedo llevarme un solo módulo?",
-        "a": "Sí. Toll Bridge y Valet funcionan sobre la flota que ya administras, aunque no uses Ride Fleet Manager. Marca solo lo que te interesa y la demo se acorta — mejor treinta minutos útiles que treinta minutos completos.",
+        "a": "Sí. Toll Bridge y Valet funcionan sobre la flota que ya administras, aunque no uses Ride Fleet Manager. Marca solo lo que te interesa y la demo se acorta — mejor cuarenta minutos útiles que sesenta completos.",
         "link": "Ver Toll Bridge por su cuenta"
       }
     },
     "end": {
       "title": "¿No está aquí la tuya?",
-      "body": "Escríbela en el mensaje del formulario. Te la contestamos por escrito antes de la llamada, para que la media hora no se vaya en aclaraciones.",
+      "body": "Escríbela en el mensaje del formulario. Te la contestamos por escrito antes de la llamada, para que la hora no se vaya en aclaraciones.",
       "cta": "Volver al formulario"
     }
   }

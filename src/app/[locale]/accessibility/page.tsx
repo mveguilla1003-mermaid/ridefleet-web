@@ -5,7 +5,7 @@ import { buildMetadata, breadcrumbSchema } from '@/lib/seo';
 import { routes, site } from '@/lib/site';
 import { Icon } from '@/components/Icons';
 import { JsonLd } from '@/components/JsonLd';
-import { BuildingBadge, Section } from '@/components/ui';
+import { Section } from '@/components/ui';
 
 export async function generateMetadata({
   params
@@ -48,7 +48,7 @@ export default function AccessibilityPage({
           <h1>{t('title')}</h1>
           <p className="lede">{t('lede')}</p>
           <p className="updated">
-            {common('updated')} <time dateTime="2026-08-03">2026-08-03</time>
+            {common('updated')} <time dateTime="2026-08-25">2026-08-25</time>
           </p>
           <p className="sample-note">
             <Icon name="i-alert" />
@@ -75,9 +75,7 @@ export default function AccessibilityPage({
               <li key={i}>{t(`gaps.items.${i}`)}</li>
             ))}
           </ul>
-          <h3>
-            {t('gaps.scheduler')} <BuildingBadge label={common('building')} />
-          </h3>
+          <h3>{t('gaps.scheduler')}</h3>
           <p>{t('gaps.schedulerBody')}</p>
 
           <h2>{t('barriers.title')}</h2>
