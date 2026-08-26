@@ -265,7 +265,13 @@
   color:var(--gold-700);                                        /* 7.15 AAA on white-ish */
 }
 .slot-stamp .badge-building{margin-left:auto}
+/* pointer-events:none makes the MOCK-UP inert: its fake days and times must
+   not look clickable. But the connected state reuses this same container for
+   the real "open the scheduler" link, which then inherited the rule and could
+   not be clicked at all — the one control on the page that books a call.
+   Real links opt back in. */
 .slot-pick{padding:var(--sp-5) clamp(14px,1.6vw,18px);pointer-events:none;flex:1;display:flex;flex-direction:column}
+.slot-pick a{pointer-events:auto}
 .slot-pick .sp-head{display:flex;align-items:baseline;gap:var(--sp-3);margin-bottom:var(--sp-4)}
 .slot-pick .sp-head b{font-size:14.5px;font-weight:640;color:var(--text-1);letter-spacing:var(--tr-snug)}
 .slot-pick .sp-head .tz{

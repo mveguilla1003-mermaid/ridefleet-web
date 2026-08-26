@@ -157,6 +157,28 @@ if (!summary.path.endsWith('/es/demo')) note(`form: empty submit navigated to ${
 await page.selectOption('#f-size', '1-9');
 if ((await page.locator('#routing').count()) !== 0) note('form: the removed small-fleet routing note is rendering again');
 
+// 2b-bis. The booking links must actually be CLICKABLE, not merely present.
+// A link can carry the right href, pass axe, and still be dead: .slot-pick sets
+// pointer-events:none to keep the mock-up calendar inert, and the real "open
+// the scheduler" link sits inside that same container. It shipped unclickable
+// once. elementFromPoint is what catches it — a query selector never would.
+for (const [path, sel] of [
+  ['/es/demo', '.slot-pick a'],
+  ['/es/demo/thank-you', 'a[href*="cal.com"]']
+]) {
+  await page.goto(`${BASE}${path}`, { waitUntil: 'networkidle' });
+  const state = await page.evaluate((selector) => {
+    const a = document.querySelector(selector);
+    if (!a) return 'missing';
+    a.scrollIntoView({ block: 'center' });
+    const r = a.getBoundingClientRect();
+    const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+    if (!hit) return 'off-screen';
+    return a === hit || a.contains(hit) ? 'clickable' : `blocked by .${hit.className || hit.tagName}`;
+  }, sel);
+  if (state !== 'clickable') note(`form: booking link ${sel} on ${path} is ${state}`);
+}
+
 // 2c. Happy path: real submission lands on thank-you, API says delivered (not skipped).
 await page.goto(`${BASE}/es/demo`, { waitUntil: 'networkidle' });
 await fillHappyForm();
@@ -198,6 +220,6 @@ await browser.close();
 console.log(
   fail.length
     ? 'FINDINGS:\n' + fail.join('\n')
-    : 'form clean: API contracts + per-IP rate limit + empty-submit a11y + no routing note + happy path + honeypot discard'
+    : 'form clean: API contracts + per-IP rate limit + empty-submit a11y + no routing note + clickable booking links + happy path + honeypot discard'
 );
 process.exit(fail.length ? 1 : 0);
