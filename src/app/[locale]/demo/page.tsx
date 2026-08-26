@@ -147,60 +147,9 @@ export default function DemoPage({ params }: { params: { locale: Locale } }) {
             </div>
 
             <aside className="rail" aria-label={t('book.railLabel')}>
-              {/* 1. What happens next */}
-              <section className="reveal">
-                <div className="rhead">
-                  <h2>{t('next.title')}</h2>
-                  <span className="rk">{t('next.kicker')}</span>
-                </div>
-                <div className="steps">
-                  {STEPS.map((key) => (
-                    <div className="step" key={key}>
-                      <span className="sn" aria-hidden="true">
-                        {t(`next.steps.${key}.n`)}
-                      </span>
-                      <div>
-                        <h3>{t(`next.steps.${key}.title`)}</h3>
-                        <p>{t(`next.steps.${key}.body`)}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <p className="sla">
-                  <Icon name="i-clock" />
-                  <span>{t('next.sla')}</span>
-                </p>
-              </section>
-
-              {/* 2. What the demo covers */}
-              <section className="reveal">
-                <div className="rhead">
-                  <h2>{t('agenda.title')}</h2>
-                  <span className="rk">{t('agenda.kicker.value')}</span>
-                </div>
-                <div className="agenda">
-                  {AGENDA_ROWS.map((row) => (
-                    <div className="arow" key={row.key}>
-                      <span className="amin">{t(`agenda.rows.${row.key}.time`)}</span>
-                      <span className="aic" aria-hidden="true">
-                        <Icon name={row.icon} />
-                      </span>
-                      <span>
-                        <b>{t(`agenda.rows.${row.key}.title`)}</b>
-                        <span className="d">{t(`agenda.rows.${row.key}.desc`)}</span>
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <p className="afoot">
-                  {t('agenda.foot')}
-                  <span className="tot">{t('agenda.total.value')}</span>
-                </p>
-              </section>
-
-              {/* 3. Scheduler. `site.schedulerUrl` is unset until the account
-                  exists, so the honest preview is what ships — the form above
-                  does the same job. No third-party script, ever. */}
+              {/* 1. Book it yourself. Moved to the top of the rail on 2026-08-26:
+                  it is the only control in this column that books a call outright,
+                  and last was reached only after scrolling past two explainers. */}
               <section className="reveal">
                 <div className="rhead">
                   <h2>{t('scheduler.title')}</h2>
@@ -271,6 +220,57 @@ export default function DemoPage({ params }: { params: { locale: Locale } }) {
                     </p>
                   </div>
                 )}
+              </section>
+
+              {/* 2. What happens next */}
+              <section className="reveal">
+                <div className="rhead">
+                  <h2>{t('next.title')}</h2>
+                  <span className="rk">{t('next.kicker')}</span>
+                </div>
+                <div className="steps">
+                  {STEPS.map((key) => (
+                    <div className="step" key={key}>
+                      <span className="sn" aria-hidden="true">
+                        {t(`next.steps.${key}.n`)}
+                      </span>
+                      <div>
+                        <h3>{t(`next.steps.${key}.title`)}</h3>
+                        <p>{t(`next.steps.${key}.body`)}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="sla">
+                  <Icon name="i-clock" />
+                  <span>{t('next.sla')}</span>
+                </p>
+              </section>
+
+              {/* 3. What the demo covers */}
+              <section className="reveal">
+                <div className="rhead">
+                  <h2>{t('agenda.title')}</h2>
+                  <span className="rk">{t('agenda.kicker.value')}</span>
+                </div>
+                <div className="agenda">
+                  {AGENDA_ROWS.map((row) => (
+                    <div className="arow" key={row.key}>
+                      <span className="amin">{t(`agenda.rows.${row.key}.time`)}</span>
+                      <span className="aic" aria-hidden="true">
+                        <Icon name={row.icon} />
+                      </span>
+                      <span>
+                        <b>{t(`agenda.rows.${row.key}.title`)}</b>
+                        <span className="d">{t(`agenda.rows.${row.key}.desc`)}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="afoot">
+                  {t('agenda.foot')}
+                  <span className="tot">{t('agenda.total.value')}</span>
+                </p>
               </section>
             </aside>
           </div>
