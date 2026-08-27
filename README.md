@@ -145,9 +145,9 @@ set them, the site shows an honest gap rather than an invented value.
 
 | Env var | Today | What it needs |
 |---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | `https://ridefleet.com` | the real production origin, no trailing slash |
-| `NEXT_PUBLIC_DEMO_PHONE_DISPLAY` | `+1 787 XXX-XXXX` | the tracked demo line, as you want it printed |
-| `NEXT_PUBLIC_DEMO_PHONE_E164` | *(empty)* | same number in E.164. **While empty, no `tel:` link renders anywhere** — the masked number is display-only by design |
+| `NEXT_PUBLIC_SITE_URL` | `https://demo.ridefleetmanager.com` | **live since 2026-08-26.** Set in Vercel *and* written as the code fallback, because a stale fallback publishes a nonexistent host without failing a gate |
+| `NEXT_PUBLIC_DEMO_PHONE_DISPLAY` | `+1 (904) 921-2162` | **no longer a placeholder.** The Valet demo line, in code. The Vercel variable was deleted on purpose: it still held the old mask, and a defined variable beats the fallback — production printed `+1 787 XXX-XXXX` beside a working `tel:` for the real number |
+| `NEXT_PUBLIC_DEMO_PHONE_E164` | `+19049212162` | same number in E.164. Where it may appear is a narrow decision — see the placement contract in `src/lib/site.ts` |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | `hola@ridefleet.com` | confirm this mailbox exists |
 | `NEXT_PUBLIC_SCHEDULER_URL` | *(empty)* | the booking link. Empty renders the form-only path, with space already reserved so adding it costs no layout shift |
 
@@ -178,6 +178,12 @@ HubSpot is checked first. Delivery failures never fail the visitor's submission 
 the lead falls back to the log and the form still thanks them.
 
 ### Moving the site to a new domain
+
+**Done once, 2026-08-26: ridefleet-web.vercel.app → demo.ridefleetmanager.com.**
+Steps 1–3 below are complete. Step 4 is not ours to do and is still open — the
+home page frames the showcase, and until RFM allows this origin that box is
+empty. The DNS is a CNAME `demo` → `28e6dc4def9cd874.vercel-dns-016.com` on
+WordPress.com, which holds the nameservers for ridefleetmanager.com.
 
 Four things move together. Missing any one of them fails quietly:
 
@@ -214,10 +220,10 @@ needs adding too, or its leads disappear the same way.**
 serving the request.** We send it as the pageUri of the submission context. In
 production that variable points at the Vercel deployment, so the first live
 submission was filed as spam with the reason "Unregistered Site Domain" even
-though ridefleet.com was already registered. Both ridefleet.com and
-ridefleet-web.vercel.app are listed now. When the real domain finally serves
-the site, set NEXT_PUBLIC_SITE_URL to it — that one variable fixes the
-canonical URLs, the sitemap and this spam filter at the same time.
+though ridefleet.com was already registered. ridefleet.com and
+ridefleet-web.vercel.app were listed first; **demo.ridefleetmanager.com joined
+them on 2026-08-26**, the same day the variable moved to it — the two changes
+have to happen together or leads stop arriving the moment the domain moves.
 
 Also: Vercel only applies new environment variables on a NEW deployment. After
 adding the two HubSpot ids, redeploy, or /api/lead keeps answering

@@ -18,11 +18,19 @@ export const site = {
    * this value so the whole icon set re-syncs in the same run.
    */
   brandHex: '#5a26c9',
-  /** Set NEXT_PUBLIC_SITE_URL in the deploy environment. */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ridefleet.com').replace(
-    /\/$/,
-    ''
-  ),
+  /**
+   * The public origin. Live at demo.ridefleetmanager.com since 2026-08-26 —
+   * a subdomain of the product domain, not ridefleet.com, which is still
+   * unregistered. NEXT_PUBLIC_SITE_URL overrides it in the deploy environment
+   * (Vercel holds exactly this value), so the fallback only shows up in local
+   * builds; it is written out rather than left at the old placeholder because
+   * canonical tags, the sitemap and robots.txt all derive from it, and a wrong
+   * fallback publishes a host that does not exist without failing any gate.
+   * Moving it obliges `npm run build:og` — the card artwork prints this host.
+   */
+  url: (
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://demo.ridefleetmanager.com'
+  ).replace(/\/$/, ''),
   /**
    * The Valet demo line — a real number that costs money per minute, so where
    * it appears is a deliberate, narrow decision (RFM brief, 2026-08-26):
