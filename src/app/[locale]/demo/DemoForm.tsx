@@ -104,7 +104,11 @@ export function DemoForm() {
   const [operation, setOperation] = useState('');
   const [fleetSize, setFleetSize] = useState('');
   const [products, setProducts] = useState<string[]>([]);
-  const [demoLanguage, setDemoLanguage] = useState<string>('es');
+  // Preselect the language the visitor is already reading in, rather than a
+  // hardcoded one. This used to be 'es' and would have silently become wrong
+  // the day the site's default locale changed — an English reader would have
+  // been signed up for a Spanish demo unless they noticed the radio.
+  const [demoLanguage, setDemoLanguage] = useState<string>(locale);
   const [notes, setNotes] = useState('');
   const [consent, setConsent] = useState(false);
   const [honeypot, setHoneypot] = useState('');

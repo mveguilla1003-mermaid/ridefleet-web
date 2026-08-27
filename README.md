@@ -3,14 +3,17 @@
 Next.js 14 App Router marketing site for Ride Fleet Manager, Toll Bridge and Valet
 (the voice product, renamed from Voz AI on 2026-08-17).
 Built from the approved `site-v2` design ("Direction C — Product-Led Premium") and
-`WEBSITE_PLAN.md` §8. Spanish is the default locale; English is a full peer, not a
-translation afterthought.
+`WEBSITE_PLAN.md` §8. **English is the default locale since 2026-08-26**; Spanish is
+a full peer, not a translation afterthought — both are complete, both are prefixed,
+and the header switcher moves between them on any page. The default only decides
+what a visitor sees who expressed no preference. Auto-detection stays off on
+purpose, so a Spanish-set browser still lands on English and switches by choice.
 
 ## Running it
 
 ```bash
 npm install
-npm run dev            # http://localhost:3000 → redirects to /es
+npm run dev            # http://localhost:3000 → redirects to /en
 npm run build && npm start
 ```
 

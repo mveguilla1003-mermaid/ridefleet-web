@@ -1,3 +1,4 @@
+import { routing } from '@/i18n/routing';
 import { site } from './site';
 
 /**
@@ -100,7 +101,10 @@ export function toHubspotSubmission(lead: Lead) {
   return {
     fields,
     context: {
-      pageUri: `${site.url}/${lead.locale || 'es'}/demo`,
+      // The fallback follows the site's default locale rather than a literal:
+      // HubSpot matches this pageUri against its registered domains, so it
+      // must be a URL that actually exists.
+      pageUri: `${site.url}/${lead.locale || routing.defaultLocale}/demo`,
       pageName: 'Ride Fleet — demo request'
     }
   };
